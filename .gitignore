@@ -1,0 +1,88 @@
+#########################
+# CodeIgniter 4
+#########################
+
+# Environment Configuration
+.env
+.env.*
+!.env.example
+
+# Writable Directories
+writable/cache/*
+!writable/cache/index.html
+
+writable/logs/*
+!writable/logs/index.html
+
+writable/session/*
+!writable/session/index.html
+
+writable/uploads/*
+!writable/uploads/index.html
+!writable/uploads/qr-codes/
+writable/uploads/qr-codes/*
+!writable/uploads/qr-codes/.gitkeep
+
+writable/debugbar/*
+!writable/debugbar/index.html
+
+# Composer
+vendor/
+composer.phar
+composer.lock
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# OS Files
+*.swp
+*.swo
+*~
+.directory
+
+# PHP
+*.log
+*.cache
+
+# Testing
+phpunit.xml
+.phpunit.result.cache
+
+# Build Files
+/build/
+/dist/
+
+# Backup Files
+*.bak
+*.tmp
+*.temp
+
+# System Files
+.htaccess
+php_errors.log
+
+# User Uploads (keep structure, ignore content)
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Database
+*.sql
+*.sqlite
+*.db
+
+# Certificates & Keys
+*.pem
+*.key
+*.crt
+*.p12
