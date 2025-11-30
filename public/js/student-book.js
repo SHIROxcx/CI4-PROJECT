@@ -145,47 +145,13 @@ async function checkBookingFacilityAvailability(selectedDate) {
   if (!selectedStudentFacilityId) return;
 
   try {
-    // Check if facility has any pending or completed bookings on this date
-    const checkUrl = `/api/student/bookings/check-availability?facility_id=${selectedStudentFacilityId}&event_date=${selectedDate}`;
-    console.log("Checking booking availability:", checkUrl);
-
-    const checkResponse = await fetch(checkUrl, {
-      method: "GET",
-      headers: {
-        "X-Requested-With": "XMLHttpRequest",
-        "Content-Type": "application/json",
-      },
-    });
-
-    const checkData = await checkResponse.json();
-    console.log("Availability check response:", checkData);
-
-    const alertDiv = document.getElementById("bookingConflictAlert");
-    const alertMessage = document.getElementById("bookingConflictAlertMessage");
-
-    if (!alertDiv || !alertMessage) {
-      console.warn("Alert elements not found in booking form");
-      return;
-    }
-
-    if (checkData.available === false) {
-      // Show warning alert
-      alertDiv.style.display = "block";
-      alertMessage.innerHTML = `
-        <i class="fas fa-exclamation-circle"></i> This facility already has a booking on <strong>${new Date(
-          selectedDate
-        ).toLocaleDateString()}</strong>. Please choose a different date.
-      `;
-      showToast("⚠️ Facility not available on this date", "warning");
-      console.log("Facility not available - alert shown");
-    } else {
-      // Hide warning alert
-      alertDiv.style.display = "none";
-      console.log("Facility is available - alert hidden");
-    }
+    // Use the unified checkDateConflict endpoint
+    // Note: This is just for informational purposes as the real check happens on submit
+    console.log("Event date changed to:", selectedDate);
+    // The real conflict check will happen when user tries to submit the booking
   } catch (error) {
     console.error("Error checking facility availability:", error);
-    // Don't block booking if check fails
+    // Don't block the user, let them proceed - we'll catch the conflict on submit
   }
 }
 
@@ -716,6 +682,39 @@ async function submitStudentBooking() {
       throw new Error("Please select both event date and time");
     }
 
+    // CHECK FOR DATE CONFLICTS WITH EXISTING BOOKINGS
+    showToast("Checking date availability...", "info");
+
+    const conflictCheck = await fetch("/api/bookings/checkDateConflict", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      },
+      body: JSON.stringify({
+        facility_id: selectedStudentFacilityId,
+        event_date: eventDate,
+        event_time: eventTime,
+        duration: duration,
+      }),
+    });
+
+    const conflictResult = await conflictCheck.json();
+    console.log("Conflict check result:", conflictResult);
+
+    if (
+      conflictResult.hasConflict ||
+      conflictResult.hasPendingOrApprovedBooking
+    ) {
+      showToast(
+        "❌ This date and time has a conflict with an existing booking. Please select a different date or time.",
+        "error"
+      );
+      btn.disabled = false;
+      btn.textContent = "Submit Booking";
+      return;
+    }
+
     const bookingData = {
       facility_id: selectedStudentFacilityId,
       plan_id: selectedStudentPlanId,
@@ -928,31 +927,7 @@ function resetStudentForm() {
   );
   if (modalFooter) modalFooter.style.display = "flex";
 }
-
-// ========================================
-// TOAST NOTIFICATIONS
-// ========================================
-function showToast(message, type = "info") {
-  const toastContainer = document.getElementById("toastContainer");
-  const toast = document.createElement("div");
-  toast.className = `toast toast-${type}`;
-
-  const icon =
-    { success: "✅", error: "❌", warning: "⚠️", info: "ℹ️" }[type] || "ℹ️";
-
-  toast.innerHTML = `
-    <span class="toast-icon">${icon}</span>
-    <span class="toast-message">${message}</span>
-    <button class="toast-close" onclick="this.parentElement.remove()">×</button>
-  `;
-
-  toastContainer.appendChild(toast);
-
-  setTimeout(() => {
-    toast.classList.add("toast-fade-out");
-    setTimeout(() => toast.remove(), 300);
-  }, 5000);
-}
+// Duplicate removed - using robust version from earlier in file
 
 // ========================================
 // INLINE VALIDATION HELPERS

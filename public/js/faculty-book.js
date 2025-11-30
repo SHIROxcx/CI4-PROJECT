@@ -475,6 +475,43 @@ async function submitFreeBooking() {
   try {
     showToast("Validating booking details...", "info");
 
+    // STEP 0: Check for date conflicts with existing bookings
+    const facilityId = parseInt(
+      document.getElementById("freeFacilityId").value
+    );
+    const eventDate = document.getElementById("freeEventDate").value;
+    const eventTime = document.getElementById("freeEventTime").value;
+    const duration = parseInt(document.getElementById("freeDuration").value);
+
+    const conflictCheck = await fetch("/api/bookings/checkDateConflict", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      },
+      body: JSON.stringify({
+        facility_id: facilityId,
+        event_date: eventDate,
+        event_time: eventTime,
+        duration: duration,
+      }),
+    });
+
+    const conflictResult = await conflictCheck.json();
+
+    if (
+      conflictResult.hasConflict ||
+      conflictResult.hasPendingOrApprovedBooking
+    ) {
+      showToast(
+        "❌ This date and time has a conflict with an existing booking. Please select a different date or time.",
+        "error"
+      );
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit Free Booking";
+      return;
+    }
+
     // Get equipment selections
     const equipmentSelections = {};
     document.querySelectorAll('[id^="free-qty-"]').forEach((input) => {
@@ -1086,60 +1123,94 @@ async function submitPaidBooking() {
     return;
   }
 
+  // STEP 1: Check for date conflicts with existing bookings
+  const facilityId = parseInt(document.getElementById("paidFacilityId").value);
+  const eventDate = document.getElementById("paidEventDate").value;
+  const eventTime = document.getElementById("paidEventTime").value;
   const additionalHours =
     parseInt(document.getElementById("paidAdditionalHours")?.value) || 0;
   const durationMatch = selectedPlan.duration.match(/\d+/);
   const planDuration = durationMatch ? parseInt(durationMatch[0]) : 0;
   const totalDuration = planDuration + additionalHours;
 
-  // Calculate total cost
-  let basePrice = selectedPlan.price;
-  let addonsPrice = 0;
-  selectedAddons.forEach((addonId) => {
-    const addon = addonsData.find((a) => a.id === addonId);
-    if (addon) addonsPrice += addon.price;
-  });
-
-  let equipmentPrice = 0;
-  Object.keys(selectedEquipment).forEach((equipmentId) => {
-    const equipment = equipmentData.find((e) => e.id === equipmentId);
-    const quantity = selectedEquipment[equipmentId];
-    if (equipment && quantity > 0) {
-      equipmentPrice += equipment.rate * quantity;
-    }
-  });
-
-  const additionalHoursPrice = additionalHours * HOURLY_RATE;
-  const totalCost =
-    basePrice +
-    addonsPrice +
-    equipmentPrice +
-    additionalHoursPrice +
-    MAINTENANCE_FEE;
-
-  const formData = {
-    facility_key: currentFacilityKey,
-    plan_id: selectedPlan.id,
-    client_name: document.getElementById("paidClientName").value,
-    contact_number: document.getElementById("paidContactNumber").value,
-    email_address: document.getElementById("paidEmailAddress").value,
-    organization: document.getElementById("paidOrganization").value,
-    address: document.getElementById("paidAddress").value,
-    event_date: document.getElementById("paidEventDate").value,
-    event_time: document.getElementById("paidEventTime").value,
-    duration: totalDuration,
-    attendees: document.getElementById("paidAttendees").value || null,
-    event_title: document.getElementById("paidEventTitle").value,
-    special_requirements: document.getElementById("paidSpecialRequirements")
-      .value,
-    selected_addons: selectedAddons,
-    selected_equipment: selectedEquipment,
-    additional_hours: additionalHours,
-    maintenance_fee: MAINTENANCE_FEE,
-    total_cost: totalCost,
-  };
-
   try {
+    showToast("Checking date availability...", "info");
+
+    const conflictCheck = await fetch("/api/bookings/checkDateConflict", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      },
+      body: JSON.stringify({
+        facility_id: facilityId,
+        event_date: eventDate,
+        event_time: eventTime,
+        duration: totalDuration,
+      }),
+    });
+
+    const conflictResult = await conflictCheck.json();
+
+    if (
+      conflictResult.hasConflict ||
+      conflictResult.hasPendingOrApprovedBooking
+    ) {
+      showToast(
+        "❌ This date and time has a conflict with an existing booking. Please select a different date or time.",
+        "error"
+      );
+      return;
+    }
+
+    // Continue with booking submission if no conflicts
+    // Calculate total cost
+    let basePrice = selectedPlan.price;
+    let addonsPrice = 0;
+    selectedAddons.forEach((addonId) => {
+      const addon = addonsData.find((a) => a.id === addonId);
+      if (addon) addonsPrice += addon.price;
+    });
+
+    let equipmentPrice = 0;
+    Object.keys(selectedEquipment).forEach((equipmentId) => {
+      const equipment = equipmentData.find((e) => e.id === equipmentId);
+      const quantity = selectedEquipment[equipmentId];
+      if (equipment && quantity > 0) {
+        equipmentPrice += equipment.rate * quantity;
+      }
+    });
+
+    const additionalHoursPrice = additionalHours * HOURLY_RATE;
+    const totalCost =
+      basePrice +
+      addonsPrice +
+      equipmentPrice +
+      additionalHoursPrice +
+      MAINTENANCE_FEE;
+
+    const formData = {
+      facility_key: currentFacilityKey,
+      plan_id: selectedPlan.id,
+      client_name: document.getElementById("paidClientName").value,
+      contact_number: document.getElementById("paidContactNumber").value,
+      email_address: document.getElementById("paidEmailAddress").value,
+      organization: document.getElementById("paidOrganization").value,
+      address: document.getElementById("paidAddress").value,
+      event_date: document.getElementById("paidEventDate").value,
+      event_time: document.getElementById("paidEventTime").value,
+      duration: totalDuration,
+      attendees: document.getElementById("paidAttendees").value || null,
+      event_title: document.getElementById("paidEventTitle").value,
+      special_requirements: document.getElementById("paidSpecialRequirements")
+        .value,
+      selected_addons: selectedAddons,
+      selected_equipment: selectedEquipment,
+      additional_hours: additionalHours,
+      maintenance_fee: MAINTENANCE_FEE,
+      total_cost: totalCost,
+    };
+
     const response = await fetch("/api/bookings", {
       method: "POST",
       headers: {
