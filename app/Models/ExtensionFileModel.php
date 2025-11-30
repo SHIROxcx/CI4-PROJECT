@@ -12,8 +12,7 @@ class ExtensionFileModel extends Model
     protected $returnType = 'array';
 
     protected $allowedFields = [
-        'extension_id',
-        'file_type',
+        'booking_extension_id',
         'original_filename',
         'stored_filename',
         'file_path',
@@ -21,7 +20,6 @@ class ExtensionFileModel extends Model
         'mime_type',
         'uploaded_by',
         'upload_date',
-        'status',
     ];
 
     protected $useTimestamps = true;
@@ -31,7 +29,7 @@ class ExtensionFileModel extends Model
     /**
      * Upload a file for extension
      */
-    public function uploadFile($extensionId, $fileType, $originalFilename, $storedFilename, $filePath, $fileSize, $mimeType, $uploadedById)
+    public function uploadFile($extensionId, $originalFilename, $storedFilename, $filePath, $fileSize, $mimeType, $uploadedById)
     {
         try {
             // Check if extension exists
@@ -43,8 +41,7 @@ class ExtensionFileModel extends Model
             }
 
             $fileData = [
-                'extension_id' => $extensionId,
-                'file_type' => $fileType,
+                'booking_extension_id' => $extensionId,
                 'original_filename' => $originalFilename,
                 'stored_filename' => $storedFilename,
                 'file_path' => $filePath,
@@ -52,7 +49,6 @@ class ExtensionFileModel extends Model
                 'mime_type' => $mimeType,
                 'uploaded_by' => $uploadedById,
                 'upload_date' => date('Y-m-d H:i:s'),
-                'status' => 'active',
             ];
 
             if ($this->insert($fileData)) {
@@ -75,20 +71,15 @@ class ExtensionFileModel extends Model
     /**
      * Get files for an extension
      */
-    public function getExtensionFiles($extensionId, $fileType = null)
+    public function getExtensionFiles($extensionId)
     {
-        $query = $this->where('extension_id', $extensionId)
-            ->where('status', 'active');
-
-        if ($fileType) {
-            $query->where('file_type', $fileType);
-        }
-
-        return $query->orderBy('upload_date', 'DESC')->findAll();
+        return $this->where('booking_extension_id', $extensionId)
+            ->orderBy('upload_date', 'DESC')
+            ->findAll();
     }
 
     /**
-     * Delete a file (soft delete)
+     * Delete a file (hard delete)
      */
     public function deleteFile($fileId)
     {
@@ -99,13 +90,13 @@ class ExtensionFileModel extends Model
                 throw new \Exception('File not found');
             }
 
-            // Soft delete - mark as deleted
-            $this->update($fileId, ['status' => 'deleted']);
-
-            // Optionally delete physical file
+            // Delete physical file
             if (file_exists($file['file_path'])) {
                 unlink($file['file_path']);
             }
+
+            // Delete database record
+            $this->delete($fileId);
 
             return [
                 'success' => true,
@@ -124,9 +115,7 @@ class ExtensionFileModel extends Model
      */
     public function getPaymentOrderFile($extensionId)
     {
-        return $this->where('extension_id', $extensionId)
-            ->where('file_type', 'payment_order')
-            ->where('status', 'active')
+        return $this->where('booking_extension_id', $extensionId)
             ->first();
     }
 
@@ -135,9 +124,7 @@ class ExtensionFileModel extends Model
      */
     public function getPaymentReceiptFiles($extensionId)
     {
-        return $this->where('extension_id', $extensionId)
-            ->where('file_type', 'payment_receipt')
-            ->where('status', 'active')
+        return $this->where('booking_extension_id', $extensionId)
             ->findAll();
     }
 
@@ -146,20 +133,16 @@ class ExtensionFileModel extends Model
      */
     public function hasPaymentReceipt($extensionId)
     {
-        return $this->where('extension_id', $extensionId)
-            ->where('file_type', 'payment_receipt')
-            ->where('status', 'active')
+        return $this->where('booking_extension_id', $extensionId)
             ->countAllResults() > 0;
     }
 
     /**
      * Count files by type for extension
      */
-    public function countFilesByType($extensionId, $fileType)
+    public function countFilesByType($extensionId)
     {
-        return $this->where('extension_id', $extensionId)
-            ->where('file_type', $fileType)
-            ->where('status', 'active')
+        return $this->where('booking_extension_id', $extensionId)
             ->countAllResults();
     }
 }

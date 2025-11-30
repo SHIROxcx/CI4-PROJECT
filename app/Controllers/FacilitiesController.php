@@ -163,6 +163,21 @@ public function createBooking()
             ])->setStatusCode(404);
         }
 
+        // Check for existing pending or completed bookings on the same facility and date
+        $existingBooking = $this->bookingModel
+            ->where('facility_id', $facility['id'])
+            ->where('event_date', $request['event_date'])
+            ->whereIn('status', ['pending', 'completed'])
+            ->get()
+            ->getRowArray();
+
+        if ($existingBooking) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'This facility is already booked on this date. Please select a different date or facility.'
+            ])->setStatusCode(409);
+        }
+
         // Check facility availability
         $duration = $request['duration'] ?? 4;
         $isAvailable = $this->bookingModel->checkFacilityAvailability(
@@ -518,7 +533,11 @@ if (!empty($equipment)) {
     public function createFacility()
     {
         try {
-            $request = $this->request->getJSON(true);
+            // Get form data (handles both JSON and FormData)
+            $request = $this->request->getPost();
+            if (empty($request)) {
+                $request = $this->request->getJSON(true);
+            }
 
             // Validation
             $validation = \Config\Services::validation();
@@ -553,6 +572,9 @@ if (!empty($equipment)) {
             $facilityId = $this->facilityModel->insert($facilityData);
 
             if ($facilityId) {
+                // Handle gallery image uploads
+                $this->handleGalleryUploads($facilityId, $request['facility_key']);
+
                 return $this->response->setJSON([
                     'success' => true,
                     'message' => 'Facility created successfully',
@@ -585,7 +607,11 @@ if (!empty($equipment)) {
                 ])->setStatusCode(404);
             }
 
-            $request = $this->request->getJSON(true);
+            // Get form data (handles both JSON and FormData)
+            $request = $this->request->getPost();
+            if (empty($request)) {
+                $request = $this->request->getJSON(true);
+            }
 
             // Validation
             $validation = \Config\Services::validation();
@@ -633,6 +659,9 @@ if (!empty($equipment)) {
             $result = $this->facilityModel->update($facilityId, $updateData);
 
             if ($result) {
+                // Handle gallery image uploads
+                $this->handleGalleryUploads($facilityId, $request['facility_key'] ?? $facility['facility_key']);
+
                 return $this->response->setJSON([
                     'success' => true,
                     'message' => 'Facility updated successfully'
@@ -691,6 +720,317 @@ if (!empty($equipment)) {
             return $this->response->setJSON([
                 'success' => false,
                 'message' => 'Error deleting facility: ' . $e->getMessage()
+            ])->setStatusCode(500);
+        }
+    }
+
+    // Get lightweight list of active facilities for JavaScript
+    // Returns: [{ id, facility_key, name, icon }, ...]
+    public function getFacilitiesList()
+    {
+        try {
+            // Return ALL facilities (active and inactive) - frontend will handle availability
+            $facilities = $this->facilityModel
+                ->select('id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate')
+                ->orderBy('name', 'ASC')
+                ->findAll();
+
+            log_message('info', '[getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)');
+            log_message('info', '[getFacilitiesList] Facilities found: ' . count($facilities));
+            foreach ($facilities as $facility) {
+                log_message('info', '[getFacilitiesList] - ' . $facility['name'] . ' (key: ' . $facility['facility_key'] . ', is_active: ' . $facility['is_active'] . ', is_maintenance: ' . $facility['is_maintenance'] . ')');
+            }
+
+            return $this->response->setJSON([
+                'success' => true,
+                'facilities' => $facilities
+            ]);
+        } catch (\Exception $e) {
+            log_message('error', 'Error fetching facilities list: ' . $e->getMessage());
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Failed to fetch facilities list'
+            ])->setStatusCode(500);
+        }
+    }
+
+    // Get facilities for student internal bookings
+    // Returns student-specific facility data
+    public function getStudentFacilities()
+    {
+        try {
+            $facilities = $this->facilityModel
+                ->select('id, facility_key, name, icon, description, is_active, is_maintenance')
+                ->orderBy('name', 'ASC')
+                ->findAll();
+
+            log_message('info', '[getStudentFacilities] Fetching facilities for student booking');
+            log_message('info', '[getStudentFacilities] Total facilities found: ' . count($facilities));
+
+            // Format facilities for student view (internal bookings are free)
+            $formattedFacilities = array_map(function($facility) {
+                return [
+                    'id' => $facility['id'],
+                    'key' => $facility['facility_key'],
+                    'facility_key' => $facility['facility_key'],
+                    'name' => $facility['name'],
+                    'title' => $facility['name'],
+                    'icon' => $facility['icon'],
+                    'description' => $facility['description'] ?? 'No description available',
+                    'features' => ['Air Conditioned', 'Sound System', 'Projector'],
+                    'price' => 'Free for Students',
+                    'is_active' => $facility['is_active'],
+                    'is_maintenance' => $facility['is_maintenance']
+                ];
+            }, $facilities);
+
+            return $this->response->setJSON([
+                'success' => true,
+                'data' => $formattedFacilities
+            ]);
+        } catch (\Exception $e) {
+            log_message('error', 'Error fetching student facilities: ' . $e->getMessage());
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Failed to fetch facilities'
+            ])->setStatusCode(500);
+        }
+    }
+
+    // Get facilities for external bookings
+    // Returns external-specific facility data with pricing
+    public function getExternalFacilities()
+    {
+        try {
+            $facilities = $this->facilityModel
+                ->select('id, facility_key, name, icon, description, is_active, is_maintenance, extended_hour_rate')
+                ->orderBy('name', 'ASC')
+                ->findAll();
+
+            log_message('info', '[getExternalFacilities] Fetching facilities for external booking');
+            log_message('info', '[getExternalFacilities] Total facilities found: ' . count($facilities));
+
+            // Format facilities for external view with pricing
+            $priceMap = [
+                'auditorium' => '₱7,000 - ₱25,000',
+                'gymnasium' => '₱7,000 - ₱35,000',
+                'function-hall' => '₱1,000 - ₱2,000',
+                'pearl-restaurant' => '₱1,000 - ₱2,000',
+                'staff-house' => '₱500 - ₱1,500',
+                'classrooms' => '₱300 - ₱800'
+            ];
+
+            $formattedFacilities = array_map(function($facility) use ($priceMap) {
+                return [
+                    'id' => $facility['id'],
+                    'key' => $facility['facility_key'],
+                    'facility_key' => $facility['facility_key'],
+                    'name' => $facility['name'],
+                    'title' => $facility['name'],
+                    'icon' => $facility['icon'],
+                    'description' => $facility['description'] ?? 'No description available',
+                    'features' => ['Air Conditioned', 'Sound System', 'Projector'],
+                    'price_range' => $priceMap[$facility['facility_key']] ?? 'Contact for pricing',
+                    'is_active' => $facility['is_active'],
+                    'is_maintenance' => $facility['is_maintenance']
+                ];
+            }, $facilities);
+
+            return $this->response->setJSON([
+                'success' => true,
+                'data' => $formattedFacilities
+            ]);
+        } catch (\Exception $e) {
+            log_message('error', 'Error fetching external facilities: ' . $e->getMessage());
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Failed to fetch facilities'
+            ])->setStatusCode(500);
+        }
+    }
+
+    // Get facility gallery images
+    public function getFacilityGallery($facilityKey = null)
+    {
+        try {
+            if (!$facilityKey) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Facility key is required'
+                ])->setStatusCode(400);
+            }
+
+            // Get facility by key
+            $facility = $this->facilityModel
+                ->where('facility_key', $facilityKey)
+                ->first();
+
+            if (!$facility) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Facility not found'
+                ])->setStatusCode(404);
+            }
+
+            // Scan facility-specific uploads folder for gallery images
+            $galleryDir = WRITEPATH . 'uploads/facilities/' . $facilityKey . '/';
+            $gallery = [];
+
+            if (is_dir($galleryDir)) {
+                $files = array_diff(scandir($galleryDir), ['.', '..']);
+                foreach ($files as $file) {
+                    $filePath = $galleryDir . $file;
+                    if (is_file($filePath)) {
+                        // Generate a route-based URL with facility key
+                        $gallery[] = [
+                            'path' => base_url('api/facilities/image/' . $facilityKey . '/' . $file),
+                            'name' => $file,
+                            'size' => filesize($filePath)
+                        ];
+                    }
+                }
+            }
+
+            return $this->response->setJSON([
+                'success' => true,
+                'gallery' => $gallery,
+                'facility_id' => $facility['id'],
+                'facility_key' => $facility['facility_key']
+            ]);
+        } catch (\Exception $e) {
+            log_message('error', 'Error fetching gallery: ' . $e->getMessage());
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Failed to fetch gallery'
+            ])->setStatusCode(500);
+        }
+    }
+
+    // Serve gallery images
+    public function getGalleryImage($facilityKey = null, $filename = null)
+    {
+        try {
+            if (!$facilityKey || !$filename) {
+                throw new \Exception('Facility key and filename are required');
+            }
+
+            // Security: prevent directory traversal
+            if (strpos($filename, '..') !== false || strpos($filename, '/') !== false || 
+                strpos($facilityKey, '..') !== false || strpos($facilityKey, '/') !== false) {
+                throw new \Exception('Invalid parameters');
+            }
+
+            $filePath = WRITEPATH . 'uploads/facilities/' . $facilityKey . '/' . $filename;
+
+            if (!file_exists($filePath)) {
+                throw new \Exception('File not found');
+            }
+
+            // Determine MIME type
+            $mimeType = mime_content_type($filePath);
+            
+            // Return the file
+            return $this->response
+                ->setHeader('Content-Type', $mimeType)
+                ->setHeader('Content-Length', filesize($filePath))
+                ->setBody(file_get_contents($filePath));
+        } catch (\Exception $e) {
+            log_message('error', 'Error serving gallery image: ' . $e->getMessage());
+            return $this->response->setStatusCode(404)->setBody('File not found');
+        }
+    }
+
+    // Handle gallery image uploads
+    protected function handleGalleryUploads($facilityId, $facilityKey)
+    {
+        $files = $this->request->getFiles();
+        // Create facility-specific upload directory
+        $uploadDir = WRITEPATH . 'uploads/facilities/' . $facilityKey . '/';
+        
+        // Create directory if it doesn't exist
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
+
+        if (isset($files['gallery_images'])) {
+            $images = $files['gallery_images'];
+            
+            // Handle single file or multiple files
+            if (!is_array($images)) {
+                $images = [$images];
+            }
+
+            foreach ($images as $file) {
+                if ($file->isValid() && !$file->hasMoved()) {
+                    // Validate file
+                    $validMimes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+                    if (!in_array($file->getMimeType(), $validMimes)) {
+                        log_message('error', 'Invalid file type: ' . $file->getMimeType());
+                        continue;
+                    }
+
+                    // Generate unique filename
+                    $newName = $file->getRandomName();
+                    
+                    // Move file to facility-specific folder
+                    if ($file->move($uploadDir, $newName)) {
+                        $imagePath = 'uploads/facilities/' . $facilityKey . '/' . $newName;
+                        log_message('info', 'Gallery image uploaded: ' . $imagePath);
+                    } else {
+                        log_message('error', 'Failed to move uploaded file: ' . $file->getErrorString());
+                    }
+                }
+            }
+        }
+    }
+
+    // Delete gallery image
+    public function deleteGalleryImage($facilityKey = null, $filename = null)
+    {
+        try {
+            if (!$facilityKey || !$filename) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Facility key and filename are required'
+                ])->setStatusCode(400);
+            }
+
+            // Security: prevent directory traversal
+            if (strpos($filename, '..') !== false || strpos($filename, '/') !== false ||
+                strpos($facilityKey, '..') !== false || strpos($facilityKey, '/') !== false) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Invalid parameters'
+                ])->setStatusCode(400);
+            }
+
+            $filePath = WRITEPATH . 'uploads/facilities/' . $facilityKey . '/' . $filename;
+
+            if (!file_exists($filePath)) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'File not found'
+                ])->setStatusCode(404);
+            }
+
+            // Delete the file
+            if (unlink($filePath)) {
+                log_message('info', 'Gallery image deleted: ' . $filename);
+                return $this->response->setJSON([
+                    'success' => true,
+                    'message' => 'Image deleted successfully'
+                ]);
+            } else {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Failed to delete image'
+                ])->setStatusCode(500);
+            }
+        } catch (\Exception $e) {
+            log_message('error', 'Error deleting gallery image: ' . $e->getMessage());
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Error deleting image: ' . $e->getMessage()
             ])->setStatusCode(500);
         }
     }

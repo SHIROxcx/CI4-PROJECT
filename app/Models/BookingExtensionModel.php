@@ -97,7 +97,7 @@ class BookingExtensionModel extends Model
      */
     public function getPendingExtensionsByFacility($facilityId, $limit = 50, $offset = 0)
     {
-        return $this->db->table('booking_extensions be')
+        $extensions = $this->db->table('booking_extensions be')
         ->select('
             be.*,
             b.id as booking_id,
@@ -119,6 +119,15 @@ class BookingExtensionModel extends Model
         ->limit($limit, $offset)
         ->get()
         ->getResultArray();
+
+        // Add files for each extension
+        $extensionFileModel = new ExtensionFileModel();
+        foreach ($extensions as &$extension) {
+            $extension['files'] = $extensionFileModel->where('booking_extension_id', $extension['id'])
+                ->findAll();
+        }
+
+        return $extensions;
     }
 
     /**
@@ -126,7 +135,7 @@ class BookingExtensionModel extends Model
      */
     public function getAllPendingExtensions($limit = 50, $offset = 0)
     {
-        return $this->db->table('booking_extensions be')
+        $extensions = $this->db->table('booking_extensions be')
         ->select('
             be.*,
             b.id as booking_id,
@@ -146,6 +155,15 @@ class BookingExtensionModel extends Model
         ->limit($limit, $offset)
         ->get()
         ->getResultArray();
+
+        // Add files for each extension
+        $extensionFileModel = new ExtensionFileModel();
+        foreach ($extensions as &$extension) {
+            $extension['files'] = $extensionFileModel->where('booking_extension_id', $extension['id'])
+                ->findAll();
+        }
+
+        return $extensions;
     }
 
     /**
@@ -178,8 +196,7 @@ class BookingExtensionModel extends Model
         if ($extension) {
             // Get associated files
             $extensionFileModel = new ExtensionFileModel();
-            $extension['files'] = $extensionFileModel->where('extension_id', $extensionId)
-                ->where('status', 'active')
+            $extension['files'] = $extensionFileModel->where('booking_extension_id', $extensionId)
                 ->findAll();
         }
 
@@ -191,7 +208,7 @@ class BookingExtensionModel extends Model
      */
     public function getByBookingId($bookingId)
     {
-        return $this->db->table('booking_extensions be')
+        $extension = $this->db->table('booking_extensions be')
         ->select('
             be.*,
             b.id as booking_id,
@@ -206,6 +223,15 @@ class BookingExtensionModel extends Model
         ->where('be.booking_id', $bookingId)
         ->get()
         ->getRowArray();
+
+        if ($extension) {
+            // Get associated files
+            $extensionFileModel = new ExtensionFileModel();
+            $extension['files'] = $extensionFileModel->where('booking_extension_id', $extension['id'])
+                ->findAll();
+        }
+
+        return $extension;
     }
 
     /**

@@ -104,57 +104,91 @@ class Survey extends BaseController
             
             log_message('debug', 'All POST data received: ' . json_encode($allPostData));
             
-            // Map form fields to database columns
-            $fieldMapping = [
-                // Staff fields (direct match)
-                'staff_punctuality' => 'staff_punctuality',
-                'staff_courtesy_property' => 'staff_courtesy_property',
-                'staff_courtesy_audio' => 'staff_courtesy_audio',
-                'staff_courtesy_janitor' => 'staff_courtesy_janitor',
-                // Facility fields (direct match)
-                'facility_level_expectations' => 'facility_level_expectations',
-                // Equipment/Venue fields - combine multiple form fields into single columns
-                'facility_cleanliness_function_hall' => 'facility_cleanliness',
-                'facility_cleanliness_classrooms' => 'facility_cleanliness',
-                'facility_cleanliness_restrooms' => 'facility_cleanliness',
-                'facility_cleanliness_reception' => 'facility_cleanliness',
-                'equipment_airconditioning' => 'facility_maintenance',
-                'equipment_lighting' => 'facility_maintenance',
-                'equipment_electric_fans' => 'facility_maintenance',
-                'equipment_tables' => 'facility_maintenance',
-                'equipment_monobloc_chairs' => 'facility_maintenance',
-                'equipment_chair_cover' => 'facility_maintenance',
-                'equipment_podium' => 'facility_maintenance',
-                'equipment_multimedia_projector' => 'facility_maintenance',
-                'equipment_sound_system' => 'facility_maintenance',
-                'equipment_microphone' => 'facility_maintenance',
-                'equipment_others' => 'facility_maintenance',
-                'overall_would_rent_again' => 'overall_satisfaction',
-                'overall_would_recommend' => 'overall_satisfaction',
-                'overall_how_found_facility' => 'venue_accuracy_setup',
-                'comments_suggestions' => 'most_enjoyed'
-            ];
-            
             $surveyData = [];
             
-            // Map form fields to database columns
-            foreach ($fieldMapping as $formField => $dbColumn) {
-                if (isset($allPostData[$formField]) && $allPostData[$formField] !== '') {
-                    // Store both mapped (for DB) and original (for Excel generator)
-                    if (!isset($surveyData[$dbColumn])) {
-                        $surveyData[$dbColumn] = $allPostData[$formField];
-                    } else {
-                        // If already set, append (for multiple values mapping to one column)
-                        $surveyData[$dbColumn] .= ' | ' . $allPostData[$formField];
-                    }
-                    
-                    // Also preserve original field names for Excel generator
-                    $surveyData[$formField] = $allPostData[$formField];
+            // STAFF SECTION - Direct mapping
+            if (isset($allPostData['staff_punctuality'])) {
+                $surveyData['staff_punctuality'] = $allPostData['staff_punctuality'];
+            }
+            if (isset($allPostData['staff_courtesy_property'])) {
+                $surveyData['staff_courtesy_property'] = $allPostData['staff_courtesy_property'];
+            }
+            if (isset($allPostData['staff_courtesy_audio'])) {
+                $surveyData['staff_courtesy_audio'] = $allPostData['staff_courtesy_audio'];
+            }
+            if (isset($allPostData['staff_courtesy_janitor'])) {
+                $surveyData['staff_courtesy_janitor'] = $allPostData['staff_courtesy_janitor'];
+            }
+            
+            // FACILITY SECTION - Direct mapping
+            if (isset($allPostData['facility_level_expectations'])) {
+                $surveyData['facility_level_expectations'] = $allPostData['facility_level_expectations'];
+            }
+            
+            // FACILITY CLEANLINESS - Combine multiple fields
+            $cleanlinessValues = [];
+            if (isset($allPostData['facility_cleanliness_function_hall'])) {
+                $cleanlinessValues[] = $allPostData['facility_cleanliness_function_hall'];
+            }
+            if (isset($allPostData['facility_cleanliness_classrooms'])) {
+                $cleanlinessValues[] = $allPostData['facility_cleanliness_classrooms'];
+            }
+            if (isset($allPostData['facility_cleanliness_restrooms'])) {
+                $cleanlinessValues[] = $allPostData['facility_cleanliness_restrooms'];
+            }
+            if (isset($allPostData['facility_cleanliness_reception'])) {
+                $cleanlinessValues[] = $allPostData['facility_cleanliness_reception'];
+            }
+            if (!empty($cleanlinessValues)) {
+                $surveyData['facility_cleanliness'] = implode(' | ', $cleanlinessValues);
+            }
+            
+            // EQUIPMENT/FACILITY MAINTENANCE - Combine all equipment fields
+            $maintenanceValues = [];
+            $equipmentFields = [
+                'equipment_airconditioning',
+                'equipment_lighting',
+                'equipment_electric_fans',
+                'equipment_tables',
+                'equipment_monobloc_chairs',
+                'equipment_chair_cover',
+                'equipment_podium',
+                'equipment_multimedia_projector',
+                'equipment_sound_system',
+                'equipment_microphone',
+                'equipment_others'
+            ];
+            
+            foreach ($equipmentFields as $field) {
+                if (isset($allPostData[$field]) && $allPostData[$field] !== '') {
+                    $maintenanceValues[] = $allPostData[$field];
                 }
             }
             
-            // Also capture the comments separately
+            if (!empty($maintenanceValues)) {
+                $surveyData['facility_maintenance'] = implode(' | ', $maintenanceValues);
+            }
+            
+            // OVERALL EXPERIENCE - Combine satisfaction responses
+            $satisfactionValues = [];
+            if (isset($allPostData['overall_would_rent_again'])) {
+                $satisfactionValues[] = $allPostData['overall_would_rent_again'];
+            }
+            if (isset($allPostData['overall_would_recommend'])) {
+                $satisfactionValues[] = $allPostData['overall_would_recommend'];
+            }
+            if (!empty($satisfactionValues)) {
+                $surveyData['overall_satisfaction'] = implode(' | ', $satisfactionValues);
+            }
+            
+            // VENUE ACCURACY - How found facility
+            if (isset($allPostData['overall_how_found_facility'])) {
+                $surveyData['venue_accuracy_setup'] = $allPostData['overall_how_found_facility'];
+            }
+            
+            // COMMENTS - Capture as improvements_needed and most_enjoyed
             if (isset($allPostData['comments_suggestions']) && $allPostData['comments_suggestions'] !== '') {
+                $surveyData['most_enjoyed'] = $allPostData['comments_suggestions'];
                 $surveyData['improvements_needed'] = $allPostData['comments_suggestions'];
             }
 
@@ -181,25 +215,14 @@ class Survey extends BaseController
                 
                 // Generate Excel file with survey responses
                 try {
-                    $booking = $this->bookingModel->find($survey['booking_id']);
+                    // Generate the Excel file using the helper
+                    $result = ExcelSurveyGenerator::generateEvaluationForm($survey['booking_id'], $surveyData);
                     
-                    // Create unique filename
-                    $timestamp = date('YmdHis');
-                    $filename = 'CSPC_Evaluation_Booking_' . $survey['booking_id'] . '_' . $timestamp . '.xlsx';
-                    $filepath = WRITEPATH . 'uploads/' . $filename;
-                    
-                    // Ensure uploads directory exists
-                    if (!is_dir(WRITEPATH . 'uploads/')) {
-                        mkdir(WRITEPATH . 'uploads/', 0755, true);
+                    if ($result['success']) {
+                        log_message('info', 'Excel evaluation form generated: ' . $result['filepath']);
+                    } else {
+                        log_message('warning', 'Excel generation returned error: ' . ($result['message'] ?? 'Unknown error'));
                     }
-                    
-                    // Generate the Excel file
-                    ExcelSurveyGenerator::generateEvaluationForm($booking, $surveyData, $filepath);
-                    
-                    log_message('info', 'Excel evaluation form generated: ' . $filepath);
-                    
-                    // You can optionally save the filename to database for tracking
-                    // $this->bookingModel->update($survey['booking_id'], ['survey_file' => $filename]);
                     
                 } catch (\Exception $e) {
                     log_message('error', 'Failed to generate Excel file: ' . $e->getMessage());
@@ -282,11 +305,11 @@ class Survey extends BaseController
     public function getEvaluationFiles($bookingId)
     {
         $files = [];
-        $uploadsDir = WRITEPATH . 'uploads/';
+        $uploadsDir = WRITEPATH . 'temp/';
         
         // Look for Excel evaluation files matching the booking ID
         if (is_dir($uploadsDir)) {
-            $pattern = 'CSPC_Evaluation_Booking_' . $bookingId . '_*.xlsx';
+            $pattern = 'Faculty_Evaluation_BK' . str_pad($bookingId, 3, '0', STR_PAD_LEFT) . '_*.xlsx';
             $matchedFiles = glob($uploadsDir . $pattern);
             
             if ($matchedFiles) {
@@ -321,7 +344,7 @@ class Survey extends BaseController
     public function downloadEvaluationFile($filename)
     {
         $filename = basename($filename); // Prevent directory traversal
-        $filepath = WRITEPATH . 'uploads/' . $filename;
+        $filepath = WRITEPATH . 'temp/' . $filename;
 
         log_message('info', '=== EVALUATION FILE DOWNLOAD STARTED ===');
         log_message('info', 'Requested filename: ' . $filename);
@@ -330,18 +353,18 @@ class Survey extends BaseController
         log_message('info', 'Base URL: ' . base_url());
         log_message('info', 'Current URL: ' . current_url());
 
-        // Check if uploads directory exists
-        $uploadsDir = WRITEPATH . 'uploads/';
+        // Check if temp directory exists
+        $uploadsDir = WRITEPATH . 'temp/';
         if (!is_dir($uploadsDir)) {
-            log_message('error', 'Uploads directory does not exist: ' . $uploadsDir);
+            log_message('error', 'Temp directory does not exist: ' . $uploadsDir);
             log_message('error', 'WRITEPATH value: ' . WRITEPATH);
             return $this->response->setStatusCode(500)->setJSON([
-                'error' => 'Uploads directory not found',
+                'error' => 'Temp directory not found',
                 'writepath' => WRITEPATH,
                 'expected_dir' => $uploadsDir
             ]);
         }
-        log_message('info', 'Uploads directory exists and is readable');
+        log_message('info', 'Temp directory exists and is readable');
 
         // Verify file exists and matches pattern
         if (!file_exists($filepath)) {
@@ -349,11 +372,11 @@ class Survey extends BaseController
 
             // List files in directory for debugging
             $files = scandir($uploadsDir);
-            log_message('info', 'Files in uploads directory: ' . json_encode($files));
+            log_message('info', 'Files in temp directory: ' . json_encode($files));
             log_message('info', 'Number of files found: ' . count($files));
             
             // Look for similar files
-            $pattern = 'CSPC_Evaluation_*';
+            $pattern = 'Faculty_Evaluation_*';
             $similarFiles = glob($uploadsDir . $pattern);
             log_message('info', 'Similar files matching pattern "' . $pattern . '": ' . json_encode($similarFiles));
 
@@ -386,9 +409,9 @@ class Survey extends BaseController
         }
 
         // Verify it's an evaluation file
-        if (strpos($filename, 'CSPC_Evaluation_Booking_') !== 0) {
+        if (strpos($filename, 'Faculty_Evaluation_BK') !== 0) {
             log_message('error', 'Invalid evaluation file requested: ' . $filename);
-            log_message('warning', 'File does not start with CSPC_Evaluation_Booking_');
+            log_message('warning', 'File does not start with Faculty_Evaluation_BK');
             return $this->response->setStatusCode(403)->setJSON([
                 'error' => 'Access denied - Invalid file pattern',
                 'filename' => $filename

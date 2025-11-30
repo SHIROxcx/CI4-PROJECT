@@ -211,6 +211,11 @@ function generateExtensionCard(extension, bookingId = null) {
               ${file.original_filename}
             </a>
             <small>(${formatFileSize(file.file_size)})</small>
+            <button class="btn btn-sm btn-danger" onclick="deleteExtensionFile(${
+              file.id
+            }); return false;" title="Delete file" style="margin-left: 10px;">
+              <i class="fas fa-times"></i> Delete
+            </button>
           </li>
       `;
     });
@@ -253,9 +258,9 @@ async function approveExtension(extensionId, extensionHours) {
         "success",
         `Extension approved! Booking updated with ${extensionHours} additional hours.`
       );
-      // Reload current booking to show updated data
-      if (currentBookingId) {
-        setTimeout(() => viewBooking(currentBookingId), 1000);
+      // Reload extensions tab immediately without closing modal
+      if (currentExtensionBookingId) {
+        loadBookingExtensions(currentExtensionBookingId);
       }
     } else {
       showAlert("error", data.message || "Failed to approve extension");
@@ -303,9 +308,9 @@ async function rejectExtension(extensionId, rejectionReason) {
 
     if (data.success) {
       showAlert("success", "Extension request rejected");
-      // Reload current booking to show updated data
-      if (currentBookingId) {
-        setTimeout(() => viewBooking(currentBookingId), 1000);
+      // Reload extensions immediately without closing modal
+      if (currentExtensionBookingId) {
+        loadBookingExtensions(currentExtensionBookingId);
       }
     } else {
       showAlert("error", data.message || "Failed to reject extension");
@@ -376,9 +381,9 @@ async function markExtensionPaid(extensionId) {
 
     if (data.success) {
       showAlert("success", "Extension marked as paid");
-      // Reload booking to show updated status
-      if (currentBookingId) {
-        setTimeout(() => viewBooking(currentBookingId), 1000);
+      // Reload extensions immediately without closing modal
+      if (currentExtensionBookingId) {
+        loadBookingExtensions(currentExtensionBookingId);
       }
     } else {
       showAlert("error", data.message || "Failed to mark as paid");
@@ -394,6 +399,40 @@ async function markExtensionPaid(extensionId) {
  */
 function downloadExtensionFile(fileId) {
   window.location.href = `/api/extensions/files/${fileId}/download`;
+}
+
+/**
+ * Delete extension file
+ */
+async function deleteExtensionFile(fileId) {
+  if (!confirm("Are you sure you want to delete this file?")) {
+    return;
+  }
+
+  try {
+    const response = await fetch(`/api/extensions/files/${fileId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      showAlert("success", "File deleted successfully");
+      // Reload extensions immediately to refresh the file list
+      if (currentExtensionBookingId) {
+        loadBookingExtensions(currentExtensionBookingId);
+      }
+    } else {
+      showAlert("error", data.message || "Failed to delete file");
+    }
+  } catch (error) {
+    console.error("Error deleting file:", error);
+    showAlert("error", "Failed to delete file");
+  }
 }
 
 /**
@@ -474,15 +513,19 @@ function formatFileSize(bytes) {
 }
 
 /**
- * Show alert (use existing showAlert or create one)
+ * Show alert (use existing alert or create notification)
  */
 function showAlert(type, message) {
-  // Try to use existing alert function or create a simple one
-  if (typeof window.showAlert === "function") {
-    window.showAlert(message);
-  } else {
-    alert(message);
-  }
+  // Use native browser alert as fallback
+  const prefix =
+    type === "success"
+      ? "✅ "
+      : type === "error"
+      ? "❌ "
+      : type === "warning"
+      ? "⚠️ "
+      : "";
+  alert(prefix + message);
 }
 
 /**
@@ -490,7 +533,7 @@ function showAlert(type, message) {
  */
 function switchTab(tabName, bookingId) {
   // Use the global switchBookingTab function
-  if (typeof switchBookingTab === 'function') {
+  if (typeof switchBookingTab === "function") {
     switchBookingTab(tabName);
   }
 
@@ -560,14 +603,14 @@ function handleExtensionFileSelect(file) {
 
   // Validation
   if (file.size > maxSize) {
-    showAlert("File too large. Maximum size is 10MB.", "danger");
+    showAlert("error", "File too large. Maximum size is 10MB.");
     return;
   }
 
   if (!allowedTypes.includes(file.type)) {
     showAlert(
-      "Invalid file type. Only PDF, JPG, and PNG are allowed.",
-      "danger"
+      "error",
+      "Invalid file type. Only PDF, JPG, and PNG are allowed."
     );
     return;
   }
@@ -600,13 +643,13 @@ function removeExtensionFile() {
  */
 async function uploadExtensionFileFromModal() {
   if (!selectedExtensionFile || !currentExtensionUploadId) {
-    showAlert("Please select a file first.", "warning");
+    showAlert("warning", "Please select a file first.");
     return;
   }
 
   const documentType = document.getElementById("extensionDocumentType").value;
   if (!documentType) {
-    showAlert("Please select a document type.", "warning");
+    showAlert("warning", "Please select a document type.");
     return;
   }
 
@@ -619,29 +662,41 @@ async function uploadExtensionFileFromModal() {
     formData.append("file", selectedExtensionFile);
     formData.append("document_type", documentType);
 
+    console.log("Uploading extension file:", {
+      extensionId: currentExtensionUploadId,
+      bookingId: currentExtensionBookingId,
+      documentType: documentType,
+      fileName: selectedExtensionFile.name,
+    });
+
     const response = await fetch(
       `/api/extensions/${currentExtensionUploadId}/upload`,
       {
         method: "POST",
         body: formData,
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+        },
       }
     );
 
     const result = await response.json();
 
+    console.log("Upload response:", result);
+
     if (result.success) {
-      showAlert("File uploaded successfully!", "success");
+      showAlert("success", "File uploaded successfully!");
       closeExtensionUploadModal();
       // Reload extensions list
       if (currentExtensionBookingId) {
         loadBookingExtensions(currentExtensionBookingId);
       }
     } else {
-      showAlert(result.message || "Upload failed", "danger");
+      showAlert("error", result.message || "Upload failed");
     }
   } catch (error) {
     console.error("Error uploading file:", error);
-    showAlert("Error uploading file", "danger");
+    showAlert("error", "Error uploading file: " + error.message);
   } finally {
     uploadBtn.disabled = false;
     uploadBtn.textContent = "Upload Document";

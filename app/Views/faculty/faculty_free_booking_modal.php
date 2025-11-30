@@ -2,10 +2,17 @@
 <div id="freeBookingModal" class="modal student-booking-modal">
     <div class="modal-content">
         <div class="modal-header">
-            <h2 class="modal-title" id="freeModalTitle">Academic/Free Booking</h2>
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <h2 class="modal-title" id="freeModalTitle">Academic/Free Booking</h2>
+                <div class="availability-indicator" id="freeAvailabilityStatus" style="margin: 0;">
+                    <span class="status-text">Loading...</span>
+                    <span class="status-icon"></span>
+                </div>
+            </div>
             <span class="close" onclick="closeFreeModal()">&times;</span>
         </div>
         <div class="modal-body">
+            <!-- Status Message Container (will be populated dynamically) -->
             <!-- Basic Information Section -->
             <div class="plan-section">
                 <h3 class="section-title">📝 Event Information</h3>
@@ -15,6 +22,7 @@
                     <input type="hidden" id="freeClientEmail" value="<?= esc($userEmail ?? '') ?>">
                     <input type="hidden" id="freeFacilityKey" value="">
                     <input type="hidden" id="freeFacilityId" value="">
+                    <input type="hidden" id="freeBookingType" value="faculty">
 
                     <!-- Contact Number - VISIBLE AND EDITABLE -->
                     <div class="form-group">

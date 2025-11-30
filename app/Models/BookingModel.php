@@ -31,7 +31,12 @@ class BookingModel extends Model
         'decline_notes',
         'additional_hours',
         'maintenance_fee',
-        'booking_type'
+        'booking_type',
+        'cancellation_letter_path',
+        'cancellation_requested_at',
+        'approved_at',
+        'approved_by',
+        'approval_notes'
     ];
 
     protected $useTimestamps = true;

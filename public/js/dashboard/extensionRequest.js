@@ -18,6 +18,16 @@ async function openExtensionRequestModal(bookingId) {
 
     const booking = data.booking;
 
+    // Check if extension already exists for this booking
+    const extensionResponse = await fetch(
+      `/api/extensions/check-booking/${bookingId}`
+    );
+    const extensionData = await extensionResponse.json();
+
+    const hasExistingExtension =
+      extensionData.has_extension ||
+      (extensionData.extensions && extensionData.extensions.length > 0);
+
     // Store current booking data for cost calculation
     currentExtensionBookingData = booking;
 
@@ -28,7 +38,6 @@ async function openExtensionRequestModal(bookingId) {
     document.getElementById("extensionHours").value = 1;
     document.getElementById("extensionReason").value = "";
     document.getElementById("extensionErrorAlert").style.display = "none";
-    document.getElementById("submitExtensionBtn").disabled = false;
 
     // Set hourly rate from booking facility data
     const hourlyRate = booking.hourly_rate || 0;
@@ -45,6 +54,31 @@ async function openExtensionRequestModal(bookingId) {
     );
     modal.show();
     extensionModalInstance = modal;
+
+    // Show warning if extension already exists
+    if (hasExistingExtension) {
+      const extension = extensionData.extensions[0];
+      const errorAlert = document.getElementById("extensionErrorAlert");
+      const errorText = document.getElementById("extensionErrorText");
+
+      errorText.innerHTML = `
+        <strong>⚠️ Extension Already Exists</strong><br>
+        You have already requested an extension for this booking (Status: <strong>${formatStatus(
+          extension.status
+        )}</strong>). 
+        Only one extension request is allowed per booking.
+      `;
+      errorAlert.style.display = "block";
+      errorAlert.className = "alert alert-warning";
+
+      document.getElementById("submitExtensionBtn").disabled = true;
+      document.getElementById("extensionHours").disabled = true;
+      document.getElementById("extensionReason").disabled = true;
+    } else {
+      document.getElementById("submitExtensionBtn").disabled = false;
+      document.getElementById("extensionHours").disabled = false;
+      document.getElementById("extensionReason").disabled = false;
+    }
   } catch (error) {
     console.error("Error opening extension modal:", error);
     showAlert("error", "Failed to open extension request modal");
@@ -105,6 +139,24 @@ async function submitExtensionRequest() {
 
     if (extensionHours < 1 || extensionHours > 12) {
       showAlert("error", "Please select between 1 and 12 hours");
+      return;
+    }
+
+    // Double-check: Verify no extension already exists before submitting
+    const extensionCheckResponse = await fetch(
+      `/api/extensions/check-booking/${bookingId}`
+    );
+    const extensionCheckData = await extensionCheckResponse.json();
+
+    if (
+      extensionCheckData.has_extension ||
+      (extensionCheckData.extensions &&
+        extensionCheckData.extensions.length > 0)
+    ) {
+      showAlert(
+        "error",
+        "This booking already has an extension request. Only one extension per booking is allowed."
+      );
       return;
     }
 
@@ -179,4 +231,19 @@ function getExtensionButton(booking) {
       <i class="fas fa-clock"></i> Request Extension
     </button>
   `;
+}
+
+/**
+ * Format status text for display
+ */
+function formatStatus(status) {
+  const statusMap = {
+    pending: "Pending",
+    approved: "Approved",
+    rejected: "Rejected",
+    completed: "Completed",
+    confirmed: "Confirmed",
+    cancelled: "Cancelled",
+  };
+  return statusMap[status] || status.charAt(0).toUpperCase() + status.slice(1);
 }

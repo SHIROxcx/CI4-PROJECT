@@ -16,7 +16,10 @@ $routes->get('/contact', 'Home::contact');
 $routes->get('/facilities', 'Home::facilities'); 
 $routes->get('/event', 'Home::event'); 
 
-// Dynamic facility detail route (handles all facility pages with fallback)
+// Dynamic facility detail route (NEW - handles all facilities from database)
+$routes->get('/facility/(:segment)', 'Home::facilityDetail/$1');
+
+// Legacy routes - OLD hardcoded facility routes (kept for backward compatibility)
 $routes->get('facilities/gymnasium', 'Home::gymnasium');
 $routes->get('facilities/pearlmini', 'Home::pearlmini');
 $routes->get('facilities/FunctionHall', 'Home::FunctionHall');
@@ -42,8 +45,14 @@ $routes->post('api/guest-registration/register', 'Api\GuestApiController::public
 
 // Public facility API
 $routes->get('api/facilities/(:any)/data', 'Api\BookingApiController::getFacilityData/$1');
+$routes->get('api/facilities/list', 'FacilitiesController::getFacilitiesList');
+$routes->get('api/facilities/student', 'FacilitiesController::getStudentFacilities');
+$routes->get('api/facilities/external', 'FacilitiesController::getExternalFacilities');
 $routes->get('api/facilities/data', 'FacilitiesController::getFacilityData');
 $routes->get('api/facilities/data/(:segment)', 'FacilitiesController::getFacilityData/$1');
+$routes->get('api/facilities/gallery/(:segment)', 'FacilitiesController::getFacilityGallery/$1');
+$routes->get('api/facilities/image/(:segment)/(:any)', 'FacilitiesController::getGalleryImage/$1/$2');
+$routes->delete('api/facilities/image/(:segment)/(:any)', 'FacilitiesController::deleteGalleryImage/$1/$2');
 $routes->get('api/addons', 'FacilitiesController::getAddons');
 $routes->get('api/equipment', 'FacilitiesController::getEquipment');
 $routes->post('api/bookings', 'FacilitiesController::createBooking');
@@ -209,6 +218,11 @@ $routes->group('api/admin', ['filter' => 'auth'], function($routes) {
     $routes->get('equipment-status', 'Api\AdminApi::getEquipmentStatus');
     $routes->get('facility-utilization', 'Api\AdminApi::getFacilityUtilization');
     $routes->get('api/facilities/(:any)/data', 'Api\BookingController::getFacilityData/$1');
+    
+    // Cancellation management
+    $routes->get('cancellations/pending', 'Api\AdminApi::getPendingCancellations');
+    $routes->post('cancellations/approve/(:num)', 'Api\AdminApi::approveCancellation/$1');
+    $routes->post('cancellations/reject/(:num)', 'Api\AdminApi::rejectCancellation/$1');
 });
 
 // ============================================
@@ -268,6 +282,8 @@ $routes->group('api/user', ['filter' => 'auth'], function($routes) {
     $routes->post('bookings/(:num)/upload-receipt', 'Api\UserApi::uploadReceipt/$1');
     $routes->get('bookings/(:num)/download-receipt', 'Api\UserApi::downloadReceipt/$1');
     $routes->delete('bookings/(:num)/delete-receipt', 'Api\UserApi::deleteReceipt/$1');
+    $routes->delete('bookings/(:num)/delete', 'Api\UserApi::deleteBooking/$1');
+    $routes->post('bookings/(:num)/reschedule', 'Api\UserApi::rescheduleBooking/$1');
 });
 
 
@@ -277,10 +293,13 @@ $routes->group('api/student', ['namespace' => 'App\Controllers\Api', 'filter' =>
     $routes->post('bookings/(:num)/upload', 'StudentBookingApi::uploadStudentDocuments/$1');
     $routes->post('bookings/(:num)/upload-files', 'StudentBookingApi::uploadStudentDocuments/$1');
     $routes->post('bookings/(:num)/cancel', 'StudentBookingApi::cancelStudentBooking/$1');
+    $routes->post('bookings/(:num)/reschedule', 'StudentBookingApi::rescheduleStudentBooking/$1');
+    $routes->delete('bookings/(:num)', 'StudentBookingApi::deleteStudentBooking/$1');
     
     $routes->get('bookings/(:num)/files', 'StudentBookingApi::getStudentBookingFiles/$1');
     $routes->get('bookings/(:num)/files/(:num)/download', 'StudentBookingApi::downloadStudentDocument/$1/$2');
     $routes->delete('bookings/(:num)/files/(:num)', 'StudentBookingApi::deleteStudentDocument/$1/$2');
+    $routes->get('bookings/check-availability', 'StudentBookingApi::checkFacilityAvailability');
     
     $routes->get('bookings', 'StudentBookingApi::getStudentBookings');
     $routes->get('bookings/(:num)', 'StudentBookingApi::getStudentBooking/$1');
@@ -371,6 +390,9 @@ $routes->group('api/extensions', ['namespace' => 'App\Controllers\Api', 'filter'
     // Request extension (student/faculty)
     $routes->post('request', 'ExtensionApiController::requestExtension');
     
+    // Check if student has extension for a booking (student endpoint)
+    $routes->get('check-booking/(:num)', 'ExtensionApiController::checkStudentExtension/$1');
+    
     // Get pending extensions (admin/facilitator)
     $routes->get('pending', 'ExtensionApiController::getPendingExtensions');
     
@@ -385,6 +407,12 @@ $routes->group('api/extensions', ['namespace' => 'App\Controllers\Api', 'filter'
     
     // Upload file (admin/facilitator)
     $routes->post('(:num)/upload', 'ExtensionApiController::uploadFile/$1');
+    
+    // Download file
+    $routes->get('files/(:num)/download', 'ExtensionApiController::downloadFile/$1');
+    
+    // Delete file
+    $routes->delete('files/(:num)', 'ExtensionApiController::deleteFile/$1');
     
     // Mark payment received (admin/facilitator)
     $routes->post('(:num)/mark-paid', 'ExtensionApiController::markPaymentReceived/$1');

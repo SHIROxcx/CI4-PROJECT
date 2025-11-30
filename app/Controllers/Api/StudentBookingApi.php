@@ -175,7 +175,7 @@ $validation->setRules([
             'special_requirements' => $request['special_requirements'] ?? '',
             'total_cost' => $totalCost,
             'additional_hours' => $additionalHours,
-            'booking_type' => 'student',
+            'booking_type' => $request['booking_type'] ?? 'student',
             'status' => 'pending',
             'created_by' => $createdBy
         ];
@@ -391,11 +391,11 @@ public function uploadStudentDocuments($bookingId)
             ])->setStatusCode(404);
         }
 
-        // Verify it's a student booking
-        if ($booking['booking_type'] !== 'student') {
+        // Verify it's a valid booking type (student or faculty)
+        if (!in_array($booking['booking_type'], ['student', 'faculty'])) {
             return $this->response->setJSON([
                 'success' => false,
-                'message' => 'Not a student booking'
+                'message' => 'Invalid booking type'
             ])->setStatusCode(400);
         }
 
@@ -724,6 +724,92 @@ public function deleteStudentDocument($bookingId, $fileId)
         ])->setStatusCode(500);
     }
 }
+
+    /**
+     * Delete student booking
+     * Only allows deletion of cancelled bookings
+     */
+    public function deleteStudentBooking($bookingId)
+    {
+        try {
+            $userData = $this->verifyUserAccess();
+            
+            if (!$userData) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Unauthorized access'
+                ])->setStatusCode(401);
+            }
+
+            // Verify booking exists and user has access
+            $booking = $this->bookingModel->find($bookingId);
+            if (!$booking) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Booking not found'
+                ])->setStatusCode(404);
+            }
+
+            // Verify access: students can only delete their own bookings
+            if ($userData['role'] === 'student' && $booking['email_address'] !== $userData['email']) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Access denied'
+                ])->setStatusCode(403);
+            }
+
+            // Only allow deletion of cancelled bookings
+            if ($booking['status'] !== 'cancelled') {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Only cancelled bookings can be deleted'
+                ])->setStatusCode(400);
+            }
+
+            $db = \Config\Database::connect();
+            $db->transStart();
+
+            // Delete related files first
+            $studentFileModel = new StudentBookingFileModel();
+            $files = $studentFileModel->where('booking_id', $bookingId)->findAll();
+
+            foreach ($files as $file) {
+                if (file_exists($file['file_path'])) {
+                    unlink($file['file_path']);
+                }
+                $studentFileModel->delete($file['id']);
+            }
+
+            // Delete booking equipment records
+            $db->table('booking_equipment')->where('booking_id', $bookingId)->delete();
+
+            // Delete the booking itself
+            if ($this->bookingModel->delete($bookingId)) {
+                $db->transComplete();
+
+                if ($db->transStatus() === false) {
+                    throw new \Exception('Failed to delete booking');
+                }
+
+                log_message('info', "Booking deleted: {$bookingId} by user {$userData['email']}");
+
+                return $this->response->setJSON([
+                    'success' => true,
+                    'message' => 'Booking deleted successfully'
+                ]);
+            } else {
+                $db->transRollback();
+                throw new \Exception('Failed to delete booking record');
+            }
+
+        } catch (\Exception $e) {
+            log_message('error', 'Delete booking error: ' . $e->getMessage());
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Failed to delete booking'
+            ])->setStatusCode(500);
+        }
+    }
 
     /**
      * Cancel student booking
@@ -1451,4 +1537,8 @@ public function validateEquipmentAvailability()
         ])->setStatusCode(500);
     }
 }
+
+
+
+
 }

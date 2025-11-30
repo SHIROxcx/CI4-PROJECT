@@ -35,6 +35,7 @@
                 <li><a href="<?= base_url('/admin/events') ?>" class="menu-item"><i>📅</i> Events</a></li>
                 <li><a href="<?= base_url('/admin/equipment') ?>" class="menu-item"><i>🔧</i> Equipment</a></li>
                 <li><a href="<?= base_url('/admin/plans') ?>" class="menu-item"><i>📋</i> Plans</a></li>
+                <li><a href="<?= base_url('/admin/facilities-management') ?>" class="menu-item"><i>🏗️</i> Facilities</a></li>
 
                 <div class="sidebar-divider"></div>
 
@@ -68,114 +69,8 @@
             </div>
 
             <!-- Facilities Grid -->
-            <div class="facilities-grid">
-                <!-- University Auditorium -->
-                <div class="facility-card" onclick="openStudentBookingModal('auditorium', 1)">
-                    <div class="facility-image">🎭</div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">University Auditorium</h3>
-                        <p class="facility-description">Large capacity venue perfect for concerts, graduations, and major events with professional sound and lighting systems.</p>
-                        <div class="facility-features">
-                            <span class="feature-tag">Air Conditioned</span>
-                            <span class="feature-tag">Sound System</span>
-                            <span class="feature-tag">Projector</span>
-                        </div>
-                        <div class="facility-price">
-                            <span class="price-range">Free (Internal)</span>
-                            <button class="book-btn">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gymnasium -->
-                <div class="facility-card" onclick="openStudentBookingModal('gymnasium', 2)">
-                    <div class="facility-image">🏀</div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">University Gymnasium</h3>
-                        <p class="facility-description">Spacious indoor sports facility suitable for sports events, large gatherings, and exhibitions.</p>
-                        <div class="facility-features">
-                            <span class="feature-tag">Heavy Duty Fans</span>
-                            <span class="feature-tag">Sound System</span>
-                            <span class="feature-tag">Sports Equipment</span>
-                        </div>
-                        <div class="facility-price">
-                            <span class="price-range">Free (Internal)</span>
-                            <button class="book-btn">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Function Hall -->
-                <div class="facility-card" onclick="openStudentBookingModal('function-hall', 4)">
-                    <div class="facility-image">🏛️</div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">Function Hall (ACAD Bldg.)</h3>
-                        <p class="facility-description">Versatile event space for meetings, conferences, and medium-sized gatherings.</p>
-                        <div class="facility-features">
-                            <span class="feature-tag">Air Conditioned</span>
-                            <span class="feature-tag">Tables & Chairs</span>
-                            <span class="feature-tag">Sound System</span>
-                        </div>
-                        <div class="facility-price">
-                            <span class="price-range">Free (Internal)</span>
-                            <button class="book-btn">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pearl Mini Restaurant -->
-                <div class="facility-card" onclick="openStudentBookingModal('pearl-restaurant', 5)">
-                    <div class="facility-image">🍽️</div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">Pearl Mini Restaurant</h3>
-                        <p class="facility-description">Cozy dining venue perfect for small gatherings, parties, and intimate events.</p>
-                        <div class="facility-features">
-                            <span class="feature-tag">Air Conditioned</span>
-                            <span class="feature-tag">Tables & Chairs</span>
-                            <span class="feature-tag">Kitchen Access</span>
-                        </div>
-                        <div class="facility-price">
-                            <span class="price-range">Free (Internal)</span>
-                            <button class="book-btn">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Staff House Rooms -->
-                <div class="facility-card" onclick="openStudentBookingModal('staff-house', 6)">
-                    <div class="facility-image">🏠</div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">Staff House Rooms</h3>
-                        <p class="facility-description">Comfortable accommodation rooms for visiting faculty, guests, and special events.</p>
-                        <div class="facility-features">
-                            <span class="feature-tag">Air Conditioned</span>
-                            <span class="feature-tag">Private Bathroom</span>
-                            <span class="feature-tag">Wi-Fi</span>
-                        </div>
-                        <div class="facility-price">
-                            <span class="price-range">Free (Internal)</span>
-                            <button class="book-btn">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Classrooms -->
-                <div class="facility-card" onclick="openStudentBookingModal('classrooms', 7)">
-                    <div class="facility-image">📖</div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">Classrooms</h3>
-                        <p class="facility-description">Well-equipped classrooms suitable for training sessions, workshops, and academic events.</p>
-                        <div class="facility-features">
-                            <span class="feature-tag">Air Conditioned</span>
-                            <span class="feature-tag">Projector</span>
-                            <span class="feature-tag">Whiteboard</span>
-                        </div>
-                        <div class="facility-price">
-                            <span class="price-range">Free (Internal)</span>
-                            <button class="book-btn">Book Now</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="facilities-grid" id="studentFacilitiesGrid">
+                <!-- Will be populated dynamically by JavaScript -->
             </div>
         </div>
     </div>
@@ -188,10 +83,26 @@
                 <span class="close" onclick="closeStudentModal()">&times;</span>
             </div>
             <div class="modal-body">
+                <!-- Facility Availability Alert -->
+                <div id="bookingConflictAlert" class="alert alert-warning border-0" style="background-color: #fff3cd; border-left: 4px solid #ffc107; display: none; margin-bottom: 20px;">
+                    <i class="fas fa-exclamation-triangle" style="color: #856404;"></i>
+                    <strong style="color: #856404;"> Facility Not Available</strong>
+                    <p id="bookingConflictAlertMessage" style="color: #856404; margin-top: 5px; margin-bottom: 0;"></p>
+                </div>
+
                 <!-- Basic Information Section -->
                 <div class="plan-section">
                     <h3 class="section-title">📝 Event Information</h3>
                     <form id="studentBookingForm">
+                    <div class="form-group">
+                        <label class="form-label">Booking Type *</label>
+                        <select class="form-control" id="bookingType" required>
+                            <option value="" disabled selected>Select booking type</option>
+                            <option value="student">🎓 Student Organization</option>
+                            <option value="faculty">👨‍🏫 Faculty</option>
+                        </select>
+                    </div>
+    
     <div class="form-group">
         <label class="form-label">Your Full Name *</label>
         <input type="text" class="form-control" id="clientName" required>
@@ -318,6 +229,7 @@
         </div>
     </div>
 
+    <script src="<?= base_url('js/admin/student-facilities.js') ?>"></script>
     <script src="<?= base_url('js/admin/student.js') ?>"></script>
 </body>
 </html>

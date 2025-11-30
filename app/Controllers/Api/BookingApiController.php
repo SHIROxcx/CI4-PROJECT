@@ -29,6 +29,22 @@ class BookingApiController extends ResourceController
     }
 
     /**
+     * Format booking type for display
+     */
+    private function formatBookingType($type)
+    {
+        switch($type) {
+            case 'student':
+                return 'Student';
+            case 'faculty':
+                return 'Faculty';
+            case 'user':
+            default:
+                return 'User';
+        }
+    }
+
+    /**
      * Check if a date/time has conflicts for a facility
      */
     public function checkDateConflict()
@@ -446,15 +462,16 @@ public function approve($bookingId)
             $request = $this->request->getJSON(true);
             
             // Validate required fields
-            if (empty($request['booking_id']) || empty($request['new_event_date'])) {
+            if (empty($request['booking_id']) || empty($request['new_event_date']) || empty($request['new_event_time'])) {
                 return $this->response->setJSON([
                     'success' => false,
-                    'message' => 'Booking ID and new event date are required'
+                    'message' => 'Booking ID, new event date, and new event time are required'
                 ])->setStatusCode(400);
             }
 
             $bookingId = $request['booking_id'];
             $newEventDate = $request['new_event_date'];
+            $newEventTime = $request['new_event_time'];
             $reason = $request['reason'] ?? 'Not specified';
             $notes = $request['notes'] ?? '';
             $notifyClient = $request['notify_client'] ?? true;
@@ -516,7 +533,7 @@ public function approve($bookingId)
             $hasConflict = $this->eventModel->hasConflict(
                 $booking['facility_id'],
                 $newEventDate,
-                $booking['event_time'],
+                $newEventTime,
                 $durationValue
             );
 
@@ -528,9 +545,10 @@ public function approve($bookingId)
                 ])->setStatusCode(400);
             }
 
-            // Update booking with new date and reschedule information
+            // Update booking with new date, time and reschedule information
             $updateData = [
                 'event_date' => $newEventDate,
+                'event_time' => $newEventTime,
                 'reschedule_reason' => $reason,
                 'reschedule_notes' => $notes,
                 'rescheduled_at' => date('Y-m-d H:i:s'),
@@ -546,14 +564,15 @@ public function approve($bookingId)
             }
             
             if ($updated) {
-                log_message('info', "Booking #{$bookingId} rescheduled. Old date: {$booking['event_date']}, New date: {$newEventDate}");
+                log_message('info', "Booking #{$bookingId} rescheduled. Old date: {$booking['event_date']} at {$booking['event_time']}, New date: {$newEventDate} at {$newEventTime}");
 
                 // Send email notification to client if enabled
                 if ($notifyClient) {
                     try {
-                        // Create updated booking object for email with new date
+                        // Create updated booking object for email with new date and time
                         $bookingForEmail = $booking;
                         $bookingForEmail['event_date'] = $newEventDate;
+                        $bookingForEmail['event_time'] = $newEventTime;
                         
                         // Create reason message for email
                         $reasonMessage = "Reschedule Reason: " . $reason;
@@ -574,7 +593,9 @@ public function approve($bookingId)
                     'booking' => [
                         'id' => $bookingId,
                         'old_event_date' => $booking['event_date'],
-                        'new_event_date' => $newEventDate
+                        'old_event_time' => $booking['event_time'],
+                        'new_event_date' => $newEventDate,
+                        'new_event_time' => $newEventTime
                     ]
                 ]);
             } else {
@@ -769,8 +790,8 @@ public function downloadFile($bookingId, $fileId)
                     $report['status_summary'][$booking['status']]++;
                 }
 
-                // Calculate revenue (exclude student bookings)
-                if (isset($booking['booking_type']) && $booking['booking_type'] !== 'student') {
+                // Calculate revenue (exclude student and faculty bookings)
+                if (isset($booking['booking_type']) && !in_array($booking['booking_type'], ['student', 'faculty'])) {
                     $cost = floatval($booking['total_cost'] ?? 0);
                     $report['revenue']['total'] += $cost;
 
@@ -789,7 +810,7 @@ public function downloadFile($bookingId, $fileId)
                     'email' => $booking['email_address'] ?? 'N/A',
                     'contact' => $booking['contact_number'] ?? 'N/A',
                     'organization' => $booking['organization'] ?? 'N/A',
-                    'booking_type' => (isset($booking['booking_type']) && $booking['booking_type'] === 'student') ? 'Student' : 'User',
+                    'booking_type' => (isset($booking['booking_type']) && in_array($booking['booking_type'], ['student', 'faculty'])) ? ucfirst($booking['booking_type']) : 'User',
                     'facility' => $booking['facility_name'] ?? 'N/A',
                     'event_title' => $booking['event_title'] ?? 'N/A',
                     'event_date' => $booking['event_date'] ?? 'N/A',
@@ -797,7 +818,7 @@ public function downloadFile($bookingId, $fileId)
                     'duration' => $booking['duration'] ?? 'N/A',
                     'attendees' => $booking['attendees'] ?? 'N/A',
                     'status' => isset($booking['status']) ? ucfirst($booking['status']) : 'N/A',
-                    'total_cost' => (isset($booking['booking_type']) && $booking['booking_type'] === 'student') ? 'FREE' : '₱' . number_format($booking['total_cost'] ?? 0, 2),
+                    'total_cost' => (isset($booking['booking_type']) && in_array($booking['booking_type'], ['student', 'faculty'])) ? 'FREE' : '₱' . number_format($booking['total_cost'] ?? 0, 2),
                     'created_at' => $booking['created_at'] ?? 'N/A'
                 ];
             }
@@ -2019,7 +2040,7 @@ public function getBookingsList()
                      (SELECT COUNT(*) FROM booking_files bf WHERE bf.booking_id = b.id) as user_files_count,
                      (SELECT COUNT(*) FROM student_booking_files sbf WHERE sbf.booking_id = b.id) as student_files_count,
                      CASE 
-                        WHEN b.booking_type = "student" THEN (SELECT COUNT(*) FROM student_booking_files sbf WHERE sbf.booking_id = b.id)
+                        WHEN b.booking_type IN ("student", "faculty") THEN (SELECT COUNT(*) FROM student_booking_files sbf WHERE sbf.booking_id = b.id)
                         ELSE (SELECT COUNT(*) FROM booking_files bf WHERE bf.booking_id = b.id)
                      END as files_count')
             ->join('facilities', 'facilities.id = b.facility_id', 'left')

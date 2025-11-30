@@ -736,7 +736,7 @@ $userRole = $session->get('role');
         <div class="stats-container">
           <div class="stat-box">
             <i class="fas fa-building"></i>
-            <h3>7</h3>
+            <h3><?= count($facilities) ?></h3>
             <p>Available Facilities</p>
           </div>
           <div class="stat-box">
@@ -802,73 +802,38 @@ $userRole = $session->get('role');
           <p>Most popular spaces for events, meetings, and academic activities</p>
         </div>
         <div class="facilities-grid">
-          <!-- Gymnasium -->
-          <div class="facility-card">
-            <div class="facility-image">
-              <i class="fas fa-basketball-ball"></i>
-              <div class="availability-badge">Available</div>
-            </div>
-            <div class="facility-content">
-              <h3>University Gymnasium</h3>
-              <p>Multi-purpose sports and events venue with complete audio-visual equipment and large capacity</p>
-              <div class="facility-features">
-                <span class="feature-tag"><i class="fas fa-users"></i> 500+ capacity</span>
-                <span class="feature-tag"><i class="fas fa-video"></i> A/V System</span>
-                <span class="feature-tag"><i class="fas fa-parking"></i> Parking</span>
+          <?php if (!empty($facilities)): ?>
+            <?php foreach (array_slice($facilities, 0, 3) as $facility): ?>
+              <div class="facility-card">
+                <div class="facility-image">
+                  <?= $facility['icon'] ?? '🏢' ?>
+                  <div class="availability-badge"><?= $facility['is_maintenance'] ? 'Maintenance' : 'Available' ?></div>
+                </div>
+                <div class="facility-content">
+                  <h3><?= esc($facility['name']) ?></h3>
+                  <p><?= esc($facility['description'] ?? 'Book this facility for your events and activities') ?></p>
+                  <div class="facility-features">
+                    <span class="feature-tag"><i class="fas fa-snowflake"></i> Air Conditioned</span>
+                    <span class="feature-tag"><i class="fas fa-volume-up"></i> Sound System</span>
+                    <span class="feature-tag"><i class="fas fa-video"></i> Projector</span>
+                  </div>
+                  <div class="facility-footer">
+                    <div class="price-tag">₱<?= number_format($facility['additional_hours_rate'] ?? 500, 0) ?>/hr</div>
+                    <a href="<?= site_url('/facility/' . esc($facility['facility_key'])) ?>" class="book-btn">Book Now</a>
+                  </div>
+                </div>
               </div>
-              <div class="facility-footer">
-                <div class="price-tag">₱7,000 - ₱12,000</div>
-                <a href="/facilities/gymnasium" class="book-btn">Book Now</a>
-              </div>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
+              <p style="color: #64748b; font-size: 1.1rem;">No facilities available at this time.</p>
             </div>
-          </div>
-
-          <!-- Function Hall -->
-          <div class="facility-card">
-            <div class="facility-image">
-              <i class="fas fa-utensils"></i>
-              <div class="availability-badge">Available</div>
-            </div>
-            <div class="facility-content">
-              <h3>Function Hall</h3>
-              <p>Elegant venue perfect for seminars, conferences, and formal celebrations</p>
-              <div class="facility-features">
-                <span class="feature-tag"><i class="fas fa-snowflake"></i> Air Conditioned</span>
-                <span class="feature-tag"><i class="fas fa-volume-up"></i> Sound System</span>
-                <span class="feature-tag"><i class="fas fa-chair"></i> 200 seats</span>
-              </div>
-              <div class="facility-footer">
-                <div class="price-tag">₱1,500 - ₱3,000</div>
-                <a href="/facilities/FunctionHall" class="book-btn">Book Now</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- AVR Engineering -->
-          <div class="facility-card">
-            <div class="facility-image">
-              <i class="fas fa-cogs"></i>
-              <div class="availability-badge">Available</div>
-            </div>
-            <div class="facility-content">
-              <h3>AVR College of Engineering</h3>
-              <p>Modern audio-visual room equipped for technical training and workshops</p>
-              <div class="facility-features">
-                <span class="feature-tag"><i class="fas fa-video"></i> Projector</span>
-                <span class="feature-tag"><i class="fas fa-tools"></i> Lab Equipment</span>
-                <span class="feature-tag"><i class="fas fa-snowflake"></i> A/C</span>
-              </div>
-              <div class="facility-footer">
-                <div class="price-tag">₱3,000 - ₱6,000</div>
-                <a href="/facilities/AVREngineering" class="book-btn">Book Now</a>
-              </div>
-            </div>
-          </div>
+          <?php endif; ?>
         </div>
 
         <div class="view-all-facilities">
           <a href="<?= site_url('/facilities') ?>" class="view-all-btn">
-            <i class="fas fa-th-large"></i> View All 7 Facilities
+            <i class="fas fa-th-large"></i> View All <?= count($facilities) ?> Facilities
           </a>
         </div>
       </div>

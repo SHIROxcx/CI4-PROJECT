@@ -494,6 +494,11 @@ tr:hover {
   color: var(--primary);
 }
 
+.type-faculty {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
 .type-external {
   background-color: #fff2f2;
   color: var(--danger);

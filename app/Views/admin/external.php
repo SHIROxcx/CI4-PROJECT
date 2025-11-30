@@ -32,6 +32,7 @@
                 <li><a href="<?= base_url('/admin/events') ?>" class="menu-item"><i>📅</i> Events</a></li>
                 <li><a href="<?= base_url('/admin/equipment') ?>" class="menu-item"><i>🔧</i> Equipment</a></li>
                 <li><a href="<?= base_url('/admin/plans') ?>" class="menu-item"><i>📋</i> Plans</a></li>
+                <li><a href="<?= base_url('/admin/facilities-management') ?>" class="menu-item"><i>🏗️</i> Facilities</a></li>
             
 
                 <div class="sidebar-divider"></div>
@@ -70,122 +71,8 @@
 
 
             <!-- Facilities Grid -->
-            <div class="facilities-grid">
-                <!-- University Auditorium -->
-                <div class="facility-card" onclick="openBookingModal('auditorium')">
-                    <div class="facility-image">🎭</div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">University Auditorium</h3>
-                        <p class="facility-description">Large capacity venue perfect for concerts, graduations, and major events with professional sound and lighting systems.</p>
-                        <div class="facility-features">
-                            <span class="feature-tag">Air Conditioned</span>
-                            <span class="feature-tag">Sound System</span>
-                            <span class="feature-tag">Projector</span>
-                            <span class="feature-tag">Professional Lighting</span>
-                        </div>
-                        <div class="facility-price">
-                            <span class="price-range">₱7,000 - ₱25,000</span>
-                            <button class="book-btn">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- University Gymnasium -->
-                <div class="facility-card" onclick="openBookingModal('gymnasium')">
-                    <div class="facility-image">🏀</div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">University Gymnasium</h3>
-                        <p class="facility-description">Spacious indoor sports facility suitable for sports events, large gatherings, and exhibitions.</p>
-                        <div class="facility-features">
-                            <span class="feature-tag">Heavy Duty Fans</span>
-                            <span class="feature-tag">Sound System</span>
-                            <span class="feature-tag">Projector</span>
-                            <span class="feature-tag">Sports Equipment</span>
-                        </div>
-                        <div class="facility-price">
-                            <span class="price-range">₱7,000 - ₱35,000</span>
-                            <button class="book-btn">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Function Hall -->
-                <div class="facility-card" onclick="openBookingModal('function-hall')">
-                    <div class="facility-image">🏛️</div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">Function Hall (ACAD Bldg.)</h3>
-                        <p class="facility-description">Versatile event space for meetings, conferences, and medium-sized gatherings.</p>
-                        <div class="facility-features">
-                            <span class="feature-tag">Air Conditioned</span>
-                            <span class="feature-tag">Tables & Chairs</span>
-                            <span class="feature-tag">Sound System</span>
-                            <span class="feature-tag">Projector</span>
-                        </div>
-                        <div class="facility-price">
-                            <span class="price-range">₱1,000 - ₱2,000</span>
-                            <button class="book-btn">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Pearl Mini Restaurant -->
-                <div class="facility-card" onclick="openBookingModal('pearl-restaurant')">
-                    <div class="facility-image">🍽️</div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">Pearl Mini Restaurant</h3>
-                        <p class="facility-description">Cozy dining venue perfect for small gatherings, parties, and intimate events.</p>
-                        <div class="facility-features">
-                            <span class="feature-tag">Air Conditioned</span>
-                            <span class="feature-tag">Tables & Chairs</span>
-                            <span class="feature-tag">Kitchen Access</span>
-                            <span class="feature-tag">Dining Setup</span>
-                        </div>
-                        <div class="facility-price">
-                            <span class="price-range">₱1,000 - ₱2,000</span>
-                            <button class="book-btn">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Staff House Rooms -->
-                <div class="facility-card" onclick="openBookingModal('staff-house')">
-                    <div class="facility-image">🏠</div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">Staff House Rooms</h3>
-                        <p class="facility-description">Comfortable accommodation rooms for visiting faculty, guests, and special events.</p>
-                        <div class="facility-features">
-                            <span class="feature-tag">Air Conditioned</span>
-                            <span class="feature-tag">Private Bathroom</span>
-                            <span class="feature-tag">Wi-Fi</span>
-                            <span class="feature-tag">Parking</span>
-                        </div>
-                        <div class="facility-price">
-                            <span class="price-range">₱500 - ₱1,500</span>
-                            <button class="book-btn">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Classrooms -->
-                <div class="facility-card" onclick="openBookingModal('classrooms')">
-                    <div class="facility-image">📖</div>
-                    <div class="facility-info">
-                        <h3 class="facility-title">Classrooms</h3>
-                        <p class="facility-description">Well-equipped classrooms suitable for training sessions, workshops, and academic events.</p>
-                        <div class="facility-features">
-                            <span class="feature-tag">Air Conditioned</span>
-                            <span class="feature-tag">Projector</span>
-                            <span class="feature-tag">Whiteboard</span>
-                            <span class="feature-tag">Tables & Chairs</span>
-                        </div>
-                        <div class="facility-price">
-                            <span class="price-range">₱300 - ₱800</span>
-                            <button class="book-btn">Book Now</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="facilities-grid" id="externalFacilitiesGrid">
+                <!-- Will be populated dynamically by JavaScript -->
             </div>
         </div>
     </div>
@@ -393,6 +280,7 @@
         </div>
     </div>
 
+    <script src="<?= base_url('js/admin/external-facilities.js') ?>"></script>
     <script src="<?= base_url('js/booking.js') ?>"></script>
 </body>
 </html>

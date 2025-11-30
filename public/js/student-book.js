@@ -19,7 +19,12 @@ let uploadedStudentFiles = {
 function openStudentBookingModal(facilityKey, facilityId) {
   selectedStudentFacility = facilityKey;
   selectedStudentFacilityId = facilityId;
-  loadStudentFacilityData(facilityKey);
+
+  // Check facility status first
+  checkStudentFacilityStatus(facilityKey).then((status) => {
+    loadStudentFacilityData(facilityKey, status);
+  });
+
   document.getElementById("studentBookingModal").style.display = "block";
 }
 
@@ -28,10 +33,35 @@ function closeStudentModal() {
   resetStudentForm();
 }
 
+// Check facility status and return status object
+async function checkStudentFacilityStatus(facilityKey) {
+  try {
+    const response = await fetch(`/api/facilities/list`);
+    const data = await response.json();
+
+    if (data.success && data.facilities) {
+      const facility = data.facilities.find(
+        (f) => f.facility_key === facilityKey
+      );
+      if (facility) {
+        return {
+          is_active: facility.is_active,
+          is_maintenance: facility.is_maintenance,
+          name: facility.name,
+        };
+      }
+    }
+    return { is_active: 1, is_maintenance: 0, name: "Unknown" };
+  } catch (error) {
+    console.error("Error checking facility status:", error);
+    return { is_active: 1, is_maintenance: 0, name: "Unknown" };
+  }
+}
+
 // ========================================
 // LOAD FACILITY DATA
 // ========================================
-async function loadStudentFacilityData(facilityKey) {
+async function loadStudentFacilityData(facilityKey, facilityStatus = {}) {
   try {
     console.log("Loading facility data for:", facilityKey);
 
@@ -48,14 +78,55 @@ async function loadStudentFacilityData(facilityKey) {
         "modalTitle"
       ).textContent = `Book ${data.facility.name}`;
 
-      if (data.facility.plans && data.facility.plans.length > 0) {
-        selectedStudentPlanId = parseInt(data.facility.plans[0].id); // ✅ Convert to integer
+      // Check facility availability
+      const isInactive = facilityStatus.is_active == 0;
+      const isMaintenance = facilityStatus.is_maintenance == 1;
+
+      const modalBody = document
+        .getElementById("studentBookingModal")
+        .querySelector(".modal-content");
+      const statusMessageDiv = modalBody.querySelector(
+        ".facility-status-message"
+      );
+
+      if (isInactive) {
+        // Show inactive message
+        if (statusMessageDiv) statusMessageDiv.remove();
+        const inactiveMsg = document.createElement("div");
+        inactiveMsg.className = "alert alert-danger facility-status-message";
+        inactiveMsg.innerHTML =
+          '<i class="fas fa-ban"></i> <strong>Sorry!</strong> This facility is not available right now.';
+        modalBody.insertBefore(inactiveMsg, modalBody.firstChild);
+
+        // Disable the form
+        disableStudentBookingForm();
+      } else if (isMaintenance) {
+        // Show maintenance message
+        if (statusMessageDiv) statusMessageDiv.remove();
+        const maintenanceMsg = document.createElement("div");
+        maintenanceMsg.className =
+          "alert alert-warning facility-status-message";
+        maintenanceMsg.innerHTML =
+          '<i class="fas fa-wrench"></i> <strong>Under Maintenance</strong> This facility is currently under maintenance. Please check back later.';
+        modalBody.insertBefore(maintenanceMsg, modalBody.firstChild);
+
+        // Disable the form
+        disableStudentBookingForm();
+      } else {
+        // Remove any existing status messages
+        if (statusMessageDiv) statusMessageDiv.remove();
+
+        if (data.facility.plans && data.facility.plans.length > 0) {
+          selectedStudentPlanId = parseInt(data.facility.plans[0].id); // ✅ Convert to integer
+        }
+
+        // Don't load equipment yet - wait for user to select event date
+        // This is now date-based, so equipment availability depends on the selected date
+        loadStudentEquipment(); // Will show message to select date first
+        enableSubmitButton();
+        enableStudentBookingForm();
       }
 
-      // Don't load equipment yet - wait for user to select event date
-      // This is now date-based, so equipment availability depends on the selected date
-      loadStudentEquipment(); // Will show message to select date first
-      enableSubmitButton();
       console.log("Facility data loaded successfully");
     } else {
       throw new Error(data.message || "Failed to load facility details");
@@ -64,6 +135,57 @@ async function loadStudentFacilityData(facilityKey) {
     console.error("Error loading facility:", error);
     showToast("Failed to load facility details", "error");
     closeStudentModal();
+  }
+}
+
+// ========================================
+// CHECK FACILITY AVAILABILITY FOR BOOKING DATE
+// ========================================
+async function checkBookingFacilityAvailability(selectedDate) {
+  if (!selectedStudentFacilityId) return;
+
+  try {
+    // Check if facility has any pending or completed bookings on this date
+    const checkUrl = `/api/student/bookings/check-availability?facility_id=${selectedStudentFacilityId}&event_date=${selectedDate}`;
+    console.log("Checking booking availability:", checkUrl);
+
+    const checkResponse = await fetch(checkUrl, {
+      method: "GET",
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+        "Content-Type": "application/json",
+      },
+    });
+
+    const checkData = await checkResponse.json();
+    console.log("Availability check response:", checkData);
+
+    const alertDiv = document.getElementById("bookingConflictAlert");
+    const alertMessage = document.getElementById("bookingConflictAlertMessage");
+
+    if (!alertDiv || !alertMessage) {
+      console.warn("Alert elements not found in booking form");
+      return;
+    }
+
+    if (checkData.available === false) {
+      // Show warning alert
+      alertDiv.style.display = "block";
+      alertMessage.innerHTML = `
+        <i class="fas fa-exclamation-circle"></i> This facility already has a booking on <strong>${new Date(
+          selectedDate
+        ).toLocaleDateString()}</strong>. Please choose a different date.
+      `;
+      showToast("⚠️ Facility not available on this date", "warning");
+      console.log("Facility not available - alert shown");
+    } else {
+      // Hide warning alert
+      alertDiv.style.display = "none";
+      console.log("Facility is available - alert hidden");
+    }
+  } catch (error) {
+    console.error("Error checking facility availability:", error);
+    // Don't block booking if check fails
   }
 }
 
@@ -245,6 +367,44 @@ function enableSubmitButton() {
   }
 }
 
+function disableStudentBookingForm() {
+  const form = document.getElementById("studentBookingForm");
+  if (!form) return;
+
+  const inputs = form.querySelectorAll("input, textarea, select, button");
+  inputs.forEach((input) => {
+    if (input.id !== "submitStudentBtn") {
+      input.disabled = true;
+    }
+  });
+
+  const submitBtn = document.getElementById("submitStudentBtn");
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Facility Unavailable";
+    submitBtn.style.opacity = "0.5";
+    submitBtn.style.cursor = "not-allowed";
+  }
+}
+
+function enableStudentBookingForm() {
+  const form = document.getElementById("studentBookingForm");
+  if (!form) return;
+
+  const inputs = form.querySelectorAll("input, textarea, select");
+  inputs.forEach((input) => {
+    input.disabled = false;
+  });
+
+  const submitBtn = document.getElementById("submitStudentBtn");
+  if (submitBtn) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit Booking";
+    submitBtn.style.opacity = "1";
+    submitBtn.style.cursor = "pointer";
+  }
+}
+
 // ========================================
 // FORM VALIDATION
 // ========================================
@@ -388,7 +548,7 @@ function validateStudentForm() {
 function showToast(message, type = "info") {
   // Get or create toast container
   let toastContainer = document.getElementById("toastContainer");
-  
+
   if (!toastContainer) {
     console.warn("Toast container not found, creating one...");
     toastContainer = document.createElement("div");
@@ -409,7 +569,7 @@ function showToast(message, type = "info") {
 
   const toast = document.createElement("div");
   toast.className = `toast toast-${type}`;
-  
+
   // Set default styles if CSS classes aren't loaded
   toast.style.cssText = `
     background: white;
@@ -430,7 +590,7 @@ function showToast(message, type = "info") {
     success: "#10b981",
     error: "#dc2626",
     warning: "#f59e0b",
-    info: "#3b82f6"
+    info: "#3b82f6",
   };
   toast.style.borderLeftColor = borderColors[type] || borderColors.info;
 
@@ -837,6 +997,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const selectedDate = this.value;
       if (selectedDate) {
         console.log("Event date changed to:", selectedDate);
+
+        // Check facility availability for the selected date
+        checkBookingFacilityAvailability(selectedDate);
 
         // Reset selected equipment when date changes
         selectedStudentEquipment = {};

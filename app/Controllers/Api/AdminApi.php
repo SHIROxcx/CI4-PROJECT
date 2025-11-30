@@ -277,4 +277,170 @@ class AdminApi extends ResourceController
             ], 500);
         }
     }
+
+    /**
+     * Get pending cancellation requests
+     */
+    public function getPendingCancellations()
+    {
+        if (!$this->verifyAdminAccess()) {
+            return $this->respond([
+                'success' => false,
+                'message' => 'Unauthorized access'
+            ], 401);
+        }
+
+        try {
+            $bookingModel = new BookingModel();
+            
+            $cancellations = $bookingModel
+                ->where('status', 'pending_cancellation')
+                ->orderBy('cancellation_requested_at', 'DESC')
+                ->findAll();
+
+            return $this->respond([
+                'success' => true,
+                'cancellations' => $cancellations,
+                'count' => count($cancellations)
+            ]);
+
+        } catch (\Exception $e) {
+            log_message('error', 'Error fetching pending cancellations: ' . $e->getMessage());
+            return $this->respond([
+                'success' => false,
+                'message' => 'Failed to load pending cancellations'
+            ], 500);
+        }
+    }
+
+    /**
+     * Approve booking cancellation
+     */
+    public function approveCancellation($bookingId = null)
+    {
+        if (!$this->verifyAdminAccess()) {
+            return $this->respond([
+                'success' => false,
+                'message' => 'Unauthorized access'
+            ], 401);
+        }
+
+        if (!$bookingId) {
+            return $this->respond([
+                'success' => false,
+                'message' => 'Booking ID is required'
+            ], 400);
+        }
+
+        try {
+            $bookingModel = new BookingModel();
+            $session = session();
+
+            $booking = $bookingModel->find($bookingId);
+
+            if (!$booking) {
+                return $this->respond([
+                    'success' => false,
+                    'message' => 'Booking not found'
+                ], 404);
+            }
+
+            if ($booking['status'] !== 'pending_cancellation') {
+                return $this->respond([
+                    'success' => false,
+                    'message' => 'This booking is not pending cancellation'
+                ], 400);
+            }
+
+            $approvalNotes = $this->request->getPost('approval_notes') ?? 'Cancellation approved';
+
+            $bookingModel->update($bookingId, [
+                'status' => 'cancelled',
+                'approved_at' => date('Y-m-d H:i:s'),
+                'approved_by' => $session->get('user_id'),
+                'approval_notes' => $approvalNotes
+            ]);
+
+            log_message('info', 'Booking #' . $bookingId . ' cancellation approved by admin: ' . $session->get('email'));
+
+            return $this->respond([
+                'success' => true,
+                'message' => 'Cancellation approved successfully'
+            ], 200);
+
+        } catch (\Exception $e) {
+            log_message('error', 'Error approving cancellation for booking ' . $bookingId . ': ' . $e->getMessage());
+            return $this->respond([
+                'success' => false,
+                'message' => 'Failed to approve cancellation'
+            ], 500);
+        }
+    }
+
+    /**
+     * Reject booking cancellation
+     */
+    public function rejectCancellation($bookingId = null)
+    {
+        if (!$this->verifyAdminAccess()) {
+            return $this->respond([
+                'success' => false,
+                'message' => 'Unauthorized access'
+            ], 401);
+        }
+
+        if (!$bookingId) {
+            return $this->respond([
+                'success' => false,
+                'message' => 'Booking ID is required'
+            ], 400);
+        }
+
+        try {
+            $bookingModel = new BookingModel();
+            $session = session();
+
+            $booking = $bookingModel->find($bookingId);
+
+            if (!$booking) {
+                return $this->respond([
+                    'success' => false,
+                    'message' => 'Booking not found'
+                ], 404);
+            }
+
+            if ($booking['status'] !== 'pending_cancellation') {
+                return $this->respond([
+                    'success' => false,
+                    'message' => 'This booking is not pending cancellation'
+                ], 400);
+            }
+
+            $rejectionNotes = $this->request->getPost('rejection_notes') ?? 'Cancellation rejected';
+
+            $bookingModel->update($bookingId, [
+                'status' => 'confirmed',
+                'approved_at' => date('Y-m-d H:i:s'),
+                'approved_by' => $session->get('user_id'),
+                'approval_notes' => 'REJECTION: ' . $rejectionNotes,
+                'cancellation_letter_path' => null,
+                'cancellation_requested_at' => null
+            ]);
+
+            log_message('info', 'Booking #' . $bookingId . ' cancellation rejected by admin: ' . $session->get('email'));
+
+            return $this->respond([
+                'success' => true,
+                'message' => 'Cancellation rejected successfully'
+            ], 200);
+
+        } catch (\Exception $e) {
+            log_message('error', 'Error rejecting cancellation for booking ' . $bookingId . ': ' . $e->getMessage());
+            return $this->respond([
+                'success' => false,
+                'message' => 'Failed to reject cancellation'
+            ], 500);
+        }
+    }
+
 }

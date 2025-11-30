@@ -33,6 +33,7 @@
                 <li><a href="<?= base_url('/admin/events') ?>" class="menu-item active"><i>📅</i> Events</a></li>
                 <li><a href="<?= base_url('/admin/equipment') ?>" class="menu-item"><i>🔧</i> Equipment</a></li>
                 <li><a href="<?= base_url('/admin/plans') ?>" class="menu-item"><i>📋</i> Plans</a></li>
+                <li><a href="<?= base_url('/admin/facilities-management') ?>" class="menu-item"><i>🏗️</i> Facilities</a></li>
 
                 <div class="sidebar-divider"></div>
 
@@ -362,7 +363,7 @@
                     </div>
                     <div class="event-info-item">
                         <span class="event-info-icon">💰</span>
-                        <span>${event.booking_type === 'student' ? '<span style="color: #28a745; font-weight: 600;">FREE</span>' : '₱' + formatNumber(event.total_cost)}</span>
+                        <span>${(event.booking_type === 'student' || event.booking_type === 'faculty') ? '<span style="color: #28a745; font-weight: 600;">FREE</span>' : '₱' + formatNumber(event.total_cost)}</span>
                     </div>
                     ${event.organization ? `
                     <div class="event-info-item">
@@ -428,7 +429,7 @@
                         ${event.status.charAt(0).toUpperCase() + event.status.slice(1)}
                     </span>
                 </td>
-                <td>${event.booking_type === 'student' ? '<span style="color: #28a745; font-weight: 600;">FREE</span>' : '₱' + formatNumber(event.total_cost)}</td>
+                <td>${(event.booking_type === 'student' || event.booking_type === 'faculty') ? '<span style="color: #28a745; font-weight: 600;">FREE</span>' : '₱' + formatNumber(event.total_cost)}</td>
                 <td>
                     <div class="action-buttons">
                         <button class="btn btn-primary btn-sm" onclick="viewEventDetails(${event.id})">
@@ -632,7 +633,7 @@
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Total Cost:</span>
-                        <span class="detail-value">${event.booking_type === 'student' ? '<span style="color: #28a745; font-weight: 600;">FREE</span>' : '₱' + formatNumber(event.total_cost)}</span>
+                        <span class="detail-value">${(event.booking_type === 'student' || event.booking_type === 'faculty') ? '<span style="color: #28a745; font-weight: 600;">FREE</span>' : '₱' + formatNumber(event.total_cost)}</span>
                     </div>
                 </div>
 

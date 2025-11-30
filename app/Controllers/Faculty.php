@@ -126,9 +126,18 @@ class Faculty extends Controller
             return redirect()->to('/unauthorized')->with('error', 'Access denied. Faculty role required.');
         }
 
-        // Get all facilities
+        // Get ALL facilities (active and inactive) - frontend will handle availability display
         $facilitiesModel = new \App\Models\FacilityModel();
-        $facilities = $facilitiesModel->findAll();
+        $facilities = $facilitiesModel
+            ->orderBy('name', 'ASC')
+            ->findAll();
+
+        // Log the query and results
+        log_message('info', '[Faculty::book] Query: SELECT * FROM facilities (no filter)');
+        log_message('info', '[Faculty::book] Facilities found: ' . count($facilities));
+        foreach ($facilities as $facility) {
+            log_message('info', '[Faculty::book] - ' . $facility['name'] . ' (ID: ' . $facility['id'] . ', key: ' . $facility['facility_key'] . ', is_active: ' . $facility['is_active'] . ', is_maintenance: ' . ($facility['is_maintenance'] ?? 'null') . ')');
+        }
 
         $data = [
             'title' => 'Book Facility',

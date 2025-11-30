@@ -2,10 +2,17 @@
 <div id="paidBookingModal" class="modal">
     <div class="modal-content">
         <div class="modal-header">
-            <h2 class="modal-title" id="paidModalTitle">Book Facility</h2>
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <h2 class="modal-title" id="paidModalTitle">Book Facility</h2>
+                <div class="availability-indicator" id="paidAvailabilityStatus" style="margin: 0;">
+                    <span class="status-text">Loading...</span>
+                    <span class="status-icon"></span>
+                </div>
+            </div>
             <span class="close" onclick="closePaidModal()">&times;</span>
         </div>
         <div class="modal-body">
+            <!-- Status Message Container (will be populated dynamically) -->
             <!-- Plan Selection -->
             <div class="plan-section">
                 <h3 class="section-title">
@@ -163,7 +170,7 @@
 
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" onclick="closePaidModal()">Cancel</button>
-            <button type="button" class="btn btn-primary" onclick="submitPaidBooking()">Create Booking</button>
+            <button type="button" class="btn btn-primary" onclick="submitPaidBooking()" id="submitPaidBtn" style="min-width: 160px;">Create Booking</button>
         </div>
     </div>
 </div>

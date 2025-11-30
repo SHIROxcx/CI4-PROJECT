@@ -560,7 +560,7 @@ $userRole = $session->get('role');
                 <div class="event-detail-item">
                     <div class="event-detail-label"><i class="fas fa-money-bill-wave"></i> Total Cost</div>
                     <div class="event-detail-value">
-                        ${event.booking_type === 'student'
+                        ${event.booking_type === 'internal'
                             ? '<span style="color: #10b981; font-weight: 700;">FREE</span>'
                             : '₱' + Number(event.total_cost).toLocaleString()}
                     </div>

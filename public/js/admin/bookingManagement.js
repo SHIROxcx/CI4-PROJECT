@@ -111,13 +111,19 @@ function createBookingRow(booking) {
 
   // Booking type badge
   const isStudentBooking = booking.booking_type === "student";
-  const typeBadge = isStudentBooking
-    ? '<span class="user-type-badge type-student">🎓 Student</span>'
-    : '<span class="user-type-badge type-external">👤 User</span>';
+  const isFacultyBooking = booking.booking_type === "faculty";
+  let typeBadge;
+  if (isStudentBooking) {
+    typeBadge = '<span class="user-type-badge type-student">🎓 Student</span>';
+  } else if (isFacultyBooking) {
+    typeBadge = '<span class="user-type-badge type-faculty">👨‍🏫 Faculty</span>';
+  } else {
+    typeBadge = '<span class="user-type-badge type-external">👤 User</span>';
+  }
 
   // Files status badge
   const filesCount = booking.files_count || 0;
-  const requiredFiles = isStudentBooking ? 3 : 7;
+  const requiredFiles = isStudentBooking || isFacultyBooking ? 3 : 7;
   const filesBadge =
     filesCount >= requiredFiles
       ? `<span style="color: #28a745; font-size: 1.2rem;" title="${filesCount}/${requiredFiles} files uploaded">✅</span>`
@@ -138,7 +144,7 @@ function createBookingRow(booking) {
                 <td>${formatDate(booking.event_date)}</td>
                 <td>${statusBadge}</td>
                 <td>${
-                  isStudentBooking
+                  isStudentBooking || isFacultyBooking
                     ? '<span style="color: #28a745; font-weight: 600;">FREE</span>'
                     : "₱" + formatNumber(booking.total_cost)
                 }</td>
@@ -149,12 +155,13 @@ function createBookingRow(booking) {
 }
 
 // Create action buttons based on booking status
-// Create action buttons based on booking status
 function createActionButtons(booking) {
   const baseActions = `<button class="btn btn-primary" onclick="viewBooking(${booking.id})">👁️ View</button>`;
+  const isFacultyBooking = booking.booking_type === "faculty";
   const isStudentBooking = booking.booking_type === "student";
+  const isFreebookingType = isStudentBooking || isFacultyBooking;
 
-  // Student Upload Button - goes to student files upload
+  // Student/Faculty Upload Button - goes to student files upload
   const studentUploadButton = `<button class="btn btn-primary" onclick="openStudentUploadModal(${booking.id})" title="Upload Student Documents">📤 Upload</button>`;
 
   // User Upload Button - goes to admin files upload
@@ -168,8 +175,8 @@ function createActionButtons(booking) {
   const rescheduleButton = `<button class="btn btn-warning" onclick="openRescheduleModal(${booking.id})" title="Reschedule Booking">📅 Reschedule</button>`;
 
   if (booking.status === "pending") {
-    // STUDENT BOOKINGS - Pending
-    if (isStudentBooking) {
+    // FREE BOOKINGS (Student/Faculty) - Pending
+    if (isFreebookingType) {
       return `
         <div class="action-buttons">
           ${baseActions}
@@ -180,7 +187,7 @@ function createActionButtons(booking) {
         </div>
       `;
     }
-    // USER BOOKINGS - Pending
+    // EXTERNAL BOOKINGS - Pending
     return `
       <div class="action-buttons">
         ${baseActions}
@@ -200,8 +207,8 @@ function createActionButtons(booking) {
     `;
   } else {
     // CONFIRMED/OTHER STATUSES
-    // Student: Only View + Upload + Reschedule
-    if (isStudentBooking) {
+    // Student/Faculty: Only View + Upload + Reschedule
+    if (isFreebookingType) {
       return `
         <div class="action-buttons">
           ${baseActions}
@@ -230,7 +237,11 @@ function updateStatistics(bookings) {
     confirmed: bookings.filter((b) => b.status === "confirmed").length,
     cancelled: bookings.filter((b) => b.status === "cancelled").length,
     totalRevenue: bookings
-      .filter((b) => b.status === "confirmed" && b.booking_type !== "student")
+      .filter(
+        (b) =>
+          b.status === "confirmed" &&
+          !["student", "faculty"].includes(b.booking_type)
+      )
       .reduce((sum, b) => sum + parseFloat(b.total_cost || 0), 0),
   };
 
@@ -342,14 +353,16 @@ function displayBookingDetails(booking) {
 
   // Check if this is a student booking
   const isStudentBooking = booking.booking_type === "student";
+  const isFacultyBooking = booking.booking_type === "faculty";
+  const isFreebookingType = isStudentBooking || isFacultyBooking;
 
-  // Calculate overtime only for non-student bookings
+  // Calculate overtime only for non-free bookings
   let overtimeFee = 0;
   let hasOvertime = false;
   let dayOfWeek = null;
   let isWeekend = false;
 
-  if (!isStudentBooking && booking.event_date && booking.event_time) {
+  if (!isFreebookingType && booking.event_date && booking.event_time) {
     try {
       const eventDate = new Date(booking.event_date + " " + booking.event_time);
       dayOfWeek = eventDate.getDay();
@@ -364,7 +377,7 @@ function displayBookingDetails(booking) {
       console.warn("Error calculating overtime fee:", error);
       overtimeFee = booking.overtime_fee || 0;
     }
-  } else if (!isStudentBooking) {
+  } else if (!isFreebookingType) {
     // Use stored overtime_fee if available
     overtimeFee = booking.overtime_fee || 0;
   }
@@ -374,6 +387,8 @@ function displayBookingDetails(booking) {
     ${
       isStudentBooking
         ? '<span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: #e3f2fd; color: #1976d2; border-radius: 4px; font-size: 0.8rem; font-weight: 500; margin-bottom: 12px; border: 1px solid #90caf9;">🎓 Student Booking</span>'
+        : isFacultyBooking
+        ? '<span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: #f3e5f5; color: #7b1fa2; border-radius: 4px; font-size: 0.8rem; font-weight: 500; margin-bottom: 12px; border: 1px solid #ce93d8;">👨‍🏫 Faculty Booking</span>'
         : ""
     }
     
@@ -1635,9 +1650,12 @@ async function downloadUploadedFile(fileType) {
     if (fileData.isExisting && fileData.fileId) {
       // Download from server
       const numericBookingId = currentBookingId
+        .toString()
         .replace("BK", "")
         .replace(/^0+/, "");
       const downloadUrl = `/api/bookings/${numericBookingId}/files/${fileData.fileId}/download`;
+
+      console.log("Downloading existing file from:", downloadUrl);
 
       // Create a temporary link to download the file
       const a = document.createElement("a");
@@ -1647,8 +1665,9 @@ async function downloadUploadedFile(fileType) {
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-    } else {
-      // Download from local file object (newly uploaded)
+    } else if (fileData.file) {
+      // Download from local file object (newly selected)
+      console.log("Downloading locally selected file:", fileData.name);
       const url = URL.createObjectURL(fileData.file);
       const a = document.createElement("a");
       a.href = url;
@@ -1657,12 +1676,14 @@ async function downloadUploadedFile(fileType) {
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+    } else {
+      alert("File data is incomplete");
     }
 
     console.log(`Downloaded file: ${fileData.name}`);
   } catch (error) {
     console.error("Error downloading file:", error);
-    alert("Failed to download file");
+    alert("Failed to download file: " + error.message);
   }
 }
 
@@ -1732,9 +1753,17 @@ async function saveAdminUserUploadedFiles() {
       formData.append(fileType, fileData.file);
     });
 
+    // Log for debugging
+    console.log("Uploading files for booking:", currentBookingId);
+    console.log("New files:", newFiles);
+    console.log("FormData keys:", Array.from(formData.keys()));
+
     const response = await fetch(`${API_BASE_URL}/${currentBookingId}/upload`, {
       method: "POST",
       body: formData,
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+      },
     });
 
     const data = await response.json();
@@ -1761,6 +1790,23 @@ async function saveAdminUserUploadedFiles() {
       });
 
       updateUploadProgress();
+
+      // Show the download and cancel buttons for uploaded files
+      newFiles.forEach((fileType) => {
+        const uploadItem = document.querySelector(
+          `[data-file-type="${fileType}"]`
+        );
+        if (uploadItem) {
+          const downloadBtn = uploadItem.querySelector(
+            ".download-uploaded-btn"
+          );
+          const cancelBtn = uploadItem.querySelector(".cancel-file-btn");
+          const uploadWrapper = uploadItem.querySelector(".file-input-wrapper");
+          if (downloadBtn) downloadBtn.style.display = "block";
+          if (cancelBtn) cancelBtn.style.display = "block";
+          if (uploadWrapper) uploadWrapper.style.display = "none";
+        }
+      });
 
       // Reload the booking details to show new files
       if (
@@ -1805,11 +1851,17 @@ async function saveStudentUploadedFiles() {
       formData.append("files[]", fileData.file);
     });
 
+    console.log("Uploading student files for booking:", currentBookingId);
+    console.log("New files:", newFiles);
+
     const response = await fetch(
       `/api/student/bookings/${currentBookingId}/upload-files`,
       {
         method: "POST",
         body: formData,
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+        },
       }
     );
 
@@ -1837,6 +1889,23 @@ async function saveStudentUploadedFiles() {
       });
 
       updateUploadProgress();
+
+      // Show the download and cancel buttons for uploaded files
+      newFiles.forEach((fileType) => {
+        const uploadItem = document.querySelector(
+          `[data-file-type="${fileType}"]`
+        );
+        if (uploadItem) {
+          const downloadBtn = uploadItem.querySelector(
+            ".download-uploaded-btn"
+          );
+          const cancelBtn = uploadItem.querySelector(".cancel-file-btn");
+          const uploadWrapper = uploadItem.querySelector(".file-input-wrapper");
+          if (downloadBtn) downloadBtn.style.display = "block";
+          if (cancelBtn) cancelBtn.style.display = "block";
+          if (uploadWrapper) uploadWrapper.style.display = "none";
+        }
+      });
 
       // Reload the booking details to show new files
       if (
@@ -3240,7 +3309,10 @@ async function openRescheduleModal(bookingId) {
       document.getElementById("currentEventDate").value = formatDate(
         booking.event_date
       );
+      document.getElementById("currentStartTime").value =
+        booking.event_time || "N/A";
       document.getElementById("newEventDate").value = "";
+      document.getElementById("newStartTime").value = "";
       document.getElementById("rescheduleReason").value = "";
       document.getElementById("rescheduleNotes").value = "";
       document.getElementById("notifyClient").checked = true;
@@ -3273,6 +3345,7 @@ function toggleCustomRescheduleReason() {
 // Submit reschedule
 async function submitReschedule() {
   const newDate = document.getElementById("newEventDate").value;
+  const newTime = document.getElementById("newStartTime").value;
   const reason = document.getElementById("rescheduleReason").value;
   const customReason = document.getElementById("customRescheduleReason").value;
   const notes = document.getElementById("rescheduleNotes").value;
@@ -3281,6 +3354,11 @@ async function submitReschedule() {
   // Validate inputs
   if (!newDate) {
     alert("Please select a new event date");
+    return;
+  }
+
+  if (!newTime) {
+    alert("Please select a new start time");
     return;
   }
 
@@ -3310,6 +3388,7 @@ async function submitReschedule() {
     const payload = {
       booking_id: currentBookingId,
       new_event_date: newDate,
+      new_event_time: newTime,
       reason: reason === "other" ? customReason : reason,
       notes: notes,
       notify_client: notifyClient,

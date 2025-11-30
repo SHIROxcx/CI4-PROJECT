@@ -66,6 +66,13 @@ function renderBookings(bookingsList) {
               </button>
               ${
                 booking.status === "pending" || booking.status === "confirmed"
+                  ? `<button class="btn btn-sm btn-warning" onclick="openRescheduleModal(${booking.id})" title="Reschedule Booking">
+                      <i class="fas fa-redo"></i>
+                    </button>`
+                  : ""
+              }
+              ${
+                booking.status === "pending" || booking.status === "confirmed"
                   ? `<button class="btn btn-sm btn-cancel" onclick="confirmCancelBooking(${booking.id}, '${booking.status}')" title="Cancel">
                       <i class="fas fa-times-circle"></i>
                     </button>`
@@ -75,6 +82,13 @@ function renderBookings(bookingsList) {
                 booking.status === "pending" || booking.status === "confirmed"
                   ? `<button class="btn btn-sm btn-upload" onclick="openDocumentUploadModal(${booking.id})" title="Upload">
                       <i class="fas fa-upload"></i>
+                    </button>`
+                  : ""
+              }
+              ${
+                booking.status === "cancelled"
+                  ? `<button class="btn btn-sm btn-danger" onclick="confirmDeleteBooking(${booking.id})" title="Delete">
+                      <i class="fas fa-trash"></i>
                     </button>`
                   : ""
               }
@@ -1148,6 +1162,158 @@ function getDocumentStatus(booking) {
   `;
 }
 
+// Open reschedule modal for pending/confirmed bookings
+async function openRescheduleModal(bookingId) {
+  let booking = bookings.find((b) => b.id == bookingId);
+
+  // If booking not found in local array, fetch from API
+  if (!booking) {
+    try {
+      const response = await fetch(`/api/student/bookings/${bookingId}`);
+      const data = await response.json();
+
+      if (data.success) {
+        booking = data.booking;
+      } else {
+        showAlert("error", "Booking not found");
+        return;
+      }
+    } catch (error) {
+      console.error("Error fetching booking:", error);
+      showAlert("error", "Failed to load booking details");
+      return;
+    }
+  }
+
+  if (!booking) {
+    showAlert("error", "Booking not found");
+    return;
+  }
+
+  if (booking.status !== "confirmed" && booking.status !== "pending") {
+    showAlert("error", "Only confirmed or pending bookings can be rescheduled");
+    return;
+  }
+
+  // Set booking details in hidden inputs
+  document.getElementById("rescheduleBookingId").value = bookingId;
+
+  // Set minimum date to today
+  const today = new Date().toISOString().split("T")[0];
+  document.getElementById("rescheduleDate").min = today;
+
+  // Reset form fields
+  document.getElementById("rescheduleReason").value = "";
+  document.getElementById("rescheduleDate").value = "";
+  document.getElementById("rescheduleTime").value = "";
+  document.getElementById("rescheduleNotes").value = "";
+  document.getElementById("submitRescheduleBtn").disabled = true;
+
+  // Show current booking details
+  document.getElementById("currentBookingInfo").innerHTML = `
+    <strong>Current Booking:</strong> ${booking.facility_name} - ${
+    booking.event_title
+  }<br>
+    <strong>Current Date:</strong> ${formatDate(
+      booking.event_date
+    )} at ${formatTime(booking.event_time)}
+  `;
+
+  // Show modal
+  const rescheduleModal = new bootstrap.Modal(
+    document.getElementById("rescheduleBookingModal")
+  );
+  rescheduleModal.show();
+}
+
+// Update reschedule submit button state
+function updateRescheduleSubmitButtonState() {
+  const reason = document.getElementById("rescheduleReason").value;
+  const date = document.getElementById("rescheduleDate").value;
+  const time = document.getElementById("rescheduleTime").value;
+  const submitBtn = document.getElementById("submitRescheduleBtn");
+
+  submitBtn.disabled = !reason || !date || !time;
+}
+
+// Submit reschedule request
+async function submitReschedule() {
+  const bookingId = document.getElementById("rescheduleBookingId").value;
+  const reason = document.getElementById("rescheduleReason").value;
+  const newDate = document.getElementById("rescheduleDate").value;
+  const newTime = document.getElementById("rescheduleTime").value;
+  const notes = document.getElementById("rescheduleNotes").value.trim();
+
+  if (!bookingId || !reason || !newDate || !newTime) {
+    showAlert("error", "Please fill in all required fields");
+    return;
+  }
+
+  try {
+    const submitBtn = document.getElementById("submitRescheduleBtn");
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML =
+      '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+    submitBtn.disabled = true;
+
+    const response = await fetch(
+      `/api/student/bookings/${bookingId}/reschedule`,
+      {
+        method: "POST",
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          reason: reason,
+          new_date: newDate,
+          new_time: newTime,
+          notes: notes,
+        }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.success) {
+      showAlert(
+        "success",
+        "Reschedule request submitted successfully! Email sent to office."
+      );
+
+      // Close modal
+      const rescheduleModal = bootstrap.Modal.getInstance(
+        document.getElementById("rescheduleBookingModal")
+      );
+      rescheduleModal.hide();
+
+      // Close details modal if open
+      const detailsModal = bootstrap.Modal.getInstance(
+        document.getElementById("bookingDetailsModal")
+      );
+      if (detailsModal) {
+        detailsModal.hide();
+      }
+
+      // Reload bookings
+      await loadBookings();
+    } else {
+      showAlert("error", data.message || "Failed to submit reschedule request");
+    }
+  } catch (error) {
+    console.error("Error submitting reschedule:", error);
+    showAlert(
+      "error",
+      "Failed to submit reschedule request. Please try again."
+    );
+  } finally {
+    const submitBtn = document.getElementById("submitRescheduleBtn");
+    submitBtn.innerHTML =
+      '<i class="fas fa-check"></i> Submit Reschedule Request';
+    submitBtn.disabled = false;
+  }
+}
+
 // Load and display document status
 async function loadDocumentStatus(bookingId) {
   try {
@@ -1209,5 +1375,70 @@ async function loadDocumentStatus(bookingId) {
     console.error("Error loading documents:", error);
     document.getElementById("documentStatusContainer").innerHTML =
       '<div class="alert alert-warning">Failed to load documents</div>';
+  }
+}
+
+// Confirm delete booking
+function confirmDeleteBooking(bookingId) {
+  document.getElementById("deleteBookingId").value = bookingId;
+  const deleteModal = new bootstrap.Modal(
+    document.getElementById("deleteBookingModal")
+  );
+  deleteModal.show();
+}
+
+// Delete booking
+async function deleteBooking() {
+  const bookingId = document.getElementById("deleteBookingId").value;
+
+  if (!bookingId) {
+    showAlert("error", "Booking ID is missing");
+    return;
+  }
+
+  try {
+    const confirmBtn = document.getElementById("confirmDeleteBtn");
+    const originalText = confirmBtn.innerHTML;
+    confirmBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Deleting...';
+    confirmBtn.disabled = true;
+
+    const response = await fetch(`/api/student/bookings/${bookingId}`, {
+      method: "DELETE",
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      showAlert("success", "Booking deleted successfully");
+
+      // Close modal
+      const deleteModal = bootstrap.Modal.getInstance(
+        document.getElementById("deleteBookingModal")
+      );
+      deleteModal.hide();
+
+      // Reload bookings
+      await loadBookings();
+
+      // Close details modal if open
+      const detailsModal = bootstrap.Modal.getInstance(
+        document.getElementById("bookingDetailsModal")
+      );
+      if (detailsModal) {
+        detailsModal.hide();
+      }
+    } else {
+      showAlert("error", data.message || "Failed to delete booking");
+    }
+  } catch (error) {
+    console.error("Error deleting booking:", error);
+    showAlert("error", "Failed to delete booking. Please try again.");
+  } finally {
+    const confirmBtn = document.getElementById("confirmDeleteBtn");
+    confirmBtn.innerHTML = '<i class="fas fa-trash"></i> Delete Booking';
+    confirmBtn.disabled = false;
   }
 }

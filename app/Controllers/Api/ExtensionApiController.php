@@ -174,6 +174,39 @@ class ExtensionApiController extends ResourceController
     }
 
     /**
+     * CHECK STUDENT EXTENSION - Student endpoint to check if they have an extension for a booking
+     * GET /api/extensions/check-booking/{booking_id}
+     * Only students can use this to check their own extensions
+     */
+    public function checkStudentExtension($bookingId = null)
+    {
+        try {
+            if (!$bookingId) {
+                return $this->response->setStatusCode(400)->setJSON([
+                    'success' => false,
+                    'message' => 'Booking ID required'
+                ]);
+            }
+
+            // Get extension for this booking (if any)
+            $extension = $this->bookingExtensionModel->getByBookingId($bookingId);
+
+            return $this->response->setStatusCode(200)->setJSON([
+                'success' => true,
+                'has_extension' => $extension !== null,
+                'extension' => $extension,
+                'extensions' => $extension ? [$extension] : []
+            ]);
+        } catch (\Exception $e) {
+            log_message('error', 'Check student extension error: ' . $e->getMessage());
+            return $this->response->setStatusCode(500)->setJSON([
+                'success' => false,
+                'message' => 'An error occurred'
+            ]);
+        }
+    }
+
+    /**
      * GET EXTENSION DETAILS
      * GET /api/extensions/{id}
      */
@@ -375,9 +408,11 @@ class ExtensionApiController extends ResourceController
                 ]);
             }
 
+            // Get mime type BEFORE moving the file
+            $mimeType = $file->getMimeType();
             $allowedMimes = ['application/pdf', 'image/jpeg', 'image/png'];
 
-            if (!in_array($file->getMimeType(), $allowedMimes)) {
+            if (!in_array($mimeType, $allowedMimes)) {
                 return $this->response->setStatusCode(400)->setJSON([
                     'success' => false,
                     'message' => 'File type not allowed'
@@ -398,12 +433,11 @@ class ExtensionApiController extends ResourceController
 
             $result = $this->extensionFileModel->uploadFile(
                 $id,
-                $fileType,
                 $file->getName(),
                 $newName,
                 $uploadPath . $newName,
                 $file->getSize(),
-                $file->getMimeType(),
+                $mimeType,
                 $userId
             );
 
@@ -411,7 +445,15 @@ class ExtensionApiController extends ResourceController
                 return $this->response->setStatusCode(400)->setJSON($result);
             }
 
-            return $this->response->setStatusCode(201)->setJSON($result);
+            // Fetch the uploaded file details to return
+            $uploadedFile = $this->extensionFileModel->find($result['file_id']);
+            
+            return $this->response->setStatusCode(201)->setJSON([
+                'success' => true,
+                'message' => 'File uploaded successfully',
+                'file_id' => $result['file_id'],
+                'file' => $uploadedFile,
+            ]);
         } catch (\Exception $e) {
             log_message('error', 'Upload file error: ' . $e->getMessage());
             return $this->response->setStatusCode(500)->setJSON([
@@ -476,7 +518,14 @@ class ExtensionApiController extends ResourceController
                 }
             }
 
-            return $this->response->setStatusCode(200)->setJSON($result);
+            // Fetch updated extension with files for response
+            $updatedExtension = $this->bookingExtensionModel->getExtensionWithDetails($id);
+
+            return $this->response->setStatusCode(200)->setJSON([
+                'success' => true,
+                'message' => 'Payment marked as received',
+                'data' => $updatedExtension
+            ]);
         } catch (\Exception $e) {
             log_message('error', 'Mark payment error: ' . $e->getMessage() . ' | Trace: ' . $e->getTraceAsString());
             return $this->response->setStatusCode(500)->setJSON([
@@ -505,6 +554,90 @@ class ExtensionApiController extends ResourceController
             return $this->response->setStatusCode(500)->setJSON([
                 'success' => false,
                 'message' => 'An error occurred'
+            ]);
+        }
+    }
+
+    /**
+     * DOWNLOAD FILE
+     * GET /api/extensions/files/{fileId}/download
+     */
+    public function downloadFile($fileId = null)
+    {
+        try {
+            if (!$fileId) {
+                return $this->response->setStatusCode(400)->setJSON([
+                    'success' => false,
+                    'message' => 'File ID required'
+                ]);
+            }
+
+            $file = $this->extensionFileModel->find($fileId);
+
+            if (!$file) {
+                return $this->response->setStatusCode(404)->setJSON([
+                    'success' => false,
+                    'message' => 'File not found'
+                ]);
+            }
+
+            if (!file_exists($file['file_path'])) {
+                return $this->response->setStatusCode(404)->setJSON([
+                    'success' => false,
+                    'message' => 'File does not exist on server'
+                ]);
+            }
+
+            return $this->response->download($file['file_path'], $file['original_filename']);
+        } catch (\Exception $e) {
+            log_message('error', 'Download file error: ' . $e->getMessage());
+            return $this->response->setStatusCode(500)->setJSON([
+                'success' => false,
+                'message' => 'Download failed'
+            ]);
+        }
+    }
+
+    /**
+     * DELETE FILE
+     * DELETE /api/extensions/files/{fileId}
+     */
+    public function deleteFile($fileId = null)
+    {
+        try {
+            if (!$fileId) {
+                return $this->response->setStatusCode(400)->setJSON([
+                    'success' => false,
+                    'message' => 'File ID required'
+                ]);
+            }
+
+            $file = $this->extensionFileModel->find($fileId);
+
+            if (!$file) {
+                return $this->response->setStatusCode(404)->setJSON([
+                    'success' => false,
+                    'message' => 'File not found'
+                ]);
+            }
+
+            // Delete physical file
+            if (file_exists($file['file_path'])) {
+                unlink($file['file_path']);
+            }
+
+            // Delete database record
+            $this->extensionFileModel->delete($fileId);
+
+            return $this->response->setStatusCode(200)->setJSON([
+                'success' => true,
+                'message' => 'File deleted successfully'
+            ]);
+        } catch (\Exception $e) {
+            log_message('error', 'Delete file error: ' . $e->getMessage());
+            return $this->response->setStatusCode(500)->setJSON([
+                'success' => false,
+                'message' => 'Delete failed'
             ]);
         }
     }

@@ -123,238 +123,53 @@ $userRole = $session->get('role');
         </div>
 
   <div class="row g-4" id="facilitiesGrid">
-          <!-- University Gymnasium -->
-          <div class="col-lg-4 col-md-6" data-category="sports">
-            <div class="facility-card">
-              <div class="facility-image">
-                <i class="fas fa-basketball-ball facility-icon"></i>
-                <div class="availability-indicator">Available</div>
-              </div>
-              <div class="facility-content">
-                <h3>University Gymnasium</h3>
-                <p>
-                  Multi-purpose sports facility with professional lighting systems,
-                  sound equipment, and spacious parking. Perfect for athletic events,
-                  performances, and large gatherings.
-                </p>
-                <div class="facility-features">
-                  <span class="feature-tag"
-                    ><i class="fas fa-lightbulb"></i> Stage Lighting</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-video"></i> Projector</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-parking"></i> Parking Area</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-users"></i> Large Capacity</span
-                  >
+          <?php if (!empty($facilities)): ?>
+            <?php foreach ($facilities as $facility): ?>
+              <div class="col-lg-4 col-md-6" data-facility-id="<?= esc($facility['id']) ?>" data-facility-key="<?= esc($facility['facility_key']) ?>">
+                <div class="facility-card">
+                  <div class="facility-image">
+                    <span class="facility-icon" style="font-size: 3rem;">
+                      <?= $facility['icon'] ?? '🏢' ?>
+                    </span>
+                    <div class="availability-indicator" data-status="<?= esc($facility['facility_key']) ?>">
+                      <span class="status-text"><?= $facility['is_maintenance'] ? 'Maintenance' : 'Available' ?></span>
+                      <span class="status-icon"></span>
+                    </div>
+                  </div>
+                  <div class="facility-content">
+                    <h3><?= esc($facility['name']) ?></h3>
+                    <p>
+                      <?= esc($facility['description'] ?? 'Book this facility for your events, meetings, and activities.') ?>
+                    </p>
+                    <div class="facility-features">
+                      <span class="feature-tag">
+                        <i class="fas fa-snowflake"></i> Air Conditioned
+                      </span>
+                      <span class="feature-tag">
+                        <i class="fas fa-volume-up"></i> Sound System
+                      </span>
+                      <span class="feature-tag">
+                        <i class="fas fa-video"></i> Projector
+                      </span>
+                      <span class="feature-tag">
+                        <i class="fas fa-wifi"></i> WiFi Available
+                      </span>
+                    </div>
+                    <div class="pricing-info">
+                      <span class="price-tag">₱<?= number_format($facility['additional_hours_rate'] ?? 500, 0) ?>/hour</span>
+                    </div>
+                    <a href="<?= site_url('/facility/' . esc($facility['facility_key'])) ?>" class="book-now-btn">
+                      <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                  </div>
                 </div>
-                <div class="pricing-info">
-                  <span class="price-tag">₱12,000 (8 hrs) | ₱7,000 (4 hrs)</span>
-                </div>
-                <a href="<?= base_url('facilities/gymnasium'); ?>" class="book-now-btn">
-                  <i class="fas fa-calendar-check"></i> Book Now
-                </a>
               </div>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <div class="col-12" style="text-align: center; padding: 40px;">
+              <p style="color: #64748b; font-size: 1.1rem;">No facilities available at this time.</p>
             </div>
-          </div>
-
-          <!-- Auditorium -->
-<div class="col-lg-4 col-md-6" data-category="events">
-  <div class="facility-card">
-    <div class="facility-image">
-      <i class="fas fa-theater-masks facility-icon"></i>
-      <div class="availability-indicator">Available</div>
-    </div>
-    <div class="facility-content">
-      <h3>Auditorium</h3>
-      <p>
-        State-of-the-art auditorium designed for performances, lectures, and 
-        large-scale events. Features professional acoustics, stage lighting, 
-        and comfortable seating for audiences of various sizes.
-      </p>
-      <div class="facility-features">
-        <span class="feature-tag"
-          ><i class="fas fa-microphone"></i> Professional Sound</span
-        >
-        <span class="feature-tag"
-          ><i class="fas fa-lightbulb"></i> Stage Lighting</span
-        >
-        <span class="feature-tag"
-          ><i class="fas fa-video"></i> Projector</span
-        >
-        <span class="feature-tag"
-          ><i class="fas fa-chair"></i> Comfortable Seating</span
-        >
-      </div>
-      <div class="pricing-info">
-        <span class="price-tag">₱15,000 (8 hrs) | ₱9,000 (4 hrs)</span>
-      </div>
-      <a href="<?= base_url('facilities/Auditorium'); ?>" class="book-now-btn">
-        <i class="fas fa-calendar-check"></i> Book Now
-      </a>
-    </div>
-  </div>
-</div>
-
-                
-          <!-- Function Hall (ACAD Building 2) -->
-          <div class="col-lg-4 col-md-6" data-category="events">
-            <div class="facility-card">
-              <div class="facility-image">
-                <i class="fas fa-utensils facility-icon"></i>
-                <div class="availability-indicator">Available</div>
-              </div>
-              <div class="facility-content">
-                <h3>Function Hall (ACAD Building 2)</h3>
-                <p>
-                  Spacious function hall perfect for formal events, conferences,
-                  and celebrations with complete audio-visual equipment and
-                  comfortable seating.
-                </p>
-                <div class="facility-features">
-                  <span class="feature-tag"
-                    ><i class="fas fa-video"></i> Projector</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-volume-up"></i> Sound System</span
-                  >                  <span class="feature-tag"
-                    ><i class="fas fa-snowflake"></i> Air Conditioned</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-chair"></i> Monobloc Chairs</span
-                  >
-                </div>
-                <div class="pricing-info">
-                  <span class="price-tag">₱3,000 (8 hrs) | ₱1,500 (4 hrs)</span>
-                </div>
-                 <a href="<?= base_url('facilities/FunctionHall'); ?>" class="book-now-btn">
-                  <i class="fas fa-calendar-check"></i> Book Now
-                </a>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Pearl Mini Restaurant -->
-          <div class="col-lg-4 col-md-6" data-category="hospitality">
-            <div class="facility-card">
-              <div class="facility-image">
-                <i class="fas fa-utensils facility-icon"></i>
-                <div class="availability-indicator">Available</div>
-              </div>
-              <div class="facility-content">
-                <h3>Pearl Mini Restaurant</h3>
-                <p>
-                  Intimate dining facility perfect for small gatherings, business meetings,
-                  and special celebrations. Features quality cuisine service and 
-                  comfortable ambiance for memorable dining experiences.
-                </p>
-                <div class="facility-features">
-                  <span class="feature-tag"
-                    ><i class="fas fa-utensils"></i> Full Service</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-snowflake"></i> Air Conditioned</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-users"></i> Private Dining</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-wine-glass"></i> Catering Service</span
-                  >
-                </div>
-                <div class="pricing-info">
-                  <span class="price-tag">₱5,000 (8 hrs) | ₱3,000 (4 hrs)</span>
-                </div>
-                <a href="<?= base_url('facilities/pearlmini'); ?>" class="book-now-btn">
-                  <i class="fas fa-calendar-check"></i> Book Now
-                </a>
-              </div>
-            </div>
-          </div>
-
-      
-           <!-- Classrooms -->
-          <div class="col-lg-4 col-md-6" data-category="academic">
-            <div class="facility-card">
-              <div class="facility-image">
-                <i class="fas fa-chalkboard-teacher facility-icon"></i>
-                <div class="availability-indicator">Available</div>
-              </div>
-              <div class="facility-content">
-                <h3>Classrooms</h3>
-                <p>
-                  Modern learning spaces with air conditioning, multimedia equipment,
-                  and comfortable seating. Perfect for training sessions, workshops,
-                  seminars, and educational activities.
-                </p>
-                <div class="facility-features">
-                  <span class="feature-tag"
-                    ><i class="fas fa-snowflake"></i> Air Conditioned</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-video"></i> Projector</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-volume-up"></i> Sound System</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-chalkboard"></i> Whiteboard</span
-                  >
-                </div>
-                <div class="pricing-info">
-                  <span class="price-tag">₱800 (8 hrs) | ₱500 (4 hrs) | ₱300 (2 hrs)</span>
-                </div>
-                <a href="<?= base_url('facilities/classroom'); ?>" class="book-now-btn">
-                  <i class="fas fa-calendar-check"></i> Book Now
-                </a>
-              </div>
-            </div>
-          </div>
-
-<!-- Student Dormitory -->
-          <div class="col-lg-4 col-md-6" data-category="academic">
-            <div class="facility-card">
-              <div class="facility-image">
-                <i class="fas fa-bed facility-icon"></i>
-                <div class="availability-indicator">Available</div>
-              </div>
-              <div class="facility-content">
-                <h3>Student Dormitory</h3>
-                <p>
-                  Comfortable accommodation facility providing a safe and
-                  conducive living environment for students, with modern
-                  amenities and security.
-                </p>
-                <div class="facility-features">
-                  <span class="feature-tag"
-                    ><i class="fas fa-bed"></i> Room Rate</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-shield-alt"></i> Security</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-wifi"></i> Internet Access</span
-                  >
-                  <span class="feature-tag"
-                    ><i class="fas fa-snowflake"></i> Air Conditioned</span
-                  >
-                </div>
-                <div class="pricing-info">
-                  <span class="price-tag">₱1,000 per month</span>
-                </div>
-                <a href="<?= base_url('facilities/Dormitory'); ?>" class="book-now-btn">
-                  <i class="fas fa-calendar-check"></i> Book Now
-                </a>
-              </div>
-            </div>
-          </div>
-
-
-          
+          <?php endif; ?>
         </div>
       </div>
 
@@ -456,58 +271,170 @@ $userRole = $session->get('role');
     <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
+      // Add dynamic status styling
+      const style = document.createElement('style');
+      style.textContent = `
+        .availability-indicator {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          padding: 8px 14px;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          backdrop-filter: blur(10px);
+          z-index: 10;
+          transition: all 0.3s ease;
+        }
+        
+        .availability-indicator.available {
+          background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(22, 163, 74, 0.9));
+          color: white;
+          box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+        }
+        
+        .availability-indicator.maintenance {
+          background: linear-gradient(135deg, rgba(245, 158, 11, 0.9), rgba(217, 119, 6, 0.9));
+          color: white;
+          box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .status-icon {
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: currentColor;
+          animation: pulse-status 2s infinite;
+        }
+        
+        @keyframes pulse-status {
+          0% {
+            box-shadow: 0 0 0 0 currentColor;
+            opacity: 1;
+          }
+          70% {
+            box-shadow: 0 0 0 6px currentColor;
+            opacity: 0;
+          }
+          100% {
+            box-shadow: 0 0 0 0 currentColor;
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Load facility status dynamically
+      async function loadFacilityStatuses() {
+        try {
+          const response = await fetch('<?= base_url('api/facilities/list') ?>');
+          const data = await response.json();
+          
+          if (data.success && data.facilities) {
+            // Update each facility's status that exists on page
+            data.facilities.forEach((facility) => {
+              const facilityCard = document.querySelector(`[data-facility-key="${facility.facility_key}"]`);
+              if (facilityCard) {
+                const statusElement = facilityCard.querySelector('[data-status]');
+                if (statusElement) {
+                  const statusText = statusElement.querySelector('.status-text');
+                  const isMaintenance = facility.is_maintenance == 1 || facility.is_maintenance === true;
+                  
+                  // Update status text
+                  statusText.textContent = isMaintenance ? 'Maintenance' : 'Available';
+                  
+                  // Update indicator class for styling
+                  statusElement.classList.remove('available', 'maintenance');
+                  statusElement.classList.add(isMaintenance ? 'maintenance' : 'available');
+                  
+                  console.log(`✓ Facility "${facility.name}" status updated: ${isMaintenance ? 'Maintenance' : 'Available'}`);
+                }
+              }
+            });
+          }
+        } catch (error) {
+          console.error('Error loading facility statuses:', error);
+        }
+      }
+
       // Navbar scroll effect
       window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
 
-// Filter facilities
-function filterFacilities(category) {
-  const facilities = document.querySelectorAll("#facilitiesGrid > div");
-  const filterButtons = document.querySelectorAll(".filter-btn");
+      // Filter facilities
+      function filterFacilities(category) {
+        const facilities = document.querySelectorAll("#facilitiesGrid > div");
+        const filterButtons = document.querySelectorAll(".filter-btn");
 
-  // Reset active state
-  filterButtons.forEach((btn) => btn.classList.remove("active"));
-  
-  // Find and activate the clicked button
-  filterButtons.forEach((btn) => {
-    if (btn.getAttribute("data-category") === category) {
-      btn.classList.add("active");
-    }
-  });
+        // Reset active state
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        
+        // Find and activate the clicked button
+        filterButtons.forEach((btn) => {
+          if (btn.getAttribute("data-category") === category) {
+            btn.classList.add("active");
+          }
+        });
 
-  facilities.forEach((facility) => {
-    if (category === "all" || facility.dataset.category === category) {
-      facility.style.display = "block";
-      setTimeout(() => {
-        facility.style.opacity = "1";
-        facility.style.transform = "translateY(0)";
-      }, 100);
-    } else {
-      facility.style.opacity = "0";
-      facility.style.transform = "translateY(20px)";
-      setTimeout(() => {
-        facility.style.display = "none";
-      }, 300);
-    }
-  });
-}
+        facilities.forEach((facility) => {
+          if (category === "all" || facility.dataset.category === category) {
+            facility.style.display = "block";
+            setTimeout(() => {
+              facility.style.opacity = "1";
+              facility.style.transform = "translateY(0)";
+            }, 100);
+          } else {
+            facility.style.opacity = "0";
+            facility.style.transform = "translateY(20px)";
+            setTimeout(() => {
+              facility.style.display = "none";
+            }, 300);
+          }
+        });
+      }
 
-// Animation for facilities on page load
-document.addEventListener("DOMContentLoaded", function () {
-  const facilities = document.querySelectorAll(".facility-card");
-  facilities.forEach((facility, index) => {
-    setTimeout(() => {
-      facility.style.opacity = "1";
-      facility.style.transform = "translateY(0)";
-    }, 100 * index);
-  });
-});
+      // Animation for facilities on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        const facilities = document.querySelectorAll(".facility-card");
+        facilities.forEach((facility, index) => {
+          setTimeout(() => {
+            facility.style.opacity = "1";
+            facility.style.transform = "translateY(0)";
+          }, 100 * index);
+        });
+
+        // Apply initial CSS classes to status indicators
+        document.querySelectorAll('[data-status]').forEach((statusElement) => {
+          const statusText = statusElement.querySelector('.status-text');
+          const text = statusText.textContent.trim();
+          
+          // Remove any existing classes
+          statusElement.classList.remove('available', 'maintenance');
+          
+          // Add appropriate class based on current text
+          if (text === 'Maintenance') {
+            statusElement.classList.add('maintenance');
+          } else {
+            statusElement.classList.add('available');
+          }
+        });
+
+        // Load facility statuses dynamically
+        loadFacilityStatuses();
+
+        // Refresh status every 30 seconds
+        setInterval(loadFacilityStatuses, 30000);
+      });
 
       // Login alert
       function showLoginAlert() {

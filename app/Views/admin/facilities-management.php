@@ -185,6 +185,25 @@
                         <textarea class="form-control" id="facilityDescription" rows="3" placeholder="Brief description of the facility"></textarea>
                     </div>
 
+                    <!-- Facility Gallery Section -->
+                    <div class="form-group full-width">
+                        <label class="form-label">Facility Gallery</label>
+                        <div class="gallery-upload-section">
+                            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 15px;">Add up to 6 images to showcase your facility</p>
+                            
+                            <div class="gallery-preview-grid" id="galleryPreview">
+                                <div class="gallery-preview-item">
+                                    <div class="gallery-upload-placeholder" onclick="document.getElementById('galleryInput').click()">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Click to upload</p>
+                                    </div>
+                                    <input type="file" id="galleryInput" accept="image/*" style="display: none;" onchange="handleGalleryUpload(event)">
+                                </div>
+                                <div id="galleryItems"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label">

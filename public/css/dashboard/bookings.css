@@ -707,6 +707,17 @@
   color: white;
 }
 
+.btn.btn-sm.btn-warning {
+  background: white;
+  color: #f59e0b;
+  border: 1px solid #f59e0b;
+}
+
+.btn.btn-sm.btn-warning:hover {
+  background: #f59e0b;
+  color: white;
+}
+
 .download-doc-btn {
   display: inline-flex !important;
   align-items: center;

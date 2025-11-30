@@ -481,6 +481,107 @@ $userEmail = $session->get('email');
     </div>
 </div>
 
+<!-- Reschedule Booking Modal -->
+<div class="modal fade" id="rescheduleBookingModal" tabindex="-1" aria-labelledby="rescheduleBookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-dark">
+                <h5 class="modal-title" id="rescheduleBookingModalLabel">
+                    <i class="fas fa-redo"></i> Reschedule Booking
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="rescheduleBookingId">
+                
+                <!-- Current Booking Info -->
+                <div class="alert alert-info border-0" style="background-color: #e3f2fd; border-left: 4px solid #2196F3;">
+                    <h6 class="alert-heading mb-3">
+                        <i class="fas fa-info-circle" style="color: #1976D2;"></i> Current Booking
+                    </h6>
+                    <div id="currentBookingInfo" style="color: #0d47a1; font-size: 14px; line-height: 1.6;">
+                        <!-- Dynamically filled -->
+                    </div>
+                </div>
+                
+                <p class="text-muted mb-4">Please provide the reason and your preferred new date and time for rescheduling.</p>
+                
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Reason for Rescheduling *</label>
+                    <select class="form-select" id="rescheduleReason" required onchange="updateRescheduleSubmitButtonState()">
+                        <option value="">-- Select a reason --</option>
+                        <option value="schedule-conflict">Schedule Conflict</option>
+                        <option value="venue-change">Venue Change</option>
+                        <option value="date-preference">Date Preference</option>
+                        <option value="event-change">Event Change</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Preferred Date *</label>
+                            <input type="date" class="form-control" id="rescheduleDate" required onchange="updateRescheduleSubmitButtonState()">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Preferred Time *</label>
+                            <input type="time" class="form-control" id="rescheduleTime" required onchange="updateRescheduleSubmitButtonState()">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Additional Notes (Optional)</label>
+                    <textarea class="form-control" id="rescheduleNotes" rows="3" placeholder="Add any additional notes..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer bg-light">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+                <button type="button" class="btn btn-warning text-dark" id="submitRescheduleBtn" onclick="submitReschedule()" disabled>
+                    <i class="fas fa-check"></i> Submit Reschedule Request
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Booking Modal -->
+<div class="modal fade" id="deleteBookingModal" tabindex="-1" aria-labelledby="deleteBookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="deleteBookingModalLabel">
+                    <i class="fas fa-trash"></i> Delete Booking
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="deleteBookingId">
+                
+                <div class="alert alert-danger" role="alert">
+                    <i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong><br>
+                    This action will permanently delete this cancelled booking record. This cannot be undone.
+                </div>
+                
+                <p>Are you sure you want to delete this booking?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn" onclick="deleteBooking()">
+                    <i class="fas fa-trash"></i> Delete Booking
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         const currentUserEmail = '<?= $userEmail ?>';

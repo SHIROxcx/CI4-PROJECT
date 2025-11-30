@@ -3,50 +3,50 @@ let selectedStudentFacilityId = null;
 let selectedStudentPlanId = null;
 let selectedStudentEquipment = {};
 let uploadedStudentFiles = {
-    permission: null,
-    request: null,
-    approval: null
+  permission: null,
+  request: null,
+  approval: null,
 };
 
 function openStudentBookingModal(facilityKey, facilityId) {
-    selectedStudentFacility = facilityKey;
-    selectedStudentFacilityId = facilityId;
-    
-    // Load facility data
-    loadStudentFacilityData(facilityKey);
-    
-    // Show modal
-    document.getElementById('studentBookingModal').style.display = 'block';
+  selectedStudentFacility = facilityKey;
+  selectedStudentFacilityId = facilityId;
+
+  // Load facility data
+  loadStudentFacilityData(facilityKey);
+
+  // Show modal
+  document.getElementById("studentBookingModal").style.display = "block";
 }
 
 function closeStudentModal() {
-    document.getElementById('studentBookingModal').style.display = 'none';
-    resetStudentForm();
+  document.getElementById("studentBookingModal").style.display = "none";
+  resetStudentForm();
 }
 
 async function loadStudentFacilityData(facilityKey) {
-    try {
-      const response = await fetch(
-        `/api/student/facilities/${facilityKey}/data`
-      );
-        const data = await response.json();
+  try {
+    const response = await fetch(`/api/student/facilities/${facilityKey}/data`);
+    const data = await response.json();
 
-        if (data.success && data.facility) {
-            document.getElementById('modalTitle').textContent = `Book ${data.facility.name}`;
+    if (data.success && data.facility) {
+      document.getElementById(
+        "modalTitle"
+      ).textContent = `Book ${data.facility.name}`;
 
-            // Set first plan as default
-            if (data.facility.plans && data.facility.plans.length > 0) {
-                selectedStudentPlanId = data.facility.plans[0].id;
-            }
+      // Set first plan as default
+      if (data.facility.plans && data.facility.plans.length > 0) {
+        selectedStudentPlanId = data.facility.plans[0].id;
+      }
 
-            // Don't load equipment yet - wait for user to select event date
-            // This is now date-based, so equipment availability depends on the selected date
-            loadStudentEquipment(); // Will show message to select date first
-        }
-    } catch (error) {
-        console.error('Error loading facility:', error);
-        alert('Failed to load facility details');
+      // Don't load equipment yet - wait for user to select event date
+      // This is now date-based, so equipment availability depends on the selected date
+      loadStudentEquipment(); // Will show message to select date first
     }
+  } catch (error) {
+    console.error("Error loading facility:", error);
+    alert("Failed to load facility details");
+  }
 }
 
 async function loadStudentEquipment(eventDate = null) {
@@ -65,7 +65,9 @@ async function loadStudentEquipment(eventDate = null) {
     '<p style="text-align: center; color: var(--gray); padding: 20px;">Loading equipment availability...</p>';
 
   try {
-    const response = await fetch(`/api/student/equipment?event_date=${eventDate}`);
+    const response = await fetch(
+      `/api/student/equipment?event_date=${eventDate}`
+    );
     const data = await response.json();
 
     if (data.success && data.equipment) {
@@ -94,7 +96,7 @@ function displayStudentEquipment(equipmentList, eventDate) {
   // Group by category
   const grouped = {};
   availableEquipment.forEach((eq) => {
-    const category = eq.category || 'other';
+    const category = eq.category || "other";
     if (!grouped[category]) {
       grouped[category] = [];
     }
@@ -110,7 +112,9 @@ function displayStudentEquipment(equipmentList, eventDate) {
     dateHeader.style.background = "#e3f2fd";
     dateHeader.style.borderRadius = "8px";
     dateHeader.style.textAlign = "center";
-    dateHeader.innerHTML = `<strong>📅 Equipment available on ${new Date(eventDate).toLocaleDateString()}</strong>`;
+    dateHeader.innerHTML = `<strong>📅 Equipment available on ${new Date(
+      eventDate
+    ).toLocaleDateString()}</strong>`;
     container.appendChild(dateHeader);
   }
 
@@ -133,7 +137,9 @@ function displayStudentEquipment(equipmentList, eventDate) {
       equipDiv.innerHTML = `
                 <div class="equipment-info">
                     <h4 class="equipment-name">${equipment.name}</h4>
-                    <p class="equipment-description">${equipment.available} available on this date</p>
+                    <p class="equipment-description">${
+                      equipment.available
+                    } available on this date</p>
                     ${
                       equipment.rate > 0
                         ? `<span class="equipment-rate">₱${equipment.rate}/${equipment.unit}</span>`
@@ -159,14 +165,14 @@ function displayStudentEquipment(equipmentList, eventDate) {
 }
 
 function updateStudentEquipment(equipmentId) {
-    const input = document.getElementById(`student-qty-${equipmentId}`);
-    const quantity = parseInt(input.value);
-    
-    if (quantity > 0) {
-        selectedStudentEquipment[equipmentId] = quantity;
-    } else {
-        delete selectedStudentEquipment[equipmentId];
-    }
+  const input = document.getElementById(`student-qty-${equipmentId}`);
+  const quantity = parseInt(input.value);
+
+  if (quantity > 0) {
+    selectedStudentEquipment[equipmentId] = quantity;
+  } else {
+    delete selectedStudentEquipment[equipmentId];
+  }
 }
 
 // ========================================
@@ -174,38 +180,42 @@ function updateStudentEquipment(equipmentId) {
 // ========================================
 function handleStudentFileSelect(input, fileType) {
   const file = input.files[0];
-  
+
   if (!file) return;
-  
+
   // Validate size
   if (file.size > 10 * 1024 * 1024) {
-    showToast('File size must be less than 10MB', 'error');
-    input.value = '';
+    showToast("File size must be less than 10MB", "error");
+    input.value = "";
     return;
   }
-  
+
   // Validate file type
-  const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'image/jpg'];
+  const allowedTypes = [
+    "application/pdf",
+    "image/jpeg",
+    "image/png",
+    "image/jpg",
+  ];
   if (!allowedTypes.includes(file.type)) {
-    showToast('Only PDF, JPG, and PNG files are allowed', 'error');
-    input.value = '';
+    showToast("Only PDF, JPG, and PNG files are allowed", "error");
+    input.value = "";
     return;
   }
-  
+
   // Store file
   uploadedStudentFiles[fileType] = file;
-  
+
   // Update UI
   const uploadItem = document.getElementById(`upload-${fileType}`);
-  uploadItem.classList.add('uploaded');
-  uploadItem.querySelector('.upload-status').textContent = 'Ready';
-  uploadItem.querySelector('.upload-status').style.color = 'var(--success)';
+  uploadItem.classList.add("uploaded");
+  uploadItem.querySelector(".upload-status").textContent = "Ready";
+  uploadItem.querySelector(".upload-status").style.color = "var(--success)";
   document.getElementById(`filename-${fileType}`).textContent = file.name;
-  
-  showToast(`${file.name} uploaded successfully`, 'success');
+
+  showToast(`${file.name} uploaded successfully`, "success");
   checkStudentFilesComplete();
 }
-
 
 function checkStudentFilesComplete() {
   // Make file uploads optional - always enable submit button if form is valid
@@ -243,6 +253,7 @@ async function submitStudentBooking() {
       special_requirements:
         document.getElementById("specialRequirements").value.trim() || "",
       selected_equipment: selectedStudentEquipment,
+      booking_type: document.getElementById("bookingType").value || "student",
     };
 
     // Create booking
@@ -264,53 +275,56 @@ async function submitStudentBooking() {
     const bookingId = bookingResult.booking_id;
 
     // Upload files if provided
-const hasFiles =
-  uploadedStudentFiles.permission ||
-  uploadedStudentFiles.request ||
-  uploadedStudentFiles.approval;
+    const hasFiles =
+      uploadedStudentFiles.permission ||
+      uploadedStudentFiles.request ||
+      uploadedStudentFiles.approval;
 
-if (hasFiles) {
-  try {
-    const formData = new FormData();
+    if (hasFiles) {
+      try {
+        const formData = new FormData();
 
-    // Add files in the correct array format that the server expects
-    if (uploadedStudentFiles.permission) {
-      formData.append("files[]", uploadedStudentFiles.permission);
-    }
-    if (uploadedStudentFiles.request) {
-      formData.append("files[]", uploadedStudentFiles.request);
-    }
-    if (uploadedStudentFiles.approval) {
-      formData.append("files[]", uploadedStudentFiles.approval);
-    }
+        // Add files in the correct array format that the server expects
+        if (uploadedStudentFiles.permission) {
+          formData.append("files[]", uploadedStudentFiles.permission);
+        }
+        if (uploadedStudentFiles.request) {
+          formData.append("files[]", uploadedStudentFiles.request);
+        }
+        if (uploadedStudentFiles.approval) {
+          formData.append("files[]", uploadedStudentFiles.approval);
+        }
 
-    const uploadResponse = await fetch(
-      `/api/student/bookings/${bookingId}/upload`,
-      {
-        method: "POST",
-        headers: {
-          "X-Requested-With": "XMLHttpRequest",
-        },
-        body: formData,
+        const uploadResponse = await fetch(
+          `/api/student/bookings/${bookingId}/upload`,
+          {
+            method: "POST",
+            headers: {
+              "X-Requested-With": "XMLHttpRequest",
+            },
+            body: formData,
+          }
+        );
+
+        const uploadResult = await uploadResponse.json();
+
+        if (!uploadResult.success) {
+          console.warn("File upload warning:", uploadResult.message);
+          showToast(
+            "Booking created but some files failed to upload",
+            "warning"
+          );
+        } else {
+          showToast(
+            `${uploadResult.files.length} file(s) uploaded successfully`,
+            "success"
+          );
+        }
+      } catch (uploadError) {
+        console.error("File upload error:", uploadError);
+        showToast("Booking created but file upload failed", "warning");
       }
-    );
-
-    const uploadResult = await uploadResponse.json();
-
-    if (!uploadResult.success) {
-      console.warn("File upload warning:", uploadResult.message);
-      showToast("Booking created but some files failed to upload", "warning");
-    } else {
-      showToast(
-        `${uploadResult.files.length} file(s) uploaded successfully`,
-        "success"
-      );
     }
-  } catch (uploadError) {
-    console.error("File upload error:", uploadError);
-    showToast("Booking created but file upload failed", "warning");
-  }
-}
 
     // Show success
     showStudentSuccess(bookingId);
@@ -323,80 +337,85 @@ if (hasFiles) {
   }
 }
 
-
 // ========================================
 function validateStudentForm() {
   const validations = [
     {
-      id: 'clientName',
-      label: 'Full Name',
-      test: (val) => val.length >= 3,
-      message: 'Full name must be at least 3 characters'
+      id: "bookingType",
+      label: "Booking Type",
+      test: (val) => val.length > 0,
+      message: "Please select a booking type",
     },
     {
-      id: 'clientEmail',
-      label: 'Email Address',
+      id: "clientName",
+      label: "Full Name",
+      test: (val) => val.length >= 3,
+      message: "Full name must be at least 3 characters",
+    },
+    {
+      id: "clientEmail",
+      label: "Email Address",
       test: (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
-      message: 'Please enter a valid email address'
+      message: "Please enter a valid email address",
     },
     {
-      id: 'organization',
-      label: 'Organization',
+      id: "organization",
+      label: "Organization",
       test: (val) => val.length >= 3,
-      message: 'Organization name must be at least 3 characters'
+      message: "Organization name must be at least 3 characters",
     },
     {
-      id: 'contactNumber',
-      label: 'Contact Number',
-      test: (val) => val.replace(/\D/g, '').length >= 7,
-      message: 'Contact number must contain at least 7 digits'
+      id: "contactNumber",
+      label: "Contact Number",
+      test: (val) => val.replace(/\D/g, "").length >= 7,
+      message: "Contact number must contain at least 7 digits",
     },
     {
-      id: 'eventDate',
-      label: 'Event Date',
+      id: "eventDate",
+      label: "Event Date",
       test: (val) => {
         const eventDate = new Date(val);
         const today = new Date();
         today.setHours(0, 0, 0, 0);
         return eventDate >= today;
       },
-      message: 'Event date cannot be in the past'
+      message: "Event date cannot be in the past",
     },
     {
-      id: 'eventTime',
-      label: 'Event Time',
+      id: "eventTime",
+      label: "Event Time",
       test: (val) => val.length > 0,
-      message: 'Please select an event time'
+      message: "Please select an event time",
     },
     {
-      id: 'duration',
-      label: 'Duration',
+      id: "duration",
+      label: "Duration",
       test: (val) => {
         const num = parseInt(val);
         return num >= 1 && num <= 12;
       },
-      message: 'Duration must be between 1 and 12 hours'
+      message: "Duration must be between 1 and 12 hours",
     },
     {
-      id: 'eventTitle',
-      label: 'Event Title',
+      id: "eventTitle",
+      label: "Event Title",
       test: (val) => val.length >= 5,
-      message: 'Event title must be at least 5 characters'
-    }
+      message: "Event title must be at least 5 characters",
+    },
   ];
-  
+
   // Clear all previous errors
-  validations.forEach(v => hideInlineError(v.id));
-  
+  validations.forEach((v) => hideInlineError(v.id));
+
   let isValid = true;
   let firstErrorField = null;
-  
+
   for (const validation of validations) {
     const field = document.getElementById(validation.id);
     if (!field) continue;
-    
+
     const value = field.value.trim();
-    
+
     // Check if empty
     if (!value) {
       showInlineError(validation.id, `${validation.label} is required`);
@@ -404,7 +423,7 @@ function validateStudentForm() {
       isValid = false;
       continue;
     }
-    
+
     // Check validation test
     if (!validation.test(value)) {
       showInlineError(validation.id, validation.message);
@@ -412,33 +431,37 @@ function validateStudentForm() {
       isValid = false;
     }
   }
-  
+
   // Validate address if provided (optional but must meet minimum)
-  const address = document.getElementById('address').value.trim();
+  const address = document.getElementById("address").value.trim();
   if (address && address.length < 10) {
-    showInlineError('address', 'Address must be at least 10 characters. Include street, city, and province.');
-    if (!firstErrorField) firstErrorField = document.getElementById('address');
+    showInlineError(
+      "address",
+      "Address must be at least 10 characters. Include street, city, and province."
+    );
+    if (!firstErrorField) firstErrorField = document.getElementById("address");
     isValid = false;
   }
-  
+
   // Validate attendees if provided
-  const attendees = document.getElementById('attendees').value.trim();
+  const attendees = document.getElementById("attendees").value.trim();
   if (attendees && (isNaN(attendees) || parseInt(attendees) < 1)) {
-    showInlineError('attendees', 'Number of attendees must be a positive number');
-    if (!firstErrorField) firstErrorField = document.getElementById('attendees');
+    showInlineError(
+      "attendees",
+      "Number of attendees must be a positive number"
+    );
+    if (!firstErrorField)
+      firstErrorField = document.getElementById("attendees");
     isValid = false;
   }
-  
+
   if (!isValid && firstErrorField) {
     firstErrorField.focus();
-    showToast('Please fix the errors in the form', 'error');
+    showToast("Please fix the errors in the form", "error");
   }
-  
+
   return isValid;
 }
-
-
-
 
 function showStudentSuccess(bookingId) {
   const modalBody = document.querySelector("#studentBookingModal .modal-body");
@@ -530,7 +553,6 @@ function resetStudentForm() {
   }
 }
 
-
 // Close modal on outside click
 window.onclick = function (event) {
   const modal = document.getElementById("studentBookingModal");
@@ -538,7 +560,6 @@ window.onclick = function (event) {
     closeStudentModal();
   }
 };
-
 
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Student booking page initialized");
@@ -567,7 +588,9 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Event date changed to:", selectedDate);
         // Reset selected equipment when date changes
         selectedStudentEquipment = {};
-        const equipmentInputs = document.querySelectorAll('[id^="student-qty-"]');
+        const equipmentInputs = document.querySelectorAll(
+          '[id^="student-qty-"]'
+        );
         equipmentInputs.forEach((input) => (input.value = "0"));
 
         // Load equipment for the new date
@@ -744,7 +767,6 @@ function hideFieldError(field) {
   }
 }
 
-
 function toggleSidebar() {
   const sidebar = document.querySelector(".sidebar");
   const mainContent = document.querySelector(".main-content");
@@ -865,35 +887,34 @@ function initializeMobileMenu() {
 // ========================================
 // TOAST NOTIFICATION SYSTEM
 // ========================================
-function showToast(message, type = 'info') {
-  const toastContainer = document.getElementById('toastContainer');
-  
-  const toast = document.createElement('div');
+function showToast(message, type = "info") {
+  const toastContainer = document.getElementById("toastContainer");
+
+  const toast = document.createElement("div");
   toast.className = `toast toast-${type}`;
-  
-  const icon = {
-    success: '✅',
-    error: '❌',
-    warning: '⚠️',
-    info: 'ℹ️'
-  }[type] || 'ℹ️';
-  
+
+  const icon =
+    {
+      success: "✅",
+      error: "❌",
+      warning: "⚠️",
+      info: "ℹ️",
+    }[type] || "ℹ️";
+
   toast.innerHTML = `
     <span class="toast-icon">${icon}</span>
     <span class="toast-message">${message}</span>
     <button class="toast-close" onclick="this.parentElement.remove()">×</button>
   `;
-  
+
   toastContainer.appendChild(toast);
-  
+
   // Auto remove after 5 seconds
   setTimeout(() => {
-    toast.classList.add('toast-fade-out');
+    toast.classList.add("toast-fade-out");
     setTimeout(() => toast.remove(), 300);
   }, 5000);
 }
-
-
 
 // ========================================
 // INLINE VALIDATION HELPERS
@@ -901,27 +922,27 @@ function showToast(message, type = 'info') {
 function showInlineError(fieldId, message) {
   const field = document.getElementById(fieldId);
   if (!field) return;
-  
+
   // Remove existing error
   hideInlineError(fieldId);
-  
+
   // Add error styling
-  field.classList.add('field-error');
-  
+  field.classList.add("field-error");
+
   // Create error message
-  const errorDiv = document.createElement('div');
-  errorDiv.className = 'inline-error';
+  const errorDiv = document.createElement("div");
+  errorDiv.className = "inline-error";
   errorDiv.innerHTML = `<span class="error-icon">⚠️</span> ${message}`;
-  
+
   field.parentNode.appendChild(errorDiv);
 }
 
 function hideInlineError(fieldId) {
   const field = document.getElementById(fieldId);
   if (!field) return;
-  
-  field.classList.remove('field-error');
-  
-  const error = field.parentNode.querySelector('.inline-error');
+
+  field.classList.remove("field-error");
+
+  const error = field.parentNode.querySelector(".inline-error");
   if (error) error.remove();
 }

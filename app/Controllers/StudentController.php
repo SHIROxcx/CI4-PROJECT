@@ -28,9 +28,18 @@ public function book()
         return redirect()->to('/')->with('error', 'Unauthorized access');
     }
 
-    // ✅ FETCH FACILITIES FROM DATABASE
+    // ✅ FETCH ALL FACILITIES (active and inactive) - frontend handles availability display
     $facilityModel = new \App\Models\FacilityModel();
-    $facilities = $facilityModel->findAll();
+    $facilities = $facilityModel
+        ->orderBy('name', 'ASC')
+        ->findAll();
+
+    // Log the query and results
+    log_message('info', '[StudentController::book] Query: SELECT * FROM facilities (no filter)');
+    log_message('info', '[StudentController::book] Facilities found: ' . count($facilities));
+    foreach ($facilities as $facility) {
+        log_message('info', '[StudentController::book] - ' . $facility['name'] . ' (ID: ' . $facility['id'] . ', key: ' . $facility['facility_key'] . ', is_active: ' . $facility['is_active'] . ', is_maintenance: ' . ($facility['is_maintenance'] ?? 'null') . ')');
+    }
 
     // Prepare data to pass to view
     $data = [
@@ -39,7 +48,7 @@ public function book()
         'userPhone' => $session->get('contact_number'),
         'userId' => $session->get('user_id'),
         'userRole' => $userRole,
-        'facilities' => $facilities, // ✅ Pass facilities to view
+        'facilities' => $facilities, // ✅ Pass all facilities to view
     ];
 
     // Load the booking page view

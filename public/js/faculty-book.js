@@ -13,113 +13,375 @@ let HOURLY_RATE = 500;
 
 // ==================== BOOKING TYPE SELECTION ====================
 function selectBookingType(type) {
-    selectedBookingType = type;
+  selectedBookingType = type;
 
-    // Update UI
-    document.getElementById('freeBookingCard').classList.remove('selected');
-    document.getElementById('paidBookingCard').classList.remove('selected');
+  // Update UI
+  document.getElementById("freeBookingCard").classList.remove("selected");
+  document.getElementById("paidBookingCard").classList.remove("selected");
 
-    if (type === 'free') {
-        document.getElementById('freeBookingCard').classList.add('selected');
-        document.getElementById('selectedTypeText').textContent = 'Academic/Free Booking - No payment required';
-    } else {
-        document.getElementById('paidBookingCard').classList.add('selected');
-        document.getElementById('selectedTypeText').textContent = 'Commercial/Paid Booking - Standard rates apply';
-    }
+  if (type === "free") {
+    document.getElementById("freeBookingCard").classList.add("selected");
+    document.getElementById("selectedTypeText").textContent =
+      "Academic/Free Booking - No payment required";
+  } else {
+    document.getElementById("paidBookingCard").classList.add("selected");
+    document.getElementById("selectedTypeText").textContent =
+      "Commercial/Paid Booking - Standard rates apply";
+  }
 
-    // Show selected type and facilities
-    document.getElementById('selectedTypeDisplay').style.display = 'block';
-    document.getElementById('facilitiesGrid').style.display = 'grid';
+  // Show selected type and facilities
+  document.getElementById("selectedTypeDisplay").style.display = "block";
+  document.getElementById("facilitiesGrid").style.display = "grid";
 
-    // Update price display on facility cards
-    updateFacilityPriceDisplay();
+  // Update price display on facility cards
+  updateFacilityPriceDisplay();
 }
 
 function clearBookingType() {
-    selectedBookingType = null;
-    document.getElementById('freeBookingCard').classList.remove('selected');
-    document.getElementById('paidBookingCard').classList.remove('selected');
-    document.getElementById('selectedTypeDisplay').style.display = 'none';
-    document.getElementById('facilitiesGrid').style.display = 'none';
+  selectedBookingType = null;
+  document.getElementById("freeBookingCard").classList.remove("selected");
+  document.getElementById("paidBookingCard").classList.remove("selected");
+  document.getElementById("selectedTypeDisplay").style.display = "none";
+  document.getElementById("facilitiesGrid").style.display = "none";
 }
 
 function updateFacilityPriceDisplay() {
-    const priceRanges = document.querySelectorAll('.price-range');
-    priceRanges.forEach(el => {
-        if (selectedBookingType === 'free') {
-            el.textContent = 'FREE (Academic)';
-            el.style.color = '#16a34a';
-        } else {
-            el.textContent = 'View Packages';
-            el.style.color = '#f59e0b';
-        }
+  const priceRanges = document.querySelectorAll(".price-range");
+  priceRanges.forEach((el) => {
+    if (selectedBookingType === "free") {
+      el.textContent = "FREE (Academic)";
+      el.style.color = "#16a34a";
+    } else {
+      el.textContent = "View Packages";
+      el.style.color = "#f59e0b";
+    }
+  });
+}
+
+// ==================== FACILITY STATUS FUNCTIONS ====================
+async function loadFacilityStatus(facilityKey, targetElementId) {
+  try {
+    console.log(
+      `[loadFacilityStatus] Loading status for facility: ${facilityKey}`
+    );
+    const response = await fetch(`/api/facilities/list`);
+    const data = await response.json();
+
+    console.log(
+      `[loadFacilityStatus] API Response - Success: ${
+        data.success
+      }, Facilities count: ${data.facilities ? data.facilities.length : 0}`
+    );
+
+    if (data.success && data.facilities) {
+      data.facilities.forEach((f) => {
+        console.log(
+          `[loadFacilityStatus] Available - ${f.name} (${f.facility_key}, is_maintenance: ${f.is_maintenance})`
+        );
+      });
+
+      const facility = data.facilities.find(
+        (f) => f.facility_key === facilityKey
+      );
+
+      console.log(
+        `[loadFacilityStatus] Found facility? ${facility ? "YES" : "NO"}`
+      );
+      if (facility) {
+        console.log(
+          `[loadFacilityStatus] Facility details - Name: ${facility.name}, is_maintenance: ${facility.is_maintenance}`
+        );
+      }
+
+      if (facility && document.getElementById(targetElementId)) {
+        const statusElement = document.getElementById(targetElementId);
+        const statusText = statusElement.querySelector(".status-text");
+        const isMaintenance =
+          facility.is_maintenance == 1 || facility.is_maintenance === true;
+
+        // Update status text
+        statusText.textContent = isMaintenance ? "Inactive" : "Available";
+
+        // Remove old classes and add new one
+        statusElement.classList.remove("available", "maintenance");
+        statusElement.classList.add(
+          isMaintenance ? "maintenance" : "available"
+        );
+
+        // Disable/enable the booking form based on facility status
+        handleFacilityStatusChange(isMaintenance, targetElementId);
+
+        console.log(
+          `✓ [loadFacilityStatus] Facility status updated: ${
+            isMaintenance ? "Inactive" : "Available"
+          }`
+        );
+      } else {
+        console.warn(
+          `[loadFacilityStatus] Could not find facility in response or element ${targetElementId} not found`
+        );
+      }
+    } else {
+      console.error(
+        `[loadFacilityStatus] API returned success=false or no facilities`
+      );
+    }
+  } catch (error) {
+    console.error(`[loadFacilityStatus] Error: ${error.message}`);
+  }
+}
+
+// Handle facility status changes - disable form if inactive
+function handleFacilityStatusChange(isInactive, targetElementId) {
+  const modal = targetElementId.includes("free")
+    ? document.getElementById("freeBookingModal")
+    : document.getElementById("paidBookingModal");
+
+  if (!modal) return;
+
+  const form = modal.querySelector("form");
+  const modalBody = modal.querySelector(".modal-body");
+  const modalFooter = modal.querySelector(".modal-footer");
+  const allInputs = modalBody
+    ? modalBody.querySelectorAll("input, textarea, select")
+    : [];
+  const allButtons = modalFooter ? modalFooter.querySelectorAll("button") : [];
+  const unavailableNotice = modal.querySelector(".facility-unavailable-notice");
+
+  if (isInactive) {
+    // Show unavailable notice
+    if (!unavailableNotice && modalBody) {
+      const notice = document.createElement("div");
+      notice.className = "facility-unavailable-notice";
+      notice.innerHTML = `
+        <div style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border: 2px solid #dc2626; border-radius: 10px; padding: 20px; margin-bottom: 20px; text-align: center;">
+          <div style="font-size: 24px; margin-bottom: 10px;">🚫</div>
+          <h4 style="color: #991b1b; margin-bottom: 8px; font-weight: 700;">Facility Currently Unavailable</h4>
+          <p style="color: #7f1d1d; margin-bottom: 0; font-size: 14px;">This facility is currently inactive and cannot be booked. Please try again later or select a different facility.</p>
+        </div>
+      `;
+      const firstSection = modalBody.querySelector(".plan-section");
+      if (firstSection) {
+        modalBody.insertBefore(notice, firstSection);
+      } else {
+        modalBody.insertBefore(notice, modalBody.firstChild);
+      }
+    }
+
+    // Disable all form elements except hidden inputs
+    allInputs.forEach((input) => {
+      if (input.type !== "hidden") {
+        input.disabled = true;
+        input.style.opacity = "0.6";
+        input.style.cursor = "not-allowed";
+      }
     });
+
+    // Disable all buttons except close button
+    allButtons.forEach((btn) => {
+      if (
+        !btn.classList.contains("close") &&
+        !btn.textContent.includes("Cancel")
+      ) {
+        btn.disabled = true;
+        btn.style.opacity = "0.5";
+        btn.style.cursor = "not-allowed";
+        btn.setAttribute("data-disabled-by-status", "true");
+      }
+    });
+  } else {
+    // Remove unavailable notice if exists
+    const notice = modal.querySelector(".facility-unavailable-notice");
+    if (notice) {
+      notice.remove();
+    }
+
+    // Re-enable form elements
+    allInputs.forEach((input) => {
+      if (input.type !== "hidden") {
+        input.disabled = false;
+        input.style.opacity = "1";
+        input.style.cursor = "auto";
+      }
+    });
+
+    // Re-enable buttons that were disabled by status
+    allButtons.forEach((btn) => {
+      if (btn.getAttribute("data-disabled-by-status") === "true") {
+        btn.disabled = false;
+        btn.style.opacity = "1";
+        btn.style.cursor = "pointer";
+        btn.removeAttribute("data-disabled-by-status");
+      }
+    });
+  }
 }
 
 // ==================== OPEN BOOKING MODAL ====================
-function openFacultyBookingModal(facilityKey, facilityId) {
-    if (!selectedBookingType) {
-        alert('Please select a booking type first (Free or Paid)');
-        return;
-    }
+async function openFacultyBookingModal(facilityKey, facilityId) {
+  if (!selectedBookingType) {
+    alert("Please select a booking type first (Free or Paid)");
+    return;
+  }
 
-    currentFacilityKey = facilityKey;
-    currentFacilityId = facilityId;
+  currentFacilityKey = facilityKey;
+  currentFacilityId = facilityId;
 
-    if (selectedBookingType === 'free') {
-        openFreeBookingModal(facilityKey, facilityId);
-    } else {
-        openPaidBookingModal(facilityKey, facilityId);
+  // Check facility status first
+  const facilityStatus = await checkFacilityStatus(facilityKey);
+
+  if (selectedBookingType === "free") {
+    openFreeBookingModal(facilityKey, facilityId, facilityStatus);
+  } else {
+    openPaidBookingModal(facilityKey, facilityId, facilityStatus);
+  }
+}
+
+// Check facility status and return status object
+async function checkFacilityStatus(facilityKey) {
+  try {
+    const response = await fetch(`/api/facilities/list`);
+    const data = await response.json();
+
+    if (data.success && data.facilities) {
+      const facility = data.facilities.find(
+        (f) => f.facility_key === facilityKey
+      );
+      if (facility) {
+        return {
+          is_active: facility.is_active,
+          is_maintenance: facility.is_maintenance,
+          name: facility.name,
+        };
+      }
     }
+    return { is_active: 1, is_maintenance: 0, name: "Unknown" };
+  } catch (error) {
+    console.error("Error checking facility status:", error);
+    return { is_active: 1, is_maintenance: 0, name: "Unknown" };
+  }
 }
 
 // ==================== FREE BOOKING FUNCTIONS ====================
-function openFreeBookingModal(facilityKey, facilityId) {
-    document.getElementById('freeFacilityKey').value = facilityKey;
-    document.getElementById('freeFacilityId').value = facilityId;
+function openFreeBookingModal(facilityKey, facilityId, facilityStatus = {}) {
+  document.getElementById("freeFacilityKey").value = facilityKey;
+  document.getElementById("freeFacilityId").value = facilityId;
+
+  // Show modal
+  document.getElementById("freeBookingModal").style.display = "block";
+
+  // Load and display facility status
+  loadFacilityStatus(facilityKey, "freeAvailabilityStatus");
+
+  // Check facility availability
+  const isInactive = facilityStatus.is_active == 0;
+  const isMaintenance = facilityStatus.is_maintenance == 1;
+
+  const modalBody = document
+    .getElementById("freeBookingModal")
+    .querySelector(".modal-body");
+  const statusMessageDiv = modalBody.querySelector(".facility-status-message");
+
+  if (isInactive) {
+    // Show inactive message
+    if (statusMessageDiv) statusMessageDiv.remove();
+    const inactiveMsg = document.createElement("div");
+    inactiveMsg.className = "alert alert-danger facility-status-message";
+    inactiveMsg.innerHTML =
+      '<i class="fas fa-ban"></i> <strong>Sorry!</strong> This facility is not available right now.';
+    modalBody.insertBefore(inactiveMsg, modalBody.firstChild);
+
+    // Disable the form
+    disableFreeBookingForm();
+  } else if (isMaintenance) {
+    // Show maintenance message
+    if (statusMessageDiv) statusMessageDiv.remove();
+    const maintenanceMsg = document.createElement("div");
+    maintenanceMsg.className = "alert alert-warning facility-status-message";
+    maintenanceMsg.innerHTML =
+      '<i class="fas fa-wrench"></i> <strong>Under Maintenance</strong> This facility is currently under maintenance. Please check back later.';
+    modalBody.insertBefore(maintenanceMsg, modalBody.firstChild);
+
+    // Disable the form
+    disableFreeBookingForm();
+  } else {
+    // Remove any existing status messages
+    if (statusMessageDiv) statusMessageDiv.remove();
 
     // Load equipment for free booking
     loadFreeEquipment();
 
     // Set minimum date to today
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('freeEventDate').min = today;
-
-    // Show modal
-    document.getElementById('freeBookingModal').style.display = 'block';
+    const today = new Date().toISOString().split("T")[0];
+    document.getElementById("freeEventDate").min = today;
 
     // Enable form validation
     validateFreeForm();
+
+    // Enable the form
+    enableFreeBookingForm();
+  }
+}
+
+function disableFreeBookingForm() {
+  const form = document.getElementById("freeBookingForm");
+  const inputs = form.querySelectorAll("input, textarea, select, button");
+  inputs.forEach((input) => {
+    if (input.id !== "submitFreeBtn") {
+      input.disabled = true;
+    }
+  });
+
+  const submitBtn = document.getElementById("submitFreeBtn");
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Facility Unavailable";
+  }
+}
+
+function enableFreeBookingForm() {
+  const form = document.getElementById("freeBookingForm");
+  const inputs = form.querySelectorAll("input, textarea, select");
+  inputs.forEach((input) => {
+    input.disabled = false;
+  });
+
+  const submitBtn = document.getElementById("submitFreeBtn");
+  if (submitBtn) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit Free Booking";
+  }
 }
 
 function closeFreeModal() {
-    document.getElementById('freeBookingModal').style.display = 'none';
-    document.getElementById('freeBookingForm').reset();
+  document.getElementById("freeBookingModal").style.display = "none";
+  document.getElementById("freeBookingForm").reset();
 }
 
 async function loadFreeEquipment() {
-    try {
-        const response = await fetch('/api/bookings/equipment');
-        const result = await response.json();
+  try {
+    const response = await fetch("/api/bookings/equipment");
+    const result = await response.json();
 
-        if (result.success) {
-            const freeEquipmentGrid = document.getElementById('freeEquipmentGrid');
-            freeEquipmentGrid.innerHTML = '';
+    if (result.success) {
+      const freeEquipmentGrid = document.getElementById("freeEquipmentGrid");
+      freeEquipmentGrid.innerHTML = "";
 
-            // Filter for non-rentable equipment (free equipment)
-            const freeEquipment = result.equipment.filter(eq =>
-                eq.is_rentable == 0 || eq.rate == 0
-            );
+      // Filter for non-rentable equipment (free equipment)
+      const freeEquipment = result.equipment.filter(
+        (eq) => eq.is_rentable == 0 || eq.rate == 0
+      );
 
-            if (freeEquipment.length === 0) {
-                freeEquipmentGrid.innerHTML = '<p class="text-muted">No equipment available for selection.</p>';
-                return;
-            }
+      if (freeEquipment.length === 0) {
+        freeEquipmentGrid.innerHTML =
+          '<p class="text-muted">No equipment available for selection.</p>';
+        return;
+      }
 
-            freeEquipment.forEach(equipment => {
-                const equipmentCard = document.createElement('div');
-                equipmentCard.className = 'col-md-6';
-                equipmentCard.innerHTML = `
+      freeEquipment.forEach((equipment) => {
+        const equipmentCard = document.createElement("div");
+        equipmentCard.className = "col-md-6";
+        equipmentCard.innerHTML = `
                     <div class="equipment-item mb-3">
                         <label class="form-label">
                             ${equipment.name}
@@ -132,209 +394,290 @@ async function loadFreeEquipment() {
                         <small class="text-muted">Available: ${equipment.available}</small>
                     </div>
                 `;
-                freeEquipmentGrid.appendChild(equipmentCard);
-            });
-        }
-    } catch (error) {
-        console.error('Error loading free equipment:', error);
+        freeEquipmentGrid.appendChild(equipmentCard);
+      });
     }
+  } catch (error) {
+    console.error("Error loading free equipment:", error);
+  }
 }
 
 function updateFreeEquipment(equipmentId) {
-    validateFreeForm();
+  validateFreeForm();
 }
 
 function handleFreeFileSelect(input, docType) {
-    const file = input.files[0];
-    const uploadItem = document.getElementById(`free-upload-${docType}`);
-    const statusSpan = uploadItem.querySelector('.upload-status');
-    const filenameDisplay = document.getElementById(`free-filename-${docType}`);
+  const file = input.files[0];
+  const uploadItem = document.getElementById(`free-upload-${docType}`);
+  const statusSpan = uploadItem.querySelector(".upload-status");
+  const filenameDisplay = document.getElementById(`free-filename-${docType}`);
 
-    if (file) {
-        // Validate file size (10MB)
-        if (file.size > 10 * 1024 * 1024) {
-            alert('File size must be less than 10MB');
-            input.value = '';
-            return;
-        }
-
-        statusSpan.textContent = 'Uploaded';
-        statusSpan.style.color = '#16a34a';
-        filenameDisplay.textContent = `File: ${file.name}`;
-        uploadItem.style.background = '#f0fdf4';
-    } else {
-        statusSpan.textContent = 'Not uploaded';
-        statusSpan.style.color = '#dc2626';
-        filenameDisplay.textContent = '';
-        uploadItem.style.background = '';
+  if (file) {
+    // Validate file size (10MB)
+    if (file.size > 10 * 1024 * 1024) {
+      alert("File size must be less than 10MB");
+      input.value = "";
+      return;
     }
 
-    validateFreeForm();
+    statusSpan.textContent = "Uploaded";
+    statusSpan.style.color = "#16a34a";
+    filenameDisplay.textContent = `File: ${file.name}`;
+    uploadItem.style.background = "#f0fdf4";
+  } else {
+    statusSpan.textContent = "Not uploaded";
+    statusSpan.style.color = "#dc2626";
+    filenameDisplay.textContent = "";
+    uploadItem.style.background = "";
+  }
+
+  validateFreeForm();
 }
 
 function validateFreeForm() {
-    const form = document.getElementById('freeBookingForm');
-    const submitBtn = document.getElementById('submitFreeBtn');
+  const form = document.getElementById("freeBookingForm");
+  const submitBtn = document.getElementById("submitFreeBtn");
 
-    // Check if all required files are uploaded
-    const permissionFile = document.getElementById('free-file-permission').files[0];
-    const requestFile = document.getElementById('free-file-request').files[0];
-    const approvalFile = document.getElementById('free-file-approval').files[0];
+  // Check if all required files are uploaded
+  const permissionFile = document.getElementById("free-file-permission")
+    .files[0];
+  const requestFile = document.getElementById("free-file-request").files[0];
+  const approvalFile = document.getElementById("free-file-approval").files[0];
 
-    const allFilesUploaded = permissionFile && requestFile && approvalFile;
-    const formValid = form.checkValidity();
+  const allFilesUploaded = permissionFile && requestFile && approvalFile;
+  const formValid = form.checkValidity();
 
-    submitBtn.disabled = !(formValid && allFilesUploaded);
+  submitBtn.disabled = !(formValid && allFilesUploaded);
 }
 
 async function submitFreeBooking() {
-    const form = document.getElementById('freeBookingForm');
-    const submitBtn = document.getElementById('submitFreeBtn');
+  const form = document.getElementById("freeBookingForm");
+  const submitBtn = document.getElementById("submitFreeBtn");
+  const statusIndicator = document.getElementById("freeAvailabilityStatus");
 
-    if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
+  // Check if facility is inactive
+  if (statusIndicator && statusIndicator.classList.contains("maintenance")) {
+    showToast(
+      "Cannot book an inactive facility. Please select another facility.",
+      "error"
+    );
+    return;
+  }
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Processing...";
+
+  try {
+    showToast("Validating booking details...", "info");
+
+    // Get equipment selections
+    const equipmentSelections = {};
+    document.querySelectorAll('[id^="free-qty-"]').forEach((input) => {
+      const qty = parseInt(input.value) || 0;
+      if (qty > 0) {
+        const equipmentId = input.id.replace("free-qty-", "");
+        equipmentSelections[equipmentId] = qty;
+      }
+    });
+
+    // STEP 1: Create the booking with JSON data
+    const bookingData = {
+      facility_id: parseInt(document.getElementById("freeFacilityId").value),
+      plan_id: 1, // Free plan (you may need to adjust this)
+      client_name: document.getElementById("freeClientName").value,
+      email_address: document.getElementById("freeClientEmail").value,
+      organization: document.getElementById("freeOrganization").value,
+      contact_number: document.getElementById("freeContactNumber").value,
+      address: document.getElementById("freeAddress").value || "",
+      event_date: document.getElementById("freeEventDate").value,
+      event_time: document.getElementById("freeEventTime").value,
+      duration: parseInt(document.getElementById("freeDuration").value),
+      attendees:
+        parseInt(document.getElementById("freeAttendees").value) || null,
+      event_title: document.getElementById("freeEventTitle").value,
+      special_requirements:
+        document.getElementById("freeSpecialRequirements").value || "",
+      selected_equipment: equipmentSelections,
+      booking_type: "faculty", // Faculty booking type
+    };
+
+    console.log("Sending booking data:", bookingData);
+
+    const bookingResponse = await fetch("/api/student/bookings/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      },
+      body: JSON.stringify(bookingData),
+    });
+
+    const bookingResult = await bookingResponse.json();
+    console.log("Booking result:", bookingResult);
+
+    if (!bookingResult.success) {
+      throw new Error(bookingResult.message || "Failed to create booking");
     }
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Processing...';
+    const bookingId = bookingResult.booking_id;
+    showToast(
+      `Booking created! ID: BK${String(bookingId).padStart(3, "0")}`,
+      "success"
+    );
 
-    try {
-        showToast('Validating booking details...', 'info');
+    // STEP 2: Upload files if any are selected
+    const permissionFile = document.getElementById("free-file-permission")
+      .files[0];
+    const requestFile = document.getElementById("free-file-request").files[0];
+    const approvalFile = document.getElementById("free-file-approval").files[0];
+    const hasFiles = permissionFile || requestFile || approvalFile;
 
-        // Get equipment selections
-        const equipmentSelections = {};
-        document.querySelectorAll('[id^="free-qty-"]').forEach(input => {
-            const qty = parseInt(input.value) || 0;
-            if (qty > 0) {
-                const equipmentId = input.id.replace('free-qty-', '');
-                equipmentSelections[equipmentId] = qty;
-            }
-        });
+    if (hasFiles) {
+      try {
+        const formData = new FormData();
+        if (permissionFile) formData.append("files[]", permissionFile);
+        if (requestFile) formData.append("files[]", requestFile);
+        if (approvalFile) formData.append("files[]", approvalFile);
 
-        // STEP 1: Create the booking with JSON data
-        const bookingData = {
-            facility_id: parseInt(document.getElementById('freeFacilityId').value),
-            plan_id: 1, // Free plan (you may need to adjust this)
-            client_name: document.getElementById('freeClientName').value,
-            email_address: document.getElementById('freeClientEmail').value,
-            organization: document.getElementById('freeOrganization').value,
-            contact_number: document.getElementById('freeContactNumber').value,
-            address: document.getElementById('freeAddress').value || '',
-            event_date: document.getElementById('freeEventDate').value,
-            event_time: document.getElementById('freeEventTime').value,
-            duration: parseInt(document.getElementById('freeDuration').value),
-            attendees: parseInt(document.getElementById('freeAttendees').value) || null,
-            event_title: document.getElementById('freeEventTitle').value,
-            special_requirements: document.getElementById('freeSpecialRequirements').value || '',
-            selected_equipment: equipmentSelections
-        };
+        showToast("Uploading documents...", "info");
 
-        console.log('Sending booking data:', bookingData);
-
-        const bookingResponse = await fetch('/api/student/bookings/create', {
-            method: 'POST',
+        const uploadResponse = await fetch(
+          `/api/student/bookings/${bookingId}/upload`,
+          {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest'
+              "X-Requested-With": "XMLHttpRequest",
             },
-            body: JSON.stringify(bookingData)
-        });
+            body: formData,
+          }
+        );
 
-        const bookingResult = await bookingResponse.json();
-        console.log('Booking result:', bookingResult);
-
-        if (!bookingResult.success) {
-            throw new Error(bookingResult.message || 'Failed to create booking');
+        const uploadResult = await uploadResponse.json();
+        if (!uploadResult.success) {
+          showToast(
+            "Booking created but some files failed to upload",
+            "warning"
+          );
+        } else {
+          showToast(
+            `${uploadResult.files.length} file(s) uploaded successfully`,
+            "success"
+          );
         }
-
-        const bookingId = bookingResult.booking_id;
-        showToast(`Booking created! ID: BK${String(bookingId).padStart(3, '0')}`, 'success');
-
-        // STEP 2: Upload files if any are selected
-        const permissionFile = document.getElementById('free-file-permission').files[0];
-        const requestFile = document.getElementById('free-file-request').files[0];
-        const approvalFile = document.getElementById('free-file-approval').files[0];
-        const hasFiles = permissionFile || requestFile || approvalFile;
-
-        if (hasFiles) {
-            try {
-                const formData = new FormData();
-                if (permissionFile) formData.append('files[]', permissionFile);
-                if (requestFile) formData.append('files[]', requestFile);
-                if (approvalFile) formData.append('files[]', approvalFile);
-
-                showToast('Uploading documents...', 'info');
-
-                const uploadResponse = await fetch(`/api/student/bookings/${bookingId}/upload`, {
-                    method: 'POST',
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    body: formData
-                });
-
-                const uploadResult = await uploadResponse.json();
-                if (!uploadResult.success) {
-                    showToast('Booking created but some files failed to upload', 'warning');
-                } else {
-                    showToast(`${uploadResult.files.length} file(s) uploaded successfully`, 'success');
-                }
-            } catch (uploadError) {
-                console.error('File upload error:', uploadError);
-                showToast('Booking created but file upload failed', 'warning');
-            }
-        }
-
-        // SUCCESS!
-        closeFreeModal();
-        showToast(`Booking submitted successfully! Reference: BK${String(bookingId).padStart(3, '0')}`, 'success');
-
-        setTimeout(() => {
-            window.location.href = '/faculty/bookings';
-        }, 2000);
-
-    } catch (error) {
-        console.error('Error submitting free booking:', error);
-        showToast(error.message || 'An error occurred while submitting your booking. Please try again.', 'error');
-
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit Free Booking';
+      } catch (uploadError) {
+        console.error("File upload error:", uploadError);
+        showToast("Booking created but file upload failed", "warning");
+      }
     }
+
+    // SUCCESS!
+    closeFreeModal();
+    showToast(
+      `Booking submitted successfully! Reference: BK${String(
+        bookingId
+      ).padStart(3, "0")}`,
+      "success"
+    );
+
+    setTimeout(() => {
+      window.location.href = "/faculty/bookings";
+    }, 2000);
+  } catch (error) {
+    console.error("Error submitting free booking:", error);
+    showToast(
+      error.message ||
+        "An error occurred while submitting your booking. Please try again.",
+      "error"
+    );
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit Free Booking";
+  }
 }
 
 // ==================== PAID BOOKING FUNCTIONS (LIKE EXTERNAL.PHP) ====================
 
-async function openPaidBookingModal(facilityKey, facilityId) {
-    currentFacilityKey = facilityKey;
-    currentFacilityId = facilityId;
+async function openPaidBookingModal(
+  facilityKey,
+  facilityId,
+  facilityStatus = {}
+) {
+  currentFacilityKey = facilityKey;
+  currentFacilityId = facilityId;
 
-    // Load facility data
-    await loadPaidFacilityData(facilityKey);
+  // Load facility status
+  loadFacilityStatus(facilityKey, "paidAvailabilityStatus");
 
-    document.getElementById('paidFacilityKey').value = facilityKey;
-    document.getElementById('paidFacilityId').value = facilityId;
+  // Load facility data
+  await loadPaidFacilityData(facilityKey);
 
-    const facility = facilityData[facilityKey];
+  document.getElementById("paidFacilityKey").value = facilityKey;
+  document.getElementById("paidFacilityId").value = facilityId;
 
-    if (!facility) {
-        showToast('Facility data not found', 'error');
-        return;
-    }
+  const facility = facilityData[facilityKey];
+
+  if (!facility) {
+    showToast("Facility data not found", "error");
+    return;
+  }
+
+  // Check facility availability
+  const isInactive = facilityStatus.is_active == 0;
+  const isMaintenance = facilityStatus.is_maintenance == 1;
+
+  const modalBody = document
+    .getElementById("paidBookingModal")
+    .querySelector(".modal-body");
+  const statusMessageDiv = modalBody.querySelector(".facility-status-message");
+
+  // Show modal first
+  document.getElementById("paidBookingModal").style.display = "block";
+
+  document.getElementById(
+    "paidModalTitle"
+  ).textContent = `Book ${facility.name}`;
+
+  if (isInactive) {
+    // Show inactive message
+    if (statusMessageDiv) statusMessageDiv.remove();
+    const inactiveMsg = document.createElement("div");
+    inactiveMsg.className = "alert alert-danger facility-status-message";
+    inactiveMsg.innerHTML =
+      '<i class="fas fa-ban"></i> <strong>Sorry!</strong> This facility is not available right now.';
+    modalBody.insertBefore(inactiveMsg, modalBody.firstChild);
+
+    // Disable the form
+    disablePaidBookingForm();
+  } else if (isMaintenance) {
+    // Show maintenance message
+    if (statusMessageDiv) statusMessageDiv.remove();
+    const maintenanceMsg = document.createElement("div");
+    maintenanceMsg.className = "alert alert-warning facility-status-message";
+    maintenanceMsg.innerHTML =
+      '<i class="fas fa-wrench"></i> <strong>Under Maintenance</strong> This facility is currently under maintenance. Please check back later.';
+    modalBody.insertBefore(maintenanceMsg, modalBody.firstChild);
+
+    // Disable the form
+    disablePaidBookingForm();
+  } else {
+    // Remove any existing status messages
+    if (statusMessageDiv) statusMessageDiv.remove();
 
     // Update the hourly rate for this specific facility
     if (facility.additional_hours_rate) {
-        HOURLY_RATE = parseFloat(facility.additional_hours_rate);
+      HOURLY_RATE = parseFloat(facility.additional_hours_rate);
     }
 
     // Update the hourly rate label
-    const hourlyRateLabel = document.getElementById('paidHourlyRateLabel');
+    const hourlyRateLabel = document.getElementById("paidHourlyRateLabel");
     if (hourlyRateLabel) {
-        hourlyRateLabel.textContent = `₱${HOURLY_RATE.toLocaleString()}`;
+      hourlyRateLabel.textContent = `₱${HOURLY_RATE.toLocaleString()}`;
     }
-
-    document.getElementById('paidModalTitle').textContent = `Book ${facility.name}`;
-    document.getElementById('paidBookingModal').style.display = 'block';
 
     // Populate plans
     populatePaidPlans(facility.plans);
@@ -349,77 +692,122 @@ async function openPaidBookingModal(facilityKey, facilityId) {
     selectedPlan = null;
     selectedAddons = [];
     selectedEquipment = {};
-    document.getElementById('paidAdditionalHours').value = 0;
-    document.getElementById('paidEventDate').value = '';
+    document.getElementById("paidAdditionalHours").value = 0;
+    document.getElementById("paidEventDate").value = "";
     updatePaidCostSummary();
 
     // Set minimum date
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('paidEventDate').min = today;
+    const today = new Date().toISOString().split("T")[0];
+    document.getElementById("paidEventDate").min = today;
+
+    // Enable the form
+    enablePaidBookingForm();
+  }
+}
+
+function disablePaidBookingForm() {
+  const form = document.getElementById("paidBookingForm");
+  if (!form) return;
+
+  const inputs = form.querySelectorAll("input, textarea, select, button");
+  inputs.forEach((input) => {
+    if (input.id !== "submitPaidBtn") {
+      input.disabled = true;
+    }
+  });
+
+  const submitBtn = document.getElementById("submitPaidBtn");
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Facility Unavailable";
+  }
+}
+
+function enablePaidBookingForm() {
+  const form = document.getElementById("paidBookingForm");
+  if (!form) return;
+
+  const inputs = form.querySelectorAll("input, textarea, select");
+  inputs.forEach((input) => {
+    input.disabled = false;
+  });
+
+  const submitBtn = document.getElementById("submitPaidBtn");
+  if (submitBtn) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit Booking";
+  }
 }
 
 function closePaidModal() {
-    document.getElementById('paidBookingModal').style.display = 'none';
-    document.getElementById('paidBookingForm').reset();
+  document.getElementById("paidBookingModal").style.display = "none";
+  document.getElementById("paidBookingForm").reset();
 }
 
 async function loadPaidFacilityData(facilityKey) {
-    try {
-        const response = await fetch(`/api/facilities/${facilityKey}/data`);
-        const data = await response.json();
+  try {
+    const response = await fetch(`/api/facilities/${facilityKey}/data`);
+    const data = await response.json();
 
-        if (data.success && data.facility) {
-            facilityData[facilityKey] = data.facility;
+    if (data.success && data.facility) {
+      facilityData[facilityKey] = data.facility;
 
-            // Also load addons and equipment
-            await loadPaidAddonsData();
-        }
-    } catch (error) {
-        console.error('Error loading facility data:', error);
+      // Also load addons and equipment
+      await loadPaidAddonsData();
     }
+  } catch (error) {
+    console.error("Error loading facility data:", error);
+  }
 }
 
 async function loadPaidAddonsData() {
-    try {
-        const response = await fetch('/api/addons');
-        const data = await response.json();
+  try {
+    const response = await fetch("/api/addons");
+    const data = await response.json();
 
-        addonsData = data
-            .filter(addon => addon.addon_key !== 'additional-hours')
-            .map(addon => ({
-                id: addon.addon_key,
-                name: addon.name,
-                description: addon.description,
-                price: parseFloat(addon.price)
-            }));
-    } catch (error) {
-        console.error('Error loading addons:', error);
-    }
+    addonsData = data
+      .filter((addon) => addon.addon_key !== "additional-hours")
+      .map((addon) => ({
+        id: addon.addon_key,
+        name: addon.name,
+        description: addon.description,
+        price: parseFloat(addon.price),
+      }));
+  } catch (error) {
+    console.error("Error loading addons:", error);
+  }
 }
 
 function populatePaidPlans(plans) {
-    const plansGrid = document.getElementById('paidPlansGrid');
-    if (!plansGrid || !plans) return;
+  const plansGrid = document.getElementById("paidPlansGrid");
+  if (!plansGrid || !plans) return;
 
-    plansGrid.innerHTML = '';
+  plansGrid.innerHTML = "";
 
-    plans.forEach(plan => {
-        const planCard = document.createElement('div');
-        planCard.className = 'plan-card';
-        planCard.onclick = () => selectPaidPlan(plan);
+  plans.forEach((plan) => {
+    const planCard = document.createElement("div");
+    planCard.className = "plan-card";
+    planCard.onclick = () => selectPaidPlan(plan);
 
-        const features = plan.features || [];
-        const includedEquipment = plan.included_equipment || [];
+    const features = plan.features || [];
+    const includedEquipment = plan.included_equipment || [];
 
-        let featuresList = features.map(f => `<li><span class="check">✓</span> ${f}</li>`).join('');
-        let equipmentList = includedEquipment.map(eq =>
-            `<li><span class="check">✓</span> ${eq.quantity_included} ${eq.unit} - ${eq.name}</li>`
-        ).join('');
+    let featuresList = features
+      .map((f) => `<li><span class="check">✓</span> ${f}</li>`)
+      .join("");
+    let equipmentList = includedEquipment
+      .map(
+        (eq) =>
+          `<li><span class="check">✓</span> ${eq.quantity_included} ${eq.unit} - ${eq.name}</li>`
+      )
+      .join("");
 
-        planCard.innerHTML = `
+    planCard.innerHTML = `
             <div class="plan-header">
                 <h3 class="plan-name">${plan.name}</h3>
-                <div class="plan-price">₱${parseFloat(plan.price).toLocaleString()}</div>
+                <div class="plan-price">₱${parseFloat(
+                  plan.price
+                ).toLocaleString()}</div>
                 <p class="plan-duration">${plan.duration}</p>
             </div>
             <div class="plan-features">
@@ -430,149 +818,159 @@ function populatePaidPlans(plans) {
             </div>
         `;
 
-        plansGrid.appendChild(planCard);
-    });
+    plansGrid.appendChild(planCard);
+  });
 }
 
 function selectPaidPlan(plan) {
-    selectedPlan = plan;
-    document.getElementById('paidSelectedPlanId').value = plan.id;
+  selectedPlan = plan;
+  document.getElementById("paidSelectedPlanId").value = plan.id;
 
-    // Update UI to show selected plan
-    document.querySelectorAll('.plan-card').forEach(card => {
-        card.classList.remove('selected');
-    });
-    event.target.closest('.plan-card').classList.add('selected');
+  // Update UI to show selected plan
+  document.querySelectorAll(".plan-card").forEach((card) => {
+    card.classList.remove("selected");
+  });
+  event.target.closest(".plan-card").classList.add("selected");
 
-    updatePaidCostSummary();
-    showToast(`Selected: ${plan.name}`, 'success');
+  updatePaidCostSummary();
+  showToast(`Selected: ${plan.name}`, "success");
 }
 
 function populatePaidAddons() {
-    const addonsGrid = document.getElementById('paidAddonsGrid');
-    if (!addonsGrid) return;
+  const addonsGrid = document.getElementById("paidAddonsGrid");
+  if (!addonsGrid) return;
 
-    addonsGrid.innerHTML = '';
+  addonsGrid.innerHTML = "";
 
-    if (!addonsData || addonsData.length === 0) {
-        addonsGrid.innerHTML = '<p style="color: #6c757d;">No add-ons available.</p>';
-        return;
-    }
+  if (!addonsData || addonsData.length === 0) {
+    addonsGrid.innerHTML =
+      '<p style="color: #6c757d;">No add-ons available.</p>';
+    return;
+  }
 
-    addonsData.forEach(addon => {
-        const addonCard = document.createElement('div');
-        addonCard.className = 'addon-card';
+  addonsData.forEach((addon) => {
+    const addonCard = document.createElement("div");
+    addonCard.className = "addon-card";
 
-        addonCard.innerHTML = `
+    addonCard.innerHTML = `
             <div class="addon-checkbox">
-                <input type="checkbox" id="paid-addon-${addon.id}" onchange="togglePaidAddon('${addon.id}')">
+                <input type="checkbox" id="paid-addon-${
+                  addon.id
+                }" onchange="togglePaidAddon('${addon.id}')">
             </div>
             <div class="addon-info">
                 <h4 class="addon-name">${addon.name}</h4>
-                <p class="addon-description">${addon.description || ''}</p>
+                <p class="addon-description">${addon.description || ""}</p>
             </div>
             <div class="addon-price">₱${addon.price.toLocaleString()}</div>
         `;
 
-        addonsGrid.appendChild(addonCard);
-    });
+    addonsGrid.appendChild(addonCard);
+  });
 }
 
 function togglePaidAddon(addonId) {
-    const checkbox = document.getElementById(`paid-addon-${addonId}`);
+  const checkbox = document.getElementById(`paid-addon-${addonId}`);
 
-    if (checkbox.checked) {
-        selectedAddons.push(addonId);
-    } else {
-        selectedAddons = selectedAddons.filter(id => id !== addonId);
-    }
+  if (checkbox.checked) {
+    selectedAddons.push(addonId);
+  } else {
+    selectedAddons = selectedAddons.filter((id) => id !== addonId);
+  }
 
-    updatePaidCostSummary();
+  updatePaidCostSummary();
 }
 
 function showPaidEquipmentDatePrompt() {
-    const equipmentGrid = document.getElementById('paidEquipmentGrid');
-    const placeholder = document.getElementById('paidEquipmentDatePlaceholder');
+  const equipmentGrid = document.getElementById("paidEquipmentGrid");
+  const placeholder = document.getElementById("paidEquipmentDatePlaceholder");
 
-    if (equipmentGrid) equipmentGrid.style.display = 'none';
-    if (placeholder) placeholder.style.display = 'block';
+  if (equipmentGrid) equipmentGrid.style.display = "none";
+  if (placeholder) placeholder.style.display = "block";
 }
 
 async function handlePaidDateChange() {
-    const eventDate = document.getElementById('paidEventDate').value;
+  const eventDate = document.getElementById("paidEventDate").value;
 
-    if (eventDate) {
-        // Load equipment for this date
-        await loadPaidEquipmentForDate(eventDate);
+  if (eventDate) {
+    // Load equipment for this date
+    await loadPaidEquipmentForDate(eventDate);
 
-        // Show equipment grid
-        document.getElementById('paidEquipmentGrid').style.display = 'grid';
-        document.getElementById('paidEquipmentDatePlaceholder').style.display = 'none';
-    }
+    // Show equipment grid
+    document.getElementById("paidEquipmentGrid").style.display = "grid";
+    document.getElementById("paidEquipmentDatePlaceholder").style.display =
+      "none";
+  }
 }
 
 async function loadPaidEquipmentForDate(eventDate) {
-    try {
-        const response = await fetch('/api/bookings/equipment-availability', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest'
-            },
-            body: JSON.stringify({
-                event_date: eventDate,
-                facility_id: currentFacilityId
-            })
-        });
+  try {
+    const response = await fetch("/api/bookings/equipment-availability", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      },
+      body: JSON.stringify({
+        event_date: eventDate,
+        facility_id: currentFacilityId,
+      }),
+    });
 
-        const result = await response.json();
+    const result = await response.json();
 
-        if (result.success && result.equipment) {
-            // Filter for rentable equipment only
-            equipmentData = result.equipment
-                .filter(eq => (eq.is_rentable == 1 && parseFloat(eq.rate || 0) > 0))
-                .filter(eq => eq.category === 'furniture' || eq.category === 'logistics')
-                .map(equipment => ({
-                    id: equipment.id.toString(),
-                    name: equipment.name,
-                    rate: parseFloat(equipment.rate || 0),
-                    unit: equipment.unit || 'piece',
-                    available: parseInt(equipment.available_on_date || 0),
-                    category: equipment.category
-                }));
+    if (result.success && result.equipment) {
+      // Filter for rentable equipment only
+      equipmentData = result.equipment
+        .filter((eq) => eq.is_rentable == 1 && parseFloat(eq.rate || 0) > 0)
+        .filter(
+          (eq) => eq.category === "furniture" || eq.category === "logistics"
+        )
+        .map((equipment) => ({
+          id: equipment.id.toString(),
+          name: equipment.name,
+          rate: parseFloat(equipment.rate || 0),
+          unit: equipment.unit || "piece",
+          available: parseInt(equipment.available_on_date || 0),
+          category: equipment.category,
+        }));
 
-            populatePaidEquipment();
-        }
-    } catch (error) {
-        console.error('Error loading equipment:', error);
+      populatePaidEquipment();
     }
+  } catch (error) {
+    console.error("Error loading equipment:", error);
+  }
 }
 
 function populatePaidEquipment() {
-    const equipmentGrid = document.getElementById('paidEquipmentGrid');
-    if (!equipmentGrid) return;
+  const equipmentGrid = document.getElementById("paidEquipmentGrid");
+  if (!equipmentGrid) return;
 
-    equipmentGrid.innerHTML = '';
+  equipmentGrid.innerHTML = "";
 
-    if (!equipmentData || equipmentData.length === 0) {
-        equipmentGrid.innerHTML = '<p style="color: #6c757d;">No rental equipment available.</p>';
-        return;
-    }
+  if (!equipmentData || equipmentData.length === 0) {
+    equipmentGrid.innerHTML =
+      '<p style="color: #6c757d;">No rental equipment available.</p>';
+    return;
+  }
 
-    equipmentData.forEach(equipment => {
-        const equipmentCard = document.createElement('div');
-        equipmentCard.className = 'equipment-card';
+  equipmentData.forEach((equipment) => {
+    const equipmentCard = document.createElement("div");
+    equipmentCard.className = "equipment-card";
 
-        const isAvailable = equipment.available > 0;
+    const isAvailable = equipment.available > 0;
 
-        equipmentCard.innerHTML = `
+    equipmentCard.innerHTML = `
             <div class="equipment-info">
                 <h4 class="equipment-name">${equipment.name}</h4>
                 <p class="equipment-description">${equipment.category}</p>
-                <span class="equipment-price">₱${equipment.rate.toLocaleString()}/${equipment.unit}</span>
+                <span class="equipment-price">₱${equipment.rate.toLocaleString()}/${
+      equipment.unit
+    }</span>
             </div>
             <div class="equipment-actions-card">
-                ${!isAvailable
+                ${
+                  !isAvailable
                     ? `<input type="number" class="form-control qty-input" value="0" disabled>
                        <label class="equipment-label" style="color: #dc2626;">Out of Stock</label>`
                     : `<input type="number" class="form-control qty-input"
@@ -584,188 +982,226 @@ function populatePaidEquipment() {
             </div>
         `;
 
-        equipmentGrid.appendChild(equipmentCard);
-    });
+    equipmentGrid.appendChild(equipmentCard);
+  });
 }
 
 function updatePaidEquipment(equipmentId) {
-    const quantityInput = document.getElementById(`paid-qty-${equipmentId}`);
-    const quantity = parseInt(quantityInput.value) || 0;
-    const equipment = equipmentData.find(e => e.id === equipmentId);
+  const quantityInput = document.getElementById(`paid-qty-${equipmentId}`);
+  const quantity = parseInt(quantityInput.value) || 0;
+  const equipment = equipmentData.find((e) => e.id === equipmentId);
 
-    if (!equipment) return;
+  if (!equipment) return;
 
-    if (quantity > equipment.available) {
-        alert(`Only ${equipment.available} units available for ${equipment.name}`);
-        quantityInput.value = equipment.available;
-        selectedEquipment[equipmentId] = equipment.available;
-    } else if (quantity > 0) {
-        selectedEquipment[equipmentId] = quantity;
-    } else {
-        delete selectedEquipment[equipmentId];
-    }
+  if (quantity > equipment.available) {
+    alert(`Only ${equipment.available} units available for ${equipment.name}`);
+    quantityInput.value = equipment.available;
+    selectedEquipment[equipmentId] = equipment.available;
+  } else if (quantity > 0) {
+    selectedEquipment[equipmentId] = quantity;
+  } else {
+    delete selectedEquipment[equipmentId];
+  }
 
-    updatePaidCostSummary();
+  updatePaidCostSummary();
 }
 
 function updatePaidCostSummary() {
-    let basePrice = selectedPlan ? selectedPlan.price : 0;
+  let basePrice = selectedPlan ? selectedPlan.price : 0;
 
-    // Calculate addon cost
-    let addonsPrice = 0;
-    selectedAddons.forEach(addonId => {
-        const addon = addonsData.find(a => a.id === addonId);
-        if (addon) addonsPrice += addon.price;
-    });
+  // Calculate addon cost
+  let addonsPrice = 0;
+  selectedAddons.forEach((addonId) => {
+    const addon = addonsData.find((a) => a.id === addonId);
+    if (addon) addonsPrice += addon.price;
+  });
 
-    // Calculate equipment cost
-    let equipmentPrice = 0;
-    Object.keys(selectedEquipment).forEach(equipmentId => {
-        const equipment = equipmentData.find(e => e.id === equipmentId);
-        const quantity = selectedEquipment[equipmentId];
-        if (equipment && quantity > 0) {
-            equipmentPrice += equipment.rate * quantity;
-        }
-    });
-
-    // Calculate additional hours cost
-    const additionalHours = parseInt(document.getElementById('paidAdditionalHours')?.value) || 0;
-    const additionalHoursPrice = additionalHours * HOURLY_RATE;
-
-    // Update display
-    document.getElementById('paidBaseCost').textContent = `₱${basePrice.toLocaleString()}`;
-    document.getElementById('paidMaintenanceCost').textContent = `₱${MAINTENANCE_FEE.toLocaleString()}`;
-
-    // Build addon costs display
-    let addonCostsHTML = '';
-    if (addonsPrice > 0) {
-        addonCostsHTML += `<div class="cost-row"><span>Add-ons:</span><span>₱${addonsPrice.toLocaleString()}</span></div>`;
+  // Calculate equipment cost
+  let equipmentPrice = 0;
+  Object.keys(selectedEquipment).forEach((equipmentId) => {
+    const equipment = equipmentData.find((e) => e.id === equipmentId);
+    const quantity = selectedEquipment[equipmentId];
+    if (equipment && quantity > 0) {
+      equipmentPrice += equipment.rate * quantity;
     }
-    if (equipmentPrice > 0) {
-        addonCostsHTML += `<div class="cost-row"><span>Equipment:</span><span>₱${equipmentPrice.toLocaleString()}</span></div>`;
-    }
-    if (additionalHoursPrice > 0) {
-        addonCostsHTML += `<div class="cost-row"><span>Additional Hours:</span><span>₱${additionalHoursPrice.toLocaleString()}</span></div>`;
-    }
-    document.getElementById('paidAddonCosts').innerHTML = addonCostsHTML;
+  });
 
-    const total = basePrice + addonsPrice + equipmentPrice + additionalHoursPrice + MAINTENANCE_FEE;
-    document.getElementById('paidTotalCost').textContent = `₱${total.toLocaleString()}`;
+  // Calculate additional hours cost
+  const additionalHours =
+    parseInt(document.getElementById("paidAdditionalHours")?.value) || 0;
+  const additionalHoursPrice = additionalHours * HOURLY_RATE;
+
+  // Update display
+  document.getElementById(
+    "paidBaseCost"
+  ).textContent = `₱${basePrice.toLocaleString()}`;
+  document.getElementById(
+    "paidMaintenanceCost"
+  ).textContent = `₱${MAINTENANCE_FEE.toLocaleString()}`;
+
+  // Build addon costs display
+  let addonCostsHTML = "";
+  if (addonsPrice > 0) {
+    addonCostsHTML += `<div class="cost-row"><span>Add-ons:</span><span>₱${addonsPrice.toLocaleString()}</span></div>`;
+  }
+  if (equipmentPrice > 0) {
+    addonCostsHTML += `<div class="cost-row"><span>Equipment:</span><span>₱${equipmentPrice.toLocaleString()}</span></div>`;
+  }
+  if (additionalHoursPrice > 0) {
+    addonCostsHTML += `<div class="cost-row"><span>Additional Hours:</span><span>₱${additionalHoursPrice.toLocaleString()}</span></div>`;
+  }
+  document.getElementById("paidAddonCosts").innerHTML = addonCostsHTML;
+
+  const total =
+    basePrice +
+    addonsPrice +
+    equipmentPrice +
+    additionalHoursPrice +
+    MAINTENANCE_FEE;
+  document.getElementById(
+    "paidTotalCost"
+  ).textContent = `₱${total.toLocaleString()}`;
 }
 
 async function submitPaidBooking() {
-    const form = document.getElementById('paidBookingForm');
+  const form = document.getElementById("paidBookingForm");
+  const statusIndicator = document.getElementById("paidAvailabilityStatus");
 
-    if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
+  // Check if facility is inactive
+  if (statusIndicator && statusIndicator.classList.contains("maintenance")) {
+    showToast(
+      "Cannot book an inactive facility. Please select another facility.",
+      "error"
+    );
+    return;
+  }
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  if (!selectedPlan) {
+    showToast("Please select a package first.", "error");
+    return;
+  }
+
+  const additionalHours =
+    parseInt(document.getElementById("paidAdditionalHours")?.value) || 0;
+  const durationMatch = selectedPlan.duration.match(/\d+/);
+  const planDuration = durationMatch ? parseInt(durationMatch[0]) : 0;
+  const totalDuration = planDuration + additionalHours;
+
+  // Calculate total cost
+  let basePrice = selectedPlan.price;
+  let addonsPrice = 0;
+  selectedAddons.forEach((addonId) => {
+    const addon = addonsData.find((a) => a.id === addonId);
+    if (addon) addonsPrice += addon.price;
+  });
+
+  let equipmentPrice = 0;
+  Object.keys(selectedEquipment).forEach((equipmentId) => {
+    const equipment = equipmentData.find((e) => e.id === equipmentId);
+    const quantity = selectedEquipment[equipmentId];
+    if (equipment && quantity > 0) {
+      equipmentPrice += equipment.rate * quantity;
     }
+  });
 
-    if (!selectedPlan) {
-        showToast('Please select a package first.', 'error');
-        return;
-    }
+  const additionalHoursPrice = additionalHours * HOURLY_RATE;
+  const totalCost =
+    basePrice +
+    addonsPrice +
+    equipmentPrice +
+    additionalHoursPrice +
+    MAINTENANCE_FEE;
 
-    const additionalHours = parseInt(document.getElementById('paidAdditionalHours')?.value) || 0;
-    const durationMatch = selectedPlan.duration.match(/\d+/);
-    const planDuration = durationMatch ? parseInt(durationMatch[0]) : 0;
-    const totalDuration = planDuration + additionalHours;
+  const formData = {
+    facility_key: currentFacilityKey,
+    plan_id: selectedPlan.id,
+    client_name: document.getElementById("paidClientName").value,
+    contact_number: document.getElementById("paidContactNumber").value,
+    email_address: document.getElementById("paidEmailAddress").value,
+    organization: document.getElementById("paidOrganization").value,
+    address: document.getElementById("paidAddress").value,
+    event_date: document.getElementById("paidEventDate").value,
+    event_time: document.getElementById("paidEventTime").value,
+    duration: totalDuration,
+    attendees: document.getElementById("paidAttendees").value || null,
+    event_title: document.getElementById("paidEventTitle").value,
+    special_requirements: document.getElementById("paidSpecialRequirements")
+      .value,
+    selected_addons: selectedAddons,
+    selected_equipment: selectedEquipment,
+    additional_hours: additionalHours,
+    maintenance_fee: MAINTENANCE_FEE,
+    total_cost: totalCost,
+  };
 
-    // Calculate total cost
-    let basePrice = selectedPlan.price;
-    let addonsPrice = 0;
-    selectedAddons.forEach(addonId => {
-        const addon = addonsData.find(a => a.id === addonId);
-        if (addon) addonsPrice += addon.price;
+  try {
+    const response = await fetch("/api/bookings", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      },
+      body: JSON.stringify(formData),
     });
 
-    let equipmentPrice = 0;
-    Object.keys(selectedEquipment).forEach(equipmentId => {
-        const equipment = equipmentData.find(e => e.id === equipmentId);
-        const quantity = selectedEquipment[equipmentId];
-        if (equipment && quantity > 0) {
-            equipmentPrice += equipment.rate * quantity;
-        }
-    });
+    const result = await response.json();
 
-    const additionalHoursPrice = additionalHours * HOURLY_RATE;
-    const totalCost = basePrice + addonsPrice + equipmentPrice + additionalHoursPrice + MAINTENANCE_FEE;
+    if (result.success) {
+      document.getElementById("paidReferenceNumber").textContent =
+        "BK" + String(result.booking_id).padStart(3, "0");
+      closePaidModal();
 
-    const formData = {
-        facility_key: currentFacilityKey,
-        plan_id: selectedPlan.id,
-        client_name: document.getElementById('paidClientName').value,
-        contact_number: document.getElementById('paidContactNumber').value,
-        email_address: document.getElementById('paidEmailAddress').value,
-        organization: document.getElementById('paidOrganization').value,
-        address: document.getElementById('paidAddress').value,
-        event_date: document.getElementById('paidEventDate').value,
-        event_time: document.getElementById('paidEventTime').value,
-        duration: totalDuration,
-        attendees: document.getElementById('paidAttendees').value || null,
-        event_title: document.getElementById('paidEventTitle').value,
-        special_requirements: document.getElementById('paidSpecialRequirements').value,
-        selected_addons: selectedAddons,
-        selected_equipment: selectedEquipment,
-        additional_hours: additionalHours,
-        maintenance_fee: MAINTENANCE_FEE,
-        total_cost: totalCost
-    };
+      // Show Bootstrap success modal
+      const successModal = new bootstrap.Modal(
+        document.getElementById("paidSuccessModal")
+      );
+      successModal.show();
 
-    try {
-        const response = await fetch('/api/bookings', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest'
-            },
-            body: JSON.stringify(formData)
-        });
-
-        const result = await response.json();
-
-        if (result.success) {
-            document.getElementById('paidReferenceNumber').textContent = 'BK' + String(result.booking_id).padStart(3, '0');
-            closePaidModal();
-
-            // Show Bootstrap success modal
-            const successModal = new bootstrap.Modal(document.getElementById('paidSuccessModal'));
-            successModal.show();
-
-            // Reset form
-            form.reset();
-            selectedPlan = null;
-            selectedAddons = [];
-            selectedEquipment = {};
-        } else {
-            showToast(result.message || 'Failed to create booking', 'error');
-        }
-    } catch (error) {
-        console.error('Error submitting paid booking:', error);
-        showToast('An error occurred while submitting your booking. Please try again.', 'error');
+      // Reset form
+      form.reset();
+      selectedPlan = null;
+      selectedAddons = [];
+      selectedEquipment = {};
+    } else {
+      showToast(result.message || "Failed to create booking", "error");
     }
+  } catch (error) {
+    console.error("Error submitting paid booking:", error);
+    showToast(
+      "An error occurred while submitting your booking. Please try again.",
+      "error"
+    );
+  }
 }
 
 function closePaidSuccessModal() {
-    const modal = bootstrap.Modal.getInstance(document.getElementById('paidSuccessModal'));
-    if (modal) modal.hide();
-    window.location.href = '/faculty/bookings';
+  const modal = bootstrap.Modal.getInstance(
+    document.getElementById("paidSuccessModal")
+  );
+  if (modal) modal.hide();
+  window.location.href = "/faculty/bookings";
 }
 
 // ==================== UTILITY FUNCTIONS ====================
 
-function showToast(message, type = 'info') {
-    const toastContainer = document.getElementById('toastContainer') || createToastContainer();
+function showToast(message, type = "info") {
+  const toastContainer =
+    document.getElementById("toastContainer") || createToastContainer();
 
-    const toastId = 'toast-' + Date.now();
-    const icons = {
-        error: '❌',
-        success: '✅',
-        warning: '⚠️',
-        info: 'ℹ️'
-    };
+  const toastId = "toast-" + Date.now();
+  const icons = {
+    error: "❌",
+    success: "✅",
+    warning: "⚠️",
+    info: "ℹ️",
+  };
 
-    const toastHTML = `
+  const toastHTML = `
         <div id="${toastId}" class="toast-notification toast-${type}">
             <div class="toast-content">
                 <span class="toast-icon">${icons[type]}</span>
@@ -775,16 +1211,16 @@ function showToast(message, type = 'info') {
         </div>
     `;
 
-    toastContainer.insertAdjacentHTML('beforeend', toastHTML);
-    setTimeout(() => closeToast(toastId), 5000);
+  toastContainer.insertAdjacentHTML("beforeend", toastHTML);
+  setTimeout(() => closeToast(toastId), 5000);
 }
 
 function createToastContainer() {
-    let container = document.getElementById('toastContainer');
-    if (!container) {
-        container = document.createElement('div');
-        container.id = 'toastContainer';
-        container.style.cssText = `
+  let container = document.getElementById("toastContainer");
+  if (!container) {
+    container = document.createElement("div");
+    container.id = "toastContainer";
+    container.style.cssText = `
             position: fixed;
             top: 20px;
             right: 20px;
@@ -794,25 +1230,27 @@ function createToastContainer() {
             gap: 10px;
             max-width: 400px;
         `;
-        document.body.appendChild(container);
-    }
-    return container;
+    document.body.appendChild(container);
+  }
+  return container;
 }
 
 function closeToast(toastId) {
-    const toast = document.getElementById(toastId);
-    if (toast) {
-        toast.style.animation = 'slideOut 0.3s ease-out';
-        setTimeout(() => toast.remove(), 300);
-    }
+  const toast = document.getElementById(toastId);
+  if (toast) {
+    toast.style.animation = "slideOut 0.3s ease-out";
+    setTimeout(() => toast.remove(), 300);
+  }
 }
 
 // ==================== FORM VALIDATION LISTENERS ====================
-document.addEventListener('DOMContentLoaded', function() {
-    // Free form validation
-    const freeFormInputs = document.querySelectorAll('#freeBookingForm input, #freeBookingForm textarea');
-    freeFormInputs.forEach(input => {
-        input.addEventListener('input', validateFreeForm);
-        input.addEventListener('change', validateFreeForm);
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  // Free form validation
+  const freeFormInputs = document.querySelectorAll(
+    "#freeBookingForm input, #freeBookingForm textarea"
+  );
+  freeFormInputs.forEach((input) => {
+    input.addEventListener("input", validateFreeForm);
+    input.addEventListener("change", validateFreeForm);
+  });
 });

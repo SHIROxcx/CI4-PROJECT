@@ -37,12 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
 // Load settings from database
 async function loadSettings() {
   try {
-    const response = await fetch('/admin/plans/getSettings', {
-      method: 'GET',
+    const response = await fetch("/admin/plans/getSettings", {
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json',
-        'X-Requested-With': 'XMLHttpRequest'
-      }
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      },
     });
 
     if (response.ok) {
@@ -53,22 +53,26 @@ async function loadSettings() {
         OVERTIME_RATE = parseFloat(result.data.overtime_rate) || 5000;
 
         // Update the hourly rate label if it exists
-        const hourlyRateLabel = document.getElementById('hourlyRateLabel');
+        const hourlyRateLabel = document.getElementById("hourlyRateLabel");
         if (hourlyRateLabel) {
           hourlyRateLabel.textContent = `₱${HOURLY_RATE}`;
         }
 
         // Update the maintenance fee display if it exists
-        const maintenanceCost = document.getElementById('maintenanceCost');
+        const maintenanceCost = document.getElementById("maintenanceCost");
         if (maintenanceCost) {
           maintenanceCost.textContent = `₱${MAINTENANCE_FEE.toLocaleString()}`;
         }
 
-        console.log('Settings loaded:', { MAINTENANCE_FEE, HOURLY_RATE, OVERTIME_RATE });
+        console.log("Settings loaded:", {
+          MAINTENANCE_FEE,
+          HOURLY_RATE,
+          OVERTIME_RATE,
+        });
       }
     }
   } catch (error) {
-    console.error('Error loading settings:', error);
+    console.error("Error loading settings:", error);
     // Keep default values if loading fails
   }
 }
@@ -76,18 +80,34 @@ async function loadSettings() {
 // Load facility data from database
 async function loadFacilityData() {
   try {
-    const facilities = [
-      "auditorium",
-      "gymnasium",
-      "function-hall",
-      "pearl-restaurant",
-      "staff-house",
-      "classrooms",
-    ];
+    // First, get the list of active facilities from API
+    const listResponse = await fetch("/api/facilities/list");
+
+    if (!listResponse.ok) {
+      console.error(
+        `Failed to load facilities list: HTTP ${listResponse.status}`
+      );
+      showToast("Warning: Could not load facilities list", "warning");
+      return;
+    }
+
+    const listData = await listResponse.json();
+    console.log("Facilities list from API:", listData);
+
+    if (!listData.success || !listData.facilities) {
+      console.warn("No facilities returned from API");
+      showToast("Warning: No facilities available", "warning");
+      return;
+    }
+
+    // Extract facility keys from the list
+    const facilityKeys = listData.facilities.map((f) => f.facility_key);
+    console.log("Facility keys to load:", facilityKeys);
 
     facilityData = {};
 
-    for (const facilityKey of facilities) {
+    // Load detailed data for each facility
+    for (const facilityKey of facilityKeys) {
       try {
         const response = await fetch(`/api/facilities/${facilityKey}/data`);
 
@@ -105,8 +125,14 @@ async function loadFacilityData() {
           facilityData[facilityKey] = data.facility;
 
           // DEBUG LOG: Check if additional_hours_rate is present
-          console.log(`[DEBUG] ${facilityKey} additional_hours_rate:`, data.facility.additional_hours_rate);
-          console.log(`[DEBUG] ${facilityKey} full facility object:`, data.facility);
+          console.log(
+            `[DEBUG] ${facilityKey} additional_hours_rate:`,
+            data.facility.additional_hours_rate
+          );
+          console.log(
+            `[DEBUG] ${facilityKey} full facility object:`,
+            data.facility
+          );
         } else {
           console.warn(`No facility data returned for ${facilityKey}`);
         }
@@ -157,14 +183,14 @@ async function loadEquipmentData(eventDate = null, facilityId = null) {
     const params = new URLSearchParams();
 
     if (eventDate) {
-      params.append('event_date', eventDate);
+      params.append("event_date", eventDate);
     }
     if (facilityId) {
-      params.append('facility_id', facilityId);
+      params.append("facility_id", facilityId);
     }
 
     if (params.toString()) {
-      url += '?' + params.toString();
+      url += "?" + params.toString();
     }
 
     const response = await fetch(url);
@@ -199,7 +225,9 @@ async function loadEquipmentData(eventDate = null, facilityId = null) {
         name: equipment.name,
         rate: parseFloat(equipment.rate || 0),
         unit: equipment.unit || "piece",
-        available: result.filtered_by_date ? parseInt(equipment.available_on_date || 0) : parseInt(equipment.available || 0),
+        available: result.filtered_by_date
+          ? parseInt(equipment.available_on_date || 0)
+          : parseInt(equipment.available || 0),
         booked_quantity: parseInt(equipment.booked_quantity || 0),
         category: equipment.category,
       }));
@@ -278,29 +306,39 @@ function openBookingModal(facilityId) {
   }
 
   // DEBUG LOG: Log the entire facility object
-  console.log('=== OPENING BOOKING MODAL DEBUG ===');
-  console.log('Current Facility ID:', facilityId);
-  console.log('Facility Object:', facility);
-  console.log('additional_hours_rate from facility:', facility.additional_hours_rate);
-  console.log('Type of additional_hours_rate:', typeof facility.additional_hours_rate);
+  console.log("=== OPENING BOOKING MODAL DEBUG ===");
+  console.log("Current Facility ID:", facilityId);
+  console.log("Facility Object:", facility);
+  console.log(
+    "additional_hours_rate from facility:",
+    facility.additional_hours_rate
+  );
+  console.log(
+    "Type of additional_hours_rate:",
+    typeof facility.additional_hours_rate
+  );
 
   // Update the hourly rate for this specific facility
   if (facility.additional_hours_rate) {
     HOURLY_RATE = parseFloat(facility.additional_hours_rate);
-    console.log(`✓ Facility-specific rate loaded: ₱${HOURLY_RATE}/hour for ${facility.name}`);
+    console.log(
+      `✓ Facility-specific rate loaded: ₱${HOURLY_RATE}/hour for ${facility.name}`
+    );
   } else {
     HOURLY_RATE = 500; // Fallback to default
-    console.log(`✗ additional_hours_rate is missing! Using default rate: ₱${HOURLY_RATE}/hour for ${facility.name}`);
-    console.log('Facility keys available:', Object.keys(facility));
+    console.log(
+      `✗ additional_hours_rate is missing! Using default rate: ₱${HOURLY_RATE}/hour for ${facility.name}`
+    );
+    console.log("Facility keys available:", Object.keys(facility));
   }
 
   // Update the hourly rate label in the UI
-  const hourlyRateLabel = document.getElementById('hourlyRateLabel');
+  const hourlyRateLabel = document.getElementById("hourlyRateLabel");
   if (hourlyRateLabel) {
     hourlyRateLabel.textContent = `₱${HOURLY_RATE.toLocaleString()}`;
-    console.log('Updated hourly rate label to:', hourlyRateLabel.textContent);
+    console.log("Updated hourly rate label to:", hourlyRateLabel.textContent);
   }
-  console.log('=== END OPENING BOOKING MODAL DEBUG ===');
+  console.log("=== END OPENING BOOKING MODAL DEBUG ===");
 
   document.getElementById("modalTitle").textContent = `Book ${facility.name}`;
   document.getElementById("bookingModal").style.display = "block";
@@ -326,7 +364,7 @@ function openBookingModal(facilityId) {
   setTimeout(() => {
     addBookingValidationListeners();
     initializeAddressCounter();
-    addEventDateListener();  // Add listener for date changes
+    addEventDateListener(); // Add listener for date changes
   }, 100);
 }
 
@@ -356,7 +394,7 @@ function addEventDateListener() {
   eventDateField.parentNode.replaceChild(newEventDateField, eventDateField);
 
   // Add new listener
-  newEventDateField.addEventListener("change", async function() {
+  newEventDateField.addEventListener("change", async function () {
     const selectedDate = this.value;
 
     if (!selectedDate || !currentFacility) return;
@@ -389,12 +427,12 @@ function addEventDateListener() {
 // Helper function to get facility ID from key
 function getFacilityIdFromKey(facilityKey) {
   const facilityIds = {
-    "auditorium": 1,
-    "gymnasium": 2,
+    auditorium: 1,
+    gymnasium: 2,
     "function-hall": 4,
     "pearl-restaurant": 6,
     "staff-house": 7,
-    "classrooms": 8
+    classrooms: 8,
   };
   return facilityIds[facilityKey] || null;
 }
@@ -692,7 +730,6 @@ function updateCostSummary() {
   });
 }
 
-
 // Calculate total duration from plan + extended hours
 function calculateTotalDuration() {
   if (!selectedPlan) return 0;
@@ -905,7 +942,10 @@ async function submitBooking() {
       // Show the actual error message from the server
       console.log("Response not OK:", response.status, response.statusText);
       console.log("Error message:", result.message);
-      showToast(result.message || `HTTP error! status: ${response.status}`, "error");
+      showToast(
+        result.message || `HTTP error! status: ${response.status}`,
+        "error"
+      );
       return;
     }
 
@@ -943,7 +983,6 @@ async function submitBooking() {
     );
   }
 }
-
 
 function calculateTotalCost() {
   // Base price from selected plan
@@ -1102,83 +1141,82 @@ function updateEquipment(equipmentId) {
   updateCostSummary();
 }
 // Dropdown toggle functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all dropdown toggles
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-    
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Get the parent dropdown element
-            const dropdown = this.closest('.dropdown');
-            
-            // Close other dropdowns
-            document.querySelectorAll('.dropdown').forEach(otherDropdown => {
-                if (otherDropdown !== dropdown) {
-                    otherDropdown.classList.remove('open');
-                }
-            });
-            
-            // Toggle current dropdown
-            dropdown.classList.toggle('open');
-        });
-    });
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.dropdown')) {
-            document.querySelectorAll('.dropdown').forEach(dropdown => {
-                dropdown.classList.remove('open');
-            });
+document.addEventListener("DOMContentLoaded", function () {
+  // Get all dropdown toggles
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+  dropdownToggles.forEach((toggle) => {
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Get the parent dropdown element
+      const dropdown = this.closest(".dropdown");
+
+      // Close other dropdowns
+      document.querySelectorAll(".dropdown").forEach((otherDropdown) => {
+        if (otherDropdown !== dropdown) {
+          otherDropdown.classList.remove("open");
         }
+      });
+
+      // Toggle current dropdown
+      dropdown.classList.toggle("open");
     });
-    
-    // Handle submenu item clicks
-    const submenuItems = document.querySelectorAll('.submenu-item');
-    submenuItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            // Remove active class from all submenu items
-            submenuItems.forEach(i => i.classList.remove('active'));
-            
-            // Add active class to clicked item
-            this.classList.add('active');
-        });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown")) {
+      document.querySelectorAll(".dropdown").forEach((dropdown) => {
+        dropdown.classList.remove("open");
+      });
+    }
+  });
+
+  // Handle submenu item clicks
+  const submenuItems = document.querySelectorAll(".submenu-item");
+  submenuItems.forEach((item) => {
+    item.addEventListener("click", function (e) {
+      // Remove active class from all submenu items
+      submenuItems.forEach((i) => i.classList.remove("active"));
+
+      // Add active class to clicked item
+      this.classList.add("active");
     });
+  });
 });
 
 // ========================================
 // TOAST NOTIFICATION SYSTEM
 // ========================================
-function showToast(message, type = 'info') {
-  const toastContainer = document.getElementById('toastContainer');
-  
-  const toast = document.createElement('div');
+function showToast(message, type = "info") {
+  const toastContainer = document.getElementById("toastContainer");
+
+  const toast = document.createElement("div");
   toast.className = `toast toast-${type}`;
-  
-  const icon = {
-    success: '✅',
-    error: '❌',
-    warning: '⚠️',
-    info: 'ℹ️'
-  }[type] || 'ℹ️';
-  
+
+  const icon =
+    {
+      success: "✅",
+      error: "❌",
+      warning: "⚠️",
+      info: "ℹ️",
+    }[type] || "ℹ️";
+
   toast.innerHTML = `
     <span class="toast-icon">${icon}</span>
     <span class="toast-message">${message}</span>
     <button class="toast-close" onclick="this.parentElement.remove()">×</button>
   `;
-  
+
   toastContainer.appendChild(toast);
-  
+
   // Auto remove after 5 seconds
   setTimeout(() => {
-    toast.classList.add('toast-fade-out');
+    toast.classList.add("toast-fade-out");
     setTimeout(() => toast.remove(), 300);
   }, 5000);
 }
-
-
 
 // ========================================
 // INLINE VALIDATION HELPERS
@@ -1186,28 +1224,28 @@ function showToast(message, type = 'info') {
 function showInlineError(fieldId, message) {
   const field = document.getElementById(fieldId);
   if (!field) return;
-  
+
   // Remove existing error
   hideInlineError(fieldId);
-  
+
   // Add error styling
-  field.classList.add('field-error');
-  
+  field.classList.add("field-error");
+
   // Create error message
-  const errorDiv = document.createElement('div');
-  errorDiv.className = 'inline-error';
+  const errorDiv = document.createElement("div");
+  errorDiv.className = "inline-error";
   errorDiv.innerHTML = `<span class="error-icon">⚠️</span> ${message}`;
-  
+
   field.parentNode.appendChild(errorDiv);
 }
 
 function hideInlineError(fieldId) {
   const field = document.getElementById(fieldId);
   if (!field) return;
-  
-  field.classList.remove('field-error');
-  
-  const error = field.parentNode.querySelector('.inline-error');
+
+  field.classList.remove("field-error");
+
+  const error = field.parentNode.querySelector(".inline-error");
   if (error) error.remove();
 }
 

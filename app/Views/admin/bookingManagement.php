@@ -32,6 +32,7 @@
                 <li><a href="<?= base_url('/admin/events') ?>" class="menu-item"><i>📅</i> Events</a></li>
                 <li><a href="<?= base_url('/admin/equipment') ?>" class="menu-item"><i>🔧</i> Equipment</a></li>
                 <li><a href="<?= base_url('/admin/plans') ?>" class="menu-item"><i>📋</i> Plans</a></li>
+                <li><a href="<?= base_url('/admin/facilities-management') ?>" class="menu-item"><i>🏗️</i> Facilities</a></li>
 
                 <div class="sidebar-divider"></div>
 
@@ -631,8 +632,18 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="form-label">Current Start Time</label>
+                    <input type="text" class="form-control" id="currentStartTime" readonly>
+                </div>
+
+                <div class="form-group">
                     <label class="form-label">New Event Date *</label>
                     <input type="date" class="form-control" id="newEventDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">New Start Time *</label>
+                    <input type="time" class="form-control" id="newStartTime" required>
                 </div>
 
                 <div class="form-group">
