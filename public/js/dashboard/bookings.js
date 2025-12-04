@@ -820,7 +820,7 @@ async function cancelBooking() {
     return;
   }
 
-  if (!reason) {
+  if (!reason || reason === "") {
     showAlert("error", "Please select a reason for cancellation");
     return;
   }
@@ -841,8 +841,14 @@ async function cancelBooking() {
     // Prepare FormData for file upload
     const formData = new FormData();
     formData.append("reason", reason);
-    formData.append("notes", notes);
+    formData.append("notes", notes || "");
     formData.append("cancel_letter", cancelLetterFile);
+
+    console.log("Sending cancellation request with:", {
+      reason: formData.get("reason"),
+      notes: formData.get("notes"),
+      hasFile: formData.get("cancel_letter") !== null,
+    });
 
     const response = await fetch(`/api/user/bookings/${bookingId}/cancel`, {
       method: "POST",
@@ -853,6 +859,8 @@ async function cancelBooking() {
     });
 
     const data = await response.json();
+
+    console.log("Cancellation response:", data);
 
     // Reset button state
     confirmBtn.innerHTML = originalText;

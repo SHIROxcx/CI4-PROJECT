@@ -192,11 +192,6 @@
                     <div style="padding: 30px;">
                         <form id="settingsForm">
                             <div class="settings-grid">
-                                <div class="form-group">
-                                    <label for="extendedHoursRate">Extended Hours Rate (₱/hour)</label>
-                                    <input type="number" id="extendedHoursRate" name="extended_hours_rate" step="0.01" min="0" required>
-                                    <small>Rate charged per additional hour beyond plan duration</small>
-                                </div>
 
                                 <div class="form-group">
                                     <label for="overtimeRate">Overtime Staff Rate (₱)</label>

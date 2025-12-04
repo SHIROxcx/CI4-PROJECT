@@ -14,9 +14,9 @@ class CancellationEmailService
     }
 
     /**
-     * Send cancellation notification to system email with booking details
+     * Send cancellation notification to system email with booking details and attached letter
      */
-    public function sendCancellationNotification($booking, $reason, $notes, $userEmail, $userFullName)
+    public function sendCancellationNotification($booking, $reason, $notes, $userEmail, $userFullName, $cancellationLetterPath = null)
     {
         try {
             $systemEmail = 'cspcsphere@gmail.com';
@@ -120,12 +120,6 @@ class CancellationEmailService
                         </tr>
                     </table>
 
-                    <div style='background-color: #e7f3ff; padding: 15px; border-radius: 5px; border-left: 4px solid #2196F3; margin-bottom: 20px;'>
-                        <p style='margin: 0; color: #0c5460; font-size: 13px;'>
-                            <strong>Action Required:</strong> Review the cancellation letter uploaded by the user in the administration panel.
-                        </p>
-                    </div>
-
                     <div style='text-align: center; color: #999; font-size: 12px; padding-top: 20px; border-top: 1px solid #ddd;'>
                         <p>This is an automated email from CSPC Booking System. Please do not reply to this email.</p>
                     </div>
@@ -137,6 +131,19 @@ class CancellationEmailService
             $this->email->setTo($systemEmail);
             $this->email->setSubject('Booking Cancellation - Booking #' . $booking['id']);
             $this->email->setMessage($htmlBody);
+
+            // Attach cancellation letter if provided
+            if ($cancellationLetterPath && file_exists($cancellationLetterPath)) {
+                try {
+                    $this->email->attach($cancellationLetterPath);
+                    log_message('info', "Cancellation letter attached to email: {$cancellationLetterPath}");
+                } catch (\Exception $attachException) {
+                    log_message('warning', "Failed to attach cancellation letter: " . $attachException->getMessage());
+                    // Continue without attachment rather than failing the email
+                }
+            } elseif ($cancellationLetterPath) {
+                log_message('warning', "Cancellation letter not found at path: {$cancellationLetterPath}");
+            }
 
             if ($this->email->send()) {
                 log_message('info', "Cancellation notification email sent to {$systemEmail} for booking #{$booking['id']}");

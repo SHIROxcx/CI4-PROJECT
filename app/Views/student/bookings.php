@@ -326,25 +326,10 @@ $userEmail = $session->get('email');
         <input type="hidden" id="cancelBookingId">
         <input type="hidden" id="cancelBookingStatus">
         
-        <!-- Refund Policy Section -->
-        <div class="alert alert-warning border-0" style="background-color: #fff3cd; border-left: 4px solid #ffc107;">
-          <h6 class="alert-heading mb-3">
-            <i class="fas fa-info-circle" style="color: #856404;"></i> Refund Policy
-          </h6>
-          <div style="color: #856404; font-size: 14px; line-height: 1.6;">
-            <p class="mb-2"><strong>If approved, a refund shall be allowed on the following conditions:</strong></p>
-            <ul class="mb-0" style="margin-left: 20px;">
-              <li class="mb-2">
-                <strong>80% Refund:</strong> If cancellation is done <strong>15 working days</strong> prior to the event (in case full payment has been made)
-              </li>
-              <li>
-                <strong>50% Refund:</strong> If cancellation is done <strong>5 working days</strong> prior to the event (in case full payment has been made)
-              </li>
-            </ul>
-          </div>
-        </div>
+
+
         
-        <p class="text-muted mb-4">Please note: After 5 working days prior to the event, no refund will be issued. You must submit a cancellation letter to the office.</p>
+      
         
         <div class="mb-3">
           <label class="form-label fw-bold">Reason for Cancellation *</label>

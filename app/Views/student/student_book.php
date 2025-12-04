@@ -22,6 +22,7 @@ if (!$isLoggedIn) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('css/dashboard/dashboard.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('css/admin/student.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('css/admin/student-modern.css'); ?>">
 
 </head>
 <body>
@@ -146,159 +147,188 @@ if (!$isLoggedIn) {
 </div>
   <!-- Student Booking Modal -->
 <div id="studentBookingModal" class="modal student-booking-modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2 class="modal-title" id="modalTitle">Book Facility</h2>
+    <div class="modal-content student-modal-content">
+        <div class="modal-header student-modal-header">
+            <div class="header-badge">🎓</div>
+            <div>
+                <h2 class="modal-title" id="modalTitle">Facility Booking</h2>
+                <p class="modal-subtitle">Complete your booking request</p>
+            </div>
             <span class="close" onclick="closeStudentModal()">&times;</span>
         </div>
-        <div class="modal-body">
-            <!-- Basic Information Section -->
-            <div class="plan-section">
-                <h3 class="section-title">📝 Event Information</h3>
-                <form id="studentBookingForm">
-                    <!-- Hidden fields - auto-filled from session -->
-                    <input type="hidden" id="clientName" value="<?= esc($userName ?? '') ?>">
-                    <input type="hidden" id="clientEmail" value="<?= esc($userEmail ?? '') ?>">
-
-                    <!-- Contact Number - NOW VISIBLE AND EDITABLE -->
-                    <div class="form-group">
-                        <label class="form-label">Contact Number *</label>
-                        <input type="tel" class="form-control" id="contactNumber" 
-                               value="<?= esc($userPhone ?? '') ?>" 
-                               placeholder="e.g., 09123456789" 
-                               required>
-                        <small style="color: var(--gray); font-size: 12px;">Please enter a valid mobile number</small>
-                    </div>
-
-                    <!-- Organization (visible for editing) -->
-                    <div class="form-group">
-                        <label class="form-label">Organization/Group Name *</label>
-                        <input type="text" class="form-control" id="organization" required>
-                    </div>
-
-                    <!-- Event Date -->
-                    <div class="form-group">
-                        <label class="form-label">Event Date *</label>
-                        <input type="date" class="form-control" id="eventDate" required>
-                    </div>
-
-                    <!-- Event Time -->
-                    <div class="form-group">
-                        <label class="form-label">Event Time *</label>
-                        <input type="time" class="form-control" id="eventTime" required>
-                    </div>
-
-                    <!-- Duration -->
-                    <div class="form-group">
-                        <label class="form-label">Duration (hours) *</label>
-                        <input type="number" class="form-control" id="duration" min="1" max="12" value="4" required>
-                    </div>
-
-                    <!-- Attendees -->
-                    <div class="form-group">
-                        <label class="form-label">Expected Attendees</label>
-                        <input type="number" class="form-control" id="attendees" min="1">
-                    </div>
-
-                    <!-- Address -->
-                    <div class="form-group full-width">
-                        <label class="form-label">Address</label>
-                        <textarea class="form-control textarea" id="address" rows="2" placeholder="Optional, but if provided, must be at least 10 characters"></textarea>
-                    </div>
-
-                    <!-- Event Title -->
-                    <div class="form-group full-width">
-                        <label class="form-label">Event Title/Purpose *</label>
-                        <input type="text" class="form-control" id="eventTitle" required>
-                    </div>
-
-                    <!-- Special Requirements -->
-                    <div class="form-group full-width">
-                        <label class="form-label">Special Requirements</label>
-                        <textarea class="form-control textarea" id="specialRequirements"></textarea>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Equipment Section -->
-            <div class="plan-section">
-                <h3 class="section-title">🔧 Equipment Needed</h3>
-                <div class="equipment-grid" id="studentEquipmentGrid">
-                    <!-- Will be populated dynamically -->
+        <div class="modal-body student-modal-body">
+            <!-- Progress Indicator -->
+            <div class="progress-steps">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <span>Basic Info</span>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <span>Event Details</span>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <span>Equipment</span>
+                </div>
+                <div class="progress-step" data-step="4">
+                    <div class="step-number">4</div>
+                    <span>Documents</span>
                 </div>
             </div>
 
-            <!-- Important Notice Section -->
-<div class="plan-section" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b; padding: 20px; margin-bottom: 20px; border-radius: 8px;">
-    <h3 class="section-title" style="color: #92400e; margin-bottom: 15px;">
-        <i class="fas fa-exclamation-triangle" style="color: #f59e0b;"></i> Important Notice
-    </h3>
-    <div style="color: #78350f; font-size: 14px; line-height: 1.6;">
-        <p style="margin-bottom: 10px; font-weight: 600;">
-            <i class="fas fa-building" style="color: #f59e0b; margin-right: 8px;"></i>
-            After submitting this booking, you must be able to pass the required documents wit <strong style="color: #92400e;">7 days</strong>
-        </p>
-        <p style="margin-bottom: 0; font-weight: 600; color: #dc2626;">
-            <i class="fas fa-times-circle" style="margin-right: 8px;"></i>
-            Failure to comply will result in automatic cancellation of your booking.
-        </p>
-    </div>
-</div>
+            <!-- Step 1: Basic Information -->
+            <div class="form-step active" data-step="1">
+                <div class="section-card">
+                    <h3 class="card-title">👤 Personal Information</h3>
+                    <form id="studentBookingForm">
+                        <!-- Hidden fields - auto-filled from session -->
+                        <input type="hidden" id="clientName" value="<?= esc($userName ?? '') ?>">
+                        <input type="hidden" id="clientEmail" value="<?= esc($userEmail ?? '') ?>">
 
-            <!-- Document Upload Section -->
-<!-- Document Upload Section -->
-<div class="plan-section upload-section">
-    <h3 class="section-title">📎 Required Documents</h3>
-    <p style="color: var(--gray); font-size: 14px; margin-bottom: 20px;">
-        Please upload the following documents (PDF, JPG, PNG - Max 10MB each)
-    </p>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label class="form-label">Contact Number *</label>
+                                <input type="tel" class="form-control form-control-modern" id="contactNumber" 
+                                       value="<?= esc($userPhone ?? '') ?>" 
+                                       placeholder="+63 (xxx) xxx-xxxx" 
+                                       required>
+                            </div>
+                        </div>
 
-    <!-- Permission Document -->
-    <div class="upload-item" id="upload-permission">
-        <div class="upload-header">
-            <div class="upload-title">📄 Approved Permission to Conduct</div>
-            <span class="upload-status">Not uploaded</span>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label class="form-label">Organization/Group Name *</label>
+                                <input type="text" class="form-control form-control-modern" id="organization" placeholder="Enter organization or group name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label class="form-label">Address</label>
+                                <textarea class="form-control form-control-modern textarea" id="address" rows="2" placeholder="San Nicolas, Iriga City, Camarines Sur"></textarea>
+                                <small class="form-hint">Optional. If provided, must be at least 10 characters (street, city, province)</small>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Step 2: Event Details -->
+            <div class="form-step" data-step="2">
+                <div class="section-card">
+                    <h3 class="card-title">📅 Event Information</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Event Date *</label>
+                                <input type="date" class="form-control form-control-modern" id="eventDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Event Time *</label>
+                                <input type="time" class="form-control form-control-modern" id="eventTime" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Duration (hours) *</label>
+                                <div class="input-with-unit">
+                                    <input type="number" class="form-control form-control-modern" id="duration" min="1" max="12" value="4" required>
+                                    <span class="unit-label">hrs</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Expected Attendees</label>
+                                <input type="number" class="form-control form-control-modern" id="attendees" min="1" placeholder="Enter estimated count">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label class="form-label">Event Title/Purpose *</label>
+                                <input type="text" class="form-control form-control-modern" id="eventTitle" placeholder="What is your event about?" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label class="form-label">Special Requirements</label>
+                                <textarea class="form-control form-control-modern textarea" id="specialRequirements" placeholder="Any special setup or requirements?"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Step 3: Equipment -->
+            <div class="form-step" data-step="3">
+                <div class="section-card">
+                    <h3 class="card-title">🔧 Equipment & Resources</h3>
+                    <div class="equipment-grid" id="studentEquipmentGrid">
+                        <!-- Will be populated dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Document Upload -->
+            <div class="form-step" data-step="4">
+                <div class="section-card">
+                    <h3 class="card-title">📎 Required Documents</h3>
+                    <p class="card-description">Upload the following documents (PDF, JPG, PNG - Max 10MB each)</p>
+
+                    <div class="documents-container">
+                        <!-- Permission Document -->
+                        <div class="document-upload-card" id="upload-permission">
+                            <div class="document-icon">📄</div>
+                            <h4 class="document-title">Approved Permission to Conduct</h4>
+                            <p class="document-desc">Official permission letter from your organization's adviser</p>
+                            <div class="upload-area">
+                                <input type="file" id="file-permission" class="form-control" accept=".pdf,.jpg,.jpeg,.png" onchange="handleStudentFileSelect(this, 'permission')">
+                                <div class="file-name-display" id="filename-permission"></div>
+                            </div>
+                            <span class="upload-status">Not uploaded</span>
+                        </div>
+
+                        <!-- Request Letter -->
+                        <div class="document-upload-card" id="upload-request">
+                            <div class="document-icon">📝</div>
+                            <h4 class="document-title">Letter Request for Venue</h4>
+                            <p class="document-desc">Formal letter requesting the use of the facility</p>
+                            <div class="upload-area">
+                                <input type="file" id="file-request" class="form-control" accept=".pdf,.jpg,.jpeg,.png" onchange="handleStudentFileSelect(this, 'request')">
+                                <div class="file-name-display" id="filename-request"></div>
+                            </div>
+                            <span class="upload-status">Not uploaded</span>
+                        </div>
+
+                        <!-- Approval Letter -->
+                        <div class="document-upload-card" id="upload-approval">
+                            <div class="document-icon">✅</div>
+                            <h4 class="document-title">Approval Letter of the Venue</h4>
+                            <p class="document-desc">Pre-approval or recommendation letter from authorized personnel</p>
+                            <div class="upload-area">
+                                <input type="file" id="file-approval" class="form-control" accept=".pdf,.jpg,.jpeg,.png" onchange="handleStudentFileSelect(this, 'approval')">
+                                <div class="file-name-display" id="filename-approval"></div>
+                            </div>
+                            <span class="upload-status">Not uploaded</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p style="font-size: 13px; color: var(--gray); margin-bottom: 10px;">
-            Official permission letter from your organization's adviser
-        </p>
-        <input type="file" id="file-permission" class="form-control" accept=".pdf,.jpg,.jpeg,.png" onchange="handleStudentFileSelect(this, 'permission')" style="margin-bottom: 5px;">
-        <div class="file-name-display" id="filename-permission" style="font-size: 12px; color: var(--gray); font-style: italic;"></div>
-    </div>
 
-    <!-- Request Letter -->
-    <div class="upload-item" id="upload-request">
-        <div class="upload-header">
-            <div class="upload-title">📝 Letter Request for Venue</div>
-            <span class="upload-status">Not uploaded</span>
-        </div>
-        <p style="font-size: 13px; color: var(--gray); margin-bottom: 10px;">
-            Formal letter requesting the use of the facility
-        </p>
-        <input type="file" id="file-request" class="form-control" accept=".pdf,.jpg,.jpeg,.png" onchange="handleStudentFileSelect(this, 'request')" style="margin-bottom: 5px;">
-        <div class="file-name-display" id="filename-request" style="font-size: 12px; color: var(--gray); font-style: italic;"></div>
-    </div>
-
-    <!-- Approval Letter -->
-    <div class="upload-item" id="upload-approval">
-        <div class="upload-header">
-            <div class="upload-title">✅ Approval Letter of the Venue</div>
-            <span class="upload-status">Not uploaded</span>
-        </div>
-        <p style="font-size: 13px; color: var(--gray); margin-bottom: 10px;">
-            Pre-approval or recommendation letter from authorized personnel
-        </p>
-        <input type="file" id="file-approval" class="form-control" accept=".pdf,.jpg,.jpeg,.png" onchange="handleStudentFileSelect(this, 'approval')" style="margin-bottom: 5px;">
-        <div class="file-name-display" id="filename-approval" style="font-size: 12px; color: var(--gray); font-style: italic;"></div>
-    </div>
-</div>
-        </div>
-
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" onclick="closeStudentModal()">Cancel</button>
-            <button type="button" class="btn btn-success" onclick="submitStudentBooking()" id="submitStudentBtn" disabled>
-                Submit Booking
-            </button>
+        <div class="modal-footer student-modal-footer">
+            <div class="footer-nav">
+                <button type="button" class="btn btn-tertiary" id="prevBtn" onclick="prevStep()" style="display: none;">← Previous</button>
+            </div>
+            <div class="footer-actions">
+                <button type="button" class="btn btn-outline" onclick="closeStudentModal()">Cancel</button>
+                <button type="button" class="btn btn-next" id="nextBtn" onclick="nextStep()">Next →</button>
+                <button type="button" class="btn btn-success" id="submitStudentBtn" onclick="submitStudentBooking()" style="display: none;" disabled>
+                    ✓ Submit Booking
+                </button>
+            </div>
         </div>
     </div>
 </div>
@@ -307,5 +337,6 @@ if (!$isLoggedIn) {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url('js/student-book.js') ?>"></script>
+<script src="<?= base_url('js/student-book-steps.js') ?>"></script>
 </body>
 </html>

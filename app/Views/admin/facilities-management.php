@@ -229,11 +229,17 @@
             </div>
             <div class="modal-body">
                 <p>Are you sure you want to delete this facility?</p>
-                <p class="warning-text">⚠️ This action cannot be undone. However, all associated bookings will be preserved without a facility reference.</p>
+                <p class="warning-text">⚠️ <strong>This action cannot be undone.</strong>
+                    <br><br>All bookings associated with this facility will be <strong>permanently deleted</strong>, including:
+                    <br>• All booking records
+                    <br>• Booking files and documents
+                    <br>• Equipment assignments
+                    <br>• Addons and fees
+                </p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" onclick="closeDeleteModal()">Cancel</button>
-                <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+                <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete Facility & All Bookings</button>
             </div>
         </div>
     </div>

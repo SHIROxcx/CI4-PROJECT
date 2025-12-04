@@ -712,13 +712,69 @@ if (!empty($equipment)) {
                 ])->setStatusCode(404);
             }
 
-            // Delete the facility - bookings will be preserved with facility_id set to NULL
+            // Get all bookings for this facility (both completed and incomplete)
+            $bookings = $this->db->table('bookings')
+                ->select('id, status')
+                ->where('facility_id', $facilityId)
+                ->get()
+                ->getResultArray();
+
+            log_message('info', 'Found ' . count($bookings) . ' bookings for facility ' . $facilityId);
+
+            // Delete all booking-related records first (cascade will handle these)
+            foreach ($bookings as $booking) {
+                $bookingId = $booking['id'];
+                
+                // Delete booking addons
+                $this->db->table('booking_addons')
+                    ->where('booking_id', $bookingId)
+                    ->delete();
+                
+                // Delete booking equipment
+                $this->db->table('booking_equipment')
+                    ->where('booking_id', $bookingId)
+                    ->delete();
+                
+                // Delete booking files
+                $this->db->table('booking_files')
+                    ->where('booking_id', $bookingId)
+                    ->delete();
+                
+                // Delete booking survey responses
+                $this->db->table('booking_survey_responses')
+                    ->where('booking_id', $bookingId)
+                    ->delete();
+                
+                // Delete booking extensions
+                $this->db->table('booking_extensions')
+                    ->where('booking_id', $bookingId)
+                    ->delete();
+                
+                // Delete events
+                $this->db->table('events')
+                    ->where('booking_id', $bookingId)
+                    ->delete();
+                
+                // Delete student booking files
+                $this->db->table('student_booking_files')
+                    ->where('booking_id', $bookingId)
+                    ->delete();
+            }
+
+            // Now delete all bookings for this facility
+            $this->db->table('bookings')
+                ->where('facility_id', $facilityId)
+                ->delete();
+
+            log_message('info', 'Deleted all bookings for facility ' . $facilityId);
+
+            // Delete the facility
             $result = $this->facilityModel->delete($facilityId);
 
             if ($result) {
                 return $this->response->setJSON([
                     'success' => true,
-                    'message' => 'Facility deleted successfully. Associated bookings have been preserved.'
+                    'message' => 'Facility and all associated bookings deleted successfully.'
                 ]);
             } else {
                 return $this->response->setJSON([
@@ -726,6 +782,7 @@ if (!empty($equipment)) {
                     'message' => 'Failed to delete facility'
                 ])->setStatusCode(500);
             }
+
         } catch (\Exception $e) {
             log_message('error', 'Error deleting facility: ' . $e->getMessage());
             return $this->response->setJSON([

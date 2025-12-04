@@ -22,12 +22,24 @@ function initializeEventListeners() {
   document.getElementById("searchInput").addEventListener("input", filterPlans);
 
   // Form submissions
-  document.getElementById("addPlanForm").addEventListener("submit", handleAddPlan);
-  document.getElementById("editPlanForm").addEventListener("submit", handleEditPlan);
-  document.getElementById("addServiceForm").addEventListener("submit", handleAddService);
-  document.getElementById("editServiceForm").addEventListener("submit", handleEditService);
-  document.getElementById("settingsForm").addEventListener("submit", handleUpdateSettings);
-  document.getElementById("editFacilityRateForm").addEventListener("submit", handleEditFacilityRate);
+  document
+    .getElementById("addPlanForm")
+    .addEventListener("submit", handleAddPlan);
+  document
+    .getElementById("editPlanForm")
+    .addEventListener("submit", handleEditPlan);
+  document
+    .getElementById("addServiceForm")
+    .addEventListener("submit", handleAddService);
+  document
+    .getElementById("editServiceForm")
+    .addEventListener("submit", handleEditService);
+  document
+    .getElementById("settingsForm")
+    .addEventListener("submit", handleUpdateSettings);
+  document
+    .getElementById("editFacilityRateForm")
+    .addEventListener("submit", handleEditFacilityRate);
 
   // Modal close on background click
   document.addEventListener("click", function (e) {
@@ -48,12 +60,12 @@ function initializeEventListeners() {
 // Tab switching
 function switchTab(tabName) {
   // Hide all tabs
-  document.querySelectorAll(".tab-content").forEach(tab => {
+  document.querySelectorAll(".tab-content").forEach((tab) => {
     tab.classList.remove("active");
   });
 
   // Remove active from all buttons
-  document.querySelectorAll(".tab-btn").forEach(btn => {
+  document.querySelectorAll(".tab-btn").forEach((btn) => {
     btn.classList.remove("active");
   });
 
@@ -109,7 +121,8 @@ function displayPlansTable(plans) {
   const tbody = document.getElementById("plansTableBody");
 
   if (plans.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="5" class="text-center">No plans found</td></tr>';
+    tbody.innerHTML =
+      '<tr><td colspan="5" class="text-center">No plans found</td></tr>';
     return;
   }
 
@@ -123,14 +136,23 @@ function displayPlansTable(plans) {
                     <span>${escapeHtml(item.name)}</span>
                 </div>
             </td>
-            <td>${escapeHtml(item.facility_name || 'N/A')}</td>
+            <td>${escapeHtml(item.facility_name || "N/A")}</td>
             <td>${escapeHtml(item.duration)}</td>
-            <td class="text-right">₱${parseFloat(item.price).toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+            <td class="text-right">₱${parseFloat(item.price).toLocaleString(
+              "en-US",
+              { minimumFractionDigits: 2 }
+            )}</td>
             <td class="table-actions">
                 <div class="action-buttons">
-                    <button class="btn-sm btn-view" onclick="viewPlan(${item.id})" title="View Details">👁️</button>
-                    <button class="btn-sm btn-edit" onclick="editPlan(${item.id})" title="Edit">✏️</button>
-                    <button class="btn-sm btn-delete" onclick="deletePlan(${item.id})" title="Delete">🗑️</button>
+                    <button class="btn-sm btn-view" onclick="viewPlan(${
+                      item.id
+                    })" title="View Details">👁️</button>
+                    <button class="btn-sm btn-edit" onclick="editPlan(${
+                      item.id
+                    })" title="Edit">✏️</button>
+                    <button class="btn-sm btn-delete" onclick="deletePlan(${
+                      item.id
+                    })" title="Delete">🗑️</button>
                 </div>
             </td>
         </tr>
@@ -172,13 +194,20 @@ function populateFacilityDropdowns() {
   dropdowns.forEach((dropdown) => {
     if (dropdown) {
       const options = facilitiesData
-        .map((facility) => `<option value="${facility.id}">${escapeHtml(facility.name)}</option>`)
+        .map(
+          (facility) =>
+            `<option value="${facility.id}">${escapeHtml(
+              facility.name
+            )}</option>`
+        )
         .join("");
 
       if (dropdown.id === "facilityFilter") {
-        dropdown.innerHTML = '<option value="">All Facilities</option>' + options;
+        dropdown.innerHTML =
+          '<option value="">All Facilities</option>' + options;
       } else {
-        dropdown.innerHTML = '<option value="">Select Facility</option>' + options;
+        dropdown.innerHTML =
+          '<option value="">Select Facility</option>' + options;
       }
     }
   });
@@ -309,8 +338,10 @@ function filterPlans() {
   let filteredPlans = plansData.filter((item) => {
     const matchesSearch =
       item.name.toLowerCase().includes(searchTerm) ||
-      (item.facility_name && item.facility_name.toLowerCase().includes(searchTerm));
-    const matchesFacility = !facilityFilter || item.facility_id == facilityFilter;
+      (item.facility_name &&
+        item.facility_name.toLowerCase().includes(searchTerm));
+    const matchesFacility =
+      !facilityFilter || item.facility_id == facilityFilter;
     return matchesSearch && matchesFacility;
   });
 
@@ -346,18 +377,22 @@ async function handleAddPlan(e) {
   });
 
   // Collect equipment
-  document.querySelectorAll("#equipmentList .equipment-item").forEach((item) => {
-    const equipmentId = item.querySelector(".equipment-select").value;
-    const quantity = item.querySelector(".equipment-quantity").value;
-    const mandatory = item.querySelector(".equipment-mandatory").checked ? 1 : 0;
-    if (equipmentId) {
-      planData.equipment.push({
-        equipment_id: equipmentId,
-        quantity_included: quantity,
-        is_mandatory: mandatory,
-      });
-    }
-  });
+  document
+    .querySelectorAll("#equipmentList .equipment-item")
+    .forEach((item) => {
+      const equipmentId = item.querySelector(".equipment-select").value;
+      const quantity = item.querySelector(".equipment-quantity").value;
+      const mandatory = item.querySelector(".equipment-mandatory").checked
+        ? 1
+        : 0;
+      if (equipmentId) {
+        planData.equipment.push({
+          equipment_id: equipmentId,
+          quantity_included: quantity,
+          is_mandatory: mandatory,
+        });
+      }
+    });
 
   showLoading(true);
 
@@ -405,31 +440,37 @@ async function handleEditPlan(e) {
   };
 
   // Collect features
-  document.querySelectorAll("#editFeaturesList .feature-item").forEach((item) => {
-    const featureInput = item.querySelector(".feature-input").value.trim();
-    const featureType = item.querySelector(".feature-type").value;
-    if (featureInput) {
-      planData.features.push({
-        feature: featureInput,
-        feature_type: featureType,
-        is_physical: 0,
-      });
-    }
-  });
+  document
+    .querySelectorAll("#editFeaturesList .feature-item")
+    .forEach((item) => {
+      const featureInput = item.querySelector(".feature-input").value.trim();
+      const featureType = item.querySelector(".feature-type").value;
+      if (featureInput) {
+        planData.features.push({
+          feature: featureInput,
+          feature_type: featureType,
+          is_physical: 0,
+        });
+      }
+    });
 
   // Collect equipment
-  document.querySelectorAll("#editEquipmentList .equipment-item").forEach((item) => {
-    const equipmentId = item.querySelector(".equipment-select").value;
-    const quantity = item.querySelector(".equipment-quantity").value;
-    const mandatory = item.querySelector(".equipment-mandatory").checked ? 1 : 0;
-    if (equipmentId) {
-      planData.equipment.push({
-        equipment_id: equipmentId,
-        quantity_included: quantity,
-        is_mandatory: mandatory,
-      });
-    }
-  });
+  document
+    .querySelectorAll("#editEquipmentList .equipment-item")
+    .forEach((item) => {
+      const equipmentId = item.querySelector(".equipment-select").value;
+      const quantity = item.querySelector(".equipment-quantity").value;
+      const mandatory = item.querySelector(".equipment-mandatory").checked
+        ? 1
+        : 0;
+      if (equipmentId) {
+        planData.equipment.push({
+          equipment_id: equipmentId,
+          quantity_included: quantity,
+          is_mandatory: mandatory,
+        });
+      }
+    });
 
   showLoading(true);
 
@@ -484,7 +525,9 @@ async function viewPlan(id) {
         featuresHTML = plan.features
           .map(
             (f) => `
-                    <li><strong>${escapeHtml(f.feature_type)}:</strong> ${escapeHtml(f.feature)}</li>
+                    <li><strong>${escapeHtml(
+                      f.feature_type
+                    )}:</strong> ${escapeHtml(f.feature)}</li>
                 `
           )
           .join("");
@@ -497,7 +540,9 @@ async function viewPlan(id) {
         equipmentHTML = plan.equipment
           .map(
             (e) => `
-                    <li>${escapeHtml(e.equipment_name)} - Qty: ${e.quantity_included} ${e.is_mandatory ? "(Mandatory)" : "(Optional)"}</li>
+                    <li>${escapeHtml(e.equipment_name)} - Qty: ${
+              e.quantity_included
+            } ${e.is_mandatory ? "(Mandatory)" : "(Optional)"}</li>
                 `
           )
           .join("");
@@ -525,7 +570,10 @@ async function viewPlan(id) {
                     </div>
                     <div class="detail-item">
                         <label>Price:</label>
-                        <span>₱${parseFloat(plan.price).toLocaleString('en-US', {minimumFractionDigits: 2})}</span>
+                        <span>₱${parseFloat(plan.price).toLocaleString(
+                          "en-US",
+                          { minimumFractionDigits: 2 }
+                        )}</span>
                     </div>
                     <div class="detail-item full-width">
                         <label>Features:</label>
@@ -583,12 +631,30 @@ async function editPlan(id) {
           const featureItem = document.createElement("div");
           featureItem.className = "feature-item";
           featureItem.innerHTML = `
-                        <input type="text" class="feature-input" placeholder="Feature description" value="${escapeHtml(feature.feature)}">
+                        <input type="text" class="feature-input" placeholder="Feature description" value="${escapeHtml(
+                          feature.feature
+                        )}">
                         <select class="feature-type">
-                            <option value="amenity" ${feature.feature_type === "amenity" ? "selected" : ""}>Amenity</option>
-                            <option value="service" ${feature.feature_type === "service" ? "selected" : ""}>Service</option>
-                            <option value="access" ${feature.feature_type === "access" ? "selected" : ""}>Access</option>
-                            <option value="description" ${feature.feature_type === "description" ? "selected" : ""}>Description</option>
+                            <option value="amenity" ${
+                              feature.feature_type === "amenity"
+                                ? "selected"
+                                : ""
+                            }>Amenity</option>
+                            <option value="service" ${
+                              feature.feature_type === "service"
+                                ? "selected"
+                                : ""
+                            }>Service</option>
+                            <option value="access" ${
+                              feature.feature_type === "access"
+                                ? "selected"
+                                : ""
+                            }>Access</option>
+                            <option value="description" ${
+                              feature.feature_type === "description"
+                                ? "selected"
+                                : ""
+                            }>Description</option>
                         </select>
                         <button type="button" class="btn-sm btn-danger" onclick="removeFeature(this)">✕</button>
                     `;
@@ -605,7 +671,12 @@ async function editPlan(id) {
           equipmentItem.className = "equipment-item";
 
           const equipmentOptions = equipmentData
-            .map((eq) => `<option value="${eq.id}" ${eq.id == equip.equipment_id ? "selected" : ""}>${escapeHtml(eq.name)}</option>`)
+            .map(
+              (eq) =>
+                `<option value="${eq.id}" ${
+                  eq.id == equip.equipment_id ? "selected" : ""
+                }>${escapeHtml(eq.name)}</option>`
+            )
             .join("");
 
           equipmentItem.innerHTML = `
@@ -613,9 +684,13 @@ async function editPlan(id) {
                             <option value="">Select Equipment</option>
                             ${equipmentOptions}
                         </select>
-                        <input type="number" class="equipment-quantity" placeholder="Quantity" min="1" value="${equip.quantity_included}">
+                        <input type="number" class="equipment-quantity" placeholder="Quantity" min="1" value="${
+                          equip.quantity_included
+                        }">
                         <label class="checkbox-label">
-                            <input type="checkbox" class="equipment-mandatory" ${equip.is_mandatory ? "checked" : ""}>
+                            <input type="checkbox" class="equipment-mandatory" ${
+                              equip.is_mandatory ? "checked" : ""
+                            }>
                             Mandatory
                         </label>
                         <button type="button" class="btn-sm btn-danger" onclick="removeEquipment(this)">✕</button>
@@ -708,7 +783,8 @@ function displayServicesTable(services) {
   const tbody = document.getElementById("servicesTableBody");
 
   if (services.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="4" class="text-center">No services found</td></tr>';
+    tbody.innerHTML =
+      '<tr><td colspan="4" class="text-center">No services found</td></tr>';
     return;
   }
 
@@ -722,12 +798,19 @@ function displayServicesTable(services) {
                     <span>${escapeHtml(item.name)}</span>
                 </div>
             </td>
-            <td>${escapeHtml(item.description || 'N/A')}</td>
-            <td class="text-right">₱${parseFloat(item.price).toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+            <td>${escapeHtml(item.description || "N/A")}</td>
+            <td class="text-right">₱${parseFloat(item.price).toLocaleString(
+              "en-US",
+              { minimumFractionDigits: 2 }
+            )}</td>
             <td class="table-actions">
                 <div class="action-buttons">
-                    <button class="btn-sm btn-edit" onclick="editService(${item.id})" title="Edit">✏️</button>
-                    <button class="btn-sm btn-delete" onclick="deleteService(${item.id})" title="Delete">🗑️</button>
+                    <button class="btn-sm btn-edit" onclick="editService(${
+                      item.id
+                    })" title="Edit">✏️</button>
+                    <button class="btn-sm btn-delete" onclick="deleteService(${
+                      item.id
+                    })" title="Delete">🗑️</button>
                 </div>
             </td>
         </tr>
@@ -784,7 +867,8 @@ async function editService(id) {
     document.getElementById("editServiceId").value = service.id;
     document.getElementById("editServiceKey").value = service.addon_key;
     document.getElementById("editServiceName").value = service.name;
-    document.getElementById("editServiceDescription").value = service.description || "";
+    document.getElementById("editServiceDescription").value =
+      service.description || "";
     document.getElementById("editServicePrice").value = service.price;
 
     openEditServiceModal();
@@ -844,13 +928,16 @@ async function confirmDeleteService() {
   showLoading(true);
 
   try {
-    const response = await fetch(`/admin/plans/deleteAddon/${currentServiceId}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Requested-With": "XMLHttpRequest",
-      },
-    });
+    const response = await fetch(
+      `/admin/plans/deleteAddon/${currentServiceId}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Requested-With": "XMLHttpRequest",
+        },
+      }
+    );
 
     const result = await response.json();
 
@@ -887,9 +974,9 @@ async function loadSettings() {
     const result = await response.json();
 
     if (result.success) {
-      document.getElementById("extendedHoursRate").value = result.data.extended_hours_rate;
       document.getElementById("overtimeRate").value = result.data.overtime_rate;
-      document.getElementById("maintenanceFee").value = result.data.maintenance_fee;
+      document.getElementById("maintenanceFee").value =
+        result.data.maintenance_fee;
     } else {
       showNotification("Error loading settings: " + result.message, "error");
     }
@@ -974,7 +1061,8 @@ function displayFacilitiesTable(facilities) {
   const tbody = document.getElementById("facilitiesTableBody");
 
   if (facilities.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="3" class="text-center">No facilities found</td></tr>';
+    tbody.innerHTML =
+      '<tr><td colspan="3" class="text-center">No facilities found</td></tr>';
     return;
   }
 
@@ -984,14 +1072,22 @@ function displayFacilitiesTable(facilities) {
         <tr>
             <td>
                 <div class="equipment-name-cell">
-                    <span class="equipment-icon-small">${item.icon || '🏢'}</span>
+                    <span class="equipment-icon-small">${
+                      item.icon || "🏢"
+                    }</span>
                     <span>${escapeHtml(item.name)}</span>
                 </div>
             </td>
-            <td class="text-right">₱${parseFloat(item.additional_hours_rate || 500).toLocaleString('en-US', {minimumFractionDigits: 2})}</td>
+            <td class="text-right">₱${parseFloat(
+              item.additional_hours_rate || 500
+            ).toLocaleString("en-US", { minimumFractionDigits: 2 })}</td>
             <td class="table-actions">
                 <div class="action-buttons">
-                    <button class="btn-sm btn-edit" onclick="editFacilityRate(${item.id}, '${escapeHtml(item.name)}', ${item.additional_hours_rate || 500})" title="Edit Rate">✏️</button>
+                    <button class="btn-sm btn-edit" onclick="editFacilityRate(${
+                      item.id
+                    }, '${escapeHtml(item.name)}', ${
+        item.additional_hours_rate || 500
+      })" title="Edit Rate">✏️</button>
                 </div>
             </td>
         </tr>

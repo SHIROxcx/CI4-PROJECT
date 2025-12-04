@@ -313,11 +313,14 @@ function handleStudentFileSelect(input, fileType) {
   }
 
   uploadedStudentFiles[fileType] = file;
-  const uploadItem = document.getElementById(`upload-${fileType}`);
-  uploadItem.classList.add("uploaded");
-  uploadItem.querySelector(".upload-status").textContent = "Ready";
-  uploadItem.querySelector(".upload-status").style.color = "var(--success)";
-  document.getElementById(`filename-${fileType}`).textContent = file.name;
+  const uploadCard = document.getElementById(`upload-${fileType}`);
+  uploadCard.classList.add("uploaded");
+  uploadCard.querySelector(".upload-status").textContent = "Uploaded";
+  uploadCard.querySelector(".upload-status").style.color = "var(--success)";
+  uploadCard.querySelector(".upload-status").style.background = "#d1fae5";
+  document.getElementById(
+    `filename-${fileType}`
+  ).textContent = `✓ ${file.name}`;
   showToast(`${file.name} uploaded successfully`, "success");
 }
 
@@ -375,6 +378,8 @@ function enableStudentBookingForm() {
 // FORM VALIDATION
 // ========================================
 function validateStudentForm() {
+  console.log("=== validateStudentForm START ===");
+
   const validations = [
     {
       id: "contactNumber",
@@ -433,10 +438,14 @@ function validateStudentForm() {
 
   for (const validation of validations) {
     const field = document.getElementById(validation.id);
-    if (!field) continue;
+    if (!field) {
+      console.warn(`Field not found: ${validation.id}`);
+      continue;
+    }
     const value = field.value.trim();
 
     if (!value) {
+      console.log(`Validation failed - ${validation.id} is empty`);
       showInlineError(validation.id, `${validation.label} is required`);
       errors.push(`${validation.label} is required`);
       if (!firstErrorField) firstErrorField = field;
@@ -445,6 +454,9 @@ function validateStudentForm() {
     }
 
     if (!validation.test(value)) {
+      console.log(
+        `Validation failed - ${validation.id} test failed for value: ${value}`
+      );
       showInlineError(validation.id, validation.message);
       errors.push(validation.message);
       if (!firstErrorField) firstErrorField = field;
@@ -454,6 +466,7 @@ function validateStudentForm() {
 
   const address = document.getElementById("address").value.trim();
   if (address && address.length < 10) {
+    console.log("Address validation failed");
     showInlineError("address", "Address must be at least 10 characters");
     errors.push("Address must be at least 10 characters");
     if (!firstErrorField) firstErrorField = document.getElementById("address");
@@ -462,6 +475,7 @@ function validateStudentForm() {
 
   const attendees = document.getElementById("attendees").value.trim();
   if (attendees && (isNaN(attendees) || parseInt(attendees) < 1)) {
+    console.log("Attendees validation failed");
     showInlineError(
       "attendees",
       "Number of attendees must be a positive number"
@@ -472,28 +486,7 @@ function validateStudentForm() {
     isValid = false;
   }
 
-  // Validate that at least one file is uploaded
-  const hasFiles =
-    uploadedStudentFiles.permission ||
-    uploadedStudentFiles.request ||
-    uploadedStudentFiles.approval;
-
-  if (!hasFiles) {
-    errors.push("At least one required document must be uploaded");
-    isValid = false;
-
-    // Scroll to document upload section
-    const uploadSection = document.querySelector(".upload-section");
-    if (uploadSection) {
-      uploadSection.scrollIntoView({ behavior: "smooth", block: "center" });
-      uploadSection.style.border = "2px solid #ef4444";
-      uploadSection.style.backgroundColor = "#fef2f2";
-      setTimeout(() => {
-        uploadSection.style.border = "";
-        uploadSection.style.backgroundColor = "";
-      }, 3000);
-    }
-  }
+  // Files are optional - do not require at least one file to be uploaded
 
   if (!isValid && firstErrorField) {
     firstErrorField.focus();
@@ -505,6 +498,7 @@ function validateStudentForm() {
     }
   }
 
+  console.log("=== validateStudentForm END - isValid:", isValid, "===");
   return isValid;
 }
 
@@ -630,17 +624,29 @@ function showToast(message, type = "info") {
 // UPDATED SUBMIT BOOKING WITH BETTER ERROR HANDLING
 // ========================================
 async function submitStudentBooking() {
+  console.log("✓ submitStudentBooking function called");
+
   const btn = document.getElementById("submitStudentBtn");
+  if (!btn) {
+    console.error("Submit button not found!");
+    return;
+  }
+
+  console.log("Submit button found, disabling...");
   btn.disabled = true;
   btn.textContent = "Processing...";
 
   try {
     // Validate form first
+    console.log("Starting form validation...");
     if (!validateStudentForm()) {
+      console.log("Form validation failed");
       btn.disabled = false;
-      btn.textContent = "Submit Booking";
+      btn.textContent = "✓ Submit Booking";
       return;
     }
+
+    console.log("Form validation passed");
 
     // Show processing toast
     showToast("Validating booking details...", "info");
@@ -798,15 +804,33 @@ async function submitStudentBooking() {
       uploadedStudentFiles.request ||
       uploadedStudentFiles.approval;
 
+    console.log("Checking for files to upload...");
+    console.log("uploadedStudentFiles:", uploadedStudentFiles);
+    console.log("hasFiles:", hasFiles);
+
     if (hasFiles) {
       try {
         const formData = new FormData();
-        if (uploadedStudentFiles.permission)
+
+        console.log("Adding files to FormData...");
+        if (uploadedStudentFiles.permission) {
           formData.append("files[]", uploadedStudentFiles.permission);
-        if (uploadedStudentFiles.request)
+          console.log(
+            "Added permission file:",
+            uploadedStudentFiles.permission.name
+          );
+        }
+        if (uploadedStudentFiles.request) {
           formData.append("files[]", uploadedStudentFiles.request);
-        if (uploadedStudentFiles.approval)
+          console.log("Added request file:", uploadedStudentFiles.request.name);
+        }
+        if (uploadedStudentFiles.approval) {
           formData.append("files[]", uploadedStudentFiles.approval);
+          console.log(
+            "Added approval file:",
+            uploadedStudentFiles.approval.name
+          );
+        }
 
         showToast("Uploading documents...", "info");
 
@@ -819,13 +843,19 @@ async function submitStudentBooking() {
           }
         );
 
+        console.log("Upload response status:", uploadResponse.status);
         const uploadResult = await uploadResponse.json();
+        console.log("Upload result:", uploadResult);
+
         if (!uploadResult.success) {
+          console.warn("File upload warning:", uploadResult.message);
           showToast(
-            "Booking created but some files failed to upload",
+            "Booking created but some files failed to upload: " +
+              uploadResult.message,
             "warning"
           );
         } else {
+          console.log("Files uploaded successfully:", uploadResult.files);
           showToast(
             `${uploadResult.files.length} file(s) uploaded successfully`,
             "success"
@@ -833,8 +863,14 @@ async function submitStudentBooking() {
         }
       } catch (uploadError) {
         console.error("File upload error:", uploadError);
-        showToast("Booking created but file upload failed", "warning");
+        console.error("Upload error details:", uploadError.message);
+        showToast(
+          "Booking created but file upload failed: " + uploadError.message,
+          "warning"
+        );
       }
+    } else {
+      console.log("No files to upload - proceeding with booking only");
     }
 
     showStudentSuccess(bookingId);
@@ -850,8 +886,11 @@ async function submitStudentBooking() {
     showToast(errorMessage, "error");
 
     // Re-enable button
-    btn.disabled = false;
-    btn.textContent = "Submit Booking";
+    const submitBtn = document.getElementById("submitStudentBtn");
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "✓ Submit Booking";
+    }
   }
 }
 // ========================================
@@ -868,9 +907,6 @@ function showStudentSuccess(bookingId) {
       ).padStart(3, "0")}</p>
       <p style="margin-bottom: 10px; color: var(--gray);">Your booking request has been submitted for approval.</p>
       <p style="margin-bottom: 30px; color: var(--gray);">You will receive a notification once it has been reviewed.</p>
-      <button class="btn btn-primary" onclick="closeAndReload()" style="padding: 12px 30px; font-size: 16px;">
-        Close
-      </button>
     </div>
   `;
   document.querySelector("#studentBookingModal .modal-footer").style.display =
@@ -895,20 +931,21 @@ function resetStudentForm() {
   const form = document.getElementById("studentBookingForm");
   if (form) form.reset();
 
-  const uploadItems = document.querySelectorAll(".upload-item");
-  uploadItems.forEach((item) => {
-    item.classList.remove("uploaded");
-    const statusEl = item.querySelector(".upload-status");
+  const uploadCards = document.querySelectorAll(".document-upload-card");
+  uploadCards.forEach((card) => {
+    card.classList.remove("uploaded");
+    const statusEl = card.querySelector(".upload-status");
     if (statusEl) {
       statusEl.textContent = "Not uploaded";
       statusEl.style.color = "";
+      statusEl.style.background = "";
     }
   });
 
   const fileNameDisplays = document.querySelectorAll(".file-name-display");
   fileNameDisplays.forEach((el) => (el.textContent = ""));
 
-  const fileInputs = document.querySelectorAll(".file-input");
+  const fileInputs = document.querySelectorAll('[id^="file-"]');
   fileInputs.forEach((input) => (input.value = ""));
 
   const equipmentInputs = document.querySelectorAll('[id^="student-qty-"]');
@@ -960,8 +997,6 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("Student booking page initialized");
 
   const eventDateField = document.getElementById("eventDate");
-  const eventTimeField = document.getElementById("eventTime");
-  const durationField = document.getElementById("duration");
 
   if (eventDateField) {
     const today = new Date().toISOString().split("T")[0];
@@ -991,25 +1026,5 @@ document.addEventListener("DOMContentLoaded", function () {
         );
       }
     });
-
-    // Show info message when time is selected
-    if (eventTimeField) {
-      eventTimeField.addEventListener("change", function () {
-        if (this.value) {
-          // Show info message when time is selected
-          showToast("⏰ Time slot selected", "info");
-        }
-      });
-    }
-
-    // Show info message when duration is selected
-    if (durationField) {
-      durationField.addEventListener("change", function () {
-        if (this.value) {
-          // Show info message when duration is selected
-          showToast("⏳ Duration updated", "info");
-        }
-      });
-    }
   }
 });

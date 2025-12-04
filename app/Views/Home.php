@@ -730,33 +730,7 @@ $userRole = $session->get('role');
       </div>
     </section>
 
-    <!-- Quick Stats Banner -->
-    <section class="stats-banner">
-      <div class="container">
-        <div class="stats-container">
-          <div class="stat-box">
-            <i class="fas fa-building"></i>
-            <h3><?= count($facilities) ?></h3>
-            <p>Available Facilities</p>
-          </div>
-          <div class="stat-box">
-            <i class="fas fa-calendar-check"></i>
-            <h3>24/7</h3>
-            <p>Online Booking</p>
-          </div>
-          <div class="stat-box">
-            <i class="fas fa-clock"></i>
-            <h3>&lt;2 Min</h3>
-            <p>Average Booking Time</p>
-          </div>
-          <div class="stat-box">
-            <i class="fas fa-users"></i>
-            <h3>2,500+</h3>
-            <p>Monthly Reservations</p>
-          </div>
-        </div>
-      </div>
-    </section>
+   
 
     <!-- How It Works Section -->
     <section class="how-it-works" id="how-it-works">
@@ -839,6 +813,34 @@ $userRole = $session->get('role');
       </div>
     </section>
 
+     <!-- Quick Stats Banner -->
+    <section class="stats-banner">
+      <div class="container">
+        <div class="stats-container">
+          <div class="stat-box">
+            <i class="fas fa-building"></i>
+            <h3><?= count($facilities) ?></h3>
+            <p>Available Facilities</p>
+          </div>
+          <div class="stat-box">
+            <i class="fas fa-calendar-check"></i>
+            <h3>24/7</h3>
+            <p>Online Booking</p>
+          </div>
+          <div class="stat-box">
+            <i class="fas fa-clock"></i>
+            <h3>&lt;2 Min</h3>
+            <p>Average Booking Time</p>
+          </div>
+          <div class="stat-box">
+            <i class="fas fa-users"></i>
+            <h3>2,500+</h3>
+            <p>Monthly Reservations</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <!-- Benefits Section -->
     <section class="benefits-section">
       <div class="container">

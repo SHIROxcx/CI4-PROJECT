@@ -855,7 +855,7 @@ async function cancelBooking() {
     return;
   }
 
-  if (!reason) {
+  if (!reason || reason === "") {
     showAlert("error", "Please select a reason for cancellation");
     return;
   }
@@ -868,7 +868,7 @@ async function cancelBooking() {
   // Create FormData for file upload
   const formData = new FormData();
   formData.append("reason", reason);
-  formData.append("notes", notes);
+  formData.append("notes", notes || "");
   if (cancelLetterFile) {
     formData.append("cancel_letter", cancelLetterFile);
   }
@@ -881,12 +881,23 @@ async function cancelBooking() {
       '<i class="fas fa-spinner fa-spin"></i> Cancelling...';
     confirmBtn.disabled = true;
 
-    const response = await fetch(`/api/user/bookings/${bookingId}/cancel`, {
+    console.log("Sending cancellation request with:", {
+      reason: formData.get("reason"),
+      notes: formData.get("notes"),
+      hasFile: formData.get("cancel_letter") !== null,
+    });
+
+    const response = await fetch(`/api/student/bookings/${bookingId}/cancel`, {
       method: "POST",
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+      },
       body: formData,
     });
 
     const data = await response.json();
+
+    console.log("Cancellation response:", data);
 
     // Reset button state
     confirmBtn.innerHTML = originalText;

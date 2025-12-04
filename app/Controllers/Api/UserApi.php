@@ -553,6 +553,7 @@ public function cancelBooking($bookingId)
     try {
         // Add debugging
         log_message('info', "Cancel booking request received for ID: {$bookingId}");
+        log_message('info', "POST data: " . json_encode($this->request->getPost()));
         
         // Security: Validate booking ID
         if (!is_numeric($bookingId) || $bookingId < 1) {
@@ -580,10 +581,6 @@ public function cancelBooking($bookingId)
         
         if (!$booking) {
             log_message('warning', "Booking not found in database: {$bookingId}");
-            // Add query to check if booking exists at all
-            $allBookings = $bookingModel->findAll();
-            log_message('info', "Total bookings in database: " . count($allBookings));
-            
             return $this->respond([
                 'success' => false,
                 'message' => 'Booking not found'
@@ -610,12 +607,15 @@ public function cancelBooking($bookingId)
             ], 400);
         }
 
-        // Get cancellation details from POST request
-        $reason = $this->request->getPost('reason');
-        $notes = $this->request->getPost('notes');
+        // Get cancellation details from POST request (works with FormData)
+        $reason = trim($this->request->getPost('reason') ?? '');
+        $notes = trim($this->request->getPost('notes') ?? '');
         
-        // Validation
+        log_message('info', "Cancellation details - Reason: '{$reason}', Notes: '{$notes}'");
+        
+        // Validation - Check reason is not empty
         if (empty($reason)) {
+            log_message('warning', "Cancellation reason is empty for booking {$bookingId}");
             return $this->respond([
                 'success' => false,
                 'message' => 'Cancellation reason is required'
@@ -626,46 +626,49 @@ public function cancelBooking($bookingId)
         $cancelLetterPath = null;
         $file = $this->request->getFile('cancel_letter');
 
-        if ($file && $file->isValid() && !$file->hasMoved()) {
-            // Validate file size (10MB)
-            if ($file->getSize() > 10 * 1024 * 1024) {
-                return $this->respond([
-                    'success' => false,
-                    'message' => 'Cancellation letter must be less than 10MB'
-                ], 400);
-            }
-
-            // Validate file type
-            $allowedMimes = ['application/pdf', 'image/jpeg', 'image/png', 'image/jpg'];
-            if (!in_array($file->getMimeType(), $allowedMimes)) {
-                return $this->respond([
-                    'success' => false,
-                    'message' => 'Only PDF, JPG, and PNG files are allowed'
-                ], 400);
-            }
-
-            // Create cancellations directory if it doesn't exist
-            $uploadDir = WRITEPATH . 'uploads/cancellations';
-            if (!is_dir($uploadDir)) {
-                mkdir($uploadDir, 0755, true);
-            }
-
-            // Move file to uploads directory
-            $newName = $file->getRandomName();
-            $file->move($uploadDir, $newName);
-            $cancelLetterPath = 'cancellations/' . $newName;
-        } else {
+        if (!$file || !$file->isValid() || $file->hasMoved()) {
+            log_message('warning', "Missing or invalid cancellation letter file for booking {$bookingId}");
             return $this->respond([
                 'success' => false,
                 'message' => 'Cancellation letter is required'
             ], 400);
         }
 
+        // Validate file size (10MB)
+        if ($file->getSize() > 10 * 1024 * 1024) {
+            return $this->respond([
+                'success' => false,
+                'message' => 'Cancellation letter must be less than 10MB'
+            ], 400);
+        }
+
+        // Validate file type
+        $allowedMimes = ['application/pdf', 'image/jpeg', 'image/png', 'image/jpg'];
+        if (!in_array($file->getMimeType(), $allowedMimes)) {
+            return $this->respond([
+                'success' => false,
+                'message' => 'Only PDF, JPG, and PNG files are allowed'
+            ], 400);
+        }
+
+        // Create cancellations directory if it doesn't exist
+        $uploadDir = WRITEPATH . 'uploads/cancellations';
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
+
+        // Move file to uploads directory
+        $newName = $file->getRandomName();
+        $file->move($uploadDir, $newName);
+        $cancelLetterPath = 'cancellations/' . $newName;
+
+        log_message('info', "Cancellation letter saved: {$cancelLetterPath}");
+
         // Update booking status to "cancelled" directly
         $updateData = [
             'status' => 'cancelled',
             'decline_reason' => $reason,
-            'decline_notes' => 'USER CANCELLED: ' . ($notes ?? 'No additional notes provided'),
+            'decline_notes' => 'USER CANCELLED: ' . ($notes ?: 'No additional notes provided'),
             'cancellation_letter_path' => $cancelLetterPath,
             'cancellation_requested_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
@@ -677,7 +680,6 @@ public function cancelBooking($bookingId)
             $dbError = $db->error();
             log_message('error', "Database update error for booking {$bookingId}: " . json_encode($dbError));
             log_message('error', "Update data: " . json_encode($updateData));
-            // Try to get more detailed error info
             log_message('error', "Last query: " . $db->getLastQuery());
         }
         
@@ -690,18 +692,26 @@ public function cancelBooking($bookingId)
         if ($updated) {
             log_message('info', "Cancellation request submitted for booking #{$bookingId} by user {$userEmail}. Reason: {$reason}");
             
-            // Send cancellation request notification email to system
+            // Send cancellation request notification email to system with attachment
             try {
                 $emailService = new CancellationEmailService();
                 $session = session();
                 $userFullName = $session->get('full_name') ?? 'User';
+                
+                // Prepare full path to cancellation letter for attachment
+                $fullLetterPath = null;
+                if ($cancelLetterPath) {
+                    $fullLetterPath = WRITEPATH . 'uploads/' . $cancelLetterPath;
+                    log_message('info', "Preparing to attach cancellation letter: {$fullLetterPath}");
+                }
                 
                 $emailService->sendCancellationNotification(
                     $booking,
                     $reason,
                     $notes,
                     $userEmail,
-                    $userFullName
+                    $userFullName,
+                    $fullLetterPath
                 );
             } catch (\Exception $emailException) {
                 log_message('error', 'Failed to send cancellation email: ' . $emailException->getMessage());

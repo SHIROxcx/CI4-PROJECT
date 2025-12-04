@@ -892,7 +892,7 @@ public function deleteStudentDocument($bookingId, $fileId)
                 ])->setStatusCode(404);
             }
 
-            // Verify access: students can only cancel their own bookings
+            // Verify access: students/faculty can only cancel their own bookings
             if ($userData['role'] === 'student' && $booking['email_address'] !== $userData['email']) {
                 return $this->response->setJSON([
                     'success' => false,
@@ -909,10 +909,12 @@ public function deleteStudentDocument($bookingId, $fileId)
             }
 
             // Get cancellation details from request
-            $reason = $this->request->getPost('reason');
-            $notes = $this->request->getPost('notes');
+            $reason = trim($this->request->getPost('reason') ?? '');
+            $notes = trim($this->request->getPost('notes') ?? '');
 
-            if (!$reason) {
+            log_message('info', "Cancel student booking - Reason: '{$reason}', Notes: '{$notes}'");
+
+            if (empty($reason)) {
                 return $this->response->setJSON([
                     'success' => false,
                     'message' => 'Cancellation reason is required'
@@ -923,40 +925,40 @@ public function deleteStudentDocument($bookingId, $fileId)
             $cancelLetterPath = null;
             $file = $this->request->getFile('cancel_letter');
 
-            if ($file && $file->isValid() && !$file->hasMoved()) {
-                // Validate file size (10MB)
-                if ($file->getSize() > 10 * 1024 * 1024) {
-                    return $this->response->setJSON([
-                        'success' => false,
-                        'message' => 'Cancellation letter must be less than 10MB'
-                    ])->setStatusCode(400);
-                }
-
-                // Validate file type
-                $allowedMimes = ['application/pdf', 'image/jpeg', 'image/png', 'image/jpg'];
-                if (!in_array($file->getMimeType(), $allowedMimes)) {
-                    return $this->response->setJSON([
-                        'success' => false,
-                        'message' => 'Only PDF, JPG, and PNG files are allowed'
-                    ])->setStatusCode(400);
-                }
-
-                // Create cancellations directory if it doesn't exist
-                $uploadDir = WRITEPATH . 'uploads/cancellations';
-                if (!is_dir($uploadDir)) {
-                    mkdir($uploadDir, 0755, true);
-                }
-
-                // Move file to uploads directory
-                $newName = $file->getRandomName();
-                $file->move($uploadDir, $newName);
-                $cancelLetterPath = 'cancellations/' . $newName;
-            } else {
+            if (!$file || !$file->isValid() || $file->hasMoved()) {
                 return $this->response->setJSON([
                     'success' => false,
                     'message' => 'Cancellation letter is required'
                 ])->setStatusCode(400);
             }
+
+            // Validate file size (10MB)
+            if ($file->getSize() > 10 * 1024 * 1024) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Cancellation letter must be less than 10MB'
+                ])->setStatusCode(400);
+            }
+
+            // Validate file type
+            $allowedMimes = ['application/pdf', 'image/jpeg', 'image/png', 'image/jpg'];
+            if (!in_array($file->getMimeType(), $allowedMimes)) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Only PDF, JPG, and PNG files are allowed'
+                ])->setStatusCode(400);
+            }
+
+            // Create cancellations directory if it doesn't exist
+            $uploadDir = WRITEPATH . 'uploads/cancellations';
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+
+            // Move file to uploads directory
+            $newName = $file->getRandomName();
+            $file->move($uploadDir, $newName);
+            $cancelLetterPath = 'cancellations/' . $newName;
 
             $db = \Config\Database::connect();
             $db->transStart();
@@ -981,7 +983,25 @@ public function deleteStudentDocument($bookingId, $fileId)
                 throw new \Exception('Failed to cancel booking');
             }
 
-            log_message('info', "Booking cancelled: {$bookingId} by user {$userData['email']}, Reason: {$reason}");
+            log_message('info', "Student booking cancelled: {$bookingId} by user {$userData['email']}, Reason: {$reason}");
+
+            // Send cancellation notification email with attachment
+            try {
+                $emailService = new \App\Services\CancellationEmailService();
+                $fullLetterPath = WRITEPATH . 'uploads/' . $cancelLetterPath;
+                
+                $emailService->sendCancellationNotification(
+                    $booking,
+                    $reason,
+                    $notes,
+                    $userData['email'],
+                    $userData['full_name'] ?? 'Student/Faculty',
+                    $fullLetterPath
+                );
+            } catch (\Exception $emailException) {
+                log_message('error', 'Failed to send cancellation email: ' . $emailException->getMessage());
+                // Don't fail the cancellation if email fails
+            }
 
             return $this->response->setJSON([
                 'success' => true,
