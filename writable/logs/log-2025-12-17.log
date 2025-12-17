@@ -1,0 +1,1206 @@
+DEBUG - 2025-12-17 01:12:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 01:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 01:37:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 01:37:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 01:37:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 01:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-17 02:10:57 --> Google callback received without authorization code
+DEBUG - 2025-12-17 02:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:12:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:12:56 --> User jomeltienes00@gmail.com logged in successfully via Google OAuth as user
+DEBUG - 2025-12-17 02:12:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:12:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:12:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:13:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:13:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:16:10 --> New user created via Google OAuth: garmilotienes@gmail.com
+INFO - 2025-12-17 02:16:10 --> User garmilotienes@gmail.com logged in successfully via Google OAuth as user
+DEBUG - 2025-12-17 02:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:16:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:16:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:16:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:18:11 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-17 02:18:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:18:12 --> EventsAPI - Found 78 events (pending + confirmed + completed)
+INFO - 2025-12-17 02:18:12 --> EventsAPI - Status breakdown: {"completed":3,"pending":63,"confirmed":12}
+INFO - 2025-12-17 02:18:12 --> EventsAPI - Found 78 events (pending + confirmed + completed)
+INFO - 2025-12-17 02:18:12 --> EventsAPI - Status breakdown: {"completed":3,"pending":63,"confirmed":12}
+DEBUG - 2025-12-17 02:18:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 02:18:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 09:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 09:55:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 11:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 14:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 14:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:34:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:38:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:38:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:38:24 --> === FACILITY DATA DEBUG ===
+INFO - 2025-12-17 17:38:24 --> Facility Key: function-hall
+INFO - 2025-12-17 17:38:24 --> Raw data count: 4
+INFO - 2025-12-17 17:38:24 --> First row data: {"id":"4","facility_key":"function-hall","name":"Function Hall (ACAD Bldg.)","icon":"\ud83c\udfdb\ufe0f","description":null,"is_active":"1","is_maintenance":"0","additional_hours_rate":"450.00","extended_hour_rate":null,"created_at":"2025-10-15 23:18:37","updated_at":"2025-11-25 22:42:34","plan_id":"26","plan_key":"function-4h","plan_name":"Standard Package","duration":"4 hours","price":"3000.00","feature":"Air Conditioner","equipment_id":"7","equipment_name":"Microphone","quantity_included":"1","unit":"included","equipment_category":"audio_visual"}
+INFO - 2025-12-17 17:38:24 --> additional_hours_rate from DB: 450.00
+INFO - 2025-12-17 17:38:24 --> Formatted facility data: {"success":true,"facility":{"name":"Function Hall (ACAD Bldg.)","icon":"\ud83c\udfdb\ufe0f","facility_id":"4","extended_hour_rate":500,"additional_hours_rate":"450.00","plans":[{"id":"26","name":"Standard Package","duration":"4 hours","price":3000,"features":["Air Conditioner"],"included_equipment":[{"id":7,"name":"Microphone","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"}]},{"id":"27","name":"Full Day Package","duration":"8 hours","price":5000,"features":["Air Conditioner"],"included_equipment":[{"id":7,"name":"Microphone","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"}]}]}}
+INFO - 2025-12-17 17:38:24 --> === END FACILITY DATA DEBUG ===
+DEBUG - 2025-12-17 17:38:24 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-11-27 17:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-11-27 17:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 10:37:30","updated_at":"2025-11-27 10:37:30"}]
+DEBUG - 2025-12-17 17:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:39:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:39:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:39:54 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-17 17:39:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:39:55 --> EventsAPI - Found 74 events (pending + confirmed + completed)
+INFO - 2025-12-17 17:39:55 --> EventsAPI - Status breakdown: {"completed":3,"pending":61,"confirmed":10}
+DEBUG - 2025-12-17 17:39:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:39:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:39:55 --> EventsAPI - Found 74 events (pending + confirmed + completed)
+INFO - 2025-12-17 17:39:55 --> EventsAPI - Status breakdown: {"completed":3,"pending":61,"confirmed":10}
+DEBUG - 2025-12-17 17:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:39:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:39:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:40:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:40:16 --> Booking #35 declined. Reason: policy-violation
+INFO - 2025-12-17 17:40:17 --> Booking notification sent: declined for booking #35 to user@gmail.com
+DEBUG - 2025-12-17 17:40:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:41:10 --> Booking #35 permanently deleted from database. Status: cancelled. Reason: asdsadads 
+INFO - 2025-12-17 17:41:11 --> Booking notification sent: deleted for booking #35 to user@gmail.com
+DEBUG - 2025-12-17 17:41:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:41:16 --> Booking #36 permanently deleted from database. Status: cancelled. Reason: sad asdas
+INFO - 2025-12-17 17:41:17 --> Booking notification sent: deleted for booking #36 to user@gmail.com
+DEBUG - 2025-12-17 17:41:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:41:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:41:22 --> Booking #37 permanently deleted from database. Status: cancelled. Reason: asdasdasd asd a
+INFO - 2025-12-17 17:41:22 --> Booking notification sent: deleted for booking #37 to user@gmail.com
+DEBUG - 2025-12-17 17:41:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:41:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:41:27 --> Booking #38 permanently deleted from database. Status: cancelled. Reason: asdasd asda
+INFO - 2025-12-17 17:41:28 --> Booking notification sent: deleted for booking #38 to student@gmail.com
+DEBUG - 2025-12-17 17:41:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:43:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:43:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:43:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:44:11 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-17 17:44:11 --> [getExternalFacilities] Total facilities found: 7
+INFO - 2025-12-17 17:44:11 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-17 17:44:11 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-17 17:44:11 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-17 17:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:44:11 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 17:44:11 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 17:44:11 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 17:44:11 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 17:44:11 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-17 17:44:11 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-17 17:44:11 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-11-27 17:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-11-27 17:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 10:37:30","updated_at":"2025-11-27 10:37:30"}]
+DEBUG - 2025-12-17 17:44:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:44:25 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-17 17:44:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:44:26 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 17:44:26 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 17:44:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:44:26 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 17:44:26 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 17:44:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:44:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:44:36 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 17:44:36 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 17:53:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:53:33 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-17 17:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:53:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:53:34 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 17:53:34 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 17:53:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 17:53:34 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 17:53:34 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 17:54:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:54:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:54:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:57:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:57:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:58:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 17:59:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:00:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:00:06 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-17 18:00:06 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-17 18:00:06 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:00:06 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:00:06 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:00:06 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:00:06 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:00:06 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-17 18:00:06 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-17 18:00:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:00:08 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-17 18:00:08 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-17 18:00:08 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:00:08 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:00:08 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:00:08 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:00:08 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:00:08 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-17 18:00:08 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-17 18:00:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:00:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:00:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:01:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:01:11 --> User johnmarkfabilane@gmail.com logged in successfully as user
+DEBUG - 2025-12-17 18:01:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:01:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:01:22 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-17 18:01:22 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-17 18:01:22 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:01:22 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:01:22 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:01:22 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:01:22 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:01:22 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-17 18:01:22 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-17 18:01:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:01:27 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-10-15 23:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-11-27 17:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-11-27 17:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 10:37:30","updated_at":"2025-11-27 10:37:30"}]
+INFO - 2025-12-17 18:01:27 --> === FACILITY DATA DEBUG ===
+INFO - 2025-12-17 18:01:27 --> Facility Key: gymnasium
+INFO - 2025-12-17 18:01:27 --> Raw data count: 102
+INFO - 2025-12-17 18:01:27 --> First row data: {"id":"2","facility_key":"gymnasium","name":"University Gymnasium","icon":"\ud83c\udfc0","description":"","is_active":"1","is_maintenance":"0","additional_hours_rate":"550.00","extended_hour_rate":"500.00","created_at":"2025-10-15 23:18:37","updated_at":"2025-11-30 07:22:19","plan_id":"1","plan_key":"gym-basic-4h","plan_name":"Basic Package","duration":"4 hours","price":"4000.00","feature":"Spacious Parking Area","equipment_id":"7","equipment_name":"Microphone","quantity_included":"2","unit":"included","equipment_category":"audio_visual"}
+INFO - 2025-12-17 18:01:27 --> additional_hours_rate from DB: 550.00
+INFO - 2025-12-17 18:01:27 --> Formatted facility data: {"success":true,"facility":{"name":"University Gymnasium","icon":"\ud83c\udfc0","facility_id":"2","extended_hour_rate":"500.00","additional_hours_rate":"550.00","plans":[{"id":"1","name":"Basic Package","duration":"4 hours","price":4000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"}]},{"id":"3","name":"Basic Setup","duration":"4 hours","price":8000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":9,"name":"Frontal Lighting","quantity_included":6,"unit":"per piece","category":"lighting"},{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"}]},{"id":"5","name":"Mid Side Setup","duration":"4 hours","price":10000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":9,"name":"Frontal Lighting","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":10,"name":"Moving Head Lights","quantity_included":2,"unit":"per unit","category":"lighting"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":11,"name":"Smoke Machine","quantity_included":1,"unit":"per piece","category":"technical"}]},{"id":"2","name":"Basic Package","duration":"8 hours","price":12000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"}]},{"id":"7","name":"Full Setup","duration":"4 hours","price":13000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":9,"name":"Frontal Lighting","quantity_included":16,"unit":"per piece","category":"lighting"},{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":10,"name":"Moving Head Lights","quantity_included":4,"unit":"per unit","category":"lighting"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":11,"name":"Smoke Machine","quantity_included":1,"unit":"per piece","category":"technical"},{"id":12,"name":"Strobe Light","quantity_included":1,"unit":"per piece","category":"lighting"}]},{"id":"4","name":"Basic Setup","duration":"8 hours","price":15000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":9,"name":"Frontal Lighting","quantity_included":6,"unit":"per piece","category":"lighting"},{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"}]},{"id":"6","name":"Mid Side Setup","duration":"8 hours","price":20000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":9,"name":"Frontal Lighting","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":10,"name":"Moving Head Lights","quantity_included":2,"unit":"per unit","category":"lighting"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":11,"name":"Smoke Machine","quantity_included":1,"unit":"per piece","category":"technical"}]},{"id":"8","name":"Full Setup","duration":"8 hours","price":25000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":9,"name":"Frontal Lighting","quantity_included":16,"unit":"per piece","category":"lighting"},{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":10,"name":"Moving Head Lights","quantity_included":4,"unit":"per unit","category":"lighting"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":11,"name":"Smoke Machine","quantity_included":1,"unit":"per piece","category":"technical"},{"id":12,"name":"Strobe Light","quantity_included":1,"unit":"per piece","category":"lighting"}]},{"id":"9","name":"Ballroom\/Live Band Setup","duration":"8 hours","price":35000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":16,"name":"Drum Set Microphone","quantity_included":1,"unit":"per set","category":"audio_visual"},{"id":19,"name":"Follow Spot","quantity_included":2,"unit":"per unit","category":"lighting"},{"id":9,"name":"Frontal Lighting","quantity_included":16,"unit":"per piece","category":"lighting"},{"id":13,"name":"Full Range Speaker System","quantity_included":6,"unit":"per unit","category":"audio_visual"},{"id":20,"name":"Intercom System","quantity_included":1,"unit":"per set","category":"technical"},{"id":10,"name":"Moving Head Lights","quantity_included":6,"unit":"per unit","category":"lighting"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":15,"name":"Powered 15\" Monitor Speaker","quantity_included":3,"unit":"per unit","category":"audio_visual"},{"id":14,"name":"Powered 18\" Subwoofer","quantity_included":2,"unit":"per unit","category":"audio_visual"},{"id":21,"name":"Projector Screen (White)","quantity_included":2,"unit":"per piece","category":"audio_visual"},{"id":12,"name":"Strobe Light","quantity_included":1,"unit":"per piece","category":"lighting"},{"id":17,"name":"Wired Microphone","quantity_included":4,"unit":"per piece","category":"audio_visual"},{"id":18,"name":"Wireless Microphone","quantity_included":2,"unit":"per piece","category":"audio_visual"}]}]}}
+INFO - 2025-12-17 18:01:27 --> === END FACILITY DATA DEBUG ===
+DEBUG - 2025-12-17 18:01:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:01:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:01:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:02:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:02:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:02:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:02:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:02:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:02:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:03:22 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:03:22 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:03:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:03:28 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:03:28 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:03:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:03:30 --> User lazimraimona@gmail.com logged in successfully as user
+DEBUG - 2025-12-17 18:03:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:03:35 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-17 18:03:35 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-17 18:03:35 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:03:35 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:03:35 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:03:35 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:03:35 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:03:35 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-17 18:03:35 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-17 18:03:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:03:41 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:03:41 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:03:55 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-17 18:03:55 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-17 18:03:55 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:03:55 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:03:55 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:03:55 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:03:55 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:03:55 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-17 18:03:55 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-17 18:03:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:04:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:04:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:04:48 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:04:48 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:05:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:05:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:05:08 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:05:08 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:05:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:06:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:06:08 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:06:08 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:06:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:06:56 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:06:56 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:07:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:07:06 --> User agranali15@gmail.com logged in successfully as user
+DEBUG - 2025-12-17 18:07:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:07:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:07:32 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-17 18:07:32 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-17 18:07:32 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:07:32 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:07:32 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:07:32 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:07:32 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:07:32 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-17 18:07:32 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-17 18:09:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:09:55 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:09:55 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:10:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:12:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:12:45 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-17 18:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:12:46 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:12:46 --> EventsAPI - Status breakdown: {"pending":7}
+INFO - 2025-12-17 18:12:46 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:12:46 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:12:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:12:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:12:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:12:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:18:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:18:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:18:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:18:07 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:18:07 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:18:10 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:18:10 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:20:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:20:58 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:21:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:21:29 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:21:29 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:21:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:22:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:24:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:24:34 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:24:34 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:27:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:27:55 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:27:55 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:28:07 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:28:07 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:28:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:28:11 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:28:11 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:28:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:28:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:28:14 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-17 18:28:14 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-17 18:28:14 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:28:14 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:28:14 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:28:14 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:28:14 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:28:14 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-17 18:28:14 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-17 18:28:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:28:15 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:28:15 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:28:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:28:20 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:28:20 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:28:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:28:27 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:28:27 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:28:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:28:41 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:28:41 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:28:44 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:28:44 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:28:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:28:45 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:28:45 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:28:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:28:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:28:48 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:28:48 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:28:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:28:49 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:28:49 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:29:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:29:00 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:29:00 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:29:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:29:01 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:29:01 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:29:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:29:03 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:29:03 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:33:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:33:30 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:33:30 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:33:39 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:33:39 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:33:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:33:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:33:58 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:34:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:34:21 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-17 18:34:21 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-17 18:34:21 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:34:21 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:34:21 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:34:21 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:34:21 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:34:21 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-17 18:34:21 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-17 18:34:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:34:24 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:34:24 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:35:37 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-17 18:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:35:38 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:35:38 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:35:38 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:35:38 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:35:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-17 18:35:44 --> Error generating facility rental report: Template not found at: /home/u840482060/domains/spherecspc.online/main/public/assets/templates/report_summary.xlsx
+DEBUG - 2025-12-17 18:36:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:36:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:36:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:36:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:43:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:43:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:43:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:43:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:43:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:43:57 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:43:57 --> EventsAPI - Status breakdown: {"pending":7}
+INFO - 2025-12-17 18:43:57 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:43:57 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:45:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:45:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:46:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:46:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:46:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:46:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:46:59 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-17 18:46:59 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-17 18:46:59 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:46:59 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:46:59 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:46:59 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:46:59 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:46:59 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-17 18:46:59 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-17 18:47:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:47:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:47:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:47:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:47:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:47:54 --> User stcastillo@my.cspc.edu.ph logged in successfully as student
+DEBUG - 2025-12-17 18:47:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:47:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:47:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:48:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:48:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:48:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:48:58 --> EventsAPI - Status breakdown: {"pending":7}
+INFO - 2025-12-17 18:48:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:48:58 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:49:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:49:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:52:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:52:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:52:19 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-17 18:52:19 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-17 18:52:19 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:52:19 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:52:19 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:52:19 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:52:19 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-17 18:52:19 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-17 18:52:19 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-17 18:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:53:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:53:58 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:53:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:53:58 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 18:57:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:58:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 18:58:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 18:58:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:58:58 --> EventsAPI - Status breakdown: {"pending":7}
+INFO - 2025-12-17 18:58:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 18:58:58 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 19:03:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 19:03:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:03:58 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 19:03:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 19:03:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:03:58 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 19:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 19:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 19:38:17 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:38:17 --> EventsAPI - Status breakdown: {"pending":7}
+INFO - 2025-12-17 19:38:18 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:38:18 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 19:38:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 19:38:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:38:58 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 19:38:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 19:38:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:38:58 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 19:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 19:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 19:44:57 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:44:57 --> EventsAPI - Status breakdown: {"pending":7}
+INFO - 2025-12-17 19:44:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:44:58 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 19:49:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 19:49:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 19:49:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:49:58 --> EventsAPI - Status breakdown: {"pending":7}
+INFO - 2025-12-17 19:49:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:49:58 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 19:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 19:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 19:52:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 19:52:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 19:52:11 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:52:11 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 19:52:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 19:52:11 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:52:11 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 19:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 19:52:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 19:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 19:52:16 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:52:16 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 19:52:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 19:52:50 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 19:52:50 --> EventsAPI - Status breakdown: {"pending":7}
+INFO - 2025-12-17 19:56:44 --> REDIRECTED ROUTE at https://spherecspc.online/
+INFO - 2025-12-17 19:57:05 --> REDIRECTED ROUTE at https://spherecspc.online/
+INFO - 2025-12-17 19:57:44 --> REDIRECTED ROUTE at https://localhost:8080/
+DEBUG - 2025-12-17 20:02:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:02:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:02:50 --> EventsAPI - Found 78 events (pending + confirmed + completed)
+INFO - 2025-12-17 20:02:50 --> EventsAPI - Status breakdown: {"completed":3,"pending":61,"confirmed":14}
+DEBUG - 2025-12-17 20:03:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:03:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:04:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:10:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:10:20 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 20:10:20 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 20:10:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:10:28 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 20:10:28 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 20:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:10:49 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 20:10:49 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 20:10:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:10:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:10:58 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 20:10:58 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 20:10:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:11:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:11:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:11:14 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-17 20:11:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:11:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:11:14 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 20:11:14 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 20:11:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:11:14 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 20:11:14 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 20:11:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:14:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:16:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:17:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:40:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 20:40:21 --> ParseError: Unclosed '{' on line 9
+[Method: GET, Route: admin/file-templates]
+in APPPATH\Controllers\Admin\FileTemplatesController.php on line 700.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\wamp64\\www\\CI4-FINAL HOSTING\\app\\Controllers\\Admin\\FileTemplatesController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin\\FileTemplatesController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin\\FileTemplatesController')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin\\FileTemplatesController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\CI4-FINAL HOSTING\\public\\index.php')
+DEBUG - 2025-12-17 20:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 20:40:46 --> Error: Call to undefined method App\Controllers\Admin\FileTemplatesController::getFileType()
+[Method: GET, Route: admin/file-templates]
+in APPPATH\Controllers\Admin\FileTemplatesController.php on line 281.
+ 1 APPPATH\Controllers\Admin\FileTemplatesController.php(259): App\Controllers\Admin\FileTemplatesController->getFileInfo('billing_statement_template.xlsx')
+ 2 APPPATH\Controllers\Admin\FileTemplatesController.php(27): App\Controllers\Admin\FileTemplatesController->getTemplateFiles()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\FileTemplatesController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\FileTemplatesController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\CI4-FINAL HOSTING\\public\\index.php')
+DEBUG - 2025-12-17 20:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 20:40:47 --> Error: Call to undefined method App\Controllers\Admin\FileTemplatesController::getFileType()
+[Method: GET, Route: admin/file-templates]
+in APPPATH\Controllers\Admin\FileTemplatesController.php on line 281.
+ 1 APPPATH\Controllers\Admin\FileTemplatesController.php(259): App\Controllers\Admin\FileTemplatesController->getFileInfo('billing_statement_template.xlsx')
+ 2 APPPATH\Controllers\Admin\FileTemplatesController.php(27): App\Controllers\Admin\FileTemplatesController->getTemplateFiles()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\FileTemplatesController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\FileTemplatesController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\CI4-FINAL HOSTING\\public\\index.php')
+DEBUG - 2025-12-17 20:41:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:41:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:42:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:42:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:43:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:43:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:44:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:44:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:44:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:44:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:45:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:45:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:45:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:46:10 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 20:46:10 --> Config found: YES
+DEBUG - 2025-12-17 20:46:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:46:11 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 20:46:11 --> Config found: YES
+DEBUG - 2025-12-17 20:48:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:48:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:48:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:48:15 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 20:48:15 --> Config found: YES
+DEBUG - 2025-12-17 20:48:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:48:24 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_204824.xlsx
+CRITICAL - 2025-12-17 20:48:24 --> Error: Cannot use object of type stdClass as array
+[Method: POST, Route: admin/file-templates/update-signatories]
+in APPPATH\Controllers\Admin\FileTemplatesController.php on line 659.
+ 1 APPPATH\Controllers\Admin\FileTemplatesController.php(591): App\Controllers\Admin\FileTemplatesController->updateExcelSignatories('billing_statement_template.xlsx', Object(stdClass))
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\FileTemplatesController->updateSignatories()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\FileTemplatesController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\CI4-FINAL HOSTING\\public\\index.php')
+DEBUG - 2025-12-17 20:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:48:31 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 20:48:31 --> Config found: YES
+DEBUG - 2025-12-17 20:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:48:32 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 20:48:33 --> Config found: YES
+DEBUG - 2025-12-17 20:48:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:48:44 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_204844.xlsx
+CRITICAL - 2025-12-17 20:48:44 --> Error: Cannot use object of type stdClass as array
+[Method: POST, Route: admin/file-templates/update-signatories]
+in APPPATH\Controllers\Admin\FileTemplatesController.php on line 659.
+ 1 APPPATH\Controllers\Admin\FileTemplatesController.php(591): App\Controllers\Admin\FileTemplatesController->updateExcelSignatories('billing_statement_template.xlsx', Object(stdClass))
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\FileTemplatesController->updateSignatories()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\FileTemplatesController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\CI4-FINAL HOSTING\\public\\index.php')
+DEBUG - 2025-12-17 20:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:48:49 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 20:48:49 --> Config found: YES
+DEBUG - 2025-12-17 20:49:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:49:03 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_204903.xlsx
+CRITICAL - 2025-12-17 20:49:03 --> Error: Cannot use object of type stdClass as array
+[Method: POST, Route: admin/file-templates/update-signatories]
+in APPPATH\Controllers\Admin\FileTemplatesController.php on line 659.
+ 1 APPPATH\Controllers\Admin\FileTemplatesController.php(591): App\Controllers\Admin\FileTemplatesController->updateExcelSignatories('billing_statement_template.xlsx', Object(stdClass))
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\FileTemplatesController->updateSignatories()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\FileTemplatesController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\CI4-FINAL HOSTING\\public\\index.php')
+DEBUG - 2025-12-17 20:49:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:49:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:49:38 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 20:49:39 --> Config found: YES
+DEBUG - 2025-12-17 20:49:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:49:45 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_204945.xlsx
+ERROR - 2025-12-17 20:49:45 --> Error updating Excel cell: fopen(C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx): Failed to open stream: Resource temporarily unavailable
+ERROR - 2025-12-17 20:49:45 --> Error updating Excel signatories: fopen(C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx): Failed to open stream: Resource temporarily unavailable
+DEBUG - 2025-12-17 20:50:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:50:03 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 20:50:03 --> Config found: YES
+DEBUG - 2025-12-17 20:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:51:41 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 20:51:42 --> Config found: YES
+DEBUG - 2025-12-17 20:51:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:51:49 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_205149.xlsx
+DEBUG - 2025-12-17 20:51:49 --> Loading Excel file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+DEBUG - 2025-12-17 20:51:49 --> Setting cell D48 to value: MARY JANE J. CHAVEZ
+DEBUG - 2025-12-17 20:51:49 --> Saving Excel file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+ERROR - 2025-12-17 20:51:49 --> Error updating Excel cell: fopen(C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx): Failed to open stream: Resource temporarily unavailable
+ERROR - 2025-12-17 20:51:49 --> File path: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+ERROR - 2025-12-17 20:51:49 --> Cell address: D48
+ERROR - 2025-12-17 20:51:49 --> Stack trace: #0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(C:\\wamp64...', 'C:\\wamp64\\www\\C...', 117)
+#1 C:\wamp64\www\CI4-FINAL HOSTING\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\BaseWriter.php(117): fopen('C:\\wamp64\\www\\C...', 'wb')
+#2 C:\wamp64\www\CI4-FINAL HOSTING\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx.php(564): PhpOffice\PhpSpreadsheet\Writer\BaseWriter->openFileHandle('C:\\wamp64\\www\\C...')
+#3 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(739): PhpOffice\PhpSpreadsheet\Writer\Xlsx->save('C:\\wamp64\\www\\C...')
+#4 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(671): App\Controllers\Admin\FileTemplatesController->setExcelCellValue('C:\\wamp64\\www\\C...', 'D48', 'MARY JANE J. CH...')
+#5 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(592): App\Controllers\Admin\FileTemplatesController->updateExcelSignatories('billing_stateme...', Object(stdClass))
+#6 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(933): App\Controllers\Admin\FileTemplatesController->updateSignatories()
+#7 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\FileTemplatesController))
+#8 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\CI4-FINAL HOSTING\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\CI4-FINAL HOSTING\system\rewrite.php(44): require_once('C:\\wamp64\\www\\C...')
+#13 {main}
+ERROR - 2025-12-17 20:51:49 --> Error updating Excel signatories: fopen(C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx): Failed to open stream: Resource temporarily unavailable
+DEBUG - 2025-12-17 20:53:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:53:53 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 20:53:53 --> Config found: YES
+DEBUG - 2025-12-17 20:54:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:54:01 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_205401.xlsx
+DEBUG - 2025-12-17 20:54:01 --> Creating temporary file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a7e92e58d.xlsx
+DEBUG - 2025-12-17 20:54:01 --> Loading Excel file from temp: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a7e92e58d.xlsx
+DEBUG - 2025-12-17 20:54:01 --> Setting cell D48 to value: MARY JANE J. CHAVEZ
+DEBUG - 2025-12-17 20:54:01 --> Saving changes to temp file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a7e92e58d.xlsx
+ERROR - 2025-12-17 20:54:01 --> Error updating Excel cell: unlink(C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx): Resource temporarily unavailable
+ERROR - 2025-12-17 20:54:01 --> File path: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+ERROR - 2025-12-17 20:54:01 --> Cell address: D48
+ERROR - 2025-12-17 20:54:01 --> Stack trace: #0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\wamp6...', 'C:\\wamp64\\www\\C...', 765)
+#1 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(765): unlink('C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(671): App\Controllers\Admin\FileTemplatesController->setExcelCellValue('C:\\wamp64\\www\\C...', 'D48', 'MARY JANE J. CH...')
+#3 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(592): App\Controllers\Admin\FileTemplatesController->updateExcelSignatories('billing_stateme...', Object(stdClass))
+#4 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(933): App\Controllers\Admin\FileTemplatesController->updateSignatories()
+#5 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\FileTemplatesController))
+#6 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\wamp64\www\CI4-FINAL HOSTING\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\wamp64\www\CI4-FINAL HOSTING\system\rewrite.php(44): require_once('C:\\wamp64\\www\\C...')
+#11 {main}
+ERROR - 2025-12-17 20:54:01 --> Error updating Excel signatories: unlink(C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx): Resource temporarily unavailable
+DEBUG - 2025-12-17 20:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:54:19 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_205419.xlsx
+DEBUG - 2025-12-17 20:54:19 --> Creating temporary file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a7fbd1575.xlsx
+DEBUG - 2025-12-17 20:54:19 --> Loading Excel file from temp: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a7fbd1575.xlsx
+DEBUG - 2025-12-17 20:54:20 --> Setting cell D48 to value: MARY JANE J. CHAVEZ
+DEBUG - 2025-12-17 20:54:20 --> Saving changes to temp file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a7fbd1575.xlsx
+INFO - 2025-12-17 20:54:20 --> Successfully updated Excel cell: D48 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+INFO - 2025-12-17 20:54:20 --> Template signatories updated: billing_statement_template.xlsx by test
+DEBUG - 2025-12-17 20:54:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:54:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:54:26 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 20:54:26 --> Config found: YES
+DEBUG - 2025-12-17 20:54:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:54:31 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 20:54:31 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 20:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:55:32 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 20:55:32 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 20:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:55:32 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 20:55:32 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 20:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:56:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:56:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:56:07 --> === GET STUDENT FILES START (Booking #141) ===
+INFO - 2025-12-17 20:56:07 --> User role: admin
+INFO - 2025-12-17 20:56:07 --> Found 0 files for booking #141
+INFO - 2025-12-17 20:56:07 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-17 20:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:56:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:56:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:57:37 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 20:57:37 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 20:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:57:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:57:39 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 20:57:39 --> Config found: YES
+DEBUG - 2025-12-17 20:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 20:57:47 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_205747.xlsx
+DEBUG - 2025-12-17 20:57:47 --> Creating temporary file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a8cb4fed8.xlsx
+DEBUG - 2025-12-17 20:57:47 --> Loading Excel file from temp: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a8cb4fed8.xlsx
+DEBUG - 2025-12-17 20:57:47 --> Setting cell D48 to value: JOMEL JANE J. CHAVEZ
+DEBUG - 2025-12-17 20:57:47 --> Saving changes to temp file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a8cb4fed8.xlsx
+INFO - 2025-12-17 20:57:48 --> Successfully updated Excel cell: D48 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+INFO - 2025-12-17 20:57:48 --> Template signatories updated: billing_statement_template.xlsx by test
+DEBUG - 2025-12-17 20:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:57:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:57:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:57:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:58:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:59:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 20:59:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:01:19 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 21:01:19 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 21:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:01:23 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 21:01:23 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 21:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:01:26 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 21:01:26 --> Config found: YES
+DEBUG - 2025-12-17 21:01:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:01:33 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_210133.xlsx
+DEBUG - 2025-12-17 21:01:33 --> Creating temporary file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a9ad75199.xlsx
+DEBUG - 2025-12-17 21:01:33 --> Loading Excel file from temp: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a9ad75199.xlsx
+DEBUG - 2025-12-17 21:01:33 --> Setting cell D48 to value: JOMEL JANE J. CHAVEZ
+DEBUG - 2025-12-17 21:01:33 --> Saving changes to temp file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a9ad75199.xlsx
+INFO - 2025-12-17 21:01:33 --> Successfully updated Excel cell: D48 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+INFO - 2025-12-17 21:01:33 --> Template signatories updated: billing_statement_template.xlsx by test
+DEBUG - 2025-12-17 21:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:01:35 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 21:01:35 --> Config found: YES
+DEBUG - 2025-12-17 21:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:01:37 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 21:01:37 --> Config found: YES
+DEBUG - 2025-12-17 21:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:01:45 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_210145.xlsx
+DEBUG - 2025-12-17 21:01:45 --> Creating temporary file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a9b9309e1.xlsx
+DEBUG - 2025-12-17 21:01:45 --> Loading Excel file from temp: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a9b9309e1.xlsx
+DEBUG - 2025-12-17 21:01:45 --> Setting cell D48 to value: JOMEL JANE J. CHAVEZ
+DEBUG - 2025-12-17 21:01:45 --> Saving changes to temp file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942a9b9309e1.xlsx
+INFO - 2025-12-17 21:01:45 --> Successfully updated Excel cell: D48 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+INFO - 2025-12-17 21:01:45 --> Template signatories updated: billing_statement_template.xlsx by test
+DEBUG - 2025-12-17 21:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:03:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:03:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:03:07 --> Looking for template config: billing_statement_tetemplate (from: billing_statement_tetemplate.xlsx)
+INFO - 2025-12-17 21:03:08 --> Config found: NO
+DEBUG - 2025-12-17 21:04:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:04:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:04:41 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 21:04:43 --> Config found: YES
+DEBUG - 2025-12-17 21:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:04:48 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_210448.xlsx
+DEBUG - 2025-12-17 21:04:48 --> Creating temporary file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942aa703e88b.xlsx
+DEBUG - 2025-12-17 21:04:48 --> Loading Excel file from temp: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942aa703e88b.xlsx
+DEBUG - 2025-12-17 21:04:49 --> Setting cell D48 to value: JOMEL JANE J. CHAVEZ
+DEBUG - 2025-12-17 21:04:50 --> Saving changes to temp file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx.tmp_6942aa703e88b.xlsx
+INFO - 2025-12-17 21:04:51 --> Successfully updated Excel cell: D48 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+INFO - 2025-12-17 21:04:51 --> Template signatories updated: billing_statement_template.xlsx by test
+DEBUG - 2025-12-17 21:04:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:05:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:09:23 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 21:09:23 --> Config found: YES
+DEBUG - 2025-12-17 21:09:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:09:27 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_210927.xlsx
+DEBUG - 2025-12-17 21:09:27 --> Loading Excel file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+DEBUG - 2025-12-17 21:09:28 --> Setting cell D48 to value: JOMEL  JANE J. CHAVEZ
+DEBUG - 2025-12-17 21:09:28 --> Saving Excel file: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+INFO - 2025-12-17 21:09:28 --> Successfully updated Excel cell: D48 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+INFO - 2025-12-17 21:09:28 --> Template signatories updated: billing_statement_template.xlsx by test
+DEBUG - 2025-12-17 21:09:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:09:29 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 21:09:29 --> Config found: YES
+DEBUG - 2025-12-17 21:09:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:09:30 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 21:09:30 --> Config found: YES
+DEBUG - 2025-12-17 21:09:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:12:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:12:07 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 21:12:07 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 21:12:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:12:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:12:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:12:09 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 21:12:09 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 21:12:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:12:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:12:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:12:25 --> === GET STUDENT FILES START (Booking #141) ===
+INFO - 2025-12-17 21:12:25 --> User role: admin
+INFO - 2025-12-17 21:12:25 --> Found 0 files for booking #141
+INFO - 2025-12-17 21:12:25 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-17 21:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:12:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:16:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:16:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:18:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:18:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:18:12 --> Looking for template config: billing_statement_tetemplate (from: billing_statement_tetemplate.xlsx)
+INFO - 2025-12-17 21:18:12 --> Config found: NO
+DEBUG - 2025-12-17 21:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:18:13 --> Looking for template config: billing_statement_tetemplate (from: billing_statement_tetemplate.xlsx)
+INFO - 2025-12-17 21:18:13 --> Config found: NO
+DEBUG - 2025-12-17 21:18:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:18:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:18:31 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 21:18:31 --> Config found: YES
+DEBUG - 2025-12-17 21:18:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:18:39 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_211839.xlsx
+DEBUG - 2025-12-17 21:18:39 --> Setting cell D48 to value: JOMEL JANE J. CHAVEZ
+INFO - 2025-12-17 21:18:39 --> Successfully updated Excel cell: D48 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+INFO - 2025-12-17 21:18:39 --> Template signatories updated: billing_statement_template.xlsx by test
+DEBUG - 2025-12-17 21:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:19:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:19:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:19:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:19:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:19:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:19:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:19:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:19:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:19:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-17 21:19:29 --> Error generating billing statement: Billing statement template not found at: assets/templates/billing_statement_template.xlsx
+DEBUG - 2025-12-17 21:20:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:20:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:21:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:21:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:21:55 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-17 21:21:55 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-17 21:21:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:21:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:21:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:21:56 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 21:21:56 --> Config found: YES
+DEBUG - 2025-12-17 21:22:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:22:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:22:17 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 21:22:17 --> Config found: YES
+DEBUG - 2025-12-17 21:22:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:22:24 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_212224.xlsx
+DEBUG - 2025-12-17 21:22:24 --> Setting cell D48 to value: JOMEL JANE J. CHAVEZ
+ERROR - 2025-12-17 21:22:24 --> Error updating Excel cell: Undefined variable $cellAddress
+ERROR - 2025-12-17 21:22:24 --> File path: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+ERROR - 2025-12-17 21:22:24 --> Cell address: D48
+ERROR - 2025-12-17 21:22:24 --> Stack trace: #0 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(779): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\wamp64\\www\\C...', 779)
+#1 [internal function]: App\Controllers\Admin\FileTemplatesController->App\Controllers\Admin\{closure}(Array)
+#2 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(766): preg_replace_callback('/<c\\s+r="D48"([...', Object(Closure), '<?xml version="...')
+#3 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(677): App\Controllers\Admin\FileTemplatesController->setExcelCellValue('C:\\wamp64\\www\\C...', 'D48', 'JOMEL JANE J. C...')
+#4 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(598): App\Controllers\Admin\FileTemplatesController->updateExcelSignatories('billing_stateme...', Object(stdClass))
+#5 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(933): App\Controllers\Admin\FileTemplatesController->updateSignatories()
+#6 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\FileTemplatesController))
+#7 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\wamp64\www\CI4-FINAL HOSTING\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\wamp64\www\CI4-FINAL HOSTING\system\rewrite.php(44): require_once('C:\\wamp64\\www\\C...')
+#12 {main}
+ERROR - 2025-12-17 21:22:24 --> Error updating Excel signatories: Undefined variable $cellAddress
+DEBUG - 2025-12-17 21:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:22:31 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 21:22:31 --> Config found: YES
+DEBUG - 2025-12-17 21:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:22:38 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_212238.xlsx
+DEBUG - 2025-12-17 21:22:38 --> Setting cell D48 to value: JOMEL  JANE J. CHAVEZ
+ERROR - 2025-12-17 21:22:38 --> Error updating Excel cell: Undefined variable $cellAddress
+ERROR - 2025-12-17 21:22:38 --> File path: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+ERROR - 2025-12-17 21:22:38 --> Cell address: D48
+ERROR - 2025-12-17 21:22:38 --> Stack trace: #0 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(779): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\wamp64\\www\\C...', 779)
+#1 [internal function]: App\Controllers\Admin\FileTemplatesController->App\Controllers\Admin\{closure}(Array)
+#2 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(766): preg_replace_callback('/<c\\s+r="D48"([...', Object(Closure), '<?xml version="...')
+#3 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(677): App\Controllers\Admin\FileTemplatesController->setExcelCellValue('C:\\wamp64\\www\\C...', 'D48', 'JOMEL  JANE J. ...')
+#4 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(598): App\Controllers\Admin\FileTemplatesController->updateExcelSignatories('billing_stateme...', Object(stdClass))
+#5 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(933): App\Controllers\Admin\FileTemplatesController->updateSignatories()
+#6 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\FileTemplatesController))
+#7 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\wamp64\www\CI4-FINAL HOSTING\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\wamp64\www\CI4-FINAL HOSTING\system\rewrite.php(44): require_once('C:\\wamp64\\www\\C...')
+#12 {main}
+ERROR - 2025-12-17 21:22:38 --> Error updating Excel signatories: Undefined variable $cellAddress
+DEBUG - 2025-12-17 21:23:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:23:22 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 21:23:22 --> Config found: YES
+DEBUG - 2025-12-17 21:23:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:23:27 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251217_212327.xlsx
+DEBUG - 2025-12-17 21:23:27 --> Setting cell D48 to value: JOMEL JANE J. CHAVEZ
+INFO - 2025-12-17 21:23:27 --> Successfully updated Excel cell: D48 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+INFO - 2025-12-17 21:23:27 --> Template signatories updated: billing_statement_template.xlsx by test
+DEBUG - 2025-12-17 21:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:24:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:24:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:24:30 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+INFO - 2025-12-17 21:24:30 --> Config found: NO
+DEBUG - 2025-12-17 21:24:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:24:31 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+INFO - 2025-12-17 21:24:31 --> Config found: NO
+DEBUG - 2025-12-17 21:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:25:05 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+INFO - 2025-12-17 21:25:05 --> Config found: NO
+DEBUG - 2025-12-17 21:25:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:25:08 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+INFO - 2025-12-17 21:25:08 --> Config found: NO
+DEBUG - 2025-12-17 21:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:29:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-17 21:29:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 21:29:28 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-17 21:29:28 --> Config found: YES

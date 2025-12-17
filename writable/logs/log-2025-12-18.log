@@ -1,0 +1,1070 @@
+DEBUG - 2025-12-18 00:28:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:28:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:28:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:28:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:28:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:28:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:28:29 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 00:28:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:28:30 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 00:28:30 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-18 00:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:28:30 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 00:28:30 --> EventsAPI - Status breakdown: {"pending":7}
+DEBUG - 2025-12-18 00:28:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:28:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:28:35 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-18 00:28:35 --> Config found: YES
+DEBUG - 2025-12-18 00:28:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:28:42 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251218_002842.xlsx
+DEBUG - 2025-12-18 00:28:42 --> Setting cell D48 to value: MARY JANE J. CHAVEZ
+ERROR - 2025-12-18 00:28:42 --> Error updating Excel cell: copy(C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx): Failed to open stream: Resource temporarily unavailable
+ERROR - 2025-12-18 00:28:42 --> File path: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+ERROR - 2025-12-18 00:28:42 --> Cell address: D48
+ERROR - 2025-12-18 00:28:42 --> Stack trace: #0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'copy(C:\\wamp64\\...', 'C:\\wamp64\\www\\C...', 816)
+#1 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(816): copy('C:\\wamp64\\www\\C...', 'C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(678): App\Controllers\Admin\FileTemplatesController->setExcelCellValue('C:\\wamp64\\www\\C...', 'D48', 'MARY JANE J. CH...')
+#3 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(599): App\Controllers\Admin\FileTemplatesController->updateExcelSignatories('billing_stateme...', Object(stdClass))
+#4 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(933): App\Controllers\Admin\FileTemplatesController->updateSignatories()
+#5 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\FileTemplatesController))
+#6 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\wamp64\www\CI4-FINAL HOSTING\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\wamp64\www\CI4-FINAL HOSTING\system\rewrite.php(44): require_once('C:\\wamp64\\www\\C...')
+#11 {main}
+ERROR - 2025-12-18 00:28:42 --> Error updating Excel signatories: copy(C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx): Failed to open stream: Resource temporarily unavailable
+DEBUG - 2025-12-18 00:29:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:29:21 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-18 00:29:21 --> Config found: YES
+DEBUG - 2025-12-18 00:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:29:26 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251218_002926.xlsx
+DEBUG - 2025-12-18 00:29:26 --> Setting cell D48 to value: MARY JANE J. CHAVEZ
+INFO - 2025-12-18 00:29:26 --> Successfully updated Excel cell: D48 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+INFO - 2025-12-18 00:29:26 --> Template signatories updated: billing_statement_template.xlsx by test
+DEBUG - 2025-12-18 00:29:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:29:28 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-18 00:29:28 --> Config found: YES
+DEBUG - 2025-12-18 00:29:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:29:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:29:29 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-18 00:29:29 --> Config found: YES
+DEBUG - 2025-12-18 00:29:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:29:54 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-18 00:29:54 --> Config found: YES
+DEBUG - 2025-12-18 00:30:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:30:06 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251218_003006.xlsx
+DEBUG - 2025-12-18 00:30:06 --> Setting cell D48 to value: JOMEL JANE J. CHAVEZ
+INFO - 2025-12-18 00:30:06 --> Successfully updated Excel cell: D48 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+INFO - 2025-12-18 00:30:06 --> Template signatories updated: billing_statement_template.xlsx by test
+DEBUG - 2025-12-18 00:30:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:30:11 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+INFO - 2025-12-18 00:30:11 --> Config found: YES
+DEBUG - 2025-12-18 00:30:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:30:18 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/billing_statement_template_20251218_003018.xlsx
+DEBUG - 2025-12-18 00:30:18 --> Setting cell D48 to value: MARY JANE J. CHAVEZ
+INFO - 2025-12-18 00:30:18 --> Successfully updated Excel cell: D48 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/billing_statement_template.xlsx
+INFO - 2025-12-18 00:30:18 --> Template signatories updated: billing_statement_template.xlsx by test
+DEBUG - 2025-12-18 00:30:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:30:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:30:40 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+INFO - 2025-12-18 00:30:40 --> Config found: NO
+DEBUG - 2025-12-18 00:31:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:31:09 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+INFO - 2025-12-18 00:31:09 --> Config found: NO
+DEBUG - 2025-12-18 00:31:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:31:09 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+INFO - 2025-12-18 00:31:09 --> Config found: NO
+DEBUG - 2025-12-18 00:31:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:31:09 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+INFO - 2025-12-18 00:31:09 --> Config found: NO
+DEBUG - 2025-12-18 00:34:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:34:07 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+INFO - 2025-12-18 00:34:07 --> Config found: YES
+DEBUG - 2025-12-18 00:34:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:34:19 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/equipment_request_form_template_20251218_003419.xlsx
+DEBUG - 2025-12-18 00:34:19 --> Setting cell C63 to value: JANE CHIE A. DE LA CRUZ, CPA
+ERROR - 2025-12-18 00:34:19 --> Error updating Excel cell: copy(C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/equipment_request_form_template.xlsx): Failed to open stream: Resource temporarily unavailable
+ERROR - 2025-12-18 00:34:19 --> File path: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/equipment_request_form_template.xlsx
+ERROR - 2025-12-18 00:34:19 --> Cell address: C63
+ERROR - 2025-12-18 00:34:19 --> Stack trace: #0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'copy(C:\\wamp64\\...', 'C:\\wamp64\\www\\C...', 845)
+#1 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(845): copy('C:\\wamp64\\www\\C...', 'C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(697): App\Controllers\Admin\FileTemplatesController->setExcelCellValue('C:\\wamp64\\www\\C...', 'C63', 'JANE CHIE A. DE...')
+#3 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(615): App\Controllers\Admin\FileTemplatesController->updateExcelSignatories('equipment_reque...', Object(stdClass))
+#4 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(933): App\Controllers\Admin\FileTemplatesController->updateSignatories()
+#5 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\FileTemplatesController))
+#6 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\wamp64\www\CI4-FINAL HOSTING\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\wamp64\www\CI4-FINAL HOSTING\system\rewrite.php(44): require_once('C:\\wamp64\\www\\C...')
+#11 {main}
+ERROR - 2025-12-18 00:34:19 --> Error updating Excel signatories: copy(C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/equipment_request_form_template.xlsx): Failed to open stream: Resource temporarily unavailable
+DEBUG - 2025-12-18 00:34:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:34:53 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+INFO - 2025-12-18 00:34:53 --> Config found: YES
+DEBUG - 2025-12-18 00:34:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:34:59 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/equipment_request_form_template_20251218_003459.xlsx
+DEBUG - 2025-12-18 00:34:59 --> Setting cell C63 to value: CHIE A. DE LA CRUZ, CPA
+INFO - 2025-12-18 00:34:59 --> Successfully updated Excel cell: C63 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/equipment_request_form_template.xlsx
+DEBUG - 2025-12-18 00:34:59 --> Setting cell C68 to value: NANCY S. PENETRANTE
+INFO - 2025-12-18 00:34:59 --> Successfully updated Excel cell: C68 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/equipment_request_form_template.xlsx
+INFO - 2025-12-18 00:34:59 --> Template signatories updated: equipment_request_form_template.xlsx by test
+DEBUG - 2025-12-18 00:35:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:35:00 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+INFO - 2025-12-18 00:35:00 --> Config found: YES
+DEBUG - 2025-12-18 00:35:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:35:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:35:02 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+INFO - 2025-12-18 00:35:02 --> Config found: YES
+DEBUG - 2025-12-18 00:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:35:18 --> Looking for template config: faculty_evaluation_template (from: faculty_evaluation_template.xlsx)
+INFO - 2025-12-18 00:35:19 --> Config found: NO
+DEBUG - 2025-12-18 00:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:35:49 --> Looking for template config: inspection_evaluation_template (from: inspection_evaluation_template.xlsx)
+INFO - 2025-12-18 00:35:49 --> Config found: NO
+DEBUG - 2025-12-18 00:38:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:38:03 --> Looking for template config: faculty_evaluation_template (from: faculty_evaluation_template.xlsx)
+INFO - 2025-12-18 00:38:03 --> Config found: NO
+DEBUG - 2025-12-18 00:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:38:06 --> Looking for template config: faculty_evaluation_template (from: faculty_evaluation_template.xlsx)
+INFO - 2025-12-18 00:38:06 --> Config found: NO
+DEBUG - 2025-12-18 00:38:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:38:14 --> Looking for template config: inspection_evaluation_template (from: inspection_evaluation_template.xlsx)
+INFO - 2025-12-18 00:38:14 --> Config found: YES
+DEBUG - 2025-12-18 00:38:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:38:21 --> Looking for template config: inspection_evaluation_template (from: inspection_evaluation_template.xlsx)
+INFO - 2025-12-18 00:38:22 --> Config found: YES
+DEBUG - 2025-12-18 00:38:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:38:28 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/inspection_evaluation_template_20251218_003828.xlsx
+DEBUG - 2025-12-18 00:38:28 --> Setting cell A36 to value: Vic B. Bardon
+INFO - 2025-12-18 00:38:28 --> Successfully updated Excel cell: A36 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/inspection_evaluation_template.xlsx
+INFO - 2025-12-18 00:38:28 --> Template signatories updated: inspection_evaluation_template.xlsx by test
+DEBUG - 2025-12-18 00:38:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:38:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:38:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:38:54 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+INFO - 2025-12-18 00:38:55 --> Config found: YES
+DEBUG - 2025-12-18 00:39:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:39:06 --> Looking for template config: inspection_evaluation_template (from: inspection_evaluation_template.xlsx)
+INFO - 2025-12-18 00:39:06 --> Config found: YES
+DEBUG - 2025-12-18 00:39:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:39:17 --> Looking for template config: faculty_evaluation_template (from: faculty_evaluation_template.xlsx)
+INFO - 2025-12-18 00:39:18 --> Config found: NO
+DEBUG - 2025-12-18 00:39:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:39:21 --> Looking for template config: faculty_evaluation_template (from: faculty_evaluation_template.xlsx)
+INFO - 2025-12-18 00:39:22 --> Config found: NO
+DEBUG - 2025-12-18 00:39:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:39:52 --> Looking for template config: faculty_evaluation_template (from: faculty_evaluation_template.xlsx)
+INFO - 2025-12-18 00:39:53 --> Config found: NO
+DEBUG - 2025-12-18 00:40:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:40:24 --> Looking for template config: moa_template (from: moa_template.docx)
+ERROR - 2025-12-18 00:40:24 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 00:40:24 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 00:40:24 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 00:40:24 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+INFO - 2025-12-18 00:40:24 --> Config found: NO
+DEBUG - 2025-12-18 00:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:40:32 --> Looking for template config: order_of_payment_template (from: order_of_payment_template.xlsx)
+INFO - 2025-12-18 00:40:33 --> Config found: NO
+DEBUG - 2025-12-18 00:40:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:40:35 --> Looking for template config: order_of_payment_template (from: order_of_payment_template.xlsx)
+INFO - 2025-12-18 00:40:36 --> Config found: NO
+DEBUG - 2025-12-18 00:41:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:41:58 --> Looking for template config: inspection_evaluation_template (from: inspection_evaluation_template.xlsx)
+INFO - 2025-12-18 00:41:58 --> Config found: YES
+DEBUG - 2025-12-18 00:42:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:42:09 --> Looking for template config: order_of_payment_template (from: order_of_payment_template.xlsx)
+INFO - 2025-12-18 00:42:10 --> Config found: YES
+DEBUG - 2025-12-18 00:42:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:42:16 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/order_of_payment_template_20251218_004216.xlsx
+DEBUG - 2025-12-18 00:42:16 --> Setting cell E36 to value: ANN P. REGONDOLA, PHD
+INFO - 2025-12-18 00:42:16 --> Successfully updated Excel cell: E36 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/order_of_payment_template.xlsx
+INFO - 2025-12-18 00:42:16 --> Template signatories updated: order_of_payment_template.xlsx by test
+DEBUG - 2025-12-18 00:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:42:17 --> Looking for template config: order_of_payment_template (from: order_of_payment_template.xlsx)
+INFO - 2025-12-18 00:42:18 --> Config found: YES
+DEBUG - 2025-12-18 00:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:42:20 --> Looking for template config: order_of_payment_template (from: order_of_payment_template.xlsx)
+INFO - 2025-12-18 00:42:21 --> Config found: YES
+DEBUG - 2025-12-18 00:42:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:42:28 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/order_of_payment_template_20251218_004228.xlsx
+DEBUG - 2025-12-18 00:42:28 --> Setting cell E36 to value: ANGELICA P. REGONDOLA, PHD
+INFO - 2025-12-18 00:42:28 --> Successfully updated Excel cell: E36 in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/order_of_payment_template.xlsx
+INFO - 2025-12-18 00:42:28 --> Template signatories updated: order_of_payment_template.xlsx by test
+DEBUG - 2025-12-18 00:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:42:49 --> Looking for template config: inspection_evaluation_template (from: inspection_evaluation_template.xlsx)
+INFO - 2025-12-18 00:42:49 --> Config found: YES
+DEBUG - 2025-12-18 00:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:42:52 --> Looking for template config: faculty_evaluation_template (from: faculty_evaluation_template.xlsx)
+INFO - 2025-12-18 00:42:52 --> Config found: NO
+DEBUG - 2025-12-18 00:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:42:53 --> Looking for template config: faculty_evaluation_template (from: faculty_evaluation_template.xlsx)
+INFO - 2025-12-18 00:42:54 --> Config found: NO
+DEBUG - 2025-12-18 00:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:42:55 --> Looking for template config: moa_template (from: moa_template.docx)
+ERROR - 2025-12-18 00:42:55 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 00:42:55 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 00:42:55 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 00:42:55 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 00:42:55 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+INFO - 2025-12-18 00:42:55 --> Config found: NO
+DEBUG - 2025-12-18 00:42:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:42:57 --> Looking for template config: moa_template (from: moa_template.docx)
+ERROR - 2025-12-18 00:42:57 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 00:42:57 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 00:42:57 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 00:42:57 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 00:42:57 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+INFO - 2025-12-18 00:42:57 --> Config found: NO
+DEBUG - 2025-12-18 00:43:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:43:04 --> Looking for template config: inspection_evaluation_template (from: inspection_evaluation_template.xlsx)
+INFO - 2025-12-18 00:43:04 --> Config found: YES
+DEBUG - 2025-12-18 00:50:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:50:02 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 00:50:02 --> Config found: YES
+DEBUG - 2025-12-18 00:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:50:09 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/moa_template_20251218_005009.docx
+DEBUG - 2025-12-18 00:50:09 --> Setting Word placeholder "NANCY S. PENETRANTE" to value: JOMEL S. PENETRANTE
+INFO - 2025-12-18 00:50:09 --> Successfully updated Word document placeholder: "NANCY S. PENETRANTE" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+DEBUG - 2025-12-18 00:50:09 --> Setting Word placeholder "MARY CHIE A. DE LA CRUZ, CPA, MBA" to value: MARY CHIE A. DE LA CRUZ, CPA, MBA
+INFO - 2025-12-18 00:50:09 --> Successfully updated Word document placeholder: "MARY CHIE A. DE LA CRUZ, CPA, MBA" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+DEBUG - 2025-12-18 00:50:09 --> Setting Word placeholder "KAREN H. CRUZATA, CPA" to value: KAREN H. CRUZATA, CPA
+WARNING - 2025-12-18 00:50:09 --> Placeholder "KAREN H. CRUZATA, CPA" not found in document
+INFO - 2025-12-18 00:50:09 --> Template signatories updated: moa_template.docx by test
+DEBUG - 2025-12-18 00:50:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:50:10 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 00:50:10 --> Config found: YES
+DEBUG - 2025-12-18 00:50:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:50:12 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 00:50:12 --> Config found: YES
+DEBUG - 2025-12-18 00:50:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:50:24 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 00:50:24 --> Config found: YES
+DEBUG - 2025-12-18 00:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:50:31 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/moa_template_20251218_005031.docx
+DEBUG - 2025-12-18 00:50:31 --> Setting Word placeholder "NANCY S. PENETRANTE" to value: NANCY S. PENETRANTE
+WARNING - 2025-12-18 00:50:31 --> Placeholder "NANCY S. PENETRANTE" not found in document
+DEBUG - 2025-12-18 00:50:31 --> Setting Word placeholder "MARY CHIE A. DE LA CRUZ, CPA, MBA" to value: MARY CHIE A. DE LA CRUZ, CPA, MBA
+INFO - 2025-12-18 00:50:31 --> Successfully updated Word document placeholder: "MARY CHIE A. DE LA CRUZ, CPA, MBA" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+DEBUG - 2025-12-18 00:50:31 --> Setting Word placeholder "KAREN H. CRUZATA, CPA" to value: KAREN H. CRUZATA, CPA
+WARNING - 2025-12-18 00:50:31 --> Placeholder "KAREN H. CRUZATA, CPA" not found in document
+INFO - 2025-12-18 00:50:31 --> Template signatories updated: moa_template.docx by test
+DEBUG - 2025-12-18 00:50:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:50:32 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 00:50:32 --> Config found: YES
+DEBUG - 2025-12-18 00:50:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:50:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:50:51 --> Looking for template config: inspection_evaluation_template (from: inspection_evaluation_template.xlsx)
+INFO - 2025-12-18 00:50:51 --> Config found: YES
+DEBUG - 2025-12-18 00:50:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:50:52 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 00:50:53 --> Config found: YES
+DEBUG - 2025-12-18 00:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:50:56 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/moa_template_20251218_005056.docx
+DEBUG - 2025-12-18 00:50:56 --> Setting Word placeholder "NANCY S. PENETRANTE" to value: NANCY S. PENETRANTE
+WARNING - 2025-12-18 00:50:56 --> Placeholder "NANCY S. PENETRANTE" not found in document
+DEBUG - 2025-12-18 00:50:56 --> Setting Word placeholder "MARY CHIE A. DE LA CRUZ, CPA, MBA" to value: MARY CHIE A. DE LA CRUZ, CPA, MBA
+INFO - 2025-12-18 00:50:56 --> Successfully updated Word document placeholder: "MARY CHIE A. DE LA CRUZ, CPA, MBA" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+DEBUG - 2025-12-18 00:50:56 --> Setting Word placeholder "KAREN H. CRUZATA, CPA" to value: KAREN H. CRUZATA, CPA
+WARNING - 2025-12-18 00:50:56 --> Placeholder "KAREN H. CRUZATA, CPA" not found in document
+INFO - 2025-12-18 00:50:56 --> Template signatories updated: moa_template.docx by test
+DEBUG - 2025-12-18 00:50:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:51:34 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 00:51:34 --> Config found: YES
+DEBUG - 2025-12-18 00:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:51:40 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/moa_template_20251218_005140.docx
+DEBUG - 2025-12-18 00:51:40 --> Setting Word placeholder "NANCY S. PENETRANTE" to value: AKI S. PENETRANTE
+WARNING - 2025-12-18 00:51:40 --> Placeholder "NANCY S. PENETRANTE" not found in document
+DEBUG - 2025-12-18 00:51:40 --> Setting Word placeholder "MARY CHIE A. DE LA CRUZ, CPA, MBA" to value: MARY CHIE A. DE LA CRUZ, CPA, MBA
+INFO - 2025-12-18 00:51:40 --> Successfully updated Word document placeholder: "MARY CHIE A. DE LA CRUZ, CPA, MBA" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+DEBUG - 2025-12-18 00:51:40 --> Setting Word placeholder "KAREN H. CRUZATA, CPA" to value: KAREN H. CRUZATA, CPA
+WARNING - 2025-12-18 00:51:40 --> Placeholder "KAREN H. CRUZATA, CPA" not found in document
+INFO - 2025-12-18 00:51:40 --> Template signatories updated: moa_template.docx by test
+DEBUG - 2025-12-18 00:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:54:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:54:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:54:36 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 00:54:36 --> Config found: YES
+DEBUG - 2025-12-18 00:55:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 00:55:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:55:01 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 00:55:01 --> Config found: YES
+DEBUG - 2025-12-18 00:56:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 00:56:13 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 00:56:14 --> Config found: YES
+DEBUG - 2025-12-18 01:04:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:04:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:04:26 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:04:26 --> Config found: YES
+DEBUG - 2025-12-18 01:05:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:05:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:05:35 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:05:35 --> Config found: YES
+DEBUG - 2025-12-18 01:05:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:05:38 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:05:38 --> Config found: YES
+DEBUG - 2025-12-18 01:05:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:05:42 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/moa_template_20251218_010542.docx
+DEBUG - 2025-12-18 01:05:42 --> Setting Word placeholder "###VP_FINANCE###" to value: JOMEL S. PENETRANTE
+INFO - 2025-12-18 01:05:42 --> Successfully updated Word document placeholder: "###VP_FINANCE###" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+DEBUG - 2025-12-18 01:05:42 --> Setting Word placeholder "###SPMO_WITNESS1###" to value: MARY CHIE A. DE LA CRUZ, CPA, MBA
+INFO - 2025-12-18 01:05:42 --> Successfully updated Word document placeholder: "###SPMO_WITNESS1###" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+DEBUG - 2025-12-18 01:05:42 --> Setting Word placeholder "###ACCOUNTANT###" to value: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:05:42 --> Successfully updated Word document placeholder: "###ACCOUNTANT###" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+INFO - 2025-12-18 01:05:42 --> Template signatories updated: moa_template.docx by test
+DEBUG - 2025-12-18 01:05:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:05:44 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:05:44 --> Config found: YES
+DEBUG - 2025-12-18 01:05:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:05:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:05:45 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:05:45 --> Config found: YES
+DEBUG - 2025-12-18 01:17:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:17:37 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:17:37 --> Config found: YES
+DEBUG - 2025-12-18 01:17:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:17:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:17:41 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:17:41 --> Config found: YES
+DEBUG - 2025-12-18 01:17:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:17:44 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:17:44 --> Config found: YES
+DEBUG - 2025-12-18 01:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:17:48 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/moa_template_20251218_011748.docx
+DEBUG - 2025-12-18 01:17:48 --> Setting Word placeholder "###VP_FINANCE###" to value: JOMEL S. PENETRANTE
+ERROR - 2025-12-18 01:17:48 --> Error updating Word document: copy(C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx): Failed to open stream: Resource temporarily unavailable
+ERROR - 2025-12-18 01:17:48 --> File path: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+ERROR - 2025-12-18 01:17:48 --> Placeholder: ###VP_FINANCE###
+ERROR - 2025-12-18 01:17:48 --> Stack trace: #0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'copy(C:\\wamp64\\...', 'C:\\wamp64\\www\\C...', 1172)
+#1 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(1172): copy('C:\\wamp64\\www\\C...', 'C:\\wamp64\\www\\C...')
+#2 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(899): App\Controllers\Admin\FileTemplatesController->setWordDocumentValue('C:\\wamp64\\www\\C...', '###VP_FINANCE##...', 'JOMEL S. PENETR...', Array)
+#3 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(828): App\Controllers\Admin\FileTemplatesController->setExcelCellValue('C:\\wamp64\\www\\C...', '###VP_FINANCE##...', 'JOMEL S. PENETR...', Array)
+#4 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(740): App\Controllers\Admin\FileTemplatesController->updateExcelSignatories('moa_template.do...', Object(stdClass))
+#5 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(933): App\Controllers\Admin\FileTemplatesController->updateSignatories()
+#6 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\FileTemplatesController))
+#7 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\wamp64\www\CI4-FINAL HOSTING\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\wamp64\www\CI4-FINAL HOSTING\system\rewrite.php(44): require_once('C:\\wamp64\\www\\C...')
+#12 {main}
+ERROR - 2025-12-18 01:17:48 --> Error updating Excel signatories: copy(C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx): Failed to open stream: Resource temporarily unavailable
+DEBUG - 2025-12-18 01:17:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:17:59 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:17:59 --> Config found: YES
+DEBUG - 2025-12-18 01:18:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:18:04 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/moa_template_20251218_011804.docx
+DEBUG - 2025-12-18 01:18:04 --> Setting Word placeholder "###VP_FINANCE###" to value: JOMEL  S. PENETRANTE
+INFO - 2025-12-18 01:18:04 --> Successfully updated Word document placeholder: "###VP_FINANCE###" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+DEBUG - 2025-12-18 01:18:04 --> Setting Word placeholder "###SPMO_WITNESS1###" to value: MARY CHIE A. DE LA CRUZ, CPA, MBA
+INFO - 2025-12-18 01:18:04 --> Successfully updated Word document placeholder: "###SPMO_WITNESS1###" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+DEBUG - 2025-12-18 01:18:04 --> Setting Word placeholder "###ACCOUNTANT###" to value: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:18:04 --> Successfully updated Word document placeholder: "###ACCOUNTANT###" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+INFO - 2025-12-18 01:18:04 --> Template signatories updated: moa_template.docx by test
+DEBUG - 2025-12-18 01:18:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:18:05 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:18:05 --> Config found: YES
+DEBUG - 2025-12-18 01:18:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:18:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:18:06 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:18:06 --> Config found: YES
+DEBUG - 2025-12-18 01:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:18:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:18:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:18:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:18:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:18:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:18:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:18:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:20:20 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:20:20 --> Config found: YES
+DEBUG - 2025-12-18 01:20:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:20:24 --> Backup created: C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/backups/moa_template_20251218_012024.docx
+DEBUG - 2025-12-18 01:20:24 --> Setting Word placeholder "###VP_FINANCE###" to value: JOMEL S. PENETRANTE
+INFO - 2025-12-18 01:20:24 --> Successfully updated Word document placeholder: "###VP_FINANCE###" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+DEBUG - 2025-12-18 01:20:24 --> Setting Word placeholder "###SPMO_WITNESS1###" to value: MARY CHIE A. DE LA CRUZ, CPA, MBA
+INFO - 2025-12-18 01:20:24 --> Successfully updated Word document placeholder: "###SPMO_WITNESS1###" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+DEBUG - 2025-12-18 01:20:24 --> Setting Word placeholder "###ACCOUNTANT###" to value: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:20:24 --> Successfully updated Word document placeholder: "###ACCOUNTANT###" in C:\wamp64\www\CI4-FINAL HOSTING\public\assets/templates/moa_template.docx
+INFO - 2025-12-18 01:20:24 --> Template signatories updated: moa_template.docx by test
+DEBUG - 2025-12-18 01:20:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:20:25 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:20:25 --> Config found: YES
+DEBUG - 2025-12-18 01:20:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:20:27 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:20:27 --> Config found: YES
+DEBUG - 2025-12-18 01:20:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:20:30 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:20:30 --> Config found: YES
+DEBUG - 2025-12-18 01:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:24:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:24:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:24:49 --> Looking for template config: moa_template (from: moa_template.docx)
+INFO - 2025-12-18 01:24:49 --> Config found: YES
+DEBUG - 2025-12-18 01:26:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:26:16 --> Signatories saved to database: moa_template.docx by test
+DEBUG - 2025-12-18 01:26:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:26:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:26:22 --> Looking for template config: moa_template (from: moa_template.docx)
+DEBUG - 2025-12-18 01:26:22 --> MOA DB Values: []
+DEBUG - 2025-12-18 01:26:22 --> MOA DB Lookup: []
+DEBUG - 2025-12-18 01:26:22 --> Signatory ###VP_FINANCE###: NANCY S. PENETRANTE
+DEBUG - 2025-12-18 01:26:22 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:26:22 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:26:22 --> Config found: YES
+DEBUG - 2025-12-18 01:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:26:23 --> Signatories saved to database: moa_template.docx by test
+DEBUG - 2025-12-18 01:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:26:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:28:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:28:09 --> Looking for template config: moa_template (from: moa_template.docx)
+DEBUG - 2025-12-18 01:28:09 --> MOA DB Values: []
+DEBUG - 2025-12-18 01:28:09 --> MOA DB Lookup: []
+DEBUG - 2025-12-18 01:28:09 --> Signatory ###VP_FINANCE###: NANCY S. PENETRANTE
+DEBUG - 2025-12-18 01:28:09 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:28:09 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:28:09 --> Config found: YES
+DEBUG - 2025-12-18 01:28:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-18 01:28:12 --> mysqli_sql_exception: Unknown column 'created_at' in 'field list' in C:\wamp64\www\CI4-FINAL HOSTING\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\wamp64\www\CI4-FINAL HOSTING\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `si...', 0)
+#1 C:\wamp64\www\CI4-FINAL HOSTING\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `si...')
+#2 C:\wamp64\www\CI4-FINAL HOSTING\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `si...')
+#3 C:\wamp64\www\CI4-FINAL HOSTING\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `si...', Array, false)
+#4 C:\wamp64\www\CI4-FINAL HOSTING\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\CI4-FINAL HOSTING\system\BaseModel.php(843): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\CI4-FINAL HOSTING\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\CI4-FINAL HOSTING\app\Models\SignatoriesModel.php(56): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\CI4-FINAL HOSTING\app\Controllers\Admin\FileTemplatesController.php(771): App\Models\SignatoriesModel->setValue('moa_template.do...', '###VP_FINANCE##...', '###VP_FINANCE##...', 'NANCY S. PENETR...')
+#9 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(933): App\Controllers\Admin\FileTemplatesController->updateSignatories()
+#10 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\FileTemplatesController))
+#11 C:\wamp64\www\CI4-FINAL HOSTING\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\wamp64\www\CI4-FINAL HOSTING\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\wamp64\www\CI4-FINAL HOSTING\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\wamp64\www\CI4-FINAL HOSTING\system\rewrite.php(44): require_once('C:\\wamp64\\www\\C...')
+#16 {main}
+ERROR - 2025-12-18 01:28:12 --> Exception in database save: Unknown column 'created_at' in 'field list'
+DEBUG - 2025-12-18 01:28:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:28:39 --> Looking for template config: moa_template (from: moa_template.docx)
+DEBUG - 2025-12-18 01:28:39 --> MOA DB Values: []
+DEBUG - 2025-12-18 01:28:39 --> MOA DB Lookup: []
+DEBUG - 2025-12-18 01:28:39 --> Signatory ###VP_FINANCE###: NANCY S. PENETRANTE
+DEBUG - 2025-12-18 01:28:39 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:28:39 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:28:39 --> Config found: YES
+DEBUG - 2025-12-18 01:28:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:28:40 --> Saved signatory ###VP_FINANCE### = NANCY S. PENETRANTE
+DEBUG - 2025-12-18 01:28:40 --> Saved signatory ###SPMO_WITNESS1### = MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:28:40 --> Saved signatory ###ACCOUNTANT### = KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:28:40 --> Signatories saved to database: moa_template.docx by test
+DEBUG - 2025-12-18 01:28:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:28:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:29:02 --> Looking for template config: moa_template (from: moa_template.docx)
+DEBUG - 2025-12-18 01:29:02 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"NANCY S. PENETRANTE","updated_at":"2025-12-18 01:28:40"}]
+DEBUG - 2025-12-18 01:29:02 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"NANCY S. PENETRANTE"}
+DEBUG - 2025-12-18 01:29:02 --> Signatory ###VP_FINANCE###: NANCY S. PENETRANTE
+DEBUG - 2025-12-18 01:29:02 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:29:02 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:29:02 --> Config found: YES
+DEBUG - 2025-12-18 01:29:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:10 --> Saved signatory ###VP_FINANCE### = JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:29:10 --> Saved signatory ###SPMO_WITNESS1### = MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:29:10 --> Saved signatory ###ACCOUNTANT### = KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:29:10 --> Signatories saved to database: moa_template.docx by test
+DEBUG - 2025-12-18 01:29:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:29:11 --> Looking for template config: moa_template (from: moa_template.docx)
+DEBUG - 2025-12-18 01:29:11 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:29:11 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:29:11 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:29:11 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:29:11 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:29:11 --> Config found: YES
+DEBUG - 2025-12-18 01:29:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:29:12 --> Looking for template config: moa_template (from: moa_template.docx)
+DEBUG - 2025-12-18 01:29:13 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:29:13 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:29:13 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:29:13 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:29:13 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:29:13 --> Config found: YES
+DEBUG - 2025-12-18 01:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:29:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:31:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:31:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:31:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:31:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:31:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:31:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:31:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:31:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:31:35 --> === fillMoaTemplate starting ===
+DEBUG - 2025-12-18 01:31:35 --> MOA Config Signatories: {"vp_finance":{"marker":"###VP_FINANCE###","label":"Vice President for Administration and Finance","placeholder":"Enter name","format":{"bold":true},"default_name":"NANCY S. PENETRANTE"},"spmo_witness1":{"marker":"###SPMO_WITNESS1###","label":"AOV\/ SPMO III (Witness 1)","placeholder":"Enter name","format":{"bold":true},"default_name":"MARY CHIE A. DE LA CRUZ, CPA, MBA"},"accountant":{"marker":"###ACCOUNTANT###","label":"Accountant III (Witness 2)","placeholder":"Enter name","format":{"bold":true},"default_name":"KAREN H. CRUZATA, CPA"}}
+DEBUG - 2025-12-18 01:31:35 --> --- Processing signatories ---
+DEBUG - 2025-12-18 01:31:35 --> Processing signatory: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:31:35 --> === getSignatoryName called with marker: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:31:35 --> Database query result for ###VP_FINANCE###: "JOMEL S. PENETRANTE"
+INFO - 2025-12-18 01:31:35 --> Using database value for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:31:35 --> Final name for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:31:35 --> Processing signatory: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:31:35 --> === getSignatoryName called with marker: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:31:35 --> Database query result for ###SPMO_WITNESS1###: "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+INFO - 2025-12-18 01:31:35 --> Using database value for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:31:35 --> Final name for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:31:35 --> Processing signatory: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:31:35 --> === getSignatoryName called with marker: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:31:35 --> Database query result for ###ACCOUNTANT###: "KAREN H. CRUZATA, CPA"
+INFO - 2025-12-18 01:31:35 --> Using database value for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:31:35 --> Final name for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:31:35 --> --- Signatories processing complete ---
+DEBUG - 2025-12-18 01:34:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:34:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:34:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:34:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:34:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:34:24 --> === fillMoaTemplate starting ===
+DEBUG - 2025-12-18 01:34:24 --> MOA Config Signatories: {"vp_finance":{"marker":"###VP_FINANCE###","label":"Vice President for Administration and Finance","placeholder":"Enter name","format":{"bold":true},"default_name":"NANCY S. PENETRANTE"},"spmo_witness1":{"marker":"###SPMO_WITNESS1###","label":"AOV\/ SPMO III (Witness 1)","placeholder":"Enter name","format":{"bold":true},"default_name":"MARY CHIE A. DE LA CRUZ, CPA, MBA"},"accountant":{"marker":"###ACCOUNTANT###","label":"Accountant III (Witness 2)","placeholder":"Enter name","format":{"bold":true},"default_name":"KAREN H. CRUZATA, CPA"}}
+DEBUG - 2025-12-18 01:34:24 --> --- Processing signatories ---
+DEBUG - 2025-12-18 01:34:24 --> Processing signatory: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:34:24 --> === getSignatoryName called with marker: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:34:24 --> Database query result for ###VP_FINANCE###: "JOMEL S. PENETRANTE"
+INFO - 2025-12-18 01:34:24 --> Using database value for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:34:24 --> Final name for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:34:24 --> Setting placeholder "VP_FINANCE" to "JOMEL S. PENETRANTE"
+DEBUG - 2025-12-18 01:34:24 --> Processing signatory: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:34:24 --> === getSignatoryName called with marker: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:34:24 --> Database query result for ###SPMO_WITNESS1###: "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+INFO - 2025-12-18 01:34:24 --> Using database value for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:34:24 --> Final name for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:34:24 --> Setting placeholder "SPMO_WITNESS1" to "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+DEBUG - 2025-12-18 01:34:24 --> Processing signatory: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:34:24 --> === getSignatoryName called with marker: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:34:24 --> Database query result for ###ACCOUNTANT###: "KAREN H. CRUZATA, CPA"
+INFO - 2025-12-18 01:34:24 --> Using database value for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:34:24 --> Final name for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:34:24 --> Setting placeholder "ACCOUNTANT" to "KAREN H. CRUZATA, CPA"
+DEBUG - 2025-12-18 01:34:24 --> --- Signatories processing complete ---
+DEBUG - 2025-12-18 01:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:37:20 --> === fillMoaTemplate starting ===
+DEBUG - 2025-12-18 01:37:20 --> MOA Config Signatories: {"vp_finance":{"marker":"###VP_FINANCE###","label":"Vice President for Administration and Finance","placeholder":"Enter name","format":{"bold":true},"default_name":"NANCY S. PENETRANTE"},"spmo_witness1":{"marker":"###SPMO_WITNESS1###","label":"AOV\/ SPMO III (Witness 1)","placeholder":"Enter name","format":{"bold":true},"default_name":"MARY CHIE A. DE LA CRUZ, CPA, MBA"},"accountant":{"marker":"###ACCOUNTANT###","label":"Accountant III (Witness 2)","placeholder":"Enter name","format":{"bold":true},"default_name":"KAREN H. CRUZATA, CPA"}}
+DEBUG - 2025-12-18 01:37:20 --> --- Processing signatories ---
+DEBUG - 2025-12-18 01:37:20 --> Processing signatory: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:37:20 --> === getSignatoryName called with marker: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:37:20 --> Database query result for ###VP_FINANCE###: "JOMEL S. PENETRANTE"
+INFO - 2025-12-18 01:37:20 --> Using database value for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:37:20 --> Final name for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:37:20 --> Setting placeholder "VP_FINANCE" to "JOMEL S. PENETRANTE"
+DEBUG - 2025-12-18 01:37:20 --> Processing signatory: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:37:20 --> === getSignatoryName called with marker: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:37:20 --> Database query result for ###SPMO_WITNESS1###: "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+INFO - 2025-12-18 01:37:20 --> Using database value for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:37:20 --> Final name for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:37:20 --> Setting placeholder "SPMO_WITNESS1" to "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+DEBUG - 2025-12-18 01:37:20 --> Processing signatory: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:37:20 --> === getSignatoryName called with marker: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:37:20 --> Database query result for ###ACCOUNTANT###: "KAREN H. CRUZATA, CPA"
+INFO - 2025-12-18 01:37:20 --> Using database value for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:37:20 --> Final name for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:37:20 --> Setting placeholder "ACCOUNTANT" to "KAREN H. CRUZATA, CPA"
+DEBUG - 2025-12-18 01:37:20 --> --- Signatories processing complete ---
+DEBUG - 2025-12-18 01:38:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:38:03 --> === fillMoaTemplate starting ===
+DEBUG - 2025-12-18 01:38:03 --> MOA Config Signatories: {"vp_finance":{"marker":"###VP_FINANCE###","label":"Vice President for Administration and Finance","placeholder":"Enter name","format":{"bold":true},"default_name":"NANCY S. PENETRANTE"},"spmo_witness1":{"marker":"###SPMO_WITNESS1###","label":"AOV\/ SPMO III (Witness 1)","placeholder":"Enter name","format":{"bold":true},"default_name":"MARY CHIE A. DE LA CRUZ, CPA, MBA"},"accountant":{"marker":"###ACCOUNTANT###","label":"Accountant III (Witness 2)","placeholder":"Enter name","format":{"bold":true},"default_name":"KAREN H. CRUZATA, CPA"}}
+DEBUG - 2025-12-18 01:38:03 --> --- Processing signatories ---
+DEBUG - 2025-12-18 01:38:03 --> Processing signatory: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:38:03 --> === getSignatoryName called with marker: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:38:03 --> Database query result for ###VP_FINANCE###: "JOMEL S. PENETRANTE"
+INFO - 2025-12-18 01:38:03 --> Using database value for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:38:03 --> Final name for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:38:03 --> Setting placeholder "VP_FINANCE" to "JOMEL S. PENETRANTE"
+DEBUG - 2025-12-18 01:38:03 --> Processing signatory: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:38:03 --> === getSignatoryName called with marker: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:38:03 --> Database query result for ###SPMO_WITNESS1###: "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+INFO - 2025-12-18 01:38:03 --> Using database value for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:38:03 --> Final name for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:38:03 --> Setting placeholder "SPMO_WITNESS1" to "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+DEBUG - 2025-12-18 01:38:03 --> Processing signatory: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:38:03 --> === getSignatoryName called with marker: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:38:03 --> Database query result for ###ACCOUNTANT###: "KAREN H. CRUZATA, CPA"
+INFO - 2025-12-18 01:38:03 --> Using database value for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:38:03 --> Final name for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:38:03 --> Setting placeholder "ACCOUNTANT" to "KAREN H. CRUZATA, CPA"
+DEBUG - 2025-12-18 01:38:03 --> --- Signatories processing complete ---
+DEBUG - 2025-12-18 01:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:39:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:39:49 --> === fillMoaTemplate starting ===
+DEBUG - 2025-12-18 01:39:49 --> MOA Config Signatories: {"vp_finance":{"marker":"###VP_FINANCE###","label":"Vice President for Administration and Finance","placeholder":"Enter name","format":{"bold":true},"default_name":"NANCY S. PENETRANTE"},"spmo_witness1":{"marker":"###SPMO_WITNESS1###","label":"AOV\/ SPMO III (Witness 1)","placeholder":"Enter name","format":{"bold":true},"default_name":"MARY CHIE A. DE LA CRUZ, CPA, MBA"},"accountant":{"marker":"###ACCOUNTANT###","label":"Accountant III (Witness 2)","placeholder":"Enter name","format":{"bold":true},"default_name":"KAREN H. CRUZATA, CPA"}}
+DEBUG - 2025-12-18 01:39:49 --> --- Processing signatories ---
+DEBUG - 2025-12-18 01:39:49 --> Processing signatory: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:39:49 --> === getSignatoryName called with marker: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:39:49 --> Database query result for ###VP_FINANCE###: "JOMEL S. PENETRANTE"
+INFO - 2025-12-18 01:39:49 --> Using database value for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:39:49 --> Final name for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:39:49 --> Setting placeholder "VP_FINANCE" to "JOMEL S. PENETRANTE"
+DEBUG - 2025-12-18 01:39:49 --> Processing signatory: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:39:49 --> === getSignatoryName called with marker: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:39:49 --> Database query result for ###SPMO_WITNESS1###: "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+INFO - 2025-12-18 01:39:49 --> Using database value for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:39:49 --> Final name for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:39:49 --> Setting placeholder "SPMO_WITNESS1" to "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+DEBUG - 2025-12-18 01:39:49 --> Processing signatory: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:39:49 --> === getSignatoryName called with marker: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:39:50 --> Database query result for ###ACCOUNTANT###: "KAREN H. CRUZATA, CPA"
+INFO - 2025-12-18 01:39:50 --> Using database value for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:39:50 --> Final name for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:39:50 --> Setting placeholder "ACCOUNTANT" to "KAREN H. CRUZATA, CPA"
+DEBUG - 2025-12-18 01:39:50 --> --- Signatories processing complete ---
+DEBUG - 2025-12-18 01:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:40:46 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 01:40:46 --> EventsAPI - Status breakdown: {"pending":6}
+DEBUG - 2025-12-18 01:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:41:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:41:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:41:05 --> === fillMoaTemplate starting ===
+DEBUG - 2025-12-18 01:41:05 --> MOA Config Signatories: {"vp_finance":{"marker":"###VP_FINANCE###","label":"Vice President for Administration and Finance","placeholder":"Enter name","format":{"bold":true},"default_name":"NANCY S. PENETRANTE"},"spmo_witness1":{"marker":"###SPMO_WITNESS1###","label":"AOV\/ SPMO III (Witness 1)","placeholder":"Enter name","format":{"bold":true},"default_name":"MARY CHIE A. DE LA CRUZ, CPA, MBA"},"accountant":{"marker":"###ACCOUNTANT###","label":"Accountant III (Witness 2)","placeholder":"Enter name","format":{"bold":true},"default_name":"KAREN H. CRUZATA, CPA"}}
+DEBUG - 2025-12-18 01:41:05 --> --- Processing signatories ---
+DEBUG - 2025-12-18 01:41:05 --> Processing signatory: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:41:05 --> === getSignatoryName called with marker: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:41:05 --> Database query result for ###VP_FINANCE###: "JOMEL S. PENETRANTE"
+INFO - 2025-12-18 01:41:05 --> Using database value for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:41:05 --> Final name for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:41:05 --> Setting placeholder "VP_FINANCE" to "JOMEL S. PENETRANTE"
+DEBUG - 2025-12-18 01:41:05 --> Processing signatory: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:41:05 --> === getSignatoryName called with marker: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:41:05 --> Database query result for ###SPMO_WITNESS1###: "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+INFO - 2025-12-18 01:41:05 --> Using database value for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:41:05 --> Final name for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:41:05 --> Setting placeholder "SPMO_WITNESS1" to "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+DEBUG - 2025-12-18 01:41:05 --> Processing signatory: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:41:05 --> === getSignatoryName called with marker: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:41:05 --> Database query result for ###ACCOUNTANT###: "KAREN H. CRUZATA, CPA"
+INFO - 2025-12-18 01:41:05 --> Using database value for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:41:05 --> Final name for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:41:05 --> Setting placeholder "ACCOUNTANT" to "KAREN H. CRUZATA, CPA"
+DEBUG - 2025-12-18 01:41:05 --> --- Signatories processing complete ---
+DEBUG - 2025-12-18 01:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:42:08 --> === fillMoaTemplate starting ===
+DEBUG - 2025-12-18 01:42:08 --> MOA Config Signatories: {"vp_finance":{"marker":"###VP_FINANCE###","label":"Vice President for Administration and Finance","placeholder":"Enter name","format":{"bold":true},"default_name":"NANCY S. PENETRANTE"},"spmo_witness1":{"marker":"###SPMO_WITNESS1###","label":"AOV\/ SPMO III (Witness 1)","placeholder":"Enter name","format":{"bold":true},"default_name":"MARY CHIE A. DE LA CRUZ, CPA, MBA"},"accountant":{"marker":"###ACCOUNTANT###","label":"Accountant III (Witness 2)","placeholder":"Enter name","format":{"bold":true},"default_name":"KAREN H. CRUZATA, CPA"}}
+DEBUG - 2025-12-18 01:42:08 --> --- Processing signatories ---
+DEBUG - 2025-12-18 01:42:08 --> Processing signatory: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:42:08 --> === getSignatoryName called with marker: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:42:08 --> Database query result for ###VP_FINANCE###: "JOMEL S. PENETRANTE"
+INFO - 2025-12-18 01:42:08 --> Using database value for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:42:08 --> Final name for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:42:08 --> Setting placeholder "VP_FINANCE" to "JOMEL S. PENETRANTE"
+DEBUG - 2025-12-18 01:42:08 --> Processing signatory: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:42:08 --> === getSignatoryName called with marker: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:42:08 --> Database query result for ###SPMO_WITNESS1###: "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+INFO - 2025-12-18 01:42:08 --> Using database value for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:42:08 --> Final name for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:42:08 --> Setting placeholder "SPMO_WITNESS1" to "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+DEBUG - 2025-12-18 01:42:08 --> Processing signatory: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:42:08 --> === getSignatoryName called with marker: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:42:08 --> Database query result for ###ACCOUNTANT###: "KAREN H. CRUZATA, CPA"
+INFO - 2025-12-18 01:42:08 --> Using database value for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:42:08 --> Final name for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:42:08 --> Setting placeholder "ACCOUNTANT" to "KAREN H. CRUZATA, CPA"
+DEBUG - 2025-12-18 01:42:08 --> --- Signatories processing complete ---
+DEBUG - 2025-12-18 01:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:42:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:43:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:43:01 --> === fillMoaTemplate starting ===
+DEBUG - 2025-12-18 01:43:01 --> MOA Config Signatories: {"vp_finance":{"marker":"###VP_FINANCE###","label":"Vice President for Administration and Finance","placeholder":"Enter name","format":{"bold":true},"default_name":"NANCY S. PENETRANTE"},"spmo_witness1":{"marker":"###SPMO_WITNESS1###","label":"AOV\/ SPMO III (Witness 1)","placeholder":"Enter name","format":{"bold":true},"default_name":"MARY CHIE A. DE LA CRUZ, CPA, MBA"},"accountant":{"marker":"###ACCOUNTANT###","label":"Accountant III (Witness 2)","placeholder":"Enter name","format":{"bold":true},"default_name":"KAREN H. CRUZATA, CPA"}}
+DEBUG - 2025-12-18 01:43:01 --> --- Processing signatories ---
+DEBUG - 2025-12-18 01:43:01 --> Processing signatory: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:43:01 --> === getSignatoryName called with marker: ###VP_FINANCE###
+DEBUG - 2025-12-18 01:43:01 --> Database query result for ###VP_FINANCE###: "JOMEL S. PENETRANTE"
+INFO - 2025-12-18 01:43:01 --> Using database value for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:43:01 --> Final name for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:43:01 --> Setting placeholder "VP_FINANCE" to "JOMEL S. PENETRANTE"
+DEBUG - 2025-12-18 01:43:01 --> Processing signatory: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:43:01 --> === getSignatoryName called with marker: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 01:43:01 --> Database query result for ###SPMO_WITNESS1###: "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+INFO - 2025-12-18 01:43:01 --> Using database value for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:43:01 --> Final name for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:43:01 --> Setting placeholder "SPMO_WITNESS1" to "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+DEBUG - 2025-12-18 01:43:01 --> Processing signatory: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:43:01 --> === getSignatoryName called with marker: ###ACCOUNTANT###
+DEBUG - 2025-12-18 01:43:01 --> Database query result for ###ACCOUNTANT###: "KAREN H. CRUZATA, CPA"
+INFO - 2025-12-18 01:43:01 --> Using database value for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:43:01 --> Final name for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 01:43:01 --> Setting placeholder "ACCOUNTANT" to "KAREN H. CRUZATA, CPA"
+DEBUG - 2025-12-18 01:43:01 --> --- Signatories processing complete ---
+DEBUG - 2025-12-18 01:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:43:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:43:53 --> Looking for template config: report_summary (from: report_summary.xlsx)
+DEBUG - 2025-12-18 01:43:54 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:43:54 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:43:54 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:43:54 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:43:54 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:43:54 --> Config found: NO
+DEBUG - 2025-12-18 01:44:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:44:14 --> Looking for template config: faculty_evaluation_template (from: faculty_evaluation_template.xlsx)
+DEBUG - 2025-12-18 01:44:15 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:44:15 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:44:15 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:44:15 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:44:15 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:44:15 --> Config found: NO
+DEBUG - 2025-12-18 01:45:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:45:07 --> Looking for template config: moa_template (from: moa_template.docx)
+DEBUG - 2025-12-18 01:45:07 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:45:07 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:45:07 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:45:07 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:45:07 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:45:07 --> Config found: YES
+DEBUG - 2025-12-18 01:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:45:08 --> Looking for template config: moa_template.docx (from: moa_template.docx.backup_6942e5bcd3861)
+ERROR - 2025-12-18 01:45:08 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:08 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:08 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:08 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:08 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+DEBUG - 2025-12-18 01:45:08 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:45:08 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:45:08 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:45:08 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:45:08 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:45:08 --> Config found: NO
+DEBUG - 2025-12-18 01:45:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:45:09 --> Looking for template config: moa_template.docx (from: moa_template.docx.backup_6942e5bcd3861)
+ERROR - 2025-12-18 01:45:09 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:09 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:09 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:09 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:09 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+DEBUG - 2025-12-18 01:45:09 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:45:09 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:45:09 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:45:09 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:45:09 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:45:09 --> Config found: NO
+DEBUG - 2025-12-18 01:45:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:45:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:45:15 --> Looking for template config: moa_template.docx (from: moa_template.docx.backup_6942e5bcd3861)
+ERROR - 2025-12-18 01:45:15 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:15 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:15 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:15 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:15 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+DEBUG - 2025-12-18 01:45:15 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:45:15 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:45:15 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:45:15 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:45:15 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:45:15 --> Config found: NO
+DEBUG - 2025-12-18 01:45:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:45:21 --> Looking for template config: moa_template.docx (from: moa_template.docx.backup_6942e5bcd3861)
+ERROR - 2025-12-18 01:45:21 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:21 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:21 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:21 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:21 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+DEBUG - 2025-12-18 01:45:21 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:45:21 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:45:21 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:45:21 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:45:21 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:45:21 --> Config found: NO
+DEBUG - 2025-12-18 01:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:45:22 --> Looking for template config: moa_template.docx (from: moa_template.docx.backup_6942e5bcd3861)
+ERROR - 2025-12-18 01:45:22 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:22 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:22 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:22 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+ERROR - 2025-12-18 01:45:22 --> Error reading Excel cell: You tried to set a sheet active by the out of bounds index: 0. The actual number of sheets is 0.
+DEBUG - 2025-12-18 01:45:22 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:45:22 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:45:22 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:45:22 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:45:22 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:45:22 --> Config found: NO
+DEBUG - 2025-12-18 01:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:45:22 --> Looking for template config: order_of_payment_template (from: order_of_payment_template.xlsx)
+DEBUG - 2025-12-18 01:45:23 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:45:23 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:45:23 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:45:23 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:45:23 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:45:23 --> Config found: YES
+DEBUG - 2025-12-18 01:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:45:32 --> Looking for template config: order_of_payment_template (from: order_of_payment_template.xlsx)
+DEBUG - 2025-12-18 01:45:33 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:45:33 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:45:33 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:45:33 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:45:33 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:45:33 --> Config found: YES
+DEBUG - 2025-12-18 01:45:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:45:35 --> Looking for template config: moa_template (from: moa_template.docx)
+DEBUG - 2025-12-18 01:45:35 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:45:35 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:45:35 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:45:35 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:45:35 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:45:35 --> Config found: YES
+DEBUG - 2025-12-18 01:45:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:45:47 --> Looking for template config: moa_template (from: moa_template.docx)
+DEBUG - 2025-12-18 01:45:47 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:45:47 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:45:47 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:45:47 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:45:47 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:45:47 --> Config found: YES
+DEBUG - 2025-12-18 01:45:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:45:48 --> Looking for template config: order_of_payment_template (from: order_of_payment_template.xlsx)
+DEBUG - 2025-12-18 01:45:49 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:45:49 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:45:49 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:45:49 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:45:49 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:45:49 --> Config found: YES
+DEBUG - 2025-12-18 01:45:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:45:51 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+DEBUG - 2025-12-18 01:45:52 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:45:52 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:45:52 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:45:52 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:45:52 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:45:52 --> Config found: YES
+DEBUG - 2025-12-18 01:45:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 01:45:53 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+DEBUG - 2025-12-18 01:45:54 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 01:45:54 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 01:45:54 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 01:45:54 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 01:45:54 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 01:45:54 --> Config found: YES
+DEBUG - 2025-12-18 01:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 01:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:07:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 02:07:49 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-18 02:07:49 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-18 02:07:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 02:07:50 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-18 02:07:50 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-18 02:07:50 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 02:07:50 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 02:07:50 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 02:07:50 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 02:07:50 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 02:07:50 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-18 02:07:50 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-18 02:07:50 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-18 02:07:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 02:07:51 --> [getStudentFacilities] Fetching facilities for student booking
+INFO - 2025-12-18 02:07:51 --> [getStudentFacilities] Total facilities found: 7
+DEBUG - 2025-12-18 02:07:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:28:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:28:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:28:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:29:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 02:29:02 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 02:29:02 --> EventsAPI - Status breakdown: {"pending":6}
+DEBUG - 2025-12-18 02:29:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:29:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:29:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:31:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:32:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:32:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:55:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:55:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:55:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:55:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:56:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:57:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:57:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-18 02:57:54 --> Error adding user: Failed to parse JSON string. Error: Syntax error
+DEBUG - 2025-12-18 02:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:57:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:57:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:57:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 02:58:10 --> Failed login attempt for: faci@gmail.com - User not found
+DEBUG - 2025-12-18 02:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:58:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 02:58:12 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 02:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 02:58:13 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 02:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 02:58:13 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 02:58:13 --> EventsAPI - Status breakdown: {"pending":6}
+DEBUG - 2025-12-18 02:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 02:58:13 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 02:58:13 --> EventsAPI - Status breakdown: {"pending":6}
+DEBUG - 2025-12-18 02:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:58:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:58:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-18 02:58:56 --> Error adding user: Failed to parse JSON string. Error: Syntax error
+DEBUG - 2025-12-18 02:58:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:58:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 02:59:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:00:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:00:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:16:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-18 03:16:15 --> Error adding user: Failed to parse JSON string. Error: Syntax error
+DEBUG - 2025-12-18 03:16:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:16:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:16:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:16:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:16:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:17:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:17:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-18 03:17:19 --> Error adding user: Failed to parse JSON string. Error: Syntax error
+DEBUG - 2025-12-18 03:17:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-18 03:17:26 --> Error adding user: Failed to parse JSON string. Error: Syntax error
+DEBUG - 2025-12-18 03:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-18 03:17:42 --> Error adding user: Failed to parse JSON string. Error: Syntax error
+DEBUG - 2025-12-18 03:18:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:18:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:18:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-18 03:18:35 --> Error adding user: Failed to parse JSON string. Error: Syntax error
+DEBUG - 2025-12-18 03:18:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-18 03:18:56 --> Error adding user: Failed to parse JSON string. Error: Syntax error
+DEBUG - 2025-12-18 03:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:19:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:19:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-18 03:19:33 --> Error adding user: Failed to parse JSON string. Error: Syntax error
+DEBUG - 2025-12-18 03:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-18 03:20:04 --> Error adding user: Failed to parse JSON string. Error: Syntax error
+DEBUG - 2025-12-18 03:20:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:20:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:20:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:20:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:20:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 03:20:27 --> User faci@gmail.com logged in successfully as facilitator
+DEBUG - 2025-12-18 03:20:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:20:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 03:20:28 --> Facilitator - Found 0 confirmed bookings
+DEBUG - 2025-12-18 03:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 03:20:41 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 03:20:41 --> EventsAPI - Status breakdown: {"pending":6}
+DEBUG - 2025-12-18 03:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:20:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 03:20:59 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 03:20:59 --> EventsAPI - Status breakdown: {"pending":6}
+DEBUG - 2025-12-18 03:21:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:22:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 03:22:09 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 03:22:09 --> EventsAPI - Status breakdown: {"pending":6}
+DEBUG - 2025-12-18 03:22:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 03:23:21 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 03:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 03:23:21 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 03:23:21 --> EventsAPI - Status breakdown: {"pending":6}
+DEBUG - 2025-12-18 03:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 03:23:21 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 03:23:21 --> EventsAPI - Status breakdown: {"pending":6}
+DEBUG - 2025-12-18 03:23:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:23:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:24:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:24:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:24:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 03:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

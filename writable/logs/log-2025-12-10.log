@@ -1,0 +1,565 @@
+DEBUG - 2025-12-10 22:05:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-10 22:05:33 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'Shiro'@'localhost' (using password: NO) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#6 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#5 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#6 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-12-10 22:05:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(62): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-12-10 22:06:26 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'Shiro'@'localhost' (using password: NO) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#6 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#5 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#6 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-12-10 22:06:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(62): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-12-10 22:07:19 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'Shiro'@'localhost' (using password: NO) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#6 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#5 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#6 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-12-10 22:07:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(62): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-12-10 22:11:33 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'Shiro'@'localhost' (using password: NO) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#6 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#5 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#6 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-12-10 22:11:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(62): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-12-10 22:11:46 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'Shiro'@'localhost' (using password: NO) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#6 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#5 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#6 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-12-10 22:11:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(62): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-12-10 22:11:47 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'Shiro'@'localhost' (using password: NO) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#6 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#5 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#6 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-12-10 22:11:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(62): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-12-10 22:12:18 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'u840482060_capsdb'@'localhost' (using password: YES) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#6 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#5 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#6 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-12-10 22:12:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(62): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-12-10 22:12:36 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'u840482060_capsdb'@'localhost' (using password: YES) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#6 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#5 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#6 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-12-10 22:12:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(62): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-12-10 22:15:13 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'u840482060_capsdb'@'localhost' (using password: YES) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#6 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#5 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#6 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-12-10 22:15:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(62): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-12-10 22:15:16 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'u840482060_capsdb'@'localhost' (using password: YES) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#6 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#5 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#6 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-12-10 22:15:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(62): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-12-10 22:17:41 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'u840482060_capsdb'@'localhost' (using password: YES) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#6 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#5 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#6 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-12-10 22:17:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(62): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-12-10 22:33:03 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'u840482060_capsdb'@'localhost' (using password: YES) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#6 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in /home/u840482060/domains/spherecspc.online/main/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/u840482060/domains/spherecspc.online/main/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/u840482060/domains/spherecspc.online/main/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/u840482060/domains/spherecspc.online/main/system/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+#5 /home/u840482060/domains/spherecspc.online/main/app/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+#6 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(933): App\Controllers\Home->index()
+#7 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#8 /home/u840482060/domains/spherecspc.online/main/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 /home/u840482060/domains/spherecspc.online/main/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/u840482060/domains/spherecspc.online/public_html/index.php(62): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-12-10 22:33:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(679): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Home.php(28): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(62): CodeIgniter\Boot::bootWeb()
