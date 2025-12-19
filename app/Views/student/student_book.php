@@ -9,7 +9,7 @@ $userPhone = $session->get('contact_number');
 
 // Redirect if not logged in
 if (!$isLoggedIn) {
-    redirect('/login');
+    return redirect()->to('login');
 }
 ?>
 <!DOCTYPE html>

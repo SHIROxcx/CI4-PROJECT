@@ -120,7 +120,8 @@
                             <th>Icon</th>
                             <th>Facility Name</th>
                             <th>Facility Key</th>
-                            <th>Description</th>
+                            <th>Capacity</th>
+                            <th></th>Description</th>
                             <th>Status</th>
                             <th>Maintenance</th>
                             <th>Actions</th>
@@ -165,6 +166,13 @@
                             <small>Enter an emoji or icon</small>
                         </div>
 
+                        <div class="form-group">
+                            <label class="form-label">Capacity (persons) *</label>
+                            <input type="number" class="form-control" id="facilityCapacity" required min="1" value="1">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
                         <div class="form-group">
                             <label class="form-label">Additional Hours Rate (₱/hour) *</label>
                             <input type="number" class="form-control" id="additionalHoursRate" required min="0" step="0.01" value="0">

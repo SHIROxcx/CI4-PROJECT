@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1074,6 +1074,275 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Equipment Reports Summary */
+        .reports-summary-section {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 2px solid var(--border-color);
+            animation: slideIn 0.4s ease;
+        }
+
+        .reports-summary-section h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .reports-summary-section i {
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+
+        .summary-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .stat-card.good .stat-value { color: var(--success-color); }
+        .stat-card.damaged .stat-value { color: var(--danger-color); }
+        .stat-card.missing .stat-value { color: #6c757d; }
+
+        /* Equipment Quantity Breakdown */
+        .equipment-quantity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .equipment-qty-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .equipment-qty-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .equipment-qty-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .equipment-qty-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            font-size: 12px;
+        }
+
+        .qty-stat {
+            text-align: center;
+            padding: 8px;
+            border-radius: 8px;
+            background: #f8fafc;
+        }
+
+        .qty-stat-label {
+            font-weight: 600;
+            color: #64748b;
+            font-size: 10px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .qty-stat-value {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .qty-stat.good {
+            background: rgba(34, 197, 94, 0.1);
+        }
+
+        .qty-stat.good .qty-stat-value {
+            color: var(--success-color);
+        }
+
+        .qty-stat.damaged {
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .qty-stat.damaged .qty-stat-value {
+            color: var(--danger-color);
+        }
+
+        .qty-stat.missing {
+            background: rgba(107, 114, 128, 0.1);
+        }
+
+        .qty-stat.missing .qty-stat-value {
+            color: #6c757d;
+        }
+
+        .qty-stat.total {
+            background: rgba(30, 60, 114, 0.1);
+        }
+
+        .qty-stat.total .qty-stat-value {
+            color: var(--primary-color);
+        }
+
+        .reports-table-container {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .reports-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .reports-table thead {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .reports-table thead th {
+            padding: 16px;
+            font-weight: 700;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .reports-table tbody tr {
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .reports-table tbody tr:hover {
+            background: #f8fafc;
+            box-shadow: inset 0 0 10px rgba(30, 60, 114, 0.05);
+        }
+
+        .reports-table tbody td {
+            padding: 14px 16px;
+        }
+
+        .equipment-name-cell {
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .status-badge.good {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .status-badge.damaged {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .status-badge.missing {
+            background: rgba(108, 117, 125, 0.1);
+            color: #6c757d;
+            border: 1px solid rgba(108, 117, 125, 0.3);
+        }
+
+        .empty-reports {
+            text-align: center;
+            padding: 40px 20px;
+            color: #64748b;
+        }
+
+        .empty-reports i {
+            font-size: 48px;
+            color: var(--border-color);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .btn-download-report {
+            background-color: var(--success-color);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+        }
+
+        .btn-download-report:hover:not(:disabled) {
+            background-color: #15b34b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+        }
+
+        .btn-download-report:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body>
@@ -1109,6 +1378,37 @@
         <div class="dashboard-header">
             <h2><i class="fas fa-clipboard-check"></i> Equipment Inspection Dashboard</h2>
             <p>Review and report on facility equipment condition after events</p>
+        </div>
+
+        <!-- Equipment Reports Summary Section -->
+        <div class="reports-summary-section">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3><i class="fas fa-chart-bar"></i> Equipment Reports Summary</h3>
+                <button class="btn-download-report" onclick="downloadReportSummary()" title="Download as Excel">
+                    <i class="fas fa-download"></i> Download Report
+                </button>
+            </div>
+            
+            <!-- Summary Statistics -->
+            <div class="summary-stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Total Equipment Inspected</div>
+                    <div class="stat-value" id="totalEquipmentCount">0</div>
+                </div>
+                <div class="stat-card good">
+                    <div class="stat-label">In Good Condition</div>
+                    <div class="stat-value" id="goodConditionCount">0</div>
+                </div>
+                <div class="stat-card damaged">
+                    <div class="stat-label">Damaged/Maintenance</div>
+                    <div class="stat-value" id="damagedCount">0</div>
+                </div>
+                <div class="stat-card missing">
+                    <div class="stat-label">Missing Equipment</div>
+                    <div class="stat-value" id="missingCount">0</div>
+                </div>
+            </div>
+
         </div>
 
         <div class="content-wrapper">
@@ -1191,6 +1491,7 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             loadEvents();
+            loadEquipmentReportsSummary();
         });
 
         // Load completed events
@@ -1777,6 +2078,11 @@
                     // Disable the Done button to prevent further clicks
                     btn.disabled = true;
                     btn.style.opacity = '0.5';
+                    
+                    // Reload equipment reports summary
+                    setTimeout(() => {
+                        loadEquipmentReportsSummary();
+                    }, 500);
                 })
                 .catch(e => {
                     console.error('Error updating equipment:', e);
@@ -1792,8 +2098,10 @@
         function closeInspectionPanel() {
             clearChecklist();
             document.getElementById('checklistPanel').classList.remove('active');
+            document.getElementById('eventsList').style.display = 'block';
             document.querySelectorAll('.event-item').forEach(el => el.classList.remove('active'));
             selectedEventId = null;
+            loadEquipmentReportsSummary();
             loadEvents();
         }
 
@@ -1968,8 +2276,9 @@
                 .then(data => {
                     if (data.success) {
                         showAlert('✓ File deleted successfully!', 'success');
-                        // Reload files
+                        // Reload files and refresh equipment reports summary
                         loadGeneratedFiles(eventId);
+                        loadEquipmentReportsSummary();
                     } else {
                         throw new Error(data.message || 'Failed to delete file');
                     }
@@ -2005,6 +2314,143 @@
                     }
                 });
             }
+        }
+
+        // Load Equipment Reports Summary
+        function loadEquipmentReportsSummary() {
+            fetch('/api/events/equipment-reports-summary')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.success) {
+                        updateReportsSummary(data);
+                    } else {
+                        console.error('Failed to load reports summary:', data.message);
+                    }
+                })
+                .catch(e => {
+                    console.error('Error loading equipment reports:', e);
+                });
+        }
+
+        // Update Reports Summary Display
+        function updateReportsSummary(data) {
+            // Update stat cards
+            document.getElementById('totalEquipmentCount').textContent = data.summary.total || 0;
+            document.getElementById('goodConditionCount').textContent = data.summary.good || 0;
+            document.getElementById('damagedCount').textContent = data.summary.damaged || 0;
+            document.getElementById('missingCount').textContent = data.summary.missing || 0;
+
+            // Update table
+            const tbody = document.getElementById('reportsTableBody');
+            
+            if (!data.reports || data.reports.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" class="empty-reports">
+                            <i class="fas fa-inbox"></i>
+                            <p>No equipment reports yet. Start by inspecting an event's equipment.</p>
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            // Group reports by event and equipment
+            const groupedData = {};
+            data.reports.forEach(report => {
+                const key = report.event_title + '||' + report.equipment_name;
+                if (!groupedData[key]) {
+                    groupedData[key] = {
+                        event_title: report.event_title,
+                        equipment_name: report.equipment_name,
+                        total: 0,
+                        good: 0,
+                        damaged: 0,
+                        missing: 0,
+                        inspection_date: report.created_at
+                    };
+                }
+                groupedData[key].total += report.expected_quantity || 0;
+                if (report.equipment_condition === 'good') {
+                    groupedData[key].good += report.expected_quantity || 0;
+                } else if (report.equipment_condition === 'damaged') {
+                    groupedData[key].damaged += report.expected_quantity || 0;
+                } else if (report.equipment_condition === 'missing') {
+                    groupedData[key].missing += report.expected_quantity || 0;
+                }
+            });
+
+            // Build table rows
+            let html = '';
+            Object.values(groupedData).forEach(detail => {
+                const inspectionDate = new Date(detail.inspection_date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                });
+
+                html += `
+                    <tr>
+                        <td>${escapeHtml(detail.event_title)}</td>
+                        <td>${escapeHtml(detail.equipment_name)}</td>
+                        <td>${detail.total}</td>
+                        <td><span style="color: #22c55e; font-weight: 600;">${detail.good}</span></td>
+                        <td><span style="color: #ef4444; font-weight: 600;">${detail.damaged}</span></td>
+                        <td><span style="color: #6b7280; font-weight: 600;">${detail.missing}</span></td>
+                        <td>${inspectionDate}</td>
+                    </tr>
+                `;
+            });
+
+            tbody.innerHTML = html;
+        }
+
+        // Helper function to escape HTML
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        // Download Equipment Reports Summary
+        function downloadReportSummary() {
+            const btn = document.querySelector('.btn-download-report');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+
+            fetch('/api/events/download-equipment-report')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to download report');
+                    }
+                    return response.blob();
+                })
+                .then(blob => {
+                    // Create download link
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `Equipment_Inspection_Summary_${new Date().toISOString().split('T')[0]}.xlsx`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+
+                    showAlert('✓ Report downloaded successfully!', 'success');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showAlert('Failed to download report: ' + error.message, 'error');
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-download"></i> Download Report';
+                });
         }
     </script>
 </body>

@@ -15,6 +15,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/contact', 'Home::contact'); 
 $routes->get('/facilities', 'Home::facilities'); 
 $routes->get('/event', 'Home::event'); 
+$routes->get('/about', 'Home::about'); 
 
 // Dynamic facility detail route (NEW - handles all facilities from database)
 $routes->get('/facility/(:segment)', 'Home::facilityDetail/$1');
@@ -30,15 +31,15 @@ $routes->get('facilities/staffhouse', 'Home::staffhouse');
 
 
 // Authentication
-$routes->get('/login', 'Auth::login');
-$routes->post('/login', 'Auth::attemptLogin');
-$routes->post('/register', 'Auth::register');
-$routes->get('/logout', 'Auth::logout');
-$routes->get('/unauthorized', 'Unauthorized::index');
+$routes->get('login', 'Auth::login');
+$routes->post('login', 'Auth::attemptLogin');
+$routes->post('register', 'Auth::register');
+$routes->get('logout', 'Auth::logout');
+$routes->get('unauthorized', 'Unauthorized::index');
 
 // Google OAuth
-$routes->get('/google/login', 'Auth::googleLogin');
-$routes->get('/google/callback', 'Auth::googleCallback');
+$routes->get('google/login', 'Auth::googleLogin');
+$routes->get('google/callback', 'Auth::googleCallback');
 
 // Smart dashboard redirect based on role
 $routes->get('dashboard', 'DashboardRouter::index', ['filter' => 'auth']);
@@ -206,6 +207,8 @@ $routes->group('api/events', ['namespace' => 'App\Controllers\Api'], function($r
     $routes->get('calendar', 'EventsApiController::getCalendarEvents');
     $routes->get('upcoming', 'EventsApiController::getUpcomingEvents');
     $routes->get('statistics', 'EventsApiController::getEventStats');
+    $routes->get('equipment-reports-summary', 'EventsApiController::equipmentReportsSummary');
+    $routes->get('download-equipment-report', 'EventsApiController::downloadEquipmentReport');
     $routes->get('(:num)', 'EventsApiController::getEventDetails/$1');
 
 });
@@ -447,8 +450,23 @@ $routes->get('api/survey/(:num)', 'Survey::getSurvey/$1', ['filter' => 'auth']);
 $routes->get('api/survey-files/(:num)', 'Survey::getEvaluationFiles/$1', ['filter' => 'auth']);
 
 // ============================================
-// FACULTY ROUTES (Requires Faculty Role)
+// EMPLOYEE ROUTES (Requires Employee Role)
 // ============================================
+
+$routes->group('employee', ['filter' => 'auth'], function($routes) {
+    $routes->get('/', 'Employee::index');
+    $routes->get('dashboard', 'Employee::dashboard');
+    $routes->get('bookings', 'Employee::bookings');
+    $routes->get('profile', 'Employee::profile');
+    $routes->get('history', 'Employee::history');
+    $routes->get('attendance', 'Employee::attendance');
+    $routes->get('book', 'Employee::book');
+});
+
+// ============================================
+// LEGACY FACULTY ROUTES (Redirect to Employee)
+// ============================================
+// Kept for backward compatibility - all requests to /faculty/* redirect to /employee/*
 
 $routes->group('faculty', ['filter' => 'auth'], function($routes) {
     $routes->get('/', 'Faculty::index');

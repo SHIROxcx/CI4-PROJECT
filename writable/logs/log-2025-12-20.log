@@ -1,0 +1,1011 @@
+DEBUG - 2025-12-20 00:13:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:14:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:23:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:23:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:23:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 00:23:38 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 00:23:38 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 00:23:38 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:23:38 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:23:38 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:23:38 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:23:38 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:23:38 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 00:23:38 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 00:23:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 00:24:51 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 00:24:51 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 00:24:51 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:24:51 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:24:51 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:24:51 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:24:51 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:24:51 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 00:24:51 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 00:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 00:24:52 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-20 00:24:52 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-20 00:24:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:24:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:25:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:33:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:33:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:33:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 00:33:53 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 00:33:53 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 00:33:53 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:33:53 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:33:53 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:33:53 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:33:53 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 00:33:53 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 00:33:53 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 00:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 00:33:54 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-20 00:33:54 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-20 00:33:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:40:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 00:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:04:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:07:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:07:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:08:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:08:38 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-20 01:08:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:08:39 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-20 01:08:39 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-20 01:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:08:39 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-20 01:08:39 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-20 01:09:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:09:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:09:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:09:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:09:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:09:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:14:12 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 01:14:12 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 01:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:14:12 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 01:14:12 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 01:14:12 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:14:12 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:14:12 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:14:12 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:14:12 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:14:12 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 01:14:12 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 01:14:12 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 01:14:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:14:24 --> [getStudentFacilities] Fetching facilities for student booking
+INFO - 2025-12-20 01:14:24 --> [getStudentFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 01:14:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:14:25 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-20 01:14:25 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-20 01:14:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:14:27 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 01:14:27 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 01:14:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:14:27 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 01:14:27 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 01:14:27 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:14:27 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:14:27 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:14:27 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:14:27 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:14:27 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 01:14:27 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 01:14:27 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 01:21:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:21:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:21:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:29:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:29:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:29:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:29:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:29:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:29:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:29:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:29:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:31:10 --> === GET STUDENT FILES START (Booking #141) ===
+INFO - 2025-12-20 01:31:10 --> User role: admin
+INFO - 2025-12-20 01:31:10 --> Found 0 files for booking #141
+INFO - 2025-12-20 01:31:10 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 01:31:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:31:35 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 01:31:35 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 01:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:31:35 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 01:31:35 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 01:31:35 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:31:35 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:31:35 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:31:35 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:31:35 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:31:35 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 01:31:35 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 01:31:35 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 01:32:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:32:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:32:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:32:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:32:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:32:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:32:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:32:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:33:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:33:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:47:00 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-20 01:47:00 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-20 01:47:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:47:02 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 01:47:02 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 01:47:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:47:02 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 01:47:02 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 01:47:02 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:47:02 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:47:02 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:47:02 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:47:02 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:47:02 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 01:47:02 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 01:47:02 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 01:47:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:47:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:47:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:47:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:47:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:47:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:47:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:47:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:48:25 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 01:48:25 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 01:48:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:48:26 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 01:48:26 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 01:48:26 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:26 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:26 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:26 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:26 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:26 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 01:48:26 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 01:48:26 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 01:48:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:48:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:48:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:48:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:48:49 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 01:48:49 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 01:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:48:49 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 01:48:49 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 01:48:49 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:49 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:49 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:49 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:49 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:49 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 01:48:49 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 01:48:49 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 01:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:48:56 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 01:48:56 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 01:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:48:56 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 01:48:56 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 01:48:56 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:56 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:56 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:56 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:56 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:48:56 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 01:48:56 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 01:48:56 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 01:49:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:49:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:49:51 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 01:49:51 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 01:49:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:49:51 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 01:49:51 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 01:49:51 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:49:51 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:49:51 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:49:51 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:49:51 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:49:51 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 01:49:51 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 01:49:51 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 01:49:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:49:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:49:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:49:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:49:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:49:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:49:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:50:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:50:44 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 01:50:44 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 01:50:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:50:44 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 01:50:44 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 01:50:44 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:50:44 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:50:44 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:50:44 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:50:44 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 01:50:44 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 01:50:44 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 01:50:44 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 01:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:52:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:52:13 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-20 01:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:52:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:52:14 --> EventsAPI - Found 9 events (pending + confirmed + completed)
+INFO - 2025-12-20 01:52:14 --> EventsAPI - Status breakdown: {"pending":8,"confirmed":1}
+DEBUG - 2025-12-20 01:52:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 01:52:14 --> EventsAPI - Found 9 events (pending + confirmed + completed)
+INFO - 2025-12-20 01:52:14 --> EventsAPI - Status breakdown: {"pending":8,"confirmed":1}
+DEBUG - 2025-12-20 01:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 01:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:04:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:04:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:04:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:06:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:06:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:06:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:06:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:06:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:06:33 --> User employee@gmail.com logged in successfully as employee
+DEBUG - 2025-12-20 02:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:09:56 --> [Employee::book] Query: SELECT * FROM facilities (no filter)
+INFO - 2025-12-20 02:09:56 --> [Employee::book] Facilities found: 7
+INFO - 2025-12-20 02:09:56 --> [Employee::book] - AVR Library (ID: 12, key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:09:56 --> [Employee::book] - Classrooms (ID: 8, key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:09:56 --> [Employee::book] - Function Hall (ACAD Bldg.) (ID: 4, key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:09:56 --> [Employee::book] - Pearl Mini Restaurant (ID: 6, key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:09:56 --> [Employee::book] - Staff House Rooms (ID: 7, key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:09:56 --> [Employee::book] - University Auditorium (ID: 1, key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:09:56 --> [Employee::book] - University Gymnasium (ID: 2, key: gymnasium, is_active: 1, is_maintenance: 0)
+CRITICAL - 2025-12-20 02:09:56 --> CodeIgniter\HTTP\Exceptions\HTTPException: The route for "/login" cannot be found.
+[Method: GET, Route: employee/book]
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 63.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(63): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/login')
+ 2 SYSTEMPATH\Common.php(855): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Views\employee\book.php(12): redirect('/login')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\wamp64\\www\\CI4-FINAL HOSTING\\app\\Views\\employee\\book.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('employee/book', [], true)
+ 7 APPPATH\Controllers\Employee.php(157): view('employee/book', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Employee->book()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Employee))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\CI4-FINAL HOSTING\\public\\index.php')
+DEBUG - 2025-12-20 02:10:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:10:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:10:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:10:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:10:55 --> [Employee::book] Query: SELECT * FROM facilities (no filter)
+INFO - 2025-12-20 02:10:55 --> [Employee::book] Facilities found: 7
+INFO - 2025-12-20 02:10:55 --> [Employee::book] - AVR Library (ID: 12, key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:10:55 --> [Employee::book] - Classrooms (ID: 8, key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:10:55 --> [Employee::book] - Function Hall (ACAD Bldg.) (ID: 4, key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:10:55 --> [Employee::book] - Pearl Mini Restaurant (ID: 6, key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:10:55 --> [Employee::book] - Staff House Rooms (ID: 7, key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:10:55 --> [Employee::book] - University Auditorium (ID: 1, key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:10:55 --> [Employee::book] - University Gymnasium (ID: 2, key: gymnasium, is_active: 1, is_maintenance: 0)
+CRITICAL - 2025-12-20 02:10:55 --> CodeIgniter\HTTP\Exceptions\HTTPException: The route for "/login" cannot be found.
+[Method: GET, Route: employee/book]
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 63.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(63): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/login')
+ 2 SYSTEMPATH\Common.php(855): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Views\employee\book.php(12): redirect('/login')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\wamp64\\www\\CI4-FINAL HOSTING\\app\\Views\\employee\\book.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('employee/book', [], true)
+ 7 APPPATH\Controllers\Employee.php(157): view('employee/book', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Employee->book()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Employee))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\CI4-FINAL HOSTING\\public\\index.php')
+DEBUG - 2025-12-20 02:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:11:25 --> [Employee::book] Query: SELECT * FROM facilities (no filter)
+INFO - 2025-12-20 02:11:25 --> [Employee::book] Facilities found: 7
+INFO - 2025-12-20 02:11:25 --> [Employee::book] - AVR Library (ID: 12, key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:11:25 --> [Employee::book] - Classrooms (ID: 8, key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:11:25 --> [Employee::book] - Function Hall (ACAD Bldg.) (ID: 4, key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:11:25 --> [Employee::book] - Pearl Mini Restaurant (ID: 6, key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:11:25 --> [Employee::book] - Staff House Rooms (ID: 7, key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:11:25 --> [Employee::book] - University Auditorium (ID: 1, key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:11:25 --> [Employee::book] - University Gymnasium (ID: 2, key: gymnasium, is_active: 1, is_maintenance: 0)
+CRITICAL - 2025-12-20 02:11:25 --> CodeIgniter\HTTP\Exceptions\HTTPException: The route for "/login" cannot be found.
+[Method: GET, Route: employee/book]
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 63.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(63): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/login')
+ 2 SYSTEMPATH\Common.php(855): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Views\employee\book.php(12): redirect('/login')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\wamp64\\www\\CI4-FINAL HOSTING\\app\\Views\\employee\\book.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('employee/book', [], true)
+ 7 APPPATH\Controllers\Employee.php(157): view('employee/book', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Employee->book()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Employee))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\CI4-FINAL HOSTING\\public\\index.php')
+DEBUG - 2025-12-20 02:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:12:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:12:49 --> [Employee::book] Query: SELECT * FROM facilities (no filter)
+INFO - 2025-12-20 02:12:49 --> [Employee::book] Facilities found: 7
+INFO - 2025-12-20 02:12:49 --> [Employee::book] - AVR Library (ID: 12, key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:12:49 --> [Employee::book] - Classrooms (ID: 8, key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:12:49 --> [Employee::book] - Function Hall (ACAD Bldg.) (ID: 4, key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:12:49 --> [Employee::book] - Pearl Mini Restaurant (ID: 6, key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:12:49 --> [Employee::book] - Staff House Rooms (ID: 7, key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:12:49 --> [Employee::book] - University Auditorium (ID: 1, key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:12:49 --> [Employee::book] - University Gymnasium (ID: 2, key: gymnasium, is_active: 1, is_maintenance: 0)
+CRITICAL - 2025-12-20 02:12:49 --> CodeIgniter\HTTP\Exceptions\HTTPException: The route for "/login" cannot be found.
+[Method: GET, Route: employee/book]
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 63.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(63): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/login')
+ 2 SYSTEMPATH\Common.php(855): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Views\employee\book.php(12): redirect('/login')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\wamp64\\www\\CI4-FINAL HOSTING\\app\\Views\\employee\\book.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('employee/book', [], true)
+ 7 APPPATH\Controllers\Employee.php(157): view('employee/book', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Employee->book()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Employee))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\CI4-FINAL HOSTING\\public\\index.php')
+DEBUG - 2025-12-20 02:13:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:13:00 --> [Employee::book] Query: SELECT * FROM facilities (no filter)
+INFO - 2025-12-20 02:13:00 --> [Employee::book] Facilities found: 7
+INFO - 2025-12-20 02:13:00 --> [Employee::book] - AVR Library (ID: 12, key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:13:00 --> [Employee::book] - Classrooms (ID: 8, key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:13:00 --> [Employee::book] - Function Hall (ACAD Bldg.) (ID: 4, key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:13:00 --> [Employee::book] - Pearl Mini Restaurant (ID: 6, key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:13:00 --> [Employee::book] - Staff House Rooms (ID: 7, key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:13:00 --> [Employee::book] - University Auditorium (ID: 1, key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:13:00 --> [Employee::book] - University Gymnasium (ID: 2, key: gymnasium, is_active: 1, is_maintenance: 0)
+CRITICAL - 2025-12-20 02:13:00 --> CodeIgniter\HTTP\Exceptions\HTTPException: The route for "/login" cannot be found.
+[Method: GET, Route: employee/book]
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 63.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(63): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/login')
+ 2 SYSTEMPATH\Common.php(855): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Views\employee\book.php(12): redirect('/login')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\wamp64\\www\\CI4-FINAL HOSTING\\app\\Views\\employee\\book.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('employee/book', [], true)
+ 7 APPPATH\Controllers\Employee.php(157): view('employee/book', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Employee->book()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Employee))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\CI4-FINAL HOSTING\\public\\index.php')
+DEBUG - 2025-12-20 02:13:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:13:45 --> [Employee::book] Query: SELECT * FROM facilities (no filter)
+INFO - 2025-12-20 02:13:45 --> [Employee::book] Facilities found: 7
+INFO - 2025-12-20 02:13:45 --> [Employee::book] - AVR Library (ID: 12, key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:13:45 --> [Employee::book] - Classrooms (ID: 8, key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:13:45 --> [Employee::book] - Function Hall (ACAD Bldg.) (ID: 4, key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:13:45 --> [Employee::book] - Pearl Mini Restaurant (ID: 6, key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:13:45 --> [Employee::book] - Staff House Rooms (ID: 7, key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:13:45 --> [Employee::book] - University Auditorium (ID: 1, key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:13:45 --> [Employee::book] - University Gymnasium (ID: 2, key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 02:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:14:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:14:20 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-20 02:14:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:14:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:14:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:14:20 --> EventsAPI - Found 9 events (pending + confirmed + completed)
+INFO - 2025-12-20 02:14:20 --> EventsAPI - Status breakdown: {"pending":8,"confirmed":1}
+INFO - 2025-12-20 02:14:20 --> EventsAPI - Found 9 events (pending + confirmed + completed)
+INFO - 2025-12-20 02:14:20 --> EventsAPI - Status breakdown: {"pending":8,"confirmed":1}
+DEBUG - 2025-12-20 02:14:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:14:24 --> [getStudentFacilities] Fetching facilities for student booking
+INFO - 2025-12-20 02:14:24 --> [getStudentFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:14:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:14:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:14:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:14:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:15:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:15:01 --> Student booking created successfully: 148 by admin kiela@gmail.com
+DEBUG - 2025-12-20 02:15:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:15:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:15:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:15:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:15:48 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 02:15:48 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:15:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:15:48 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 02:15:48 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 02:15:48 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:15:48 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:15:48 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:15:48 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:15:48 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:15:48 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:15:48 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 02:15:48 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 02:15:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:15:50 --> [getStudentFacilities] Fetching facilities for student booking
+INFO - 2025-12-20 02:15:50 --> [getStudentFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:15:58 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 02:15:58 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:15:58 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 02:15:58 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 02:15:58 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:15:58 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:15:58 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:15:58 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:15:58 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:15:58 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:15:58 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 02:15:58 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 02:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:16:02 --> [getStudentFacilities] Fetching facilities for student booking
+INFO - 2025-12-20 02:16:02 --> [getStudentFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:17:55 --> [getStudentFacilities] Fetching facilities for student booking
+INFO - 2025-12-20 02:17:55 --> [getStudentFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:17:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:18:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:18:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:18:31 --> Student booking created successfully: 149 by admin SIXTO@GMAIL.COM
+DEBUG - 2025-12-20 02:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:20:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:20:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:20:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-20 02:20:39 --> Failed login attempt for: employee@gmail.com - Incorrect password
+DEBUG - 2025-12-20 02:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:20:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:20:50 --> User employee@gmail.com logged in successfully as employee
+DEBUG - 2025-12-20 02:20:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:20:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:20:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:20:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:20:52 --> [Employee::book] Query: SELECT * FROM facilities (no filter)
+INFO - 2025-12-20 02:20:52 --> [Employee::book] Facilities found: 7
+INFO - 2025-12-20 02:20:52 --> [Employee::book] - AVR Library (ID: 12, key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:52 --> [Employee::book] - Classrooms (ID: 8, key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:52 --> [Employee::book] - Function Hall (ACAD Bldg.) (ID: 4, key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:52 --> [Employee::book] - Pearl Mini Restaurant (ID: 6, key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:52 --> [Employee::book] - Staff House Rooms (ID: 7, key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:52 --> [Employee::book] - University Auditorium (ID: 1, key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:20:52 --> [Employee::book] - University Gymnasium (ID: 2, key: gymnasium, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:20:55 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 02:21:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-20 02:21:39 --> Validation failed: {"address":"Address must be at least 10 characters (include street, city, province)"}
+DEBUG - 2025-12-20 02:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:21:47 --> Student booking created successfully: 150 by guest employee@gmail.com
+DEBUG - 2025-12-20 02:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:21:48 --> === UPLOAD START for booking 150 ===
+INFO - 2025-12-20 02:21:48 --> Booking found: 150
+DEBUG - 2025-12-20 02:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:21:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:21:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:21:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:00 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-20 02:22:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:01 --> EventsAPI - Found 12 events (pending + confirmed + completed)
+INFO - 2025-12-20 02:22:01 --> EventsAPI - Status breakdown: {"pending":11,"confirmed":1}
+DEBUG - 2025-12-20 02:22:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:01 --> EventsAPI - Found 12 events (pending + confirmed + completed)
+INFO - 2025-12-20 02:22:01 --> EventsAPI - Status breakdown: {"pending":11,"confirmed":1}
+DEBUG - 2025-12-20 02:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:12 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-20 02:22:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:13 --> EventsAPI - Found 12 events (pending + confirmed + completed)
+INFO - 2025-12-20 02:22:13 --> EventsAPI - Status breakdown: {"pending":11,"confirmed":1}
+DEBUG - 2025-12-20 02:22:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:13 --> EventsAPI - Found 12 events (pending + confirmed + completed)
+INFO - 2025-12-20 02:22:13 --> EventsAPI - Status breakdown: {"pending":11,"confirmed":1}
+DEBUG - 2025-12-20 02:22:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:16 --> === GET STUDENT FILES START (Booking #150) ===
+INFO - 2025-12-20 02:22:16 --> User role: admin
+INFO - 2025-12-20 02:22:16 --> Found 0 files for booking #150
+INFO - 2025-12-20 02:22:16 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:22:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:20 --> === GET STUDENT FILES START (Booking #149) ===
+INFO - 2025-12-20 02:22:20 --> User role: admin
+INFO - 2025-12-20 02:22:20 --> Found 0 files for booking #149
+INFO - 2025-12-20 02:22:20 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:22:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:23 --> === GET STUDENT FILES START (Booking #150) ===
+INFO - 2025-12-20 02:22:23 --> User role: admin
+INFO - 2025-12-20 02:22:23 --> Found 0 files for booking #150
+INFO - 2025-12-20 02:22:23 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:22:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:25 --> === GET STUDENT FILES START (Booking #150) ===
+INFO - 2025-12-20 02:22:25 --> User role: admin
+INFO - 2025-12-20 02:22:25 --> Found 0 files for booking #150
+INFO - 2025-12-20 02:22:25 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:26 --> === GET STUDENT FILES START (Booking #149) ===
+INFO - 2025-12-20 02:22:26 --> User role: admin
+INFO - 2025-12-20 02:22:26 --> Found 0 files for booking #149
+INFO - 2025-12-20 02:22:26 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:22:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:32 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-20 02:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:33 --> EventsAPI - Found 12 events (pending + confirmed + completed)
+INFO - 2025-12-20 02:22:33 --> EventsAPI - Status breakdown: {"pending":11,"confirmed":1}
+DEBUG - 2025-12-20 02:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:33 --> EventsAPI - Found 12 events (pending + confirmed + completed)
+INFO - 2025-12-20 02:22:33 --> EventsAPI - Status breakdown: {"pending":11,"confirmed":1}
+DEBUG - 2025-12-20 02:22:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:46 --> Booking #148 declined. Reason: maintenance-scheduled
+INFO - 2025-12-20 02:22:49 --> Booking notification sent: declined for booking #148 to kiela@gmail.com
+DEBUG - 2025-12-20 02:22:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:22:49 --> Booking #148 declined. Reason: maintenance-scheduled
+INFO - 2025-12-20 02:22:53 --> Booking notification sent: declined for booking #148 to kiela@gmail.com
+DEBUG - 2025-12-20 02:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:22:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:23:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:23:01 --> Booking #148 permanently deleted from database. Status: cancelled. Reason: ada
+INFO - 2025-12-20 02:23:05 --> Booking notification sent: deleted for booking #148 to kiela@gmail.com
+DEBUG - 2025-12-20 02:23:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:23:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:23:15 --> === GET STUDENT FILES START (Booking #150) ===
+INFO - 2025-12-20 02:23:15 --> User role: admin
+INFO - 2025-12-20 02:23:15 --> Found 0 files for booking #150
+INFO - 2025-12-20 02:23:15 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:23:16 --> === GET STUDENT FILES START (Booking #150) ===
+INFO - 2025-12-20 02:23:16 --> User role: admin
+INFO - 2025-12-20 02:23:16 --> Found 0 files for booking #150
+INFO - 2025-12-20 02:23:16 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:23:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:23:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:23:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:23:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:23:39 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-20 02:23:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:23:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:23:40 --> EventsAPI - Found 11 events (pending + confirmed + completed)
+INFO - 2025-12-20 02:23:40 --> EventsAPI - Status breakdown: {"pending":10,"confirmed":1}
+DEBUG - 2025-12-20 02:23:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:23:40 --> EventsAPI - Found 11 events (pending + confirmed + completed)
+INFO - 2025-12-20 02:23:40 --> EventsAPI - Status breakdown: {"pending":10,"confirmed":1}
+DEBUG - 2025-12-20 02:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:24:09 --> === GET STUDENT FILES START (Booking #149) ===
+INFO - 2025-12-20 02:24:09 --> User role: admin
+INFO - 2025-12-20 02:24:09 --> Found 0 files for booking #149
+INFO - 2025-12-20 02:24:09 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:24:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:24:11 --> === GET STUDENT FILES START (Booking #149) ===
+INFO - 2025-12-20 02:24:11 --> User role: admin
+INFO - 2025-12-20 02:24:11 --> Found 0 files for booking #149
+INFO - 2025-12-20 02:24:11 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:24:12 --> === GET STUDENT FILES START (Booking #150) ===
+INFO - 2025-12-20 02:24:12 --> User role: admin
+INFO - 2025-12-20 02:24:13 --> Found 0 files for booking #150
+INFO - 2025-12-20 02:24:13 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:25:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:25:20 --> [getStudentFacilities] Fetching facilities for student booking
+INFO - 2025-12-20 02:25:20 --> [getStudentFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:25:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:25:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:26:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:26:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:26:31 --> Student booking created successfully: 151 by admin wdafdawd@gmail.com
+DEBUG - 2025-12-20 02:26:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:26:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:26:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:26:37 --> === GET STUDENT FILES START (Booking #151) ===
+INFO - 2025-12-20 02:26:37 --> User role: admin
+INFO - 2025-12-20 02:26:37 --> Found 0 files for booking #151
+INFO - 2025-12-20 02:26:37 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:26:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:26:39 --> === GET STUDENT FILES START (Booking #151) ===
+INFO - 2025-12-20 02:26:39 --> User role: admin
+INFO - 2025-12-20 02:26:39 --> Found 0 files for booking #151
+INFO - 2025-12-20 02:26:39 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:26:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:26:56 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 02:26:56 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:26:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:26:57 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 02:26:57 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 02:26:57 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:26:57 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:26:57 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:26:57 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:26:57 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:26:57 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:26:57 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 02:26:57 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 02:27:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:27:00 --> [getStudentFacilities] Fetching facilities for student booking
+INFO - 2025-12-20 02:27:00 --> [getStudentFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:27:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:27:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:27:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:27:32 --> Student booking created successfully: 152 by admin SIXTO@GMAIL.COM
+DEBUG - 2025-12-20 02:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:27:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:27:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:27:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:27:38 --> === GET STUDENT FILES START (Booking #152) ===
+INFO - 2025-12-20 02:27:38 --> User role: admin
+INFO - 2025-12-20 02:27:38 --> Found 0 files for booking #152
+INFO - 2025-12-20 02:27:38 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:27:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:27:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:27:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:27:39 --> === GET STUDENT FILES START (Booking #152) ===
+INFO - 2025-12-20 02:27:39 --> User role: admin
+INFO - 2025-12-20 02:27:39 --> Found 0 files for booking #152
+INFO - 2025-12-20 02:27:39 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:27:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:27:46 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 02:27:46 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:27:46 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 02:27:46 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 02:27:46 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:27:46 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:27:46 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:27:46 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:27:46 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:27:46 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:27:46 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 02:27:46 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 02:30:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:30:22 --> [getStudentFacilities] Fetching facilities for student booking
+INFO - 2025-12-20 02:30:22 --> [getStudentFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:30:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:30:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:31:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:31:09 --> Student booking created successfully: 153 by admin SIXTO@GMAIL.COM
+DEBUG - 2025-12-20 02:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:31:20 --> === GET STUDENT FILES START (Booking #153) ===
+INFO - 2025-12-20 02:31:20 --> User role: admin
+INFO - 2025-12-20 02:31:20 --> Found 0 files for booking #153
+INFO - 2025-12-20 02:31:20 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:35:45 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 02:35:45 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:35:45 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 02:35:45 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 02:35:45 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:35:45 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:35:45 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:35:45 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:35:45 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:35:45 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:35:45 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 02:35:45 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 02:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:36:20 --> [getStudentFacilities] Fetching facilities for student booking
+INFO - 2025-12-20 02:36:20 --> [getStudentFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:36:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:37:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:37:10 --> Student booking created successfully: 154 by admin asdadad@gmail.com
+DEBUG - 2025-12-20 02:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:37:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:37:15 --> === GET STUDENT FILES START (Booking #154) ===
+INFO - 2025-12-20 02:37:15 --> User role: admin
+INFO - 2025-12-20 02:37:15 --> Found 0 files for booking #154
+INFO - 2025-12-20 02:37:15 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:41:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:41:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:41:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:41:17 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 02:41:17 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:41:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:41:17 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 02:41:17 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 02:41:17 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:41:17 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:41:17 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:41:17 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:41:17 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 02:41:17 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 02:41:17 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 02:41:17 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 02:41:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:41:20 --> [getStudentFacilities] Fetching facilities for student booking
+INFO - 2025-12-20 02:41:20 --> [getStudentFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 02:41:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:41:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:41:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:42:17 --> Student booking created successfully: 155 by admin wdafdawd@gmail.com
+DEBUG - 2025-12-20 02:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:42:22 --> === GET STUDENT FILES START (Booking #155) ===
+INFO - 2025-12-20 02:42:22 --> User role: admin
+INFO - 2025-12-20 02:42:22 --> Found 0 files for booking #155
+INFO - 2025-12-20 02:42:22 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:42:25 --> === GET STUDENT FILES START (Booking #155) ===
+INFO - 2025-12-20 02:42:25 --> User role: admin
+INFO - 2025-12-20 02:42:25 --> Found 0 files for booking #155
+INFO - 2025-12-20 02:42:25 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:42:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:42:29 --> === UPLOAD START for booking 155 ===
+INFO - 2025-12-20 02:42:29 --> Booking found: 155
+INFO - 2025-12-20 02:42:29 --> Upload path: C:\wamp64\www\CI4-FINAL HOSTING\writable\uploads/student_booking_files/155/
+INFO - 2025-12-20 02:42:29 --> Created upload directory
+INFO - 2025-12-20 02:42:29 --> Files received: 1
+INFO - 2025-12-20 02:42:29 --> Files array: ["files"]
+INFO - 2025-12-20 02:42:29 --> Processing 1 files
+INFO - 2025-12-20 02:42:29 --> Processing file index 0
+INFO - 2025-12-20 02:42:29 --> File name: CHAPTER-4 (1).pdf, Valid: 1, HasMoved: 
+INFO - 2025-12-20 02:42:29 --> File type: permission_letter
+INFO - 2025-12-20 02:42:29 --> Moving file to: C:\wamp64\www\CI4-FINAL HOSTING\writable\uploads/student_booking_files/155/1766169749_415f4deb51d806bcdfb5.pdf
+INFO - 2025-12-20 02:42:29 --> File uploaded successfully: CHAPTER-4 (1).pdf as permission_letter
+INFO - 2025-12-20 02:42:29 --> Total uploaded: 1
+INFO - 2025-12-20 02:42:29 --> === UPLOAD COMPLETE ===
+DEBUG - 2025-12-20 02:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:42:33 --> === GET STUDENT FILES START (Booking #155) ===
+INFO - 2025-12-20 02:42:33 --> User role: admin
+INFO - 2025-12-20 02:42:33 --> Found 1 files for booking #155
+INFO - 2025-12-20 02:42:33 --> File: CHAPTER-4 (1).pdf (permission_letter)
+INFO - 2025-12-20 02:42:33 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:42:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:42:39 --> === GET STUDENT FILES START (Booking #155) ===
+INFO - 2025-12-20 02:42:39 --> User role: admin
+INFO - 2025-12-20 02:42:39 --> Found 0 files for booking #155
+INFO - 2025-12-20 02:42:39 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 02:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:42:46 --> === UPLOAD START for booking 155 ===
+INFO - 2025-12-20 02:42:46 --> Booking found: 155
+INFO - 2025-12-20 02:42:46 --> Upload path: C:\wamp64\www\CI4-FINAL HOSTING\writable\uploads/student_booking_files/155/
+INFO - 2025-12-20 02:42:46 --> Files received: 1
+INFO - 2025-12-20 02:42:46 --> Files array: ["files"]
+INFO - 2025-12-20 02:42:46 --> Processing 1 files
+INFO - 2025-12-20 02:42:46 --> Processing file index 0
+INFO - 2025-12-20 02:42:46 --> File name: CHAPTER-4 (1).pdf, Valid: 1, HasMoved: 
+INFO - 2025-12-20 02:42:46 --> File type: permission_letter
+INFO - 2025-12-20 02:42:46 --> Moving file to: C:\wamp64\www\CI4-FINAL HOSTING\writable\uploads/student_booking_files/155/1766169766_8bfca83457217169dd81.pdf
+INFO - 2025-12-20 02:42:46 --> File uploaded successfully: CHAPTER-4 (1).pdf as permission_letter
+INFO - 2025-12-20 02:42:46 --> Total uploaded: 1
+INFO - 2025-12-20 02:42:46 --> === UPLOAD COMPLETE ===
+DEBUG - 2025-12-20 02:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 02:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 02:42:50 --> === GET STUDENT FILES START (Booking #155) ===
+INFO - 2025-12-20 02:42:50 --> User role: admin
+INFO - 2025-12-20 02:42:50 --> Found 1 files for booking #155
+INFO - 2025-12-20 02:42:50 --> File: CHAPTER-4 (1).pdf (permission_letter)
+INFO - 2025-12-20 02:42:50 --> === GET STUDENT FILES END ===
+DEBUG - 2025-12-20 03:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 03:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 03:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 03:12:48 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-20 03:12:48 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-20 03:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-20 03:12:48 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-20 03:12:48 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-20 03:12:48 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 03:12:48 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 03:12:48 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 03:12:48 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 03:12:48 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-20 03:12:48 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-20 03:12:48 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-20 03:12:48 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-20 03:17:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-20 03:17:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

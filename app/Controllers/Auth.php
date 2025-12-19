@@ -86,7 +86,7 @@ public function register()
                 'user' => 'User'
             ];
             $roleText = $roleNames[$role] ?? 'User';
-            return redirect()->to('/login')->with('success', "🎉 Account created successfully as {$roleText}! You can now log in with your credentials.");
+            return redirect()->to('login')->with('success', "🎉 Account created successfully as {$roleText}! You can now log in with your credentials.");
         } else {
             return redirect()->back()->withInput()->with('error', 'Failed to create account. Please try again or contact support if the problem persists.');
         }
@@ -179,15 +179,15 @@ public function attemptLogin()
     // Redirect based on role
     switch ($user['role']) {
         case 'admin':
-            return redirect()->to('/admin');
+            return redirect()->to('admin');
         case 'student':
-            return redirect()->to('/student/dashboard');
+            return redirect()->to('student/dashboard');
         case 'facilitator':
-            return redirect()->to('/facilitator');
+            return redirect()->to('facilitator');
         case 'employee':
-            return redirect()->to('/employee/dashboard');
+            return redirect()->to('employee/dashboard');
         default:
-            return redirect()->to('/user/dashboard');
+            return redirect()->to('user/dashboard');
     }
 }
 
@@ -225,13 +225,13 @@ public function googleCallback()
     if ($error) {
         $errorDesc = $this->request->getGet('error_description') ?? 'Unknown error occurred';
         log_message('warning', "Google OAuth error: {$error} - {$errorDesc}");
-        return redirect()->to('/login')->with('error', 'Google login was cancelled or failed. Please try again.');
+        return redirect()->to('login')->with('error', 'Google login was cancelled or failed. Please try again.');
     }
 
     // Check if authorization code is present
     if (!$code) {
         log_message('warning', 'Google callback received without authorization code');
-        return redirect()->to('/login')->with('error', 'Invalid authorization code from Google.');
+        return redirect()->to('login')->with('error', 'Invalid authorization code from Google.');
     }
 
     try {
@@ -240,13 +240,13 @@ public function googleCallback()
         // Exchange code for access token
         $tokenData = $googleService->getAccessToken($code, $state);
         if (!$tokenData || !isset($tokenData['access_token'])) {
-            return redirect()->to('/login')->with('error', 'Failed to obtain access token from Google.');
+            return redirect()->to('login')->with('error', 'Failed to obtain access token from Google.');
         }
 
         // Get user information from Google
         $googleUser = $googleService->getUserInfo($tokenData['access_token']);
         if (!$googleUser) {
-            return redirect()->to('/login')->with('error', 'Failed to retrieve your Google profile information.');
+            return redirect()->to('login')->with('error', 'Failed to retrieve your Google profile information.');
         }
 
         // Handle login - create user if doesn't exist
@@ -254,11 +254,11 @@ public function googleCallback()
 
         // Check if account is active
         if (isset($user['status']) && $user['status'] === 'suspended') {
-            return redirect()->to('/login')->with('error', 'Your account has been suspended. Please contact the administrator for assistance.');
+            return redirect()->to('login')->with('error', 'Your account has been suspended. Please contact the administrator for assistance.');
         }
 
         if (isset($user['status']) && $user['status'] === 'inactive') {
-            return redirect()->to('/login')->with('warning', 'Your account is inactive. Please contact the administrator to activate your account.');
+            return redirect()->to('login')->with('warning', 'Your account is inactive. Please contact the administrator to activate your account.');
         }
 
         // Set session data
@@ -303,7 +303,7 @@ public function googleCallback()
 
     } catch (\Exception $e) {
         log_message('error', 'Google OAuth callback error: ' . $e->getMessage());
-        return redirect()->to('/login')->with('error', 'An unexpected error occurred during Google login. Please try again.');
+        return redirect()->to('login')->with('error', 'An unexpected error occurred during Google login. Please try again.');
     }
 }
 }

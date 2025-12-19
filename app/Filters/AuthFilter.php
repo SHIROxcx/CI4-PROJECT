@@ -26,7 +26,7 @@ class AuthFilter implements FilterInterface
             }
             
             // For regular requests, redirect to login
-            return redirect()->to('/login')->with('message', 'Please log in to continue');
+            return redirect()->to('login')->with('message', 'Please log in to continue');
         }
 
         // User is authenticated, authorization will be checked by RoleFilter if applied

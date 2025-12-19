@@ -250,6 +250,88 @@ class BookingExtensionModel extends Model
                 throw new \Exception('Only pending extensions can be approved');
             }
 
+            // Get booking details to check for conflicts
+            $bookingModel = new BookingModel();
+            $booking = $bookingModel->find($extension['booking_id']);
+
+            if (!$booking) {
+                throw new \Exception('Associated booking not found');
+            }
+
+            // Load BookingHelper for calculations
+            $bookingHelper = new \App\Services\BookingHelper();
+
+            // Get current booking end time or calculate it
+            $currentEndTime = $booking['event_end_time'];
+            
+            if (!$currentEndTime) {
+                // Calculate current end time if not already calculated
+                $baseDuration = $booking['duration'] ?? '8 hours';
+                $baseHours = \App\Services\BookingHelper::parseDurationToHours($baseDuration);
+                $currentAdditionalHours = $booking['additional_hours'] ?? 0;
+                $currentTotalHours = $baseHours + $currentAdditionalHours;
+                $currentEndTime = \App\Services\BookingHelper::calculateEventEndTime(
+                    $booking['event_time'],
+                    $currentTotalHours
+                );
+            }
+
+            // Calculate new end time with extension
+            $newTotalAdditionalHours = ($booking['additional_hours'] ?? 0) + $extension['extension_hours'];
+            $baseDuration = $booking['duration'] ?? '8 hours';
+            $baseHours = \App\Services\BookingHelper::parseDurationToHours($baseDuration);
+            $newTotalHours = $baseHours + $newTotalAdditionalHours;
+            $newEndTime = \App\Services\BookingHelper::calculateEventEndTime(
+                $booking['event_time'],
+                $newTotalHours
+            );
+
+            // Check for conflicts with extended time (add 2-hour grace period)
+            $eventModel = new \App\Models\EventModel();
+            $db = \Config\Database::connect();
+            
+            // Get existing bookings to check for conflicts
+            $existingBookings = $db->table('bookings')
+                ->select('event_time, event_end_time, duration, additional_hours')
+                ->where('facility_id', $booking['facility_id'])
+                ->where('event_date', $booking['event_date'])
+                ->where('status', 'confirmed')
+                ->where('id !=', $booking['id']) // Exclude current booking
+                ->get()
+                ->getResultArray();
+
+            // Check if extended time conflicts with other bookings (with 2-hour grace period)
+            foreach ($existingBookings as $existingBooking) {
+                $existingEndTime = $existingBooking['event_end_time'];
+                
+                if (!$existingEndTime) {
+                    // Calculate if not available
+                    $existingBaseDuration = $existingBooking['duration'] ?? '8 hours';
+                    $existingBaseHours = \App\Services\BookingHelper::parseDurationToHours($existingBaseDuration);
+                    $existingAdditionalHours = $existingBooking['additional_hours'] ?? 0;
+                    $existingTotalHours = $existingBaseHours + $existingAdditionalHours;
+                    $existingEndTime = \App\Services\BookingHelper::calculateEventEndTime(
+                        $existingBooking['event_time'],
+                        $existingTotalHours
+                    );
+                }
+
+                // Check for conflict with 2-hour grace period
+                if (\App\Services\BookingHelper::hasTimeConflict(
+                    $booking['event_time'],
+                    $newEndTime,
+                    $existingBooking['event_time'],
+                    $existingEndTime,
+                    2 // 2-hour grace period
+                )) {
+                    throw new \Exception(
+                        'Extension would create a scheduling conflict. ' .
+                        'New end time (' . $newEndTime . ') conflicts with existing booking at ' .
+                        $existingBooking['event_time']
+                    );
+                }
+            }
+
             // Update extension status
             $this->update($extensionId, [
                 'status' => 'approved',
@@ -257,25 +339,20 @@ class BookingExtensionModel extends Model
                 'approved_at' => date('Y-m-d H:i:s'),
             ]);
 
-            // Update booking with additional hours only (don't add cost yet, wait for payment)
-            $bookingModel = new BookingModel();
-            $booking = $bookingModel->find($extension['booking_id']);
+            // Update booking with additional hours and new end time
+            $bookingModel->update($extension['booking_id'], [
+                'additional_hours' => $newTotalAdditionalHours,
+                'event_end_time' => $newEndTime,
+                'total_duration_hours' => $newTotalHours,
+            ]);
 
-            if ($booking) {
-                $currentAdditionalHours = $booking['additional_hours'] ?? 0;
-                $newAdditionalHours = $currentAdditionalHours + $extension['extension_hours'];
+            return [
+                'success' => true,
+                'message' => 'Extension approved successfully',
+                'new_end_time' => $newEndTime,
+                'new_total_hours' => $newTotalHours,
+            ];
 
-                $bookingModel->update($extension['booking_id'], [
-                    'additional_hours' => $newAdditionalHours,
-                ]);
-
-                return [
-                    'success' => true,
-                    'message' => 'Extension approved successfully',
-                ];
-            }
-
-            throw new \Exception('Failed to update booking');
         } catch (\Exception $e) {
             return [
                 'success' => false,

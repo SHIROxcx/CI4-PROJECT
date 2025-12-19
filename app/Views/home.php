@@ -118,6 +118,18 @@ $userRole = $session->get('role');
         overflow: hidden;
       }
 
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('<?= base_url('images/header-landmark.jpg') ?>') center/cover no-repeat;
+        z-index: 1;
+        opacity: 0.3;
+      }
+
       .hero-content {
         position: relative;
         z-index: 2;
@@ -687,6 +699,9 @@ $userRole = $session->get('role');
               <a class="nav-link active" href="<?= site_url('/') ?>">Home</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="<?= site_url('/about') ?>">About</a>
+            </li>            
+            <li class="nav-item">
               <a class="nav-link" href="<?= site_url('/facilities') ?>">Facilities</a>
             </li>
             <li class="nav-item">
@@ -730,71 +745,8 @@ $userRole = $session->get('role');
       </div>
     </section>
 
-    <!-- Quick Stats Banner -->
-    <section class="stats-banner">
-      <div class="container">
-        <div class="stats-container">
-          <div class="stat-box">
-            <i class="fas fa-building"></i>
-            <h3><?= count($facilities) ?></h3>
-            <p>Available Facilities</p>
-          </div>
-          <div class="stat-box">
-            <i class="fas fa-calendar-check"></i>
-            <h3>24/7</h3>
-            <p>Online Booking</p>
-          </div>
-          <div class="stat-box">
-            <i class="fas fa-clock"></i>
-            <h3>&lt;2 Min</h3>
-            <p>Average Booking Time</p>
-          </div>
-          <div class="stat-box">
-            <i class="fas fa-users"></i>
-            <h3>2,500+</h3>
-            <p>Monthly Reservations</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works" id="how-it-works">
-      <div class="container">
-        <div class="section-header">
-          <h2>How to Book a Facility</h2>
-          <p>Simple, fast, and secure reservation process in just four easy steps</p>
-        </div>
-        <div class="steps-container">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <i class="fas fa-search"></i>
-            <h3>Search Facilities</h3>
-            <p>Browse available facilities or use filters to find the perfect space for your needs</p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">2</div>
-            <i class="fas fa-calendar-alt"></i>
-            <h3>Check Availability</h3>
-            <p>View real-time schedules and select your preferred date and time slot</p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <i class="fas fa-file-alt"></i>
-            <h3>Submit Request</h3>
-            <p>Fill out the booking form with event details and submit for approval</p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">4</div>
-            <i class="fas fa-check-circle"></i>
-            <h3>Get Confirmation</h3>
-            <p>Receive instant notification and confirmation email for your reservation</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Facilities -->
+       <!-- Featured Facilities -->
     <section class="featured-facilities">
       <div class="container">
         <div class="section-header">
@@ -839,6 +791,44 @@ $userRole = $session->get('role');
       </div>
     </section>
 
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <h2>How to Book a Facility</h2>
+          <p>Simple, fast, and secure reservation process in just four easy steps</p>
+        </div>
+        <div class="steps-container">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <i class="fas fa-search"></i>
+            <h3>Search Facilities</h3>
+            <p>Browse available facilities or use filters to find the perfect space for your needs</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Check Availability</h3>
+            <p>View real-time schedules and select your preferred date and time slot</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <i class="fas fa-file-alt"></i>
+            <h3>Submit Request</h3>
+            <p>Fill out the booking form with event details and submit for approval</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <i class="fas fa-check-circle"></i>
+            <h3>Get Confirmation</h3>
+            <p>Receive instant notification and confirmation email for your reservation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ 
     <!-- Benefits Section -->
     <section class="benefits-section">
       <div class="container">

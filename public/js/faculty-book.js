@@ -548,15 +548,10 @@ function validateFreeForm() {
   const form = document.getElementById("freeBookingForm");
   const submitBtn = document.getElementById("submitFreeBtn");
 
-  // Check if all required files are uploaded
-  const permissionFile = document.getElementById("file-permission").files[0];
-  const requestFile = document.getElementById("file-request").files[0];
-  const approvalFile = document.getElementById("file-approval").files[0];
-
-  const allFilesUploaded = permissionFile && requestFile && approvalFile;
+  // Form fields are required, files are optional
   const formValid = form.checkValidity();
 
-  submitBtn.disabled = !(formValid && allFilesUploaded);
+  submitBtn.disabled = !formValid;
 }
 
 async function submitFreeBooking() {
@@ -584,13 +579,27 @@ async function submitFreeBooking() {
   try {
     showToast("Validating booking details...", "info");
 
-    // STEP 0: Check for date conflicts with existing bookings
+    // STEP 0: Check for date + time + grace period conflicts
     const facilityId = parseInt(
       document.getElementById("freeFacilityId").value
     );
     const eventDate = document.getElementById("freeEventDate").value;
     const eventTime = document.getElementById("freeEventTime").value;
     const duration = parseInt(document.getElementById("freeDuration").value);
+
+    // Calculate end time with 2-hour grace period
+    const startTime = new Date(`2000-01-01 ${eventTime}`);
+    const endTime = new Date(startTime.getTime() + duration * 60 * 60 * 1000);
+    const endTimeWithGrace = new Date(endTime.getTime() + 2 * 60 * 60 * 1000);
+
+    const endTimeStr =
+      String(endTime.getHours()).padStart(2, "0") +
+      ":" +
+      String(endTime.getMinutes()).padStart(2, "0");
+    const endTimeWithGraceStr =
+      String(endTimeWithGrace.getHours()).padStart(2, "0") +
+      ":" +
+      String(endTimeWithGrace.getMinutes()).padStart(2, "0");
 
     const conflictCheck = await fetch("/api/bookings/checkDateConflict", {
       method: "POST",
@@ -613,7 +622,12 @@ async function submitFreeBooking() {
       conflictResult.hasPendingOrApprovedBooking
     ) {
       showToast(
-        "❌ This date and time has a conflict with an existing booking. Please select a different date or time.",
+        "⚠️ Conflict Detected: Facility has a conflicting booking on this date/time. Your requested time: " +
+          eventTime +
+          " - " +
+          endTimeStr +
+          ". With 2-hour grace period, available from: " +
+          endTimeWithGraceStr,
         "error"
       );
       submitBtn.disabled = false;
@@ -642,7 +656,7 @@ async function submitFreeBooking() {
       special_requirements:
         document.getElementById("freeSpecialRequirements").value || "",
       selected_equipment: equipmentSelections,
-      booking_type: "employee", // Faculty booking type
+      booking_type: "employee", // Employee booking type
     };
 
     console.log("Sending booking data:", bookingData);
@@ -723,7 +737,7 @@ async function submitFreeBooking() {
     );
 
     setTimeout(() => {
-      window.location.href = "/faculty/bookings";
+      window.location.href = "/employee/bookings";
     }, 2000);
   } catch (error) {
     console.error("Error submitting free booking:", error);
@@ -1252,7 +1266,7 @@ async function submitPaidBooking() {
     return;
   }
 
-  // STEP 1: Check for date conflicts with existing bookings
+  // STEP 1: Check for date + time + grace period conflicts
   const facilityId = parseInt(document.getElementById("paidFacilityId").value);
   const eventDate = document.getElementById("paidEventDate").value;
   const eventTime = document.getElementById("paidEventTime").value;
@@ -1261,6 +1275,22 @@ async function submitPaidBooking() {
   const durationMatch = selectedPlan.duration.match(/\d+/);
   const planDuration = durationMatch ? parseInt(durationMatch[0]) : 0;
   const totalDuration = planDuration + additionalHours;
+
+  // Calculate end time with 2-hour grace period
+  const startTime = new Date(`2000-01-01 ${eventTime}`);
+  const endTime = new Date(
+    startTime.getTime() + totalDuration * 60 * 60 * 1000
+  );
+  const endTimeWithGrace = new Date(endTime.getTime() + 2 * 60 * 60 * 1000);
+
+  const endTimeStr =
+    String(endTime.getHours()).padStart(2, "0") +
+    ":" +
+    String(endTime.getMinutes()).padStart(2, "0");
+  const endTimeWithGraceStr =
+    String(endTimeWithGrace.getHours()).padStart(2, "0") +
+    ":" +
+    String(endTimeWithGrace.getMinutes()).padStart(2, "0");
 
   try {
     showToast("Checking date availability...", "info");
@@ -1286,7 +1316,12 @@ async function submitPaidBooking() {
       conflictResult.hasPendingOrApprovedBooking
     ) {
       showToast(
-        "❌ This date and time has a conflict with an existing booking. Please select a different date or time.",
+        "⚠️ Conflict Detected: Facility has a conflicting booking on this date/time. Your requested time: " +
+          eventTime +
+          " - " +
+          endTimeStr +
+          ". With 2-hour grace period, available from: " +
+          endTimeWithGraceStr,
         "error"
       );
       return;
@@ -1454,4 +1489,3 @@ document.addEventListener("DOMContentLoaded", function () {
     input.addEventListener("change", validateFreeForm);
   });
 });
-

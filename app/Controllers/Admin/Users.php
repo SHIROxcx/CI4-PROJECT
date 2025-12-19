@@ -189,6 +189,9 @@ class Users extends BaseController
                 $updateData['password'] = $data['password']; // Model will hash it
             }
 
+            // Set validation rules with current user ID to exclude from unique check
+            $this->userModel->setValidationRules($this->userModel->getValidationRules(['id' => $id]));
+
             // Update user
             if ($this->userModel->update($id, $updateData)) {
                 return $this->response->setJSON([

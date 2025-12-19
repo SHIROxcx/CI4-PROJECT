@@ -138,19 +138,49 @@ $validation->setRules([
             ])->setStatusCode(404);
         }
 
-        // Check facility availability
-        $isAvailable = $this->bookingModel->checkFacilityAvailability(
-            $request['facility_id'],
-            $request['event_date'],
-            $request['event_time'],
-            $request['duration']
-        );
+        // Check facility availability with time-based conflict detection (with grace period)
+        // Get all existing bookings for the facility on the same date
+        $existingBookings = $this->bookingModel
+            ->where('facility_id', $request['facility_id'])
+            ->where('event_date', $request['event_date'])
+            ->whereIn('status', ['pending', 'confirmed'])
+            ->get()
+            ->getResultArray();
 
-        if (!$isAvailable) {
-            return $this->response->setJSON([
-                'success' => false,
-                'message' => 'Facility is not available at the selected date and time'
-            ])->setStatusCode(409);
+        // Check for time conflicts with 2-hour grace period
+        if (!empty($existingBookings)) {
+            $newEventTime = $request['event_time'];
+            $newDuration = $request['duration'];
+            
+            // Calculate new event end time
+            $newStart = new \DateTime($request['event_date'] . ' ' . $newEventTime);
+            $newEnd = clone $newStart;
+            $newEnd->add(new \DateInterval('PT' . intval($newDuration * 60) . 'M'));
+            
+            // Add 2-hour grace period
+            $newEndWithGrace = clone $newEnd;
+            $newEndWithGrace->add(new \DateInterval('PT2H'));
+
+            // Check each existing booking for time conflict
+            foreach ($existingBookings as $booking) {
+                $existingStart = new \DateTime($booking['event_date'] . ' ' . $booking['event_time']);
+                $existingEnd = clone $existingStart;
+                $existingEnd->add(new \DateInterval('PT' . intval($booking['duration'] * 60) . 'M'));
+                
+                // Add 2-hour grace period to existing booking
+                $existingEndWithGrace = clone $existingEnd;
+                $existingEndWithGrace->add(new \DateInterval('PT2H'));
+
+                // Check for overlap including grace periods
+                if ($newStart < $existingEndWithGrace && $newEndWithGrace > $existingStart) {
+                    return $this->response->setJSON([
+                        'success' => false,
+                        'message' => 'Facility has a conflicting booking. Your requested time: ' . 
+                                   $newStart->format('h:i A') . ' - ' . $newEnd->format('h:i A') . '. ' .
+                                   'With 2-hour grace period, available from: ' . $newEndWithGrace->format('h:i A')
+                    ])->setStatusCode(409);
+                }
+            }
         }
 
         // Calculate total cost
@@ -396,8 +426,8 @@ public function uploadStudentDocuments($bookingId)
 
         log_message('info', "Booking found: {$booking['id']}");
 
-        // Verify it's a valid booking type (student or faculty)
-        if (!in_array($booking['booking_type'], ['student', 'faculty'])) {
+        // Verify it's a valid booking type (student, faculty, or employee)
+        if (!in_array($booking['booking_type'], ['student', 'faculty', 'employee'])) {
             return $this->response->setJSON([
                 'success' => false,
                 'message' => 'Invalid booking type'
@@ -1595,7 +1625,293 @@ public function validateEquipmentAvailability()
     }
 }
 
+    /**
+     * Reschedule a student booking with conflict checking
+     * Students can reschedule their own pending/confirmed bookings
+     */
+    public function rescheduleStudentBooking($bookingId)
+    {
+        try {
+            $userData = $this->verifyUserAccess();
+            
+            if (!$userData) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Unauthorized access'
+                ])->setStatusCode(401);
+            }
 
+            // Validate booking ID
+            if (!is_numeric($bookingId) || $bookingId < 1) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Invalid booking ID'
+                ])->setStatusCode(400);
+            }
 
+            // Get booking
+            $booking = $this->bookingModel->find($bookingId);
+            
+            if (!$booking) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Booking not found'
+                ])->setStatusCode(404);
+            }
+
+            // Verify ownership (student can only reschedule their own bookings)
+            if ($booking['email_address'] !== $userData['email']) {
+                log_message('warning', "Unauthorized reschedule attempt - User: {$userData['email']}, Booking Owner: {$booking['email_address']}, Booking: {$bookingId}");
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Access denied'
+                ])->setStatusCode(403);
+            }
+
+            // Only allow rescheduling pending or confirmed bookings
+            if (!in_array($booking['status'], ['pending', 'confirmed'])) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Only pending or confirmed bookings can be rescheduled'
+                ])->setStatusCode(400);
+            }
+
+            // Get reschedule details from request
+            $request = $this->request->getJSON(true);
+            $reason = $request['reason'] ?? null;
+            $newDate = $request['new_date'] ?? null;
+            $newTime = $request['new_time'] ?? null;
+            $notes = $request['notes'] ?? '';
+            
+            // Validate required fields
+            if (empty($reason)) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Reschedule reason is required'
+                ])->setStatusCode(400);
+            }
+
+            if (empty($newDate)) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'New date is required'
+                ])->setStatusCode(400);
+            }
+
+            if (empty($newTime)) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'New time is required'
+                ])->setStatusCode(400);
+            }
+
+            // Validate date format
+            if (!strtotime($newDate)) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Invalid date format'
+                ])->setStatusCode(400);
+            }
+
+            // Validate time format
+            if (!strtotime($newTime)) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Invalid time format'
+                ])->setStatusCode(400);
+            }
+
+            // Validate new date is in the future
+            $newDateObj = new \DateTime($newDate);
+            $today = new \DateTime();
+            $today->setTime(0, 0, 0);
+
+            if ($newDateObj < $today) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'New event date must be in the future'
+                ])->setStatusCode(400);
+            }
+
+            // Initialize BookingHelper for time calculations
+            $bookingHelper = new \App\Services\BookingHelper();
+
+            // Parse base duration from booking
+            $baseDuration = $booking['duration'] ?? '8 hours';
+            $baseHours = $bookingHelper->parseDurationToHours($baseDuration);
+            
+            // Calculate total duration (base + additional hours)
+            $additionalHours = (int)($booking['additional_hours'] ?? 0);
+            $totalDurationHours = $baseHours + $additionalHours;
+
+            // Calculate new event end time
+            $newEventEndTime = $bookingHelper->calculateEventEndTime(
+                $newTime,
+                $totalDurationHours
+            );
+
+            // Calculate end time with 2-hour grace period
+            $newEndWithGrace = $bookingHelper->calculateGracePeriodEndTime(
+                $newEventEndTime
+            );
+
+            // Check for DATE + TIME + GRACE conflicts on new date (excluding current booking)
+            $db = \Config\Database::connect();
+            $existingBookings = $db->table('bookings')
+                ->select('id, event_date, event_time, duration, additional_hours, event_end_time')
+                ->where('facility_id', $booking['facility_id'])
+                ->where('event_date', $newDate)
+                ->where('id !=', $bookingId) // Exclude current booking
+                ->whereIn('status', ['pending', 'confirmed', 'approved'])
+                ->get()
+                ->getResultArray();
+
+            foreach ($existingBookings as $existing) {
+                // Calculate existing booking's end time with grace period
+                $existingEndTime = $existing['event_end_time'];
+                
+                if (!$existingEndTime) {
+                    // Calculate if not stored
+                    $existingBaseDuration = $existing['duration'] ?? 8;
+                    $existingBaseHours = $bookingHelper->parseDurationToHours($existingBaseDuration);
+                    $existingAdditionalHours = (int)($existing['additional_hours'] ?? 0);
+                    $existingTotalHours = $existingBaseHours + $existingAdditionalHours;
+                    $existingEndTime = $bookingHelper->calculateEventEndTime(
+                        $existing['event_time'],
+                        $existingTotalHours
+                    );
+                }
+
+                $existingEndWithGrace = $bookingHelper->calculateGracePeriodEndTime(
+                    $existingEndTime
+                );
+
+                // Convert to DateTime for comparison
+                $newStart = new \DateTime($newDate . ' ' . $newTime);
+                $newEnd = new \DateTime($newDate . ' ' . $newEventEndTime);
+                $newEndGrace = new \DateTime($newDate . ' ' . $newEndWithGrace);
+                
+                $existingStart = new \DateTime($newDate . ' ' . $existing['event_time']);
+                $existingEndGrace = new \DateTime($newDate . ' ' . $existingEndWithGrace);
+
+                // Check for overlap including grace periods
+                // Conflict if: newStart < existingEndGrace AND newEndGrace > existingStart
+                if ($newStart < $existingEndGrace && $newEndGrace > $existingStart) {
+                    return $this->response->setJSON([
+                        'success' => false,
+                        'message' => 'Facility has conflicting booking on selected date/time. ' .
+                                   'Your requested time: ' . date('h:i A', strtotime($newTime)) . ' - ' . 
+                                   date('h:i A', strtotime($newEventEndTime)) . 
+                                   '. With 2-hour grace period, available from: ' . 
+                                   date('h:i A', strtotime($newEndWithGrace))
+                    ])->setStatusCode(409);
+                }
+            }
+
+            // No conflicts found - send reschedule request email to admin for approval
+            try {
+                $email = \Config\Services::email();
+                
+                $email->setFrom('cspcsphere@gmail.com', 'CSPC Sphere Booking System');
+                $email->setTo('cspcsphere@gmail.com');
+                $email->setSubject('Student Booking Reschedule Request - ' . $booking['event_title']);
+                
+                // Format dates and times for display
+                $newDateFormatted = date('F d, Y', strtotime($newDate));
+                $newTimeFormatted = date('g:i A', strtotime($newTime));
+                $currentEventDate = date('F d, Y', strtotime($booking['event_date']));
+                $currentEventTime = date('g:i A', strtotime($booking['event_time']));
+                
+                // Prepare email body
+                $emailBody = "
+                <html>
+                <head>
+                    <style>
+                        body { font-family: Arial, sans-serif; color: #333; }
+                        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+                        .header { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 20px; border-radius: 8px; text-align: center; }
+                        .content { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; margin: 20px 0; }
+                        .section { background: white; padding: 15px; margin: 10px 0; border-left: 4px solid #2a5298; }
+                        .footer { background: #1e3c72; color: white; padding: 15px; text-align: center; border-radius: 8px; }
+                        .info-label { font-weight: bold; color: #666; }
+                    </style>
+                </head>
+                <body>
+                    <div class='container'>
+                        <div class='header'>
+                            <h2>📅 Student Booking Reschedule Request</h2>
+                        </div>
+                        
+                        <div class='content'>
+                            <div class='section'>
+                                <h3>Booking Details</h3>
+                                <p><span class='info-label'>Booking ID:</span> #{$booking['id']}</p>
+                                <p><span class='info-label'>Student:</span> {$booking['client_name']}</p>
+                                <p><span class='info-label'>Email:</span> {$booking['email_address']}</p>
+                                <p><span class='info-label'>Event Title:</span> {$booking['event_title']}</p>
+                            </div>
+                            
+                            <div class='section'>
+                                <h3>Current Booking Time</h3>
+                                <p><span class='info-label'>Facility:</span> {$booking['facility_name']}</p>
+                                <p><span class='info-label'>Date:</span> {$currentEventDate}</p>
+                                <p><span class='info-label'>Time:</span> {$currentEventTime}</p>
+                            </div>
+                            
+                            <div class='section'>
+                                <h3>Requested New Booking Time</h3>
+                                <p><span class='info-label'>Date:</span> {$newDateFormatted}</p>
+                                <p><span class='info-label'>Time:</span> {$newTimeFormatted}</p>
+                            </div>
+                            
+                            <div class='section'>
+                                <h3>Reschedule Reason</h3>
+                                <p>{$reason}</p>
+                                " . (!empty($notes) ? "<p><span class='info-label'>Additional Notes:</span> {$notes}</p>" : "") . "
+                            </div>
+                        </div>
+                        
+                        <div class='footer'>
+                            <p>⏰ Please approve or decline this reschedule request in the admin panel.</p>
+                        </div>
+                    </div>
+                </body>
+                </html>
+                ";
+                
+                $email->setMessage($emailBody);
+                
+                if (!$email->send()) {
+                    log_message('error', 'Failed to send student reschedule email: ' . $email->printDebugger());
+                    return $this->response->setJSON([
+                        'success' => false,
+                        'message' => 'Failed to send reschedule request email'
+                    ])->setStatusCode(500);
+                }
+                
+                log_message('info', "Student reschedule request email sent - Booking: {$bookingId}, Student: {$userData['email']}, New Date: {$newDate} {$newTime}");
+                
+                return $this->response->setJSON([
+                    'success' => true,
+                    'message' => 'Reschedule request submitted successfully. Email has been sent to the office for approval.'
+                ]);
+                
+            } catch (\Exception $emailException) {
+                log_message('error', 'Error sending student reschedule email: ' . $emailException->getMessage());
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Failed to send reschedule request: ' . $emailException->getMessage()
+                ])->setStatusCode(500);
+            }
+
+        } catch (\Exception $e) {
+            log_message('error', 'Student reschedule error: ' . $e->getMessage());
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Failed to process reschedule request: ' . $e->getMessage()
+            ])->setStatusCode(500);
+        }
+    }
 
 }
+

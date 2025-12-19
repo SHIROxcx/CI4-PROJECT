@@ -682,8 +682,22 @@ async function submitStudentBooking() {
       throw new Error("Please select both event date and time");
     }
 
-    // CHECK FOR DATE CONFLICTS WITH EXISTING BOOKINGS
+    // CHECK FOR DATE + TIME CONFLICTS WITH EXISTING BOOKINGS (including 2-hour grace period)
     showToast("Checking date availability...", "info");
+
+    // Calculate end time with 2-hour grace period
+    const startTime = new Date(`2000-01-01 ${eventTime}`);
+    const endTime = new Date(startTime.getTime() + duration * 60 * 60 * 1000);
+    const endTimeWithGrace = new Date(endTime.getTime() + 2 * 60 * 60 * 1000); // Add 2 hour grace
+
+    const endTimeStr =
+      String(endTime.getHours()).padStart(2, "0") +
+      ":" +
+      String(endTime.getMinutes()).padStart(2, "0");
+    const endTimeWithGraceStr =
+      String(endTimeWithGrace.getHours()).padStart(2, "0") +
+      ":" +
+      String(endTimeWithGrace.getMinutes()).padStart(2, "0");
 
     const conflictCheck = await fetch("/api/bookings/checkDateConflict", {
       method: "POST",
@@ -707,7 +721,12 @@ async function submitStudentBooking() {
       conflictResult.hasPendingOrApprovedBooking
     ) {
       showToast(
-        "❌ This date and time has a conflict with an existing booking. Please select a different date or time.",
+        "⚠️ Conflict Detected: Facility has a conflicting booking on this date/time. Your requested time: " +
+          eventTime +
+          " - " +
+          endTimeStr +
+          ". With 2-hour grace period, available from: " +
+          endTimeWithGraceStr,
         "error"
       );
       btn.disabled = false;

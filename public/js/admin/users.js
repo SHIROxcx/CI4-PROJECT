@@ -745,27 +745,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidebar = document.querySelector(".sidebar");
   const mainContent = document.querySelector(".main-content");
 
-  if (toggleBtn) {
+  if (toggleBtn && sidebar && mainContent) {
     toggleBtn.addEventListener("click", function () {
       sidebar.classList.toggle("collapsed");
       mainContent.classList.toggle("expanded");
     });
+
+    document.addEventListener("click", function (event) {
+      const isMobile = window.innerWidth <= 768;
+      const clickedOutside =
+        !sidebar.contains(event.target) && !toggleBtn.contains(event.target);
+
+      if (
+        isMobile &&
+        clickedOutside &&
+        sidebar.classList.contains("collapsed") === false
+      ) {
+        sidebar.classList.add("collapsed");
+        mainContent.classList.add("expanded");
+      }
+    });
   }
-
-  document.addEventListener("click", function (event) {
-    const isMobile = window.innerWidth <= 768;
-    const clickedOutside =
-      !sidebar.contains(event.target) && !toggleBtn.contains(event.target);
-
-    if (
-      isMobile &&
-      clickedOutside &&
-      sidebar.classList.contains("collapsed") === false
-    ) {
-      sidebar.classList.add("collapsed");
-      mainContent.classList.add("expanded");
-    }
-  });
 
   const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
   dropdownToggles.forEach((toggle) => {

@@ -113,8 +113,9 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="15" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="20" fill="rgba(255,255,255,0.08)"/><circle cx="70" cy="20" r="10" fill="rgba(255,255,255,0.12)"/></svg>');
+  background: url("/images/header-landmark.jpg") center/cover no-repeat;
   z-index: 1;
+  opacity: 0.3;
 }
 
 .hero-content {

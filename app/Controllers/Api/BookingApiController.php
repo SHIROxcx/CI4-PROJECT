@@ -237,147 +237,157 @@ class BookingApiController extends ResourceController
         }
     }
 
-    /**
-     * Approve booking
-     */
-public function approve($bookingId)
-{
-    $db = \Config\Database::connect();
-    $db->transStart();
+    public function approve($bookingId)
+    {
+        $db = \Config\Database::connect();
+        $db->transStart();
 
-    try {
-        $request = $this->request->getJSON(true);
-        
-        // Get the booking details first
-        $booking = $this->bookingModel->getBookingWithFullDetails($bookingId);
-        
-        if (!$booking) {
-            $db->transRollback();
-            return $this->response->setJSON([
-                'success' => false,
-                'message' => 'Booking not found'
-            ])->setStatusCode(404);
-        }
-
-        // Check if booking is already approved
-        if ($booking['status'] === 'confirmed') {
-            $db->transRollback();
-            return $this->response->setJSON([
-                'success' => false,
-                'message' => 'Booking is already approved'
-            ])->setStatusCode(400);
-        }
-
-        // Parse duration safely
-        $duration = $booking['duration'] ?? 8;
-        $durationValue = 8; // Default value
-        
-        if (is_numeric($duration)) {
-            $durationValue = intval($duration);
-        } elseif (is_string($duration)) {
-            // Extract numbers from string (e.g., "8 hours" -> 8)
-            if (preg_match('/(\d+)/', $duration, $matches)) {
-                $durationValue = intval($matches[1]);
-            }
-        }
-        
-        // Validate duration is reasonable (1-24 hours)
-        if ($durationValue < 1 || $durationValue > 24) {
-            $durationValue = 8;
-        }
-
-        // Initialize EventModel if not already done
-        if (!isset($this->eventModel)) {
-            $this->eventModel = new \App\Models\EventModel();
-        }
-
-        // Check for facility conflicts
-        $hasConflict = $this->eventModel->hasConflict(
-            $booking['facility_id'],
-            $booking['event_date'],
-            $booking['event_time'],
-            $durationValue
-        );
-
-        if ($hasConflict) {
-            $db->transRollback();
-            return $this->response->setJSON([
-                'success' => false,
-                'message' => 'There is a scheduling conflict with another event at the same facility'
-            ])->setStatusCode(409);
-        }
-
-        // Update booking status
-        $updateData = [
-            'status' => 'confirmed',
-            'updated_at' => date('Y-m-d H:i:s')
-        ];
-
-        $bookingUpdated = $this->bookingModel->update($bookingId, $updateData);
-        
-        if (!$bookingUpdated) {
-            $db->transRollback();
-            throw new \Exception('Failed to update booking status');
-        }
-
-        // Create event record
-        $eventCreated = $this->eventModel->createFromBooking($booking, $request['notes'] ?? null);
-        
-        if (!$eventCreated) {
-            $db->transRollback();
-            throw new \Exception('Failed to create event record');
-        }
-
-        $db->transComplete();
-
-        if ($db->transStatus() === false) {
-            throw new \Exception('Database transaction failed');
-        }
-
-        // Create survey record with unique token (outside transaction)
-        $surveyModel = new \App\Models\SurveyModel();
-        $surveyToken = $surveyModel->generateToken();
-        $surveyCrated = $surveyModel->insert([
-            'booking_id' => $bookingId,
-            'survey_token' => $surveyToken
-        ]);
-
-        if (!$surveyCrated) {
-            log_message('error', 'Failed to create survey record for booking #' . $bookingId);
-            $surveyToken = null;
-        } else {
-            log_message('info', 'Survey created successfully for booking #' . $bookingId . ' with token: ' . $surveyToken);
-        }
-
-        log_message('info', "Booking #{$bookingId} approved and event created. Notes: " . ($request['notes'] ?? 'No notes'));
-        
-        // Send email notification with survey link
         try {
-            if ($surveyToken) {
-                $booking['survey_token'] = $surveyToken;
-                log_message('info', 'Survey token added to booking data: ' . $surveyToken);
+            $request = $this->request->getJSON(true);
+            
+            // Get the booking details first
+            $booking = $this->bookingModel->getBookingWithFullDetails($bookingId);
+            
+            if (!$booking) {
+                $db->transRollback();
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Booking not found'
+                ])->setStatusCode(404);
             }
-            sendBookingNotification('approved', $booking);
-        } catch (\Exception $e) {
-            log_message('error', 'Failed to send approval email: ' . $e->getMessage());
-            // Don't fail the approval if email fails
-        }
-        
-        return $this->response->setJSON([
-            'success' => true,
-            'message' => 'Booking approved successfully and event created',
-            'event_id' => $eventCreated
-        ]);
 
-    } catch (\Exception $e) {
-        $db->transRollback();
-        log_message('error', 'Error approving booking: ' . $e->getMessage());
-        log_message('error', 'Stack trace: ' . $e->getTraceAsString());
-        return $this->response->setJSON([
-            'success' => false,
-            'message' => 'Failed to approve booking: ' . $e->getMessage()
-        ])->setStatusCode(500);
-    }
+            // Check if booking is already approved
+            if ($booking['status'] === 'confirmed') {
+                $db->transRollback();
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Booking is already approved'
+                ])->setStatusCode(400);
+            }
+
+            // Load BookingHelper for duration calculations
+            $bookingHelper = new \App\Services\BookingHelper();
+
+            // Parse base duration from plan
+            $baseDuration = $booking['duration'] ?? '8 hours';
+            $baseHours = $bookingHelper->parseDurationToHours($baseDuration);
+            
+            // Calculate total duration (base + additional hours)
+            $additionalHours = (int)($booking['additional_hours'] ?? 0);
+            $totalDurationHours = $baseHours + $additionalHours;
+
+            // Calculate event end time
+            $eventEndTime = $bookingHelper->calculateEventEndTime(
+                $booking['event_time'],
+                $totalDurationHours
+            );
+
+            // Validate duration is reasonable (1-720 hours = up to 30 days)
+            if ($totalDurationHours < 1 || $totalDurationHours > 720) {
+                $totalDurationHours = 8;
+                $baseHours = 8;
+                $eventEndTime = $bookingHelper->calculateEventEndTime(
+                    $booking['event_time'],
+                    8
+                );
+            }
+
+            // Initialize EventModel if not already done
+            if (!isset($this->eventModel)) {
+                $this->eventModel = new \App\Models\EventModel();
+            }
+
+            // Check for facility conflicts
+            $hasConflict = $this->eventModel->hasConflict(
+                $booking['facility_id'],
+                $booking['event_date'],
+                $booking['event_time'],
+                $totalDurationHours
+            );
+
+            if ($hasConflict) {
+                $db->transRollback();
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'There is a scheduling conflict with another event at the same facility'
+                ])->setStatusCode(409);
+            }
+
+            // Update booking status and add calculated end time
+            $updateData = [
+                'status' => 'confirmed',
+                'event_end_time' => $eventEndTime,
+                'total_duration_hours' => $totalDurationHours,
+                'updated_at' => date('Y-m-d H:i:s')
+            ];
+
+            $bookingUpdated = $this->bookingModel->update($bookingId, $updateData);
+            
+            if (!$bookingUpdated) {
+                $db->transRollback();
+                throw new \Exception('Failed to update booking status');
+            }
+
+            // Create event record
+            $eventCreated = $this->eventModel->createFromBooking($booking, $request['notes'] ?? null);
+            
+            if (!$eventCreated) {
+                $db->transRollback();
+                throw new \Exception('Failed to create event record');
+            }
+
+            $db->transComplete();
+
+            if ($db->transStatus() === false) {
+                throw new \Exception('Database transaction failed');
+            }
+
+            // Create survey record with unique token (outside transaction)
+            $surveyModel = new \App\Models\SurveyModel();
+            $surveyToken = $surveyModel->generateToken();
+            $surveyCrated = $surveyModel->insert([
+                'booking_id' => $bookingId,
+                'survey_token' => $surveyToken
+            ]);
+
+            if (!$surveyCrated) {
+                log_message('error', 'Failed to create survey record for booking #' . $bookingId);
+                $surveyToken = null;
+            } else {
+                log_message('info', 'Survey created successfully for booking #' . $bookingId . ' with token: ' . $surveyToken);
+            }
+
+            log_message('info', "Booking #{$bookingId} approved and event created. Notes: " . ($request['notes'] ?? 'No notes') . ". End time: {$eventEndTime}, Duration: {$totalDurationHours} hours");
+            
+            // Send email notification with survey link
+            try {
+                if ($surveyToken) {
+                    $booking['survey_token'] = $surveyToken;
+                    log_message('info', 'Survey token added to booking data: ' . $surveyToken);
+                }
+                sendBookingNotification('approved', $booking);
+            } catch (\Exception $e) {
+                log_message('error', 'Failed to send approval email: ' . $e->getMessage());
+                // Don't fail the approval if email fails
+            }
+            
+            return $this->response->setJSON([
+                'success' => true,
+                'message' => 'Booking approved successfully and event created',
+                'event_id' => $eventCreated,
+                'event_end_time' => $eventEndTime,
+                'total_duration_hours' => $totalDurationHours
+            ]);
+
+        } catch (\Exception $e) {
+            $db->transRollback();
+            log_message('error', 'Error approving booking: ' . $e->getMessage());
+            log_message('error', 'Stack trace: ' . $e->getTraceAsString());
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Failed to approve booking: ' . $e->getMessage()
+            ])->setStatusCode(500);
+        }
 }
     /**
      * Decline booking
@@ -530,25 +540,79 @@ public function approve($bookingId)
                 $durationValue = 8;
             }
 
-            // Initialize EventModel if not already done
-            if (!isset($this->eventModel)) {
-                $this->eventModel = new \App\Models\EventModel();
-            }
+            // Initialize BookingHelper for time calculations
+            $bookingHelper = new \App\Services\BookingHelper();
 
-            // Check for facility conflicts on new date (excluding current booking)
-            $hasConflict = $this->eventModel->hasConflict(
-                $booking['facility_id'],
-                $newEventDate,
+            // Parse base duration from plan
+            $baseDuration = $booking['duration'] ?? '8 hours';
+            $baseHours = $bookingHelper->parseDurationToHours($baseDuration);
+            
+            // Calculate total duration (base + additional hours)
+            $additionalHours = (int)($booking['additional_hours'] ?? 0);
+            $totalDurationHours = $baseHours + $additionalHours;
+
+            // Calculate new event end time
+            $newEventEndTime = $bookingHelper->calculateEventEndTime(
                 $newEventTime,
-                $durationValue
+                $totalDurationHours
             );
 
-            if ($hasConflict) {
-                $db->transRollback();
-                return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'The new date has a facility conflict. Please select another date.'
-                ])->setStatusCode(400);
+            // Calculate end time with 2-hour grace period
+            $newEndWithGrace = $bookingHelper->calculateGracePeriodEndTime(
+                $newEventEndTime
+            );
+
+            // Check for DATE + TIME + GRACE conflicts on new date (excluding current booking)
+            $existingBookings = $db->table('bookings')
+                ->select('id, event_date, event_time, duration, additional_hours, event_end_time')
+                ->where('facility_id', $booking['facility_id'])
+                ->where('event_date', $newEventDate)
+                ->where('id !=', $bookingId) // Exclude current booking
+                ->whereIn('status', ['pending', 'confirmed', 'approved'])
+                ->get()
+                ->getResultArray();
+
+            foreach ($existingBookings as $existing) {
+                // Calculate existing booking's end time with grace period
+                $existingEndTime = $existing['event_end_time'];
+                
+                if (!$existingEndTime) {
+                    // Calculate if not stored
+                    $existingBaseDuration = $existing['duration'] ?? 8;
+                    $existingBaseHours = $bookingHelper->parseDurationToHours($existingBaseDuration);
+                    $existingAdditionalHours = (int)($existing['additional_hours'] ?? 0);
+                    $existingTotalHours = $existingBaseHours + $existingAdditionalHours;
+                    $existingEndTime = $bookingHelper->calculateEventEndTime(
+                        $existing['event_time'],
+                        $existingTotalHours
+                    );
+                }
+
+                $existingEndWithGrace = $bookingHelper->calculateGracePeriodEndTime(
+                    $existingEndTime
+                );
+
+                // Convert to DateTime for comparison
+                $newStart = new \DateTime($newEventDate . ' ' . $newEventTime);
+                $newEnd = new \DateTime($newEventDate . ' ' . $newEventEndTime);
+                $newEndGrace = new \DateTime($newEventDate . ' ' . $newEndWithGrace);
+                
+                $existingStart = new \DateTime($newEventDate . ' ' . $existing['event_time']);
+                $existingEndGrace = new \DateTime($newEventDate . ' ' . $existingEndWithGrace);
+
+                // Check for overlap including grace periods
+                // Conflict if: newStart < existingEndGrace AND newEndGrace > existingStart
+                if ($newStart < $existingEndGrace && $newEndGrace > $existingStart) {
+                    $db->transRollback();
+                    return $this->response->setJSON([
+                        'success' => false,
+                        'message' => 'Facility has conflicting booking on selected date/time. ' .
+                                   'Your requested time: ' . date('h:i A', strtotime($newEventTime)) . ' - ' . 
+                                   date('h:i A', strtotime($newEventEndTime)) . 
+                                   '. With 2-hour grace period, available from: ' . 
+                                   date('h:i A', strtotime($newEndWithGrace))
+                    ])->setStatusCode(409);
+                }
             }
 
             // Update booking with new date, time and reschedule information
@@ -797,7 +861,7 @@ public function downloadFile($bookingId, $fileId)
                 }
 
                 // Calculate revenue (exclude student and employee bookings)
-                if (isset($booking['booking_type']) && !in_array($booking['booking_type'], ['student', 'Employee'])) {
+                if (isset($booking['booking_type']) && !in_array($booking['booking_type'], ['student', 'employee'])) {
                     $cost = floatval($booking['total_cost'] ?? 0);
                     $report['revenue']['total'] += $cost;
 
@@ -816,7 +880,7 @@ public function downloadFile($bookingId, $fileId)
                     'email' => $booking['email_address'] ?? 'N/A',
                     'contact' => $booking['contact_number'] ?? 'N/A',
                     'organization' => $booking['organization'] ?? 'N/A',
-                    'booking_type' => (isset($booking['booking_type']) && in_array($booking['booking_type'], ['student', 'Employee'])) ? ucfirst($booking['booking_type']) : 'User',
+                    'booking_type' => (isset($booking['booking_type']) && in_array($booking['booking_type'], ['student', 'employee'])) ? ucfirst($booking['booking_type']) : 'User',
                     'facility' => $booking['facility_name'] ?? 'N/A',
                     'event_title' => $booking['event_title'] ?? 'N/A',
                     'event_date' => $booking['event_date'] ?? 'N/A',
@@ -824,7 +888,7 @@ public function downloadFile($bookingId, $fileId)
                     'duration' => $booking['duration'] ?? 'N/A',
                     'attendees' => $booking['attendees'] ?? 'N/A',
                     'status' => isset($booking['status']) ? ucfirst($booking['status']) : 'N/A',
-                    'total_cost' => (isset($booking['booking_type']) && in_array($booking['booking_type'], ['student', 'Employee'])) ? 'FREE' : '?' . number_format($booking['total_cost'] ?? 0, 2),
+                    'total_cost' => (isset($booking['booking_type']) && in_array($booking['booking_type'], ['student', 'employee'])) ? 'FREE' : '?' . number_format($booking['total_cost'] ?? 0, 2),
                     'created_at' => $booking['created_at'] ?? 'N/A'
                 ];
             }
@@ -2056,7 +2120,7 @@ public function getBookingsList()
                      (SELECT COUNT(*) FROM booking_files bf WHERE bf.booking_id = b.id) as user_files_count,
                      (SELECT COUNT(*) FROM student_booking_files sbf WHERE sbf.booking_id = b.id) as student_files_count,
                      CASE 
-                        WHEN b.booking_type IN ("student", "faculty") THEN (SELECT COUNT(*) FROM student_booking_files sbf WHERE sbf.booking_id = b.id)
+                        WHEN b.booking_type IN ("student", "faculty", "employee") THEN (SELECT COUNT(*) FROM student_booking_files sbf WHERE sbf.booking_id = b.id)
                         ELSE (SELECT COUNT(*) FROM booking_files bf WHERE bf.booking_id = b.id)
                      END as files_count')
             ->join('facilities', 'facilities.id = b.facility_id', 'left')

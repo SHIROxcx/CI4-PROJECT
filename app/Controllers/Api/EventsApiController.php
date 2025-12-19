@@ -6,6 +6,11 @@ use App\Models\EventModel;
 use App\Models\BookingModel;
 use App\Models\FacilityModel;
 use CodeIgniter\RESTful\ResourceController;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Style\Color;
+use PhpOffice\PhpSpreadsheet\Style\Fill;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
 
 class EventsApiController extends ResourceController
 {
@@ -589,6 +594,379 @@ public function list()
             'message' => 'Failed to fetch events list',
             'error' => $e->getMessage()
         ])->setStatusCode(500);
+    }
+}
+
+/**
+ * Download Equipment Reports Summary as Excel
+ */
+public function downloadEquipmentReport()
+{
+    try {
+        $db = \Config\Database::connect();
+        $session = session();
+        
+        // Get current facilitator ID from session
+        $facilitatorId = $session->get('user_id');
+        
+        if (!$facilitatorId) {
+            throw new \Exception('Not authenticated');
+        }
+        
+        // Get summary statistics from facilitator_checklist_items (filtered by current facilitator)
+        // Using SUM of expected_quantity instead of COUNT to get actual total equipment quantities
+        $summaryQuery = $db->table('facilitator_checklist_items fci')
+            ->select('fci.equipment_condition, SUM(fci.expected_quantity) as total_quantity')
+            ->join('facilitator_checklists fc', 'fc.id = fci.checklist_id', 'left')
+            ->where('fc.facilitator_id', $facilitatorId)
+            ->groupBy('fci.equipment_condition')
+            ->get()
+            ->getResultArray();
+
+        $summary = [
+            'total' => 0,
+            'good' => 0,
+            'damaged' => 0,
+            'missing' => 0
+        ];
+
+        foreach ($summaryQuery as $row) {
+            $total_qty = $row['total_quantity'] ?? 0;
+            $summary['total'] += $total_qty;
+            if ($row['equipment_condition'] === 'good') {
+                $summary['good'] = $total_qty;
+            } elseif ($row['equipment_condition'] === 'damaged') {
+                $summary['damaged'] = $total_qty;
+            } elseif ($row['equipment_condition'] === 'missing') {
+                $summary['missing'] = $total_qty;
+            }
+        }
+
+        // Get equipment quantity summary (sum expected quantity by equipment name and condition)
+        $equipmentSummary = $db->table('facilitator_checklist_items fci')
+            ->select('fci.equipment_name, fci.equipment_condition, SUM(fci.expected_quantity) as expected_quantity')
+            ->join('facilitator_checklists fc', 'fc.id = fci.checklist_id', 'left')
+            ->where('fc.facilitator_id', $facilitatorId)
+            ->groupBy('fci.equipment_name, fci.equipment_condition')
+            ->orderBy('fci.equipment_name', 'ASC')
+            ->get()
+            ->getResultArray();
+
+        // Process equipment summary into grouped format
+        $equipmentGrouped = [];
+        foreach ($equipmentSummary as $item) {
+            $name = $item['equipment_name'];
+            if (!isset($equipmentGrouped[$name])) {
+                $equipmentGrouped[$name] = [
+                    'name' => $name,
+                    'expected_total' => 0,
+                    'good' => 0,
+                    'damaged' => 0,
+                    'missing' => 0
+                ];
+            }
+            $equipmentGrouped[$name]['expected_total'] += $item['expected_quantity'] ?? 0;
+            if ($item['equipment_condition'] === 'good') {
+                $equipmentGrouped[$name]['good'] = $item['expected_quantity'] ?? 0;
+            } elseif ($item['equipment_condition'] === 'damaged') {
+                $equipmentGrouped[$name]['damaged'] = $item['expected_quantity'] ?? 0;
+            } elseif ($item['equipment_condition'] === 'missing') {
+                $equipmentGrouped[$name]['missing'] = $item['expected_quantity'] ?? 0;
+            }
+        }
+        $equipmentGrouped = array_values($equipmentGrouped);
+
+        // Create Excel spreadsheet
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setTitle('Equipment Report');
+
+        // Set column widths
+        $sheet->getColumnDimension('A')->setWidth(25);
+        $sheet->getColumnDimension('B')->setWidth(25);
+        $sheet->getColumnDimension('C')->setWidth(12);
+        $sheet->getColumnDimension('D')->setWidth(12);
+        $sheet->getColumnDimension('E')->setWidth(12);
+        $sheet->getColumnDimension('F')->setWidth(12);
+        $sheet->getColumnDimension('G')->setWidth(18);
+
+        // Add title
+        $sheet->mergeCells('A1:G1');
+        $titleCell = $sheet->getCell('A1');
+        $titleCell->setValue('Equipment Inspection Reports Summary');
+        $titleCell->getStyle()->getFont()->setBold(true)->setSize(16)->setColor(new Color('FFFFFF'));
+        $titleCell->getStyle()->getFill()->setFillType(Fill::FILL_SOLID)->getStartColor()->setARGB('FF1E3C72');
+        $titleCell->getStyle()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+        $sheet->getRowDimension('1')->setRowHeight(25);
+
+        // Add generation date
+        $sheet->mergeCells('A2:F2');
+        $dateCell = $sheet->getCell('A2');
+        $dateCell->setValue('Generated on: ' . date('Y-m-d H:i:s'));
+        $dateCell->getStyle()->getFont()->setItalic(true)->setSize(10)->setColor(new Color('666666'));
+        $dateCell->getStyle()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+
+        // Add summary section
+        $sheet->mergeCells('A4:G4');
+        $summaryHeader = $sheet->getCell('A4');
+        $summaryHeader->setValue('Summary Statistics');
+        $summaryHeader->getStyle()->getFont()->setBold(true)->setSize(12)->setColor(new Color('FFFFFF'));
+        $summaryHeader->getStyle()->getFill()->setFillType(Fill::FILL_SOLID)->getStartColor()->setARGB('FF2A5298');
+
+        // Summary data
+        $row = 5;
+        $sheet->setCellValue('A' . $row, 'Total Equipment Inspected:');
+        $sheet->setCellValue('B' . $row, $summary['total']);
+        $sheet->getStyle('A' . $row)->getFont()->setBold(true);
+
+        $row++;
+        $sheet->setCellValue('A' . $row, 'In Good Condition:');
+        $sheet->setCellValue('B' . $row, $summary['good']);
+        $sheet->getStyle('B' . $row)->getFont()->setColor(new Color('16A34A'));
+
+        $row++;
+        $sheet->setCellValue('A' . $row, 'Damaged/Maintenance:');
+        $sheet->setCellValue('B' . $row, $summary['damaged']);
+        $sheet->getStyle('B' . $row)->getFont()->setColor(new Color('DC2626'));
+
+        $row++;
+        $sheet->setCellValue('A' . $row, 'Missing Equipment:');
+        $sheet->setCellValue('B' . $row, $summary['missing']);
+        $sheet->getStyle('B' . $row)->getFont()->setColor(new Color('6B7280'));
+
+        // Add detailed reports section
+        $row += 1;
+        $sheet->mergeCells('A' . $row . ':G' . $row);
+        $detailHeader = $sheet->getCell('A' . $row);
+        $detailHeader->setValue('Inspection Details');
+        $detailHeader->getStyle()->getFont()->setBold(true)->setSize(12)->setColor(new Color('FFFFFF'));
+        $detailHeader->getStyle()->getFill()->setFillType(Fill::FILL_SOLID)->getStartColor()->setARGB('FF2A5298');
+
+        // Table headers
+        $row++;
+        $headers = ['Event Name', 'Equipment', 'Total', 'Good', 'Damaged', 'Missing', 'Inspection Date'];
+        $col = 'A';
+        foreach ($headers as $header) {
+            $cell = $sheet->getCell($col . $row);
+            $cell->setValue($header);
+            $cell->getStyle()->getFont()->setBold(true)->setColor(new Color('FFFFFF'));
+            $cell->getStyle()->getFill()->setFillType(Fill::FILL_SOLID)->getStartColor()->setARGB('FF1E3C72');
+            $cell->getStyle()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $col++;
+        }
+
+        // Get detailed inspection data
+        $detailedData = $db->table('facilitator_checklist_items fci')
+            ->select('b.event_title, fci.equipment_name, fci.expected_quantity, fci.equipment_condition, fci.created_at')
+            ->join('facilitator_checklists fc', 'fc.id = fci.checklist_id', 'left')
+            ->join('bookings b', 'b.id = fc.booking_id', 'left')
+            ->where('fc.facilitator_id', $facilitatorId)
+            ->orderBy('b.event_title', 'ASC')
+            ->orderBy('fci.equipment_name', 'ASC')
+            ->get()
+            ->getResultArray();
+
+        // Group data by event and equipment
+        $groupedData = [];
+        foreach ($detailedData as $item) {
+            $key = $item['event_title'] . '||' . $item['equipment_name'];
+            if (!isset($groupedData[$key])) {
+                $groupedData[$key] = [
+                    'event_title' => $item['event_title'],
+                    'equipment_name' => $item['equipment_name'],
+                    'total' => 0,
+                    'good' => 0,
+                    'damaged' => 0,
+                    'missing' => 0,
+                    'inspection_date' => $item['created_at']
+                ];
+            }
+            $groupedData[$key]['total'] += $item['expected_quantity'];
+            if ($item['equipment_condition'] === 'good') {
+                $groupedData[$key]['good'] += $item['expected_quantity'];
+            } elseif ($item['equipment_condition'] === 'damaged') {
+                $groupedData[$key]['damaged'] += $item['expected_quantity'];
+            } elseif ($item['equipment_condition'] === 'missing') {
+                $groupedData[$key]['missing'] += $item['expected_quantity'];
+            }
+        }
+
+        // Add data rows
+        $row++;
+        foreach ($groupedData as $detail) {
+            $sheet->setCellValue('A' . $row, $detail['event_title'] ?? '');
+            $sheet->setCellValue('B' . $row, $detail['equipment_name'] ?? '');
+            $sheet->setCellValue('C' . $row, $detail['total']);
+            $sheet->setCellValue('D' . $row, $detail['good']);
+            $sheet->setCellValue('E' . $row, $detail['damaged']);
+            $sheet->setCellValue('F' . $row, $detail['missing']);
+            $sheet->setCellValue('G' . $row, $detail['inspection_date'] ? date('Y-m-d', strtotime($detail['inspection_date'])) : '');
+
+            // Center align numbers
+            for ($i = 'C'; $i <= 'G'; $i++) {
+                $sheet->getStyle($i . $row)->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            }
+
+            $row++;
+        }
+
+        // Output file
+        $writer = new Xlsx($spreadsheet);
+        
+        // Set headers for download
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="Equipment_Inspection_Summary_' . date('Y-m-d_His') . '.xlsx"');
+        header('Cache-Control: max-age=0');
+        
+        // Write to output
+        $writer->save('php://output');
+        exit;
+
+    } catch (\Exception $e) {
+        log_message('error', 'EventsAPI - Error generating equipment report: ' . $e->getMessage());
+        return $this->response->setJSON([
+            'success' => false,
+            'message' => 'Failed to generate report: ' . $e->getMessage()
+        ])->setStatusCode(500);
+    }
+}
+
+/**
+ * Get Equipment Reports Summary
+ */
+public function equipmentReportsSummary()
+{
+    try {
+        $db = \Config\Database::connect();
+        $session = session();
+        
+        // Get current facilitator ID from session
+        $facilitatorId = $session->get('user_id');
+        
+        if (!$facilitatorId) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Not authenticated'
+            ]);
+        }
+        
+        // Check if the facilitator_checklist_items table exists
+        $tables = $db->listTables();
+        
+        if (!in_array('facilitator_checklist_items', $tables)) {
+            // Table doesn't exist yet, return empty summary
+            return $this->response->setJSON([
+                'success' => true,
+                'summary' => [
+                    'total' => 0,
+                    'good' => 0,
+                    'damaged' => 0,
+                    'missing' => 0
+                ],
+                'reports' => [],
+                'count' => 0,
+                'message' => 'No inspection reports found yet'
+            ]);
+        }
+        
+        // Get summary statistics from facilitator_checklist_items (filtered by current facilitator)
+        // Using SUM of expected_quantity instead of COUNT to get actual total equipment quantities
+        $summaryQuery = $db->table('facilitator_checklist_items fci')
+            ->select('fci.equipment_condition, SUM(fci.expected_quantity) as total_quantity')
+            ->join('facilitator_checklists fc', 'fc.id = fci.checklist_id', 'left')
+            ->where('fc.facilitator_id', $facilitatorId)
+            ->groupBy('fci.equipment_condition')
+            ->get()
+            ->getResultArray();
+
+        $summary = [
+            'total' => 0,
+            'good' => 0,
+            'damaged' => 0,
+            'missing' => 0
+        ];
+
+        foreach ($summaryQuery as $row) {
+            $total_qty = $row['total_quantity'] ?? 0;
+            $summary['total'] += $total_qty;
+            if ($row['equipment_condition'] === 'good') {
+                $summary['good'] = $total_qty;
+            } elseif ($row['equipment_condition'] === 'damaged') {
+                $summary['damaged'] = $total_qty;
+            } elseif ($row['equipment_condition'] === 'missing') {
+                $summary['missing'] = $total_qty;
+            }
+        }
+
+        // Get equipment quantity summary (sum expected quantity by equipment name and condition)
+        $equipmentSummary = $db->table('facilitator_checklist_items fci')
+            ->select('fci.equipment_name, fci.equipment_condition, SUM(fci.expected_quantity) as expected_quantity, COUNT(*) as records')
+            ->join('facilitator_checklists fc', 'fc.id = fci.checklist_id', 'left')
+            ->where('fc.facilitator_id', $facilitatorId)
+            ->groupBy('fci.equipment_name, fci.equipment_condition')
+            ->orderBy('fci.equipment_name', 'ASC')
+            ->get()
+            ->getResultArray();
+
+        // Process equipment summary into grouped format
+        $equipmentGrouped = [];
+        foreach ($equipmentSummary as $item) {
+            $name = $item['equipment_name'];
+            if (!isset($equipmentGrouped[$name])) {
+                $equipmentGrouped[$name] = [
+                    'name' => $name,
+                    'expected_total' => 0,
+                    'good' => 0,
+                    'damaged' => 0,
+                    'missing' => 0
+                ];
+            }
+            $equipmentGrouped[$name]['expected_total'] += $item['expected_quantity'] ?? 0;
+            if ($item['equipment_condition'] === 'good') {
+                $equipmentGrouped[$name]['good'] = $item['expected_quantity'] ?? 0;
+            } elseif ($item['equipment_condition'] === 'damaged') {
+                $equipmentGrouped[$name]['damaged'] = $item['expected_quantity'] ?? 0;
+            } elseif ($item['equipment_condition'] === 'missing') {
+                $equipmentGrouped[$name]['missing'] = $item['expected_quantity'] ?? 0;
+            }
+        }
+        // Convert to indexed array
+        $equipmentGrouped = array_values($equipmentGrouped);
+
+        // Get detailed reports (latest 50) from facilitator_checklist_items (filtered by current facilitator)
+        $reports = $db->table('facilitator_checklist_items fci')
+            ->select('fci.*, fc.facilitator_name, b.event_title, b.event_date, f.name as facility_name')
+            ->join('facilitator_checklists fc', 'fc.id = fci.checklist_id', 'left')
+            ->join('bookings b', 'b.id = fc.booking_id', 'left')
+            ->join('facilities f', 'f.id = b.facility_id', 'left')
+            ->where('fc.facilitator_id', $facilitatorId)
+            ->orderBy('fci.created_at', 'DESC')
+            ->limit(50)
+            ->get()
+            ->getResultArray();
+
+        return $this->response->setJSON([
+            'success' => true,
+            'summary' => $summary,
+            'equipmentSummary' => $equipmentGrouped,
+            'reports' => $reports,
+            'count' => count($reports)
+        ]);
+
+    } catch (\Exception $e) {
+        log_message('error', 'EventsAPI - Error fetching equipment reports: ' . $e->getMessage());
+        return $this->response->setJSON([
+            'success' => true,
+            'summary' => [
+                'total' => 0,
+                'good' => 0,
+                'damaged' => 0,
+                'missing' => 0
+            ],
+            'reports' => [],
+            'count' => 0,
+            'message' => 'Unable to fetch reports at this time'
+        ]);
     }
 }
 }

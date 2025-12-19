@@ -77,6 +77,9 @@ function renderFacilities(facilitiesData) {
             <td class="facility-icon">${facility.icon || "🏢"}</td>
             <td class="facility-name">${facility.name}</td>
             <td><span class="facility-key">${facility.facility_key}</span></td>
+            <td class="facility-capacity"><strong>${
+              facility.capacity || "N/A"
+            }</strong> persons</td>
             <td class="facility-description" title="${
               facility.description || ""
             }">${facility.description || "No description"}</td>
@@ -189,6 +192,7 @@ function editFacility(facilityId) {
   document.getElementById("facilityName").value = facility.name;
   document.getElementById("facilityKey").value = facility.facility_key;
   document.getElementById("facilityIcon").value = facility.icon || "";
+  document.getElementById("facilityCapacity").value = facility.capacity || 1;
   document.getElementById("additionalHoursRate").value =
     facility.additional_hours_rate || 0;
   document.getElementById("facilityDescription").value =
@@ -249,6 +253,8 @@ async function saveFacility() {
   const name = document.getElementById("facilityName").value.trim();
   const facilityKey = document.getElementById("facilityKey").value.trim();
   const icon = document.getElementById("facilityIcon").value.trim();
+  const capacity =
+    parseInt(document.getElementById("facilityCapacity").value) || 1;
   const additionalHoursRate = document.getElementById(
     "additionalHoursRate"
   ).value;
@@ -298,6 +304,7 @@ async function saveFacility() {
   formData.append("name", name);
   formData.append("facility_key", facilityKey);
   formData.append("icon", icon);
+  formData.append("capacity", capacity);
   formData.append("additional_hours_rate", parseFloat(additionalHoursRate));
   formData.append("description", description);
   formData.append("is_active", isActive);

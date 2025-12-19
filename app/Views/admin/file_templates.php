@@ -42,6 +42,287 @@
         .clear-file-btn:active {
             transform: scale(0.95);
         }
+
+        /* Header Section Improvements */
+        .filetemplates-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .filetemplates-header-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .filetemplates-header-content p {
+            font-size: 14px;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .filetemplates-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn-import {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-import:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+        }
+
+        .btn-refresh {
+            background-color: var(--gray-light);
+            color: var(--dark);
+            border: 1px solid #ddd;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-refresh:hover {
+            background-color: #e8ecf1;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Search and Filter Section */
+        .search-filter-section {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-input-wrapper {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-input-wrapper input {
+            width: 100%;
+            padding: 10px 16px 10px 38px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .search-input-wrapper input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(10, 43, 122, 0.1);
+        }
+
+        .search-input-wrapper::before {
+            content: "🔍";
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            pointer-events: none;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+            border-radius: 12px;
+            border: 2px dashed #ddd;
+        }
+
+        .empty-state-icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+
+        .empty-state h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .empty-state p {
+            color: var(--gray);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Card Container */
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e8e8e8;
+        }
+
+        /* Improved template grid */
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .template-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            padding: 24px;
+            transition: all 0.3s ease;
+            border: 2px solid #f0f4f8;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .template-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .template-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(10, 43, 122, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .template-card:hover::before {
+            opacity: 1;
+        }
+
+        .template-icon {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .template-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+            text-align: center;
+        }
+
+        .template-filename {
+            font-size: 12px;
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 16px;
+            font-family: "Courier New", monospace;
+            background: var(--gray-light);
+            padding: 6px 12px;
+            border-radius: 6px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .template-info {
+            font-size: 13px;
+            color: var(--gray);
+            margin: 8px 0;
+            padding: 8px 12px;
+            background: var(--gray-light);
+            border-radius: 6px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .template-info strong {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .template-footer {
+            text-align: center;
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-light);
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* Alert Improvements */
+        .alert {
+            padding: 14px 18px;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            border-left: 4px solid;
+            animation: slideIn 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            border-color: #198754;
+            color: #155724;
+        }
+
+        .alert-error {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+
+        .alert span {
+            font-weight: 600;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -105,25 +386,44 @@
         <!-- Header -->
         <div class="header">
             <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
-
-            <div class="search-box">
-                <i>🔍</i>
-                <input type="text" placeholder="Search templates..." id="searchInput">
-            </div>
+            <div style="margin-left: auto;"></div>
         </div>
-
-
-        
 
         <!-- Dashboard Content -->
         <div class="dashboard">
-            <div class="dashboard-title">
-                <h2>📄 File Templates Management</h2>
-                <p>Manage document templates used for generating booking-related files</p>
+            <!-- Page Header Section -->
+            <div class="filetemplates-header">
+                <div class="filetemplates-header-content">
+                    <h2>📄 File Templates Management</h2>
+                    <p>Manage document templates used for generating booking-related files</p>
+                </div>
+                <div class="filetemplates-actions">
+                    <button class="btn-refresh" onclick="location.reload()" title="Refresh templates">
+                        🔄 Refresh
+                    </button>
+                </div>
             </div>
 
+            <div id="alertContainer"></div>
+
+            <!-- Search Section -->
+            <?php if (!empty($templates)): ?>
+                <div class="search-filter-section">
+                    <div class="search-input-wrapper">
+                        <input 
+                            type="text" 
+                            placeholder="Search templates by name or file..." 
+                            id="searchInput"
+                        >
+                    </div>
+                    <button class="btn-refresh" onclick="clearSearch()" title="Clear search">
+                        ✕ Clear
+                    </button>
+                </div>
+            <?php endif; ?>
+
+            <!-- Templates Card -->
             <div class="card">
-                <div id="alertContainer"></div>
 
                 <?php if (empty($templates)): ?>
                     <div class="empty-state">
@@ -142,7 +442,7 @@
                                 continue;
                             }
                             ?>
-                            <div class="template-card" data-filename="<?= esc($template['name']) ?>" onclick="openSignatoriesModal('<?= esc($template['name'], 'js') ?>', '<?= esc($template['display_name'], 'js') ?>')">
+                            <div class="template-card" data-filename="<?= esc($template['name']) ?>" data-display-name="<?= esc($template['display_name'], 'js') ?>" onclick="openSignatoriesModal('<?= esc($template['name'], 'js') ?>', '<?= esc($template['display_name'], 'js') ?>')">
                                 <div class="template-icon">
                                     <?php
                                         $icon = '📄';
@@ -158,11 +458,17 @@
                                 </div>
                                 <div class="template-name"><?= esc($template['display_name']) ?></div>
                                 <div class="template-filename"><?= esc($template['name']) ?></div>
-                                <div class="template-info"><strong>Type:</strong> <?= esc($template['type']) ?></div>
-                                <div class="template-info"><strong>Size:</strong> <?= esc($template['size_formatted']) ?></div>
-                                <div class="template-info"><strong>Modified:</strong> <?= esc($template['modified_formatted']) ?></div>
-                                <div style="text-align: center; margin-top: 15px; color: var(--primary); font-size: 12px; font-weight: 600;">
-                                    ➜ Click to Edit Signatories
+                                <div class="template-info">
+                                    <strong>Type:</strong> <?= esc($template['type']) ?>
+                                </div>
+                                <div class="template-info">
+                                    <strong>Size:</strong> <?= esc($template['size_formatted']) ?>
+                                </div>
+                                <div class="template-info">
+                                    <strong>Modified:</strong> <?= esc($template['modified_formatted']) ?>
+                                </div>
+                                <div class="template-footer">
+                                    ➜ CLICK TO EDIT SIGNATORIES
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -174,21 +480,21 @@
 
     <!-- Signatories Modal -->
     <div id="signatoriesModal" class="modal" style="display: none;">
-        <div class="modal-content" style="max-width: 500px;">
-            <div class="modal-header">
-                <h3 id="modalTitle">Edit Signatories</h3>
-                <span class="close" onclick="closeSignatoriesModal()">&times;</span>
+        <div class="modal-content" style="max-width: 500px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);">
+            <div class="modal-header" style="border-bottom: 1px solid #e8e8e8; padding: 24px 28px;">
+                <h3 id="modalTitle" style="font-size: 20px; font-weight: 700; color: var(--dark); margin: 0;">Edit Signatories</h3>
+                <span class="close" onclick="closeSignatoriesModal()" style="font-size: 28px; cursor: pointer; color: var(--gray);">&times;</span>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="padding: 28px;">
                 <form id="signatoriesEditForm">
                     <input type="hidden" id="modalTemplateName" name="template_name">
                     <div id="signatoriesContainer"></div>
                     
-                    <div style="margin-top: 30px; display: flex; gap: 10px;">
-                        <button type="button" onclick="closeSignatoriesModal()" class="btn btn-secondary" style="flex: 1;">
-                            Cancel
+                    <div style="margin-top: 32px; display: flex; gap: 12px; border-top: 1px solid #e8e8e8; padding-top: 20px;">
+                        <button type="button" onclick="closeSignatoriesModal()" class="btn btn-secondary" style="flex: 1; padding: 11px 20px; border-radius: 8px; background-color: var(--gray-light); color: var(--dark); border: 1px solid #ddd; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                            ✕ Cancel
                         </button>
-                        <button type="submit" class="btn btn-primary" style="flex: 1;">
+                        <button type="submit" class="btn btn-primary" style="flex: 1; padding: 11px 20px; border-radius: 8px; background-color: var(--primary); color: white; border: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
                             💾 Save Changes
                         </button>
                     </div>
@@ -260,25 +566,38 @@
             container.innerHTML = '';
 
             if (!templateConfig.signatories || templateConfig.signatories.length === 0) {
-                container.innerHTML = '<p style="color: var(--danger);">No signatories configured for this template</p>';
+                container.innerHTML = '<p style="color: var(--danger); font-weight: 500; text-align: center;">No signatories configured for this template</p>';
                 return;
             }
 
             templateConfig.signatories.forEach((sig, index) => {
                 const fieldHtml = `
-                    <div class="form-group">
-                        <label for="signatory_${index}">${sig.label}</label>
-                        ${sig.subtitle ? `<small style="color: #6c757d; display: block; margin-bottom: 8px; font-style: italic;">${sig.subtitle}</small>` : ''}
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="signatory_${index}" style="display: block; font-weight: 600; color: var(--dark); margin-bottom: 6px; font-size: 14px;">${sig.label}</label>
+                        ${sig.subtitle ? `<small style="color: #6c757d; display: block; margin-bottom: 10px; font-style: italic; font-size: 13px;">${sig.subtitle}</small>` : ''}
                         <input type="text" 
                                id="signatory_${index}" 
                                name="signatories[${index}]" 
                                class="form-control" 
                                placeholder="${sig.placeholder || 'Enter ' + sig.label.toLowerCase()}"
-                               value="${sig.current_value || ''}">
-                        <small style="color: #6c757d; display: block; margin-top: 4px;">${sig.cell_location}</small>
+                               value="${sig.current_value || ''}"
+                               style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+                        <small style="color: #6c757d; display: block; margin-top: 6px; font-size: 12px; font-weight: 500;">${sig.cell_location}</small>
                     </div>
                 `;
                 container.insertAdjacentHTML('beforeend', fieldHtml);
+            });
+
+            // Add focus styles via event listeners
+            document.querySelectorAll('#signatoriesContainer input').forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.borderColor = 'var(--primary)';
+                    this.style.boxShadow = '0 0 0 3px rgba(10, 43, 122, 0.1)';
+                });
+                input.addEventListener('blur', function() {
+                    this.style.borderColor = '#ddd';
+                    this.style.boxShadow = 'none';
+                });
             });
         }
 
@@ -352,6 +671,7 @@
         document.getElementById('searchInput').addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
             const cards = document.querySelectorAll('.template-card');
+            let visibleCount = 0;
 
             cards.forEach(card => {
                 const name = card.querySelector('.template-name').textContent.toLowerCase();
@@ -359,11 +679,34 @@
 
                 if (name.includes(searchTerm) || filename.includes(searchTerm)) {
                     card.style.display = 'block';
+                    visibleCount++;
                 } else {
                     card.style.display = 'none';
                 }
             });
+
+            // Show message if no results
+            const grid = document.getElementById('templatesGrid');
+            if (grid) {
+                let noResults = grid.querySelector('.no-results-message');
+                if (visibleCount === 0 && searchTerm) {
+                    if (!noResults) {
+                        noResults = document.createElement('div');
+                        noResults.className = 'no-results-message';
+                        noResults.style.cssText = 'grid-column: 1/-1; text-align: center; padding: 40px 20px; color: var(--gray);';
+                        noResults.innerHTML = '<p style="font-size: 16px; margin: 0;">🔍 No templates found matching your search</p>';
+                        grid.insertBefore(noResults, grid.firstChild);
+                    }
+                } else if (noResults) {
+                    noResults.remove();
+                }
+            }
         });
+
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchInput').dispatchEvent(new Event('input'));
+        }
 
         // Modal close on outside click
         window.onclick = function(event) {
@@ -377,13 +720,29 @@
             const alertContainer = document.getElementById('alertContainer');
             const alert = document.createElement('div');
             alert.className = `alert alert-${type}`;
-            alert.innerHTML = `<span>${type === 'success' ? '✓' : '✕'}</span>${message}`;
-            alertContainer.appendChild(alert);
+            
+            const icon = type === 'success' ? '✓' : '✕';
+            alert.innerHTML = `<span>${icon}</span><div>${message}</div>`;
+            
+            alertContainer.insertBefore(alert, alertContainer.firstChild);
 
             setTimeout(() => {
-                alert.remove();
+                alert.style.animation = 'slideOut 0.3s ease forwards';
+                setTimeout(() => alert.remove(), 300);
             }, 5000);
         }
+
+        // Add slide-out animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideOut {
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
 
         function showLoading() {
             document.getElementById('loadingOverlay').style.display = 'flex';

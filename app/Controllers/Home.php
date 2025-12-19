@@ -119,6 +119,11 @@ class Home extends BaseController
     {
         return view('event');
     }
+
+    public function about()
+    {
+        return view('about');
+    }
    
     // Backward compatibility methods - redirect to dynamic facility detail
     public function gymnasium()

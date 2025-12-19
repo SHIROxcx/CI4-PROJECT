@@ -128,7 +128,7 @@
                                     <select class="form-control form-control-modern" id="bookingType" required>
                                         <option value="" disabled selected>Select booking type</option>
                                         <option value="student">🎓 Student Organization</option>
-                                        <option value="Employee">👨‍🏫 Employee</option>
+                                        <option value="employee">👨‍🏫 Employee</option>
                                     </select>
                                 </div>
                             </div>

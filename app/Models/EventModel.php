@@ -133,6 +133,10 @@ class EventModel extends Model
             $startTime = new \DateTime($eventDate . ' ' . $eventTime);
             $endTime = clone $startTime;
             $endTime->add(new \DateInterval('PT' . $duration . 'H'));
+            
+            // Add 2-hour grace period to new booking
+            $endTimeWithGrace = clone $endTime;
+            $endTimeWithGrace->add(new \DateInterval('PT2H'));
 
             $conflicts = $this->where('facility_id', $facilityId)
                              ->where('event_date', $eventDate)
@@ -143,9 +147,15 @@ class EventModel extends Model
                 $existingStart = new \DateTime($event['event_date'] . ' ' . $event['event_time']);
                 $existingEnd = clone $existingStart;
                 $existingEnd->add(new \DateInterval('PT' . $event['duration'] . 'H'));
+                
+                // Add 2-hour grace period to existing booking
+                $existingEndWithGrace = clone $existingEnd;
+                $existingEndWithGrace->add(new \DateInterval('PT2H'));
 
-                // Check for overlap
-                if ($startTime < $existingEnd && $endTime > $existingStart) {
+                // Check for overlap with grace periods
+                // Conflict if new event overlaps with existing event + grace period
+                // OR existing event overlaps with new event + grace period
+                if ($startTime < $existingEndWithGrace && $endTimeWithGrace > $existingStart) {
                     return true;
                 }
             }

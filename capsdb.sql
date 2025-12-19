@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 17, 2025 at 06:09 PM
+-- Generation Time: Dec 19, 2025 at 06:38 PM
 -- Server version: 8.0.39
 -- PHP Version: 8.2.18
 
@@ -154,13 +154,14 @@ CREATE TABLE IF NOT EXISTS `bookings` (
   `address` varchar(500) DEFAULT NULL,
   `event_date` date NOT NULL,
   `event_time` time NOT NULL,
+  `event_end_time` time DEFAULT NULL,
   `duration` varchar(50) DEFAULT NULL,
   `attendees` int DEFAULT NULL,
   `event_title` varchar(255) NOT NULL,
   `special_requirements` text,
   `total_cost` decimal(10,2) NOT NULL,
   `status` enum('pending','confirmed','cancelled','completed','pending_cancellation') DEFAULT 'pending',
-  `booking_type` enum('student','employee','user','external') DEFAULT 'user',
+  `booking_type` enum('student','employee','user','external') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'user',
   `decline_reason` varchar(100) DEFAULT NULL,
   `decline_notes` text,
   `cancellation_letter_path` varchar(500) DEFAULT NULL COMMENT 'Path to the cancellation letter file',
@@ -171,6 +172,7 @@ CREATE TABLE IF NOT EXISTS `bookings` (
   `approved_by` int DEFAULT NULL,
   `approval_notes` text,
   `additional_hours` int DEFAULT '0',
+  `total_duration_hours` decimal(5,2) DEFAULT NULL,
   `maintenance_fee` decimal(10,2) DEFAULT '2000.00',
   `overtime_fee` decimal(10,2) DEFAULT '0.00',
   PRIMARY KEY (`id`),
@@ -180,22 +182,35 @@ CREATE TABLE IF NOT EXISTS `bookings` (
   KEY `idx_status` (`status`),
   KEY `idx_event_date` (`event_date`),
   KEY `idx_booking_status_date` (`status`,`event_date`),
-  KEY `idx_status_event_date` (`status`,`event_date`)
-) ENGINE=InnoDB AUTO_INCREMENT=143 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `idx_status_event_date` (`status`,`event_date`),
+  KEY `idx_event_end_time` (`event_end_time`),
+  KEY `idx_facility_date_time` (`facility_id`,`event_date`,`event_time`,`event_end_time`)
+) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`id`, `facility_id`, `plan_id`, `client_name`, `contact_number`, `email_address`, `organization`, `address`, `event_date`, `event_time`, `duration`, `attendees`, `event_title`, `special_requirements`, `total_cost`, `status`, `booking_type`, `decline_reason`, `decline_notes`, `cancellation_letter_path`, `cancellation_requested_at`, `created_at`, `updated_at`, `approved_at`, `approved_by`, `approval_notes`, `additional_hours`, `maintenance_fee`, `overtime_fee`) VALUES
-(135, 2, 1, 'lizamae', '09810586557', 'lizamaebuenocleofe@gmail.com', 'ccs', 'buhi camarines sur', '2025-12-19', '11:40:00', '5', 300, 'party', 'none', 36015.00, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-13 21:40:52', '2025-12-13 21:40:52', NULL, NULL, NULL, 1, 2000.00, 0.00),
-(136, 12, 30, 'ivan', '09123456789', 'ivaaanjoshua@gmail.com', NULL, 'San Miguel Nabua Cam sur', '2026-01-31', '10:07:00', '4', 24, 'Seminar', NULL, 5600.00, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-14 16:08:46', '2025-12-14 16:08:46', NULL, NULL, NULL, 1, 2000.00, 0.00),
-(137, 2, 1, 'Janna May Tangtang ', '09129284359', 'jannamay.tangtang@usant.edu.ph', NULL, 'San miguel, Nabua, Camarines Sur ', '2025-12-22', '18:00:00', '4', NULL, 'party', NULL, 6000.00, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-14 18:22:21', '2025-12-14 18:22:21', NULL, NULL, NULL, 0, 2000.00, 0.00),
-(138, 4, 26, 'Hazel Ann T. lanuzga', '09917862107', 'hazellanuzga19@gmail.com', NULL, 'Goyudan, Bato Camarines Sur', '2026-02-12', '13:32:00', '4', NULL, 'Seminar ', NULL, 6000.00, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-14 18:34:15', '2025-12-14 18:34:15', NULL, NULL, NULL, 0, 2000.00, 0.00),
-(139, 2, 1, 'April Abonita', '09203197861', 'eyprilya1@gmail.com', 'ABA Inc.', 'Zone 6, San Juan Bato, Cam Sur', '2025-12-17', '08:30:00', '4', 100, 'The event aims to strengthen teamwork, recognize employee achievements, and discuss company goals and strategies for the upcoming year.', NULL, 10750.00, 'cancelled', 'user', NULL, NULL, NULL, NULL, '2025-12-14 18:44:55', '2025-12-17 16:28:32', NULL, NULL, NULL, 0, 2000.00, 0.00),
-(140, 6, 18, 'Princess Ivy', '09123456789', 'ivyyy@gmail.com', NULL, 'San Miguel Nabua Camarines Sur', '2025-12-21', '09:00:00', '4', NULL, 'Christmas Party ', NULL, 33000.00, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-14 19:04:38', '2025-12-14 19:04:38', NULL, NULL, NULL, 0, 2000.00, 0.00),
-(141, 8, 28, 'Michaela Cezar', '09380582591', 'micezar@my.cspc.edu.ph', 'CCS-CSC', '', '2025-12-15', '08:00:00', '3', 50, 'CSPC - Student Connect', 'N/A', 0.00, 'cancelled', 'student', NULL, NULL, NULL, NULL, '2025-12-14 19:25:18', '2025-12-16 18:18:20', NULL, NULL, NULL, 0, 2000.00, 0.00),
-(142, 4, 26, 'Sss', '09454493652', 'elladichoso1@gmail.com', NULL, 'San Miguel, Nabua, Camarines Sur', '2025-12-23', '08:00:00', '4', NULL, 'Spd', NULL, 5000.00, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-14 20:33:04', '2025-12-14 20:33:04', NULL, NULL, NULL, 0, 2000.00, 0.00);
+INSERT INTO `bookings` (`id`, `facility_id`, `plan_id`, `client_name`, `contact_number`, `email_address`, `organization`, `address`, `event_date`, `event_time`, `event_end_time`, `duration`, `attendees`, `event_title`, `special_requirements`, `total_cost`, `status`, `booking_type`, `decline_reason`, `decline_notes`, `cancellation_letter_path`, `cancellation_requested_at`, `created_at`, `updated_at`, `approved_at`, `approved_by`, `approval_notes`, `additional_hours`, `total_duration_hours`, `maintenance_fee`, `overtime_fee`) VALUES
+(135, 2, 1, 'lizamae', '09810586557', 'lizamaebuenocleofe@gmail.com', 'ccs', 'buhi camarines sur', '2025-12-19', '11:40:00', NULL, '5', 300, 'party', 'none', 36015.00, 'cancelled', 'user', NULL, NULL, NULL, NULL, '2025-12-13 21:40:52', '2025-12-19 17:09:38', NULL, NULL, NULL, 1, NULL, 2000.00, 0.00),
+(136, 12, 30, 'ivan', '09123456789', 'ivaaanjoshua@gmail.com', NULL, 'San Miguel Nabua Cam sur', '2026-01-31', '10:07:00', NULL, '4', 24, 'Seminar', NULL, 5600.00, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-14 16:08:46', '2025-12-14 16:08:46', NULL, NULL, NULL, 1, NULL, 2000.00, 0.00),
+(137, 2, 1, 'Janna May Tangtang ', '09129284359', 'jannamay.tangtang@usant.edu.ph', NULL, 'San miguel, Nabua, Camarines Sur ', '2025-12-22', '18:00:00', NULL, '4', NULL, 'party', NULL, 6000.00, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-14 18:22:21', '2025-12-14 18:22:21', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00),
+(138, 4, 26, 'Hazel Ann T. lanuzga', '09917862107', 'hazellanuzga19@gmail.com', NULL, 'Goyudan, Bato Camarines Sur', '2026-02-12', '13:32:00', NULL, '4', NULL, 'Seminar ', NULL, 6000.00, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-14 18:34:15', '2025-12-14 18:34:15', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00),
+(139, 2, 1, 'April Abonita', '09203197861', 'eyprilya1@gmail.com', 'ABA Inc.', 'Zone 6, San Juan Bato, Cam Sur', '2025-12-17', '08:30:00', NULL, '4', 100, 'The event aims to strengthen teamwork, recognize employee achievements, and discuss company goals and strategies for the upcoming year.', NULL, 10750.00, 'cancelled', 'user', NULL, NULL, NULL, NULL, '2025-12-14 18:44:55', '2025-12-17 16:28:32', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00),
+(140, 6, 18, 'Princess Ivy', '09123456789', 'ivyyy@gmail.com', NULL, 'San Miguel Nabua Camarines Sur', '2025-12-21', '09:00:00', NULL, '4', NULL, 'Christmas Party ', NULL, 33000.00, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-14 19:04:38', '2025-12-14 19:04:38', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00),
+(141, 8, 28, 'Michaela Cezar', '09380582591', 'micezar@my.cspc.edu.ph', 'CCS-CSC', '', '2025-12-15', '08:00:00', NULL, '3', 50, 'CSPC - Student Connect', 'N/A', 0.00, 'cancelled', 'student', NULL, NULL, NULL, NULL, '2025-12-14 19:25:18', '2025-12-16 18:18:20', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00),
+(142, 4, 26, 'Sss', '09454493652', 'elladichoso1@gmail.com', NULL, 'San Miguel, Nabua, Camarines Sur', '2025-12-23', '08:00:00', NULL, '4', NULL, 'Spd', NULL, 5000.00, 'cancelled', 'user', 'policy-violation', 'zxczcx', NULL, NULL, '2025-12-14 20:33:04', '2025-12-18 06:35:00', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00),
+(143, 8, 28, 'dwa daw', '+34673555075', 'jomeltienes00@gmail.com', 'akp', 'Avenida La Cornisa 31 08392 Sant Andreu de Llavaneres', '2026-01-02', '14:49:00', NULL, '8', 2, 'toiurna', 'assxad', 3307.50, 'confirmed', 'user', NULL, NULL, NULL, NULL, '2025-12-18 06:46:18', '2025-12-18 06:48:25', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00),
+(144, 4, 26, 'dadwdawdas da', '+34673555075', 'asdas2@gmail.com', 'AWDAD', 'Avenida La Cornisa 31 08392 Sant Andreu de Llavaneres', '2026-01-01', '15:01:00', NULL, '6', 3, 'adwad', 'MNM', 5910.00, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-18 07:00:52', '2025-12-18 07:00:52', NULL, NULL, NULL, 2, NULL, 2000.00, 0.00),
+(145, 8, 28, 'dwa daw', '+34673555075', 'jomeltienes00@gmail.com', 'AWDAD', 'Avenida La Cornisa 31 08392 Sant Andreu de Llavaneres', '2026-01-08', '01:37:00', NULL, '11', 4, 'ADASASDA D', 'dsad asads sa dsas', 4237.50, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-19 17:32:17', '2025-12-19 17:32:17', NULL, NULL, NULL, 3, NULL, 2000.00, 0.00),
+(146, 8, 28, 'wendel', '+34673555075', 'jomeltienes00@gmail.com', 'akp', 'Avenida La Cornisa 31 08392 Sant Andreu de Llavaneres', '2025-12-25', '03:47:00', NULL, '12', 4, 'toiurna', 'asdads asd', 8500.00, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-19 17:47:47', '2025-12-19 17:47:47', NULL, NULL, NULL, 4, NULL, 2000.00, 0.00),
+(147, 8, 28, 'SIXTO', '+34673555075', 'jomeltienes00@gmail.com', 'css', 'Avenida La Cornisa 31 08392 Sant Andreu de Llavaneres', '2025-12-25', '21:47:00', NULL, '8', 3, 'adwad', 'sdfsd fsdfs', 3322.50, 'pending', 'user', NULL, NULL, NULL, NULL, '2025-12-19 17:49:49', '2025-12-19 17:49:49', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00),
+(149, 8, 28, 'dwa daw', '+34673555075', 'SIXTO@GMAIL.COM', 'AWDAD', 'Avenida La Cornisa 31 08392 Sant Andreu de Llavaneres', '2025-12-23', '02:24:00', NULL, '4', 2, 'asdawdad', 'sada das', 0.00, 'pending', 'employee', NULL, NULL, NULL, NULL, '2025-12-19 18:18:31', '2025-12-19 18:18:31', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00),
+(150, 8, 1, 'jomel tienes', '673555075', 'employee@gmail.com', 'asdsa ', 'ad asd a asda sdas aasd asdasd', '2026-01-01', '02:25:00', NULL, '4', 23, 'aadsa s', ' asd as', 0.00, 'pending', 'employee', NULL, NULL, NULL, NULL, '2025-12-19 18:21:47', '2025-12-19 18:21:47', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00),
+(151, 12, 30, 'dadwdawdas da', '+34673555075', 'wdafdawd@gmail.com', 'css', 'Avenida La Cornisa 31 08392 Sant Andreu de Llavaneres', '2026-01-31', '02:31:00', NULL, '4', 3, 'asdawdad', 'sadasd asdw adsa', 0.00, 'pending', 'employee', NULL, NULL, NULL, NULL, '2025-12-19 18:26:31', '2025-12-19 18:26:31', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00),
+(152, 8, 28, 'SIXTO', '+34673555075', 'SIXTO@GMAIL.COM', 'css', 'Avenida La Cornisa 31 08392 Sant Andreu de Llavaneres', '2026-01-31', '02:32:00', NULL, '4', 2, 'wdwewea', 'dasasd a', 0.00, 'pending', 'student', NULL, NULL, NULL, NULL, '2025-12-19 18:27:32', '2025-12-19 18:27:32', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00),
+(153, 8, 28, 'dwa daw', '+34673555075', 'SIXTO@GMAIL.COM', 'AWDAD', 'Avenida La Cornisa 31 08392 Sant Andreu de Llavaneres', '2026-01-30', '14:35:00', NULL, '4', NULL, 'wdwewea', 'dasda das sa', 0.00, 'pending', 'employee', NULL, NULL, NULL, NULL, '2025-12-19 18:31:09', '2025-12-19 18:31:09', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00),
+(154, 12, 30, 'kiela', '+34673555075', 'asdadad@gmail.com', 'akp', 'a sdaasd as dasd as asd asd', '2026-01-10', '02:41:00', NULL, '4', 3, 'as dsasd', 'asdas dasd as', 0.00, 'pending', 'employee', NULL, NULL, NULL, NULL, '2025-12-19 18:37:10', '2025-12-19 18:37:10', NULL, NULL, NULL, 0, NULL, 2000.00, 0.00);
 
 -- --------------------------------------------------------
 
@@ -212,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `booking_addons` (
   PRIMARY KEY (`id`),
   KEY `booking_id` (`booking_id`),
   KEY `addon_id` (`addon_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `booking_addons`
@@ -295,7 +310,11 @@ INSERT INTO `booking_addons` (`id`, `booking_id`, `addon_id`, `price`) VALUES
 (109, 140, 3, 2000.00),
 (110, 140, 4, 1000.00),
 (111, 140, 5, 3000.00),
-(112, 140, 7, 5000.00);
+(112, 140, 7, 5000.00),
+(113, 143, 1, 1000.00),
+(114, 145, 1, 1000.00),
+(115, 146, 7, 5000.00),
+(116, 147, 1, 1000.00);
 
 -- --------------------------------------------------------
 
@@ -317,7 +336,7 @@ CREATE TABLE IF NOT EXISTS `booking_equipment` (
   KEY `booking_id` (`booking_id`),
   KEY `equipment_id` (`equipment_id`),
   KEY `idx_booking_equipment` (`booking_id`,`equipment_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=226 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=237 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `booking_equipment`
@@ -501,7 +520,16 @@ INSERT INTO `booking_equipment` (`id`, `booking_id`, `equipment_id`, `quantity_i
 (222, 141, 10, 0, 0, 1, 0.00, 0.00),
 (223, 141, 13, 0, 0, 1, 0.00, 0.00),
 (224, 141, 18, 0, 0, 1, 0.00, 0.00),
-(225, 141, 21, 0, 0, 1, 0.00, 0.00);
+(225, 141, 21, 0, 0, 1, 0.00, 0.00),
+(226, 143, 4, 0, 0, 1, 7.50, 7.50),
+(227, 144, 3, 0, 0, 1, 10.00, 10.00),
+(228, 145, 2, 0, 0, 5, 7.50, 37.50),
+(229, 147, 2, 0, 0, 3, 7.50, 22.50),
+(232, 149, 1, 0, 0, 3, 65.00, 195.00),
+(233, 149, 4, 0, 0, 2, 7.50, 15.00),
+(234, 150, 15, 0, 0, 1, 0.00, 0.00),
+(235, 152, 2, 0, 0, 2, 7.50, 15.00),
+(236, 153, 1, 0, 0, 3, 65.00, 195.00);
 
 -- --------------------------------------------------------
 
@@ -515,14 +543,14 @@ CREATE TABLE IF NOT EXISTS `booking_extensions` (
   `booking_id` int NOT NULL,
   `extension_hours` int UNSIGNED NOT NULL COMMENT 'Number of additional hours requested',
   `extension_cost` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT 'Cost for the extension (hours * hourly_rate)',
-  `extension_reason` text COLLATE utf8mb4_general_ci,
-  `status` enum('pending','approved','rejected','completed') COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'pending' COMMENT 'Status of the extension request',
+  `extension_reason` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `status` enum('pending','approved','rejected','completed') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'pending' COMMENT 'Status of the extension request',
   `requested_by_id` int NOT NULL,
-  `requested_by` varchar(255) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Name of the person requesting extension',
+  `requested_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Name of the person requesting extension',
   `requested_at` datetime DEFAULT NULL,
   `approved_by` int DEFAULT NULL,
   `approved_at` datetime DEFAULT NULL,
-  `payment_status` enum('pending','received','waived') COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'pending' COMMENT 'Payment status for the extension',
+  `payment_status` enum('pending','received','waived') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'pending' COMMENT 'Payment status for the extension',
   `payment_order_generated` tinyint(1) DEFAULT '0' COMMENT 'Whether a payment order has been generated',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -630,7 +658,14 @@ CREATE TABLE IF NOT EXISTS `booking_survey_responses` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `survey_token` (`survey_token`),
   KEY `booking_id` (`booking_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `booking_survey_responses`
+--
+
+INSERT INTO `booking_survey_responses` (`id`, `booking_id`, `survey_token`, `staff_punctuality`, `staff_courtesy_property`, `staff_courtesy_audio`, `staff_courtesy_janitor`, `facility_level_expectations`, `facility_cleanliness`, `facility_maintenance`, `venue_accuracy_setup`, `venue_accuracy_space`, `catering_quality`, `catering_presentation`, `catering_service`, `overall_satisfaction`, `most_enjoyed`, `improvements_needed`, `recommendation`, `is_submitted`, `created_at`, `updated_at`) VALUES
+(17, 143, 'e7bc1de81b4edfd70a5d547d92fed6b039bd1f0ef055f6d1fab5bdcd30df0433', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2025-12-18 14:48:25', '2025-12-18 14:48:25');
 
 -- --------------------------------------------------------
 
@@ -674,10 +709,10 @@ CREATE TABLE IF NOT EXISTS `equipment` (
 --
 
 INSERT INTO `equipment` (`id`, `equipment_key`, `name`, `category`, `quantity`, `price`, `rate`, `unit`, `good`, `damaged`, `available`, `rented`, `status`, `is_trackable`, `is_rentable`, `is_plan_includable`, `minimum_quantity`, `notes`, `created_at`, `updated_at`) VALUES
-(1, 'tables', 'Tables', 'furniture', 200, 0.00, 65.00, 'per piece', 2, 0, 0, 13, 'available', 1, 1, 1, 20, 'Rentable tables - ₱65 per piece', '2025-10-16 00:35:06', '2025-12-02 06:08:03'),
-(2, 'monobloc-chairs', 'Monobloc Chairs', 'furniture', 500, 0.00, 7.50, 'per piece', 0, 2, 0, 33, 'available', 1, 1, 1, 50, 'Rentable chairs - ₱7.50 per piece', '2025-10-16 00:35:06', '2025-12-02 06:08:03'),
+(1, 'tables', 'Tables', 'furniture', 500, 0.00, 65.00, 'per piece', 500, 0, 487, 13, 'available', 1, 1, 1, 20, 'Rentable tables - ₱65 per piece', '2025-10-16 00:35:06', '2025-12-18 23:42:40'),
+(2, 'monobloc-chairs', 'Monobloc Chairs', 'furniture', 500, 0.00, 7.50, 'per piece', 30, 2, 0, 33, 'available', 1, 1, 1, 50, 'Rentable chairs - ₱7.50 per piece', '2025-10-16 00:35:06', '2025-12-18 23:19:47'),
 (3, 'table-covers', 'Table Covers', 'furniture', 100, 0.00, 10.00, 'per piece', 3, 0, 0, 11, 'available', 1, 1, 1, 10, 'Table decorations - ₱10 per piece', '2025-10-16 00:35:06', '2025-12-02 06:08:03'),
-(4, 'chair-covers', 'Chair Covers', 'furniture', 296, 0.00, 7.50, 'per piece', 3, 2, 0, 42, 'available', 1, 1, 1, 20, 'Chair decorations - ₱7.50 per piece', '2025-10-16 00:35:06', '2025-12-02 06:08:03'),
+(4, 'chair-covers', 'Chair Covers', 'furniture', 296, 0.00, 7.50, 'per piece', 1, 2, 0, 42, 'available', 1, 1, 1, 20, 'Chair decorations - ₱7.50 per piece', '2025-10-16 00:35:06', '2025-12-18 23:19:47'),
 (5, 'lectern/podium', 'Lectern/Podium', 'furniture', 6, 0.00, 0.00, 'included', 6, 0, 6, 0, 'available', 1, 0, 1, 1, 'Included with venue packages', '2025-10-16 00:35:06', '2025-11-04 18:15:06'),
 (6, 'multimedia-projector', 'Multimedia Projector', 'audio_visual', 10, 0.00, 0.00, 'included', 0, 7, 0, 0, 'available', 1, 0, 1, 2, 'Included with venue packages', '2025-10-16 00:35:06', '2025-12-02 06:08:03'),
 (7, 'microphone', 'Microphone', 'audio_visual', 20, 0.00, 0.00, 'included', 2, 2, 2, 0, 'available', 1, 0, 1, 5, 'Basic microphones included', '2025-10-16 00:35:06', '2025-12-02 06:08:03'),
@@ -695,9 +730,9 @@ INSERT INTO `equipment` (`id`, `equipment_key`, `name`, `category`, `quantity`, 
 (19, 'follow-spot', 'Follow Spot', 'lighting', 4, 0.00, 0.00, 'per unit', 4, 0, 4, 0, 'available', 1, 0, 1, 2, 'Ballroom setup - 2 units', '2025-10-16 00:35:06', '2025-11-04 01:46:49'),
 (20, 'intercom-system', 'Intercom System', 'technical', 2, 0.00, 0.00, 'per set', 2, 0, 2, 0, 'available', 1, 0, 1, 1, 'Ballroom communication system', '2025-10-16 00:35:06', NULL),
 (21, 'projector-screen-(white)', 'Projector Screen (White)', 'audio_visual', 5, 0.00, 0.00, 'per piece', 5, 0, 5, 0, 'available', 1, 0, 1, 2, 'Ballroom setup - Left & Right side', '2025-10-16 00:35:06', '2025-10-20 18:36:23'),
-(22, 'heavy-duty-electric-fans', 'Heavy Duty Electric Fans', 'technical', 30, 0.00, 0.00, 'included', 30, 0, 30, 0, 'available', 0, 0, 0, 10, 'Gymnasium cooling', '2025-10-16 00:35:06', NULL),
+(22, 'heavy-duty-electric-fans', 'Heavy Duty Electric Fans', 'technical', 30, 0.00, 0.00, 'included', 5, 0, 5, 0, 'available', 0, 0, 0, 10, 'Gymnasium cooling', '2025-10-16 00:35:06', '2025-12-18 23:19:47'),
 (23, 'air-conditioner', 'Air Conditioner', 'technical', 20, 0.00, 0.00, 'included', 20, 0, 20, 0, 'available', 0, 0, 0, 5, 'Auditorium/AVR cooling', '2025-10-16 00:35:06', NULL),
-(24, 'tv-monitor', 'TV Monitor', 'audio_visual', 10, 0.00, 0.00, 'included', 10, 0, 10, 0, 'available', 1, 0, 1, 2, 'TV monitor for classrooms', '2025-10-16 03:07:23', NULL),
+(24, 'tv-monitor', 'TV Monitor', 'audio_visual', 10, 0.00, 0.00, 'included', 1, 0, 1, 0, 'available', 1, 0, 1, 2, 'TV monitor for classrooms', '2025-10-16 03:07:23', '2025-12-18 23:19:47'),
 (25, NULL, 'shoes', 'furniture', 122, 232.00, 0.00, 'per piece', 122, 0, 122, 0, 'available', 1, 1, 1, 5, NULL, '2025-10-17 00:33:08', '2025-10-21 04:57:35');
 
 -- --------------------------------------------------------
@@ -720,7 +755,7 @@ CREATE TABLE IF NOT EXISTS `equipment_schedule` (
   UNIQUE KEY `uk_equipment_date` (`equipment_id`,`event_date`),
   KEY `idx_equipment_id` (`equipment_id`),
   KEY `idx_event_date` (`event_date`)
-) ENGINE=InnoDB AUTO_INCREMENT=209 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=212 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `equipment_schedule`
@@ -856,7 +891,7 @@ INSERT INTO `equipment_schedule` (`id`, `equipment_id`, `event_date`, `total_qua
 (127, 1, '2026-01-18', 187, 3, '2025-12-01 03:13:18', '2025-12-01 03:13:18'),
 (128, 4, '2026-01-18', 252, 3, '2025-12-01 03:13:18', '2025-12-01 03:13:18'),
 (129, 1, '2025-12-25', 187, 0, '2025-12-01 03:30:21', '2025-12-01 03:30:21'),
-(130, 2, '2025-12-25', 467, 0, '2025-12-01 03:30:21', '2025-12-01 03:30:21'),
+(130, 2, '2025-12-25', 467, 3, '2025-12-01 03:30:21', '2025-12-20 01:49:49'),
 (131, 3, '2025-12-25', 89, 0, '2025-12-01 03:30:21', '2025-12-01 03:30:21'),
 (132, 4, '2025-12-25', 252, 0, '2025-12-01 03:30:21', '2025-12-01 03:30:21'),
 (133, 25, '2025-12-25', 122, 0, '2025-12-01 03:30:21', '2025-12-01 03:30:21'),
@@ -934,7 +969,10 @@ INSERT INTO `equipment_schedule` (`id`, `equipment_id`, `event_date`, `total_qua
 (205, 2, '2025-12-23', 0, 0, '2025-12-14 20:31:40', '2025-12-14 20:31:40'),
 (206, 3, '2025-12-23', 0, 0, '2025-12-14 20:31:40', '2025-12-14 20:31:40'),
 (207, 4, '2025-12-23', 0, 0, '2025-12-14 20:31:40', '2025-12-14 20:31:40'),
-(208, 25, '2025-12-23', 122, 0, '2025-12-14 20:31:40', '2025-12-14 20:31:40');
+(208, 25, '2025-12-23', 122, 0, '2025-12-14 20:31:40', '2025-12-14 20:31:40'),
+(209, 4, '2026-01-02', 0, 1, '2025-12-18 14:46:18', '2025-12-18 14:46:18'),
+(210, 3, '2026-01-01', 0, 1, '2025-12-18 15:00:52', '2025-12-18 15:00:52'),
+(211, 2, '2026-01-08', 0, 5, '2025-12-20 01:32:17', '2025-12-20 01:32:17');
 
 -- --------------------------------------------------------
 
@@ -972,7 +1010,7 @@ CREATE TABLE IF NOT EXISTS `events` (
   KEY `idx_event_date_status` (`event_date`,`status`),
   KEY `idx_facility_date` (`facility_id`,`event_date`),
   KEY `idx_status_date` (`status`,`event_date`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `events`
@@ -1000,7 +1038,8 @@ INSERT INTO `events` (`id`, `booking_id`, `event_title`, `client_name`, `contact
 (33, 100, 'asda sdas', 'SIXTO', '12313114', 'jomeltienes00@gmail.com', 'css', 'asd asd asd asd as', 8, '', '2026-01-18', '03:18:00', '11', 4, 11417.50, 'asd asd', '2025-11-30 19:13:27', '', 'scheduled', '2025-11-30 19:13:27', '2025-11-30 19:13:27'),
 (34, 102, 'as dasd asd', 'Desiree', '0908634373', 'faculty@cspc.edu.ph', 'css', 'asd as d asads asdas dsa', 8, '', '2025-12-30', '07:30:00', '8', 3, 12575.00, ' asdas', '2025-11-30 19:31:16', '', 'scheduled', '2025-11-30 19:31:16', '2025-11-30 19:31:16'),
 (35, 131, 'BYCIT', 'jomel', '009808652', 'jomeltienes00@gmail.com', 'CSS', 'san niclas iriga city', 1, '', '2025-12-14', '09:11:00', '6', 300, 24100.00, 'n/a', '2025-12-01 21:28:00', '', 'scheduled', '2025-12-01 21:28:00', '2025-12-01 21:28:00'),
-(36, 130, 'asdawdad', 'SIXTO', '+34673555075', 'jomeltienes00@gmail.com', 'AWDAD', 'Avenida La Cornisa 31 08392 Sant Andreu de Llavaneres', 4, '', '2025-12-15', '04:42:00', '7', 3, 10350.00, 'SAD ASDASD', '2025-12-11 20:15:39', '', 'scheduled', '2025-12-12 04:15:39', '2025-12-12 04:15:39');
+(36, 130, 'asdawdad', 'SIXTO', '+34673555075', 'jomeltienes00@gmail.com', 'AWDAD', 'Avenida La Cornisa 31 08392 Sant Andreu de Llavaneres', 4, '', '2025-12-15', '04:42:00', '7', 3, 10350.00, 'SAD ASDASD', '2025-12-11 20:15:39', '', 'scheduled', '2025-12-12 04:15:39', '2025-12-12 04:15:39'),
+(37, 143, 'toiurna', 'dwa daw', '+34673555075', 'jomeltienes00@gmail.com', 'akp', 'Avenida La Cornisa 31 08392 Sant Andreu de Llavaneres', 8, '', '2026-01-02', '14:49:00', '8', 2, 3307.50, 'assxad', '2025-12-18 06:48:25', '', 'completed', '2025-12-18 06:48:25', '2025-12-18 15:19:47');
 
 -- --------------------------------------------------------
 
@@ -1053,11 +1092,11 @@ DROP TABLE IF EXISTS `extension_files`;
 CREATE TABLE IF NOT EXISTS `extension_files` (
   `id` int NOT NULL AUTO_INCREMENT,
   `booking_extension_id` int UNSIGNED NOT NULL,
-  `original_filename` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `stored_filename` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `file_path` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `original_filename` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `stored_filename` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `file_path` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `file_size` bigint NOT NULL,
-  `mime_type` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `mime_type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `uploaded_by` int NOT NULL,
   `upload_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -1097,21 +1136,14 @@ CREATE TABLE IF NOT EXISTS `facilitator_checklists` (
   PRIMARY KEY (`id`),
   KEY `idx_submitted_at` (`submitted_at`),
   KEY `idx_booking_event` (`booking_id`,`event_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `facilitator_checklists`
 --
 
 INSERT INTO `facilitator_checklists` (`id`, `booking_id`, `event_id`, `facilitator_id`, `facilitator_name`, `notes`, `signature`, `submitted_at`, `created_at`) VALUES
-(1, 37, 6, 23, 'facilitator', NULL, NULL, '2025-11-19 13:47:23', '2025-11-19 13:47:23'),
-(2, 42, 9, 20, 'studentss', NULL, NULL, '2025-11-19 16:42:36', '2025-11-19 16:42:36'),
-(3, 38, 7, 23, 'facilitator', NULL, NULL, '2025-11-19 22:46:20', '2025-11-19 22:46:20'),
-(4, 34, 21, 23, 'facilitator', NULL, NULL, '2025-11-27 06:34:50', '2025-11-27 06:34:50'),
-(5, 44, 8, 23, 'facilitator', NULL, NULL, '2025-11-27 13:01:29', '2025-11-27 13:01:29'),
-(6, 42, 9, 23, 'facilitator', NULL, NULL, '2025-11-27 17:07:09', '2025-11-27 17:07:09'),
-(7, 54, 15, 23, 'facilitator', NULL, NULL, '2025-12-01 05:55:35', '2025-12-01 05:55:35'),
-(8, 71, 20, 23, 'facilitator', NULL, NULL, '2025-12-02 06:07:25', '2025-12-02 06:07:25');
+(16, 143, 37, 46, 'akiesha', NULL, NULL, '2025-12-18 23:19:45', '2025-12-18 23:19:45');
 
 -- --------------------------------------------------------
 
@@ -1134,40 +1166,18 @@ CREATE TABLE IF NOT EXISTS `facilitator_checklist_items` (
   PRIMARY KEY (`id`),
   KEY `checklist_id` (`checklist_id`),
   KEY `equipment_id` (`equipment_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `facilitator_checklist_items`
 --
 
 INSERT INTO `facilitator_checklist_items` (`id`, `checklist_id`, `equipment_id`, `equipment_name`, `expected_quantity`, `actual_quantity`, `equipment_condition`, `is_available`, `remarks`, `created_at`) VALUES
-(1, 1, 6, 'Multimedia Projector', 1, 1, 'good', 1, '', '2025-11-19 13:47:23'),
-(2, 1, 7, 'Microphone', 1, 1, 'damaged', 0, '', '2025-11-19 13:47:23'),
-(3, 2, 4, 'Chair Covers', 6, 6, 'good', 1, '', '2025-11-19 16:42:36'),
-(4, 2, 6, 'Multimedia Projector', 1, 1, 'good', 1, '', '2025-11-19 16:42:36'),
-(5, 2, 7, 'Microphone', 2, 2, 'good', 1, '', '2025-11-19 16:42:36'),
-(6, 2, 8, 'PARLED Backdrop Lights', 10, 10, 'good', 1, '', '2025-11-19 16:42:36'),
-(7, 2, 9, 'Frontal Lighting', 6, 6, 'damaged', 0, '', '2025-11-19 16:42:36'),
-(8, 3, 6, 'Multimedia Projector', 2, 2, 'good', 1, '', '2025-11-19 22:46:20'),
-(9, 3, 7, 'Microphone', 2, 1, 'good', 1, '', '2025-11-19 22:46:20'),
-(10, 4, 6, 'Multimedia Projector', 1, 1, 'damaged', 0, '', '2025-11-27 06:34:50'),
-(11, 4, 7, 'Microphone', 2, 1, 'good', 1, '', '2025-11-27 06:34:50'),
-(12, 5, 4, 'Chair Covers', 3, 1, 'good', 1, '', '2025-11-27 13:01:29'),
-(13, 5, 6, 'Multimedia Projector', 1, 1, 'damaged', 0, '', '2025-11-27 13:01:29'),
-(14, 5, 7, 'Microphone', 2, 1, 'good', 1, '', '2025-11-27 13:01:29'),
-(15, 6, 4, 'Chair Covers', 6, 1, 'damaged', 0, '', '2025-11-27 17:07:09'),
-(16, 6, 6, 'Multimedia Projector', 1, 1, 'damaged', 0, '', '2025-11-27 17:07:09'),
-(17, 6, 7, 'Microphone', 2, 1, 'good', 1, '', '2025-11-27 17:07:09'),
-(18, 6, 8, 'PARLED Backdrop Lights', 10, 1, 'damaged', 0, '', '2025-11-27 17:07:09'),
-(19, 6, 9, 'Frontal Lighting', 6, 1, 'damaged', 0, '', '2025-11-27 17:07:09'),
-(20, 7, 4, 'Chair Covers', 6, 1, 'damaged', 0, '', '2025-12-01 05:55:35'),
-(21, 7, 6, 'Multimedia Projector', 1, 1, 'damaged', 0, '', '2025-12-01 05:55:35'),
-(22, 7, 7, 'Microphone', 2, 1, 'good', 1, '', '2025-12-01 05:55:35'),
-(23, 8, 2, 'Monobloc Chairs', 2, 1, 'damaged', 0, '', '2025-12-02 06:07:25'),
-(24, 8, 3, 'Table Covers', 3, 1, 'good', 1, '', '2025-12-02 06:07:25'),
-(25, 8, 4, 'Chair Covers', 3, 1, 'good', 1, '', '2025-12-02 06:07:25'),
-(26, 8, 6, 'Multimedia Projector', 1, 1, 'damaged', 0, '', '2025-12-02 06:07:25'),
-(27, 8, 7, 'Microphone', 2, 1, 'good', 1, '', '2025-12-02 06:07:25');
+(63, 16, 1, 'Tables', 10, 1, 'good', 1, '', '2025-12-18 23:19:45'),
+(64, 16, 2, 'Monobloc Chairs', 30, 1, 'good', 1, '', '2025-12-18 23:19:45'),
+(65, 16, 4, 'Chair Covers', 1, 1, 'good', 1, '', '2025-12-18 23:19:45'),
+(66, 16, 22, 'Heavy Duty Electric Fans', 5, 1, 'good', 1, '', '2025-12-18 23:19:45'),
+(67, 16, 24, 'TV Monitor', 1, 1, 'good', 1, '', '2025-12-18 23:19:45');
 
 -- --------------------------------------------------------
 
@@ -1181,6 +1191,7 @@ CREATE TABLE IF NOT EXISTS `facilities` (
   `facility_key` varchar(50) NOT NULL,
   `name` varchar(255) NOT NULL,
   `icon` varchar(10) DEFAULT NULL,
+  `capacity` int DEFAULT NULL,
   `description` text,
   `is_active` tinyint(1) DEFAULT '1',
   `is_maintenance` tinyint(1) DEFAULT '0',
@@ -1196,14 +1207,14 @@ CREATE TABLE IF NOT EXISTS `facilities` (
 -- Dumping data for table `facilities`
 --
 
-INSERT INTO `facilities` (`id`, `facility_key`, `name`, `icon`, `description`, `is_active`, `is_maintenance`, `additional_hours_rate`, `extended_hour_rate`, `created_at`, `updated_at`) VALUES
-(1, 'auditorium', 'University Auditorium', '🎭', 'miss ko na sha', 0, 0, 700.00, 500.00, '2025-10-15 23:18:37', '2025-12-12 10:43:12'),
-(2, 'gymnasium', 'University Gymnasium', '🏀', '', 1, 0, 550.00, 500.00, '2025-10-15 23:18:37', '2025-11-30 07:22:19'),
-(4, 'function-hall', 'Function Hall (ACAD Bldg.)', '🏛️', NULL, 1, 0, 450.00, NULL, '2025-10-15 23:18:37', '2025-11-25 22:42:34'),
-(6, 'pearl-restaurant', 'Pearl Mini Restaurant', '🍽️', NULL, 1, 0, 400.00, NULL, '2025-10-15 23:18:37', '2025-11-25 22:42:34'),
-(7, 'staff-house', 'Staff House Rooms', '🏠', NULL, 1, 0, 350.00, NULL, '2025-10-15 23:18:37', '2025-11-25 22:42:34'),
-(8, 'classrooms', 'Classrooms', '📖', NULL, 1, 0, 300.00, NULL, '2025-10-15 23:18:37', '2025-11-25 22:42:34'),
-(12, 'library', 'AVR Library', '📚', 'avr library', 1, 0, 300.00, 500.00, '2025-12-12 10:02:50', '2025-12-12 10:02:50');
+INSERT INTO `facilities` (`id`, `facility_key`, `name`, `icon`, `capacity`, `description`, `is_active`, `is_maintenance`, `additional_hours_rate`, `extended_hour_rate`, `created_at`, `updated_at`) VALUES
+(1, 'auditorium', 'University Auditorium', '🎭', 500, '', 0, 0, 700.00, 500.00, '2025-10-15 23:18:37', '2025-12-18 16:34:11'),
+(2, 'gymnasium', 'University Gymnasium', '🏀', 300, '', 1, 0, 550.00, 500.00, '2025-10-15 23:18:37', '2025-12-18 16:34:11'),
+(4, 'function-hall', 'Function Hall (ACAD Bldg.)', '🏛️', 200, NULL, 1, 0, 450.00, NULL, '2025-10-15 23:18:37', '2025-12-18 16:34:11'),
+(6, 'pearl-restaurant', 'Pearl Mini Restaurant', '🍽️', 100, NULL, 1, 0, 400.00, NULL, '2025-10-15 23:18:37', '2025-12-18 16:34:11'),
+(7, 'staff-house', 'Staff House Rooms', '🏠', 50, NULL, 1, 0, 350.00, NULL, '2025-10-15 23:18:37', '2025-12-18 16:34:11'),
+(8, 'classrooms', 'Classrooms', '📖', 40, NULL, 1, 0, 300.00, NULL, '2025-10-15 23:18:37', '2025-12-18 16:34:11'),
+(12, 'library', 'AVR Library', '📚', 80, 'avr library', 1, 0, 300.00, 500.00, '2025-12-12 10:02:50', '2025-12-18 16:34:11');
 
 -- --------------------------------------------------------
 
@@ -1214,10 +1225,10 @@ INSERT INTO `facilities` (`id`, `facility_key`, `name`, `icon`, `description`, `
 DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE IF NOT EXISTS `migrations` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `version` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `class` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `group` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `namespace` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `version` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `class` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `group` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `namespace` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `time` int NOT NULL,
   `batch` int UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
@@ -1540,7 +1551,7 @@ CREATE TABLE IF NOT EXISTS `signatories` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `template_name` (`template_name`,`field_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `signatories`
@@ -1549,7 +1560,9 @@ CREATE TABLE IF NOT EXISTS `signatories` (
 INSERT INTO `signatories` (`id`, `template_name`, `field_key`, `field_label`, `field_value`, `updated_at`) VALUES
 (1, 'moa_template.docx', '###VP_FINANCE###', '###VP_FINANCE###', 'JOMEL S. PENETRANTE', '2025-12-17 17:29:10'),
 (2, 'moa_template.docx', '###SPMO_WITNESS1###', '###SPMO_WITNESS1###', 'MARY CHIE A. DE LA CRUZ, CPA, MBA', '2025-12-17 17:28:40'),
-(3, 'moa_template.docx', '###ACCOUNTANT###', '###ACCOUNTANT###', 'KAREN H. CRUZATA, CPA', '2025-12-17 17:28:40');
+(3, 'moa_template.docx', '###ACCOUNTANT###', '###ACCOUNTANT###', 'KAREN H. CRUZATA, CPA', '2025-12-17 17:28:40'),
+(4, 'equipment_request_form_template.xlsx', 'C63', 'C63', 'CHIE A. DE LA CRUZ, CPA', '2025-12-18 11:29:34'),
+(5, 'equipment_request_form_template.xlsx', 'C68', 'C68', 'NANCY S. PENETRANTE', '2025-12-18 11:29:34');
 
 -- --------------------------------------------------------
 
@@ -1586,14 +1599,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(100) NOT NULL,
   `contact_number` varchar(20) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
-  `role` enum('admin','user','student','facilitator','employee') NOT NULL DEFAULT 'user',
+  `role` enum('admin','user','student','facilitator','employee') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'user',
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `google_id` varchar(255) DEFAULT NULL COMMENT 'Google OAuth ID for users logging in with Google',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   KEY `idx_role` (`role`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `users`
@@ -1601,7 +1614,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `contact_number`, `password`, `role`, `created_at`, `updated_at`, `google_id`) VALUES
 (2, 'test', 'test@gmail.com', '673555075', '$2y$10$GMgDl0.RHkCrqbd/ZAsWuO6QMFCq56Rm7X3.wwRVMf1zPzDTuAFyi', 'admin', '2025-10-15 23:18:37', '2025-10-16 13:36:06', NULL),
-(17, 'jomeltienes@gmail.com', 'jomel@gmail.com', '098723213', '$2y$10$vF5VA0GxKkXuS93NDy7nXeURX/IDOhUwtLbrajvEeDlei/4SGLmti', 'student', '2025-10-21 12:34:54', '2025-10-21 12:34:54', NULL),
+(17, 'jomeltienes@gmail.com', 'jomel@gmail.com', '098723213', '$2y$10$xB7mVJx6aE74Vk0HmNcJ4uhLn63PDLyZMM2va8sQy09AAKxtWt66G', 'student', '2025-10-21 12:34:54', '2025-12-18 11:33:27', NULL),
 (31, 'ivan', 'ivaaanjoshua@gmail.com', '09123456789', '$2y$10$r0URaRslW9GgRMdFmfUAzOTtzYJ50gZbRUv69IbwpZ6AdWlsv./dm', 'user', '2025-12-14 16:05:47', '2025-12-14 16:05:47', NULL),
 (32, 'April Boragay Abonita', 'apabonita@my.cspc.edu.ph', '09203197861', '$2y$10$ttl12tMmpPf4MM6uxZi/zuLJfWzLeDFnC6ljhJ3wn776Lga0dp.Pu', 'student', '2025-12-14 18:12:33', '2025-12-14 18:12:33', NULL),
 (33, 'Janna May Tangtang ', 'jannamay.tangtang@usant.edu.ph', '09129284359', '$2y$10$EWNrB.wc7ikh7f5NBHK4/.D7UZ/bcBDMX2pATXrClyUpCtVsLFfLa', 'user', '2025-12-14 18:16:58', '2025-12-14 18:16:58', NULL),
@@ -1613,7 +1626,10 @@ INSERT INTO `users` (`id`, `full_name`, `email`, `contact_number`, `password`, `
 (42, 'Johnmark Fabilane ', 'johnmarkfabilane@gmail.com', '09505364538', '$2y$10$NrciHr7Y3Vs8CMVB1vZpteyhj1v61hAe3zjHDVP3TKlal32n.fO1K', 'user', '2025-12-17 18:00:55', '2025-12-17 18:00:55', NULL),
 (43, 'Raia Lazim', 'lazimraimona@gmail.com', '09101216634', '$2y$10$Y5bHcBUJYviph1dgpWz9.uOPKGE2zDmMbkn9dbuVocrPgInyBMNY.', 'user', '2025-12-17 18:03:10', '2025-12-17 18:03:10', NULL),
 (44, 'Angel Aaron Granali', 'agranali15@gmail.com', '09668535854', '$2y$10$Hlp5DjbXpxLD0W7p.n4kzO7N4AWFDhJ7CPZoXe.VSGVG6EuQXz9Na', 'user', '2025-12-17 18:06:50', '2025-12-17 18:06:50', NULL),
-(45, 'Stephanie Castillo', 'stcastillo@my.cspc.edu.ph', '09766028208', '$2y$10$ZVsiJByD2hkr/o29Nnls9.9r/gzvylnnEgT.vL.rnSuPAdLA1LjpK', 'student', '2025-12-17 18:46:23', '2025-12-17 18:46:23', NULL);
+(45, 'Stephanie Castillo', 'stcastillo@my.cspc.edu.ph', '09766028208', '$2y$10$ZVsiJByD2hkr/o29Nnls9.9r/gzvylnnEgT.vL.rnSuPAdLA1LjpK', 'student', '2025-12-17 18:46:23', '2025-12-17 18:46:23', NULL),
+(46, 'akiesha', 'faci@gmail.com', '673555075', '$2y$10$CTyPJNjLen9QLU8FSKiJV.Np0yjUMkIvtN21fTwQb2vB0BR34LUp2', 'facilitator', '2025-12-17 19:20:15', '2025-12-17 19:20:15', NULL),
+(47, 'jomel', 'jomeltienes00@gmail.com', '673555075', '$2y$10$N.kA22kPXlUATv.hvwB5MuTElPwM9P.tLzO/Ga/2UDK/RBbWlp6CK', 'user', '2025-12-18 11:35:06', '2025-12-18 11:35:45', NULL),
+(49, 'jomel tienes', 'employee@gmail.com', '673555075', '$2y$10$9cJVptHVUE8mJZi/MqPaiO1q283GFG3U7EfPkFBCTexCQ2.5qwI4C', 'employee', '2025-12-19 18:06:16', '2025-12-19 18:06:16', NULL);
 
 -- --------------------------------------------------------
 
@@ -1624,15 +1640,15 @@ INSERT INTO `users` (`id`, `full_name`, `email`, `contact_number`, `password`, `
 DROP TABLE IF EXISTS `view_booking_summary`;
 CREATE TABLE IF NOT EXISTS `view_booking_summary` (
   `booking_id` int DEFAULT NULL,
-  `client_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `client_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `equipment_count` bigint DEFAULT NULL,
   `event_date` date DEFAULT NULL,
   `event_time` time DEFAULT NULL,
-  `event_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `facility_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `plan_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` enum('pending','confirmed','cancelled','completed','pending_cancellation') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `event_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facility_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `plan_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` enum('pending','confirmed','cancelled','completed','pending_cancellation') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `total_cost` decimal(10,2) DEFAULT NULL,
   `total_equipment_quantity` decimal(32,0) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1646,15 +1662,15 @@ CREATE TABLE IF NOT EXISTS `view_booking_summary` (
 DROP TABLE IF EXISTS `view_equipment_availability`;
 CREATE TABLE IF NOT EXISTS `view_equipment_availability` (
   `available` bigint DEFAULT NULL,
-  `category` enum('furniture','audio_visual','lighting','technical','logistics') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `current_status` varchar(17) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category` enum('furniture','audio_visual','lighting','technical','logistics') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `current_status` varchar(17) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `damaged` int DEFAULT NULL,
   `good` int DEFAULT NULL,
   `id` int DEFAULT NULL,
   `is_rentable` tinyint(1) DEFAULT NULL,
   `is_trackable` tinyint(1) DEFAULT NULL,
   `minimum_quantity` int DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `rate` decimal(10,2) DEFAULT NULL,
   `rented` int DEFAULT NULL,
   `total_quantity` int DEFAULT NULL
@@ -1668,16 +1684,16 @@ CREATE TABLE IF NOT EXISTS `view_equipment_availability` (
 
 DROP TABLE IF EXISTS `view_plan_complete_details`;
 CREATE TABLE IF NOT EXISTS `view_plan_complete_details` (
-  `category` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `duration` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `facility_icon` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `duration` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facility_icon` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `facility_id` int DEFAULT NULL,
-  `facility_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facility_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_trackable` bigint DEFAULT NULL,
-  `item_name` mediumtext COLLATE utf8mb4_unicode_ci,
-  `item_type` varchar(9) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `item_name` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `item_type` varchar(9) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `plan_id` int DEFAULT NULL,
-  `plan_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `plan_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
   `quantity` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -1068,3 +1068,1385 @@ DEBUG - 2025-12-18 03:24:15 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-12-18 03:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-12-18 03:24:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-12-18 03:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 11:50:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 11:51:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 12:09:10 --> Failed login attempt for: admin@example.com - User not found
+DEBUG - 2025-12-18 12:09:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 12:09:11 --> Failed login attempt for: invalid@example.com - User not found
+DEBUG - 2025-12-18 12:09:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:09:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 12:12:37 --> Failed login attempt for: admin@example.com - User not found
+DEBUG - 2025-12-18 12:12:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 12:12:38 --> Failed login attempt for: invalid@example.com - User not found
+DEBUG - 2025-12-18 12:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 12:15:08 --> Failed login attempt for: admin@example.com - User not found
+DEBUG - 2025-12-18 12:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 12:15:09 --> Failed login attempt for: invalid@example.com - User not found
+DEBUG - 2025-12-18 12:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:15:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 12:17:14 --> Failed login attempt for: admin@example.com - User not found
+DEBUG - 2025-12-18 12:17:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 12:17:14 --> Failed login attempt for: invalid@example.com - User not found
+DEBUG - 2025-12-18 12:17:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:17:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 12:18:38 --> Failed login attempt for: admin@example.com - User not found
+DEBUG - 2025-12-18 12:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 12:18:39 --> Failed login attempt for: invalid@example.com - User not found
+DEBUG - 2025-12-18 12:18:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 12:18:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 13:01:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 13:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 13:02:50 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-18 13:02:50 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-18 13:02:50 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:02:50 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:02:50 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:02:50 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:02:50 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:02:50 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-18 13:02:50 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-18 13:02:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 13:02:57 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 13:02:57 --> EventsAPI - Status breakdown: {"pending":6}
+DEBUG - 2025-12-18 13:03:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 13:03:03 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-18 13:03:03 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-18 13:03:03 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:03:03 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:03:03 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:03:03 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:03:03 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:03:03 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-18 13:03:03 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:03:33 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-18 13:03:33 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-18 13:03:33 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:03:33 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:03:33 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:03:33 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:03:33 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 13:03:33 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-18 13:03:33 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-18 13:03:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 13:03:40 --> === FACILITY DATA DEBUG ===
+INFO - 2025-12-18 13:03:40 --> Facility Key: gymnasium
+INFO - 2025-12-18 13:03:40 --> Raw data count: 102
+INFO - 2025-12-18 13:03:40 --> First row data: {"id":"2","facility_key":"gymnasium","name":"University Gymnasium","icon":"\ud83c\udfc0","description":"","is_active":"1","is_maintenance":"0","additional_hours_rate":"550.00","extended_hour_rate":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-30 15:22:19","plan_id":"1","plan_key":"gym-basic-4h","plan_name":"Basic Package","duration":"4 hours","price":"4000.00","feature":"Spacious Parking Area","equipment_id":"7","equipment_name":"Microphone","quantity_included":"2","unit":"included","equipment_category":"audio_visual"}
+INFO - 2025-12-18 13:03:40 --> additional_hours_rate from DB: 550.00
+INFO - 2025-12-18 13:03:40 --> Formatted facility data: {"success":true,"facility":{"name":"University Gymnasium","icon":"\ud83c\udfc0","facility_id":"2","extended_hour_rate":"500.00","additional_hours_rate":"550.00","plans":[{"id":"1","name":"Basic Package","duration":"4 hours","price":4000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"}]},{"id":"3","name":"Basic Setup","duration":"4 hours","price":8000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":9,"name":"Frontal Lighting","quantity_included":6,"unit":"per piece","category":"lighting"},{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"}]},{"id":"5","name":"Mid Side Setup","duration":"4 hours","price":10000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":9,"name":"Frontal Lighting","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":10,"name":"Moving Head Lights","quantity_included":2,"unit":"per unit","category":"lighting"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":11,"name":"Smoke Machine","quantity_included":1,"unit":"per piece","category":"technical"}]},{"id":"2","name":"Basic Package","duration":"8 hours","price":12000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"}]},{"id":"7","name":"Full Setup","duration":"4 hours","price":13000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":9,"name":"Frontal Lighting","quantity_included":16,"unit":"per piece","category":"lighting"},{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":10,"name":"Moving Head Lights","quantity_included":4,"unit":"per unit","category":"lighting"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":11,"name":"Smoke Machine","quantity_included":1,"unit":"per piece","category":"technical"},{"id":12,"name":"Strobe Light","quantity_included":1,"unit":"per piece","category":"lighting"}]},{"id":"4","name":"Basic Setup","duration":"8 hours","price":15000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":9,"name":"Frontal Lighting","quantity_included":6,"unit":"per piece","category":"lighting"},{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"}]},{"id":"6","name":"Mid Side Setup","duration":"8 hours","price":20000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":9,"name":"Frontal Lighting","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":10,"name":"Moving Head Lights","quantity_included":2,"unit":"per unit","category":"lighting"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":11,"name":"Smoke Machine","quantity_included":1,"unit":"per piece","category":"technical"}]},{"id":"8","name":"Full Setup","duration":"8 hours","price":25000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":9,"name":"Frontal Lighting","quantity_included":16,"unit":"per piece","category":"lighting"},{"id":7,"name":"Microphone","quantity_included":2,"unit":"included","category":"audio_visual"},{"id":10,"name":"Moving Head Lights","quantity_included":4,"unit":"per unit","category":"lighting"},{"id":6,"name":"Multimedia Projector","quantity_included":1,"unit":"included","category":"audio_visual"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":11,"name":"Smoke Machine","quantity_included":1,"unit":"per piece","category":"technical"},{"id":12,"name":"Strobe Light","quantity_included":1,"unit":"per piece","category":"lighting"}]},{"id":"9","name":"Ballroom\/Live Band Setup","duration":"8 hours","price":35000,"features":["Spacious Parking Area","Free use of the Campus Parks\/Grounds for pre-event photoshoot"],"included_equipment":[{"id":16,"name":"Drum Set Microphone","quantity_included":1,"unit":"per set","category":"audio_visual"},{"id":19,"name":"Follow Spot","quantity_included":2,"unit":"per unit","category":"lighting"},{"id":9,"name":"Frontal Lighting","quantity_included":16,"unit":"per piece","category":"lighting"},{"id":13,"name":"Full Range Speaker System","quantity_included":6,"unit":"per unit","category":"audio_visual"},{"id":20,"name":"Intercom System","quantity_included":1,"unit":"per set","category":"technical"},{"id":10,"name":"Moving Head Lights","quantity_included":6,"unit":"per unit","category":"lighting"},{"id":8,"name":"PARLED Backdrop Lights","quantity_included":10,"unit":"per piece","category":"lighting"},{"id":15,"name":"Powered 15\" Monitor Speaker","quantity_included":3,"unit":"per unit","category":"audio_visual"},{"id":14,"name":"Powered 18\" Subwoofer","quantity_included":2,"unit":"per unit","category":"audio_visual"},{"id":21,"name":"Projector Screen (White)","quantity_included":2,"unit":"per piece","category":"audio_visual"},{"id":12,"name":"Strobe Light","quantity_included":1,"unit":"per piece","category":"lighting"},{"id":17,"name":"Wired Microphone","quantity_included":4,"unit":"per piece","category":"audio_visual"},{"id":18,"name":"Wireless Microphone","quantity_included":2,"unit":"per piece","category":"audio_visual"}]}]}}
+INFO - 2025-12-18 13:03:40 --> === END FACILITY DATA DEBUG ===
+DEBUG - 2025-12-18 13:03:40 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-18 13:03:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 13:05:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 13:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:30:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:31:02 --> User faci@gmail.com logged in successfully as facilitator
+DEBUG - 2025-12-18 14:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:31:03 --> Facilitator - Found 0 confirmed bookings
+DEBUG - 2025-12-18 14:31:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:31:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:31:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 14:31:52 --> Failed login attempt for: " or ""=" - User not found
+DEBUG - 2025-12-18 14:31:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:33:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:33:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:33:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:33:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:33:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:33:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:34:08 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 14:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:34:09 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:34:09 --> EventsAPI - Status breakdown: {"pending":6}
+DEBUG - 2025-12-18 14:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:34:10 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:34:10 --> EventsAPI - Status breakdown: {"pending":6}
+DEBUG - 2025-12-18 14:34:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:34:12 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-18 14:34:12 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-18 14:34:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:34:12 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-18 14:34:12 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-18 14:34:12 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:34:12 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:34:12 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:34:12 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:34:12 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:34:12 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-18 14:34:12 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-18 14:34:13 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-18 14:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:34:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:34:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:34:50 --> Booking #142 declined. Reason: policy-violation
+INFO - 2025-12-18 14:35:00 --> Booking notification sent: declined for booking #142 to elladichoso1@gmail.com
+DEBUG - 2025-12-18 14:35:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:35:00 --> Booking #142 declined. Reason: policy-violation
+INFO - 2025-12-18 14:35:08 --> Booking notification sent: declined for booking #142 to elladichoso1@gmail.com
+DEBUG - 2025-12-18 14:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:35:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:35:24 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 14:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:35:25 --> EventsAPI - Found 5 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:35:25 --> EventsAPI - Status breakdown: {"pending":5}
+DEBUG - 2025-12-18 14:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:35:25 --> EventsAPI - Found 5 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:35:25 --> EventsAPI - Status breakdown: {"pending":5}
+DEBUG - 2025-12-18 14:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:35:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:35:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:36:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:42:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:42:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:45:33 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 14:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:45:34 --> EventsAPI - Found 5 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:45:34 --> EventsAPI - Status breakdown: {"pending":5}
+DEBUG - 2025-12-18 14:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:45:35 --> EventsAPI - Found 5 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:45:35 --> EventsAPI - Status breakdown: {"pending":5}
+DEBUG - 2025-12-18 14:45:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:45:38 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-18 14:45:38 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-18 14:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:45:38 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-18 14:45:38 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-18 14:45:38 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:45:38 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:45:38 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:45:38 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:45:38 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:45:38 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-18 14:45:38 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-18 14:45:38 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-18 14:46:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:46:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:46:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:46:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:46:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:46:51 --> === fillMoaTemplate starting ===
+DEBUG - 2025-12-18 14:46:51 --> MOA Config Signatories: {"vp_finance":{"marker":"###VP_FINANCE###","label":"Vice President for Administration and Finance","placeholder":"Enter name","format":{"bold":true},"default_name":"NANCY S. PENETRANTE"},"spmo_witness1":{"marker":"###SPMO_WITNESS1###","label":"AOV\/ SPMO III (Witness 1)","placeholder":"Enter name","format":{"bold":true},"default_name":"MARY CHIE A. DE LA CRUZ, CPA, MBA"},"accountant":{"marker":"###ACCOUNTANT###","label":"Accountant III (Witness 2)","placeholder":"Enter name","format":{"bold":true},"default_name":"KAREN H. CRUZATA, CPA"}}
+DEBUG - 2025-12-18 14:46:51 --> --- Processing signatories ---
+DEBUG - 2025-12-18 14:46:51 --> Processing signatory: ###VP_FINANCE###
+DEBUG - 2025-12-18 14:46:51 --> === getSignatoryName called with marker: ###VP_FINANCE###
+DEBUG - 2025-12-18 14:46:51 --> Database query result for ###VP_FINANCE###: "JOMEL S. PENETRANTE"
+INFO - 2025-12-18 14:46:51 --> Using database value for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 14:46:51 --> Final name for ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 14:46:51 --> Setting placeholder "VP_FINANCE" to "JOMEL S. PENETRANTE"
+DEBUG - 2025-12-18 14:46:51 --> Processing signatory: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 14:46:51 --> === getSignatoryName called with marker: ###SPMO_WITNESS1###
+DEBUG - 2025-12-18 14:46:51 --> Database query result for ###SPMO_WITNESS1###: "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+INFO - 2025-12-18 14:46:51 --> Using database value for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 14:46:51 --> Final name for ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 14:46:51 --> Setting placeholder "SPMO_WITNESS1" to "MARY CHIE A. DE LA CRUZ, CPA, MBA"
+DEBUG - 2025-12-18 14:46:51 --> Processing signatory: ###ACCOUNTANT###
+DEBUG - 2025-12-18 14:46:51 --> === getSignatoryName called with marker: ###ACCOUNTANT###
+DEBUG - 2025-12-18 14:46:51 --> Database query result for ###ACCOUNTANT###: "KAREN H. CRUZATA, CPA"
+INFO - 2025-12-18 14:46:51 --> Using database value for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 14:46:51 --> Final name for ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+DEBUG - 2025-12-18 14:46:51 --> Setting placeholder "ACCOUNTANT" to "KAREN H. CRUZATA, CPA"
+DEBUG - 2025-12-18 14:46:51 --> --- Signatories processing complete ---
+DEBUG - 2025-12-18 14:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:48:25 --> Event created successfully from booking #143 with event ID: 37
+INFO - 2025-12-18 14:48:25 --> Survey created successfully for booking #143 with token: e7bc1de81b4edfd70a5d547d92fed6b039bd1f0ef055f6d1fab5bdcd30df0433
+INFO - 2025-12-18 14:48:25 --> Booking #143 approved and event created. Notes: 
+INFO - 2025-12-18 14:48:25 --> Survey token added to booking data: e7bc1de81b4edfd70a5d547d92fed6b039bd1f0ef055f6d1fab5bdcd30df0433
+INFO - 2025-12-18 14:48:29 --> Booking notification sent: approved for booking #143 to jomeltienes00@gmail.com
+DEBUG - 2025-12-18 14:48:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:49:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:49:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:49:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:52:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 14:52:03 --> Failed login attempt for: jomeltienes00@gmail.com - User not found
+DEBUG - 2025-12-18 14:52:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:54:15 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 14:54:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:54:16 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:54:16 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-18 14:54:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:54:16 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:54:16 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-18 14:54:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:54:19 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:54:19 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-18 14:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:54:19 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:54:19 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-18 14:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:54:48 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 14:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:54:49 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:54:49 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-18 14:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:54:49 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:54:49 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-18 14:54:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:54:53 --> [getStudentFacilities] Fetching facilities for student booking
+INFO - 2025-12-18 14:54:53 --> [getStudentFacilities] Total facilities found: 7
+DEBUG - 2025-12-18 14:54:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:54:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:54:58 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:54:58 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+INFO - 2025-12-18 14:54:58 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:54:58 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-18 14:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:55:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:55:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:55:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:56:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:56:08 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 14:56:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:56:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:56:09 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:56:09 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-18 14:56:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:56:10 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:56:10 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-18 14:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:58:45 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 14:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:58:46 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:58:46 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-18 14:58:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:58:46 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:58:46 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-18 14:59:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:59:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:59:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:59:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:59:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:59:23 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 14:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:59:23 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 14:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:59:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:59:24 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:59:24 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-18 14:59:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:59:25 --> EventsAPI - Found 6 events (pending + confirmed + completed)
+INFO - 2025-12-18 14:59:25 --> EventsAPI - Status breakdown: {"pending":5,"confirmed":1}
+DEBUG - 2025-12-18 14:59:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:59:27 --> [getStudentFacilities] Fetching facilities for student booking
+INFO - 2025-12-18 14:59:27 --> [getStudentFacilities] Total facilities found: 7
+DEBUG - 2025-12-18 14:59:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 14:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:59:37 --> [getExternalFacilities] Fetching facilities for external booking
+INFO - 2025-12-18 14:59:37 --> [getExternalFacilities] Total facilities found: 7
+DEBUG - 2025-12-18 14:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 14:59:37 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-18 14:59:37 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-18 14:59:37 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:59:37 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:59:37 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:59:37 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:59:37 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 14:59:37 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-18 14:59:37 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-18 14:59:38 --> getAddons - Raw addons from DB: [{"id":"1","addon_key":"photo-booth","name":"Photo Booth","description":"Professional photo booth setup with props","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"2","addon_key":"live-band","name":"Live Band Setup","description":"Additional power and setup for live band performance","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"3","addon_key":"led-tv","name":"LED Wall TV","description":"Large LED display for presentations or entertainment","price":"2000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"4","addon_key":"spotlight","name":"Professional Spotlight","description":"Outsourced professional spotlight equipment","price":"1000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"5","addon_key":"special-lighting","name":"Special Lighting Package","description":"Advanced lighting setup by external provider","price":"3000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"6","addon_key":"sound-system","name":"Premium Sound System","description":"Professional grade sound system by external provider","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-10-16 07:18:37"},{"id":"7","addon_key":"overtime","name":"Overtime Staff Support","description":"Overtime Pay for 5 staff members (weekends\/holidays\/after 5PM)","price":"5000.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"9","addon_key":"additional-hours","name":"Additional Hours","description":"Extra hours beyond plan duration","price":"500.00","created_at":"2025-10-16 07:18:37","updated_at":"2025-11-28 01:21:18"},{"id":"11","addon_key":"catering","name":"catering","description":"asdas da","price":"10000.00","created_at":"2025-11-27 18:37:30","updated_at":"2025-11-27 18:37:30"}]
+DEBUG - 2025-12-18 15:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 15:00:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 15:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 15:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 15:00:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:25:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:26:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:26:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:26:26 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 19:26:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:26:26 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 19:26:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:26:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:26:27 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:26:27 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:26:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:26:27 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:26:27 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:27:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:27:51 --> Looking for template config: billing_statement_template (from: billing_statement_template.xlsx)
+DEBUG - 2025-12-18 19:27:54 --> MOA DB Values: [{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"}]
+DEBUG - 2025-12-18 19:27:54 --> MOA DB Lookup: {"###VP_FINANCE###":"JOMEL S. PENETRANTE","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###ACCOUNTANT###":"KAREN H. CRUZATA, CPA"}
+DEBUG - 2025-12-18 19:27:54 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 19:27:54 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 19:27:54 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 19:27:54 --> Config found: YES
+DEBUG - 2025-12-18 19:27:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:27:57 --> Looking for template config: moa_template (from: moa_template.docx)
+DEBUG - 2025-12-18 19:27:57 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 19:27:57 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 19:27:57 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 19:27:57 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 19:27:57 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 19:27:57 --> Config found: YES
+DEBUG - 2025-12-18 19:29:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:29:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:29:30 --> Looking for template config: equipment_request_form_template (from: equipment_request_form_template.xlsx)
+DEBUG - 2025-12-18 19:29:31 --> MOA DB Values: [{"id":"3","template_name":"moa_template.docx","field_key":"###ACCOUNTANT###","field_label":"###ACCOUNTANT###","field_value":"KAREN H. CRUZATA, CPA","updated_at":"2025-12-18 01:28:40"},{"id":"2","template_name":"moa_template.docx","field_key":"###SPMO_WITNESS1###","field_label":"###SPMO_WITNESS1###","field_value":"MARY CHIE A. DE LA CRUZ, CPA, MBA","updated_at":"2025-12-18 01:28:40"},{"id":"1","template_name":"moa_template.docx","field_key":"###VP_FINANCE###","field_label":"###VP_FINANCE###","field_value":"JOMEL S. PENETRANTE","updated_at":"2025-12-18 01:29:10"}]
+DEBUG - 2025-12-18 19:29:31 --> MOA DB Lookup: {"###ACCOUNTANT###":"KAREN H. CRUZATA, CPA","###SPMO_WITNESS1###":"MARY CHIE A. DE LA CRUZ, CPA, MBA","###VP_FINANCE###":"JOMEL S. PENETRANTE"}
+DEBUG - 2025-12-18 19:29:31 --> Signatory ###VP_FINANCE###: JOMEL S. PENETRANTE
+DEBUG - 2025-12-18 19:29:31 --> Signatory ###SPMO_WITNESS1###: MARY CHIE A. DE LA CRUZ, CPA, MBA
+DEBUG - 2025-12-18 19:29:31 --> Signatory ###ACCOUNTANT###: KAREN H. CRUZATA, CPA
+INFO - 2025-12-18 19:29:31 --> Config found: YES
+DEBUG - 2025-12-18 19:29:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:29:34 --> Saved signatory C63 = CHIE A. DE LA CRUZ, CPA
+DEBUG - 2025-12-18 19:29:34 --> Saved signatory C68 = NANCY S. PENETRANTE
+INFO - 2025-12-18 19:29:34 --> Signatories saved to database: equipment_request_form_template.xlsx by test
+DEBUG - 2025-12-18 19:29:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:29:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:29:39 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:29:39 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:29:39 --> getGuestsByBooking() - Called with bookingId: 143
+INFO - 2025-12-18 19:29:39 --> getGuestsByBooking() - Booking lookup result: Found
+INFO - 2025-12-18 19:29:39 --> getGuestsByBooking() - Found 0 guests for booking_id: 143
+DEBUG - 2025-12-18 19:29:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:29:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:29:43 --> getGuestsByBooking() - Called with bookingId: 143
+INFO - 2025-12-18 19:29:43 --> getGuestsByBooking() - Booking lookup result: Found
+INFO - 2025-12-18 19:29:43 --> getGuestsByBooking() - Found 0 guests for booking_id: 143
+DEBUG - 2025-12-18 19:29:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:29:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:29:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:30:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:30:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:30:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:30:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:30:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:30:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:30:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:30:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:30:54 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 19:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:30:55 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:30:55 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:30:55 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:30:55 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:31:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:31:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:32:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:32:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:32:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:32:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:33:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:33:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:33:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:33:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:33:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:33:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:33:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:33:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:33:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 19:33:44 --> Failed login attempt for: jomeltienes00@gmail.com - User not found
+DEBUG - 2025-12-18 19:33:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-12-18 19:33:53 --> Failed login attempt for: jomeltienes00@gmail.com - User not found
+DEBUG - 2025-12-18 19:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:34:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:34:05 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 19:34:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:34:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:34:05 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:34:05 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:34:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:34:05 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:34:05 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:34:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:34:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:34:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:34:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:34:41 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 19:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:34:41 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:34:41 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:34:41 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:34:41 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:35:17 --> User jomeltienes00@gmail.com logged in successfully as user
+DEBUG - 2025-12-18 19:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:35:45 --> Password changed successfully for user 47
+DEBUG - 2025-12-18 19:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:35:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:35:59 --> getGuestsByBooking() - Called with bookingId: 143
+INFO - 2025-12-18 19:35:59 --> getGuestsByBooking() - Booking lookup result: Found
+INFO - 2025-12-18 19:35:59 --> getGuestsByBooking() - Found 0 guests for booking_id: 143
+DEBUG - 2025-12-18 19:35:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:36:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:36:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:36:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:36:56 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-18 19:36:56 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-18 19:36:56 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 19:36:56 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 19:36:56 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 19:36:56 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 19:36:56 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 19:36:56 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-18 19:36:56 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 19:37:27 --> [getFacilitiesList] Query: SELECT id, facility_key, name, icon, is_active, is_maintenance, extended_hour_rate FROM facilities (no filter)
+INFO - 2025-12-18 19:37:27 --> [getFacilitiesList] Facilities found: 7
+INFO - 2025-12-18 19:37:27 --> [getFacilitiesList] - AVR Library (key: library, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 19:37:27 --> [getFacilitiesList] - Classrooms (key: classrooms, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 19:37:27 --> [getFacilitiesList] - Function Hall (ACAD Bldg.) (key: function-hall, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 19:37:27 --> [getFacilitiesList] - Pearl Mini Restaurant (key: pearl-restaurant, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 19:37:27 --> [getFacilitiesList] - Staff House Rooms (key: staff-house, is_active: 1, is_maintenance: 0)
+INFO - 2025-12-18 19:37:27 --> [getFacilitiesList] - University Auditorium (key: auditorium, is_active: 0, is_maintenance: 0)
+INFO - 2025-12-18 19:37:27 --> [getFacilitiesList] - University Gymnasium (key: gymnasium, is_active: 1, is_maintenance: 0)
+DEBUG - 2025-12-18 19:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:37:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:37:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:37:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:37:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:38:00 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 19:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:38:01 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:38:01 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:38:01 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:38:01 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+INFO - 2025-12-18 19:38:06 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:38:06 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+INFO - 2025-12-18 19:38:06 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:38:06 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+INFO - 2025-12-18 19:38:07 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:38:07 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+INFO - 2025-12-18 19:38:07 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:38:07 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:38:23 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:38:23 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:38:23 --> getGuestsByBooking() - Called with bookingId: 143
+INFO - 2025-12-18 19:38:23 --> getGuestsByBooking() - Booking lookup result: Found
+INFO - 2025-12-18 19:38:23 --> getGuestsByBooking() - Found 0 guests for booking_id: 143
+DEBUG - 2025-12-18 19:38:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:38:26 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:38:26 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:38:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:38:26 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:38:26 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:38:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:38:35 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:38:35 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:38:35 --> getGuestsByBooking() - Called with bookingId: 143
+INFO - 2025-12-18 19:38:35 --> getGuestsByBooking() - Booking lookup result: Found
+INFO - 2025-12-18 19:38:35 --> getGuestsByBooking() - Found 0 guests for booking_id: 143
+DEBUG - 2025-12-18 19:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:38:48 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:38:48 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:38:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:38:52 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:38:52 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:38:52 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 19:38:52 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 19:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:38:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:39:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:39:12 --> User faci@gmail.com logged in successfully as facilitator
+DEBUG - 2025-12-18 19:39:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:39:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:39:13 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 19:39:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 19:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 19:39:14 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 19:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:21:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:21:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:21:49 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:22:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:22:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:22:11 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:22:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:22:51 --> Facilitator checklist stored for event 37 by user 46
+DEBUG - 2025-12-18 20:22:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:22:54 --> Facilitator checklist already exists for event 37
+INFO - 2025-12-18 20:22:54 --> Updated equipment 1: Qty: 200->200, Good: 2->10, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:22:54 --> Updated equipment 2: Qty: 500->500, Good: 0->30, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 20:22:54 --> Updated equipment 4: Qty: 296->296, Good: 3->1, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 20:22:54 --> Updated equipment 22: Qty: 30->30, Good: 30->5, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:22:54 --> Updated equipment 24: Qty: 10->10, Good: 10->1, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:22:54 --> Event 37 inspection completed and status updated to 'completed'
+DEBUG - 2025-12-18 20:22:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:22:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:22:59 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:22:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:23:04 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:23:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:23:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:23:06 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:23:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:23:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:23:49 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-18 20:23:50 --> EventsAPI - Error generating equipment report: No inspection reports available
+DEBUG - 2025-12-18 20:23:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:23:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:23:56 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:23:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:24:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:24:21 --> Facilitator - Downloaded file: Inspection_Evaluation_Event37_2025-12-18_202251.xlsx for event: 37
+DEBUG - 2025-12-18 20:24:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:24:21 --> Facilitator - Downloaded file: Inspection_Evaluation_Event37_2025-12-18_202251.xlsx for event: 37
+DEBUG - 2025-12-18 20:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:25:09 --> Facilitator - Deleted file: Inspection_Evaluation_Event37_2025-12-18_202251.xlsx for event: 37
+DEBUG - 2025-12-18 20:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:25:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:25:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:25:10 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:25:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:25:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:25:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:25:11 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:25:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:25:29 --> Facilitator checklist already exists for event 37
+INFO - 2025-12-18 20:25:29 --> Updated equipment 1: Qty: 200->200, Good: 10->10, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:25:29 --> Updated equipment 2: Qty: 500->500, Good: 30->30, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 20:25:29 --> Updated equipment 4: Qty: 296->296, Good: 1->1, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 20:25:29 --> Updated equipment 22: Qty: 30->30, Good: 5->5, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:25:29 --> Updated equipment 24: Qty: 10->10, Good: 1->1, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:25:29 --> Event 37 inspection completed and status updated to 'completed'
+DEBUG - 2025-12-18 20:25:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:25:36 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:25:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:25:37 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:25:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:25:39 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:25:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:25:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:25:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:25:40 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:25:41 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:25:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:25:55 --> Facilitator checklist already exists for event 37
+INFO - 2025-12-18 20:25:55 --> Updated equipment 1: Qty: 200->200, Good: 10->10, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:25:55 --> Updated equipment 2: Qty: 500->500, Good: 30->30, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 20:25:55 --> Updated equipment 4: Qty: 296->296, Good: 1->1, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 20:25:55 --> Updated equipment 22: Qty: 30->30, Good: 5->5, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:25:55 --> Updated equipment 24: Qty: 10->10, Good: 1->1, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:25:55 --> Event 37 inspection completed and status updated to 'completed'
+DEBUG - 2025-12-18 20:26:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:26:04 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:26:04 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:26:06 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:26:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:26:23 --> Facilitator checklist already exists for event 37
+INFO - 2025-12-18 20:26:23 --> Updated equipment 1: Qty: 200->200, Good: 10->10, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:26:23 --> Updated equipment 2: Qty: 500->500, Good: 30->30, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 20:26:24 --> Updated equipment 4: Qty: 296->296, Good: 1->1, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 20:26:24 --> Updated equipment 22: Qty: 30->30, Good: 5->5, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:26:24 --> Updated equipment 24: Qty: 10->10, Good: 1->1, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:26:24 --> Event 37 inspection completed and status updated to 'completed'
+DEBUG - 2025-12-18 20:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:26:31 --> Facilitator checklist already exists for event 37
+DEBUG - 2025-12-18 20:26:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:26:32 --> Facilitator checklist already exists for event 37
+INFO - 2025-12-18 20:26:32 --> Updated equipment 1: Qty: 200->200, Good: 10->10, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:26:32 --> Updated equipment 2: Qty: 500->500, Good: 30->30, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 20:26:32 --> Updated equipment 4: Qty: 296->296, Good: 1->1, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 20:26:32 --> Updated equipment 22: Qty: 30->30, Good: 5->5, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:26:32 --> Updated equipment 24: Qty: 10->10, Good: 1->1, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 20:26:32 --> Event 37 inspection completed and status updated to 'completed'
+DEBUG - 2025-12-18 20:26:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:26:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:26:42 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:26:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:26:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:26:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:26:43 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:26:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-18 20:27:18 --> EventsAPI - Error generating equipment report: No inspection reports available
+ERROR - 2025-12-18 20:27:19 --> EventsAPI - Error generating equipment report: No inspection reports available
+DEBUG - 2025-12-18 20:30:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:30:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:30:17 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:30:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:30:57 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:31:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:31:01 --> Facilitator - Deleted file: Inspection_Evaluation_Event37_2025-12-18_202631.xlsx for event: 37
+DEBUG - 2025-12-18 20:31:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:31:02 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:31:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:31:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:31:04 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:31:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:32:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:32:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:32:33 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:32:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:32:34 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:32:35 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:33:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:33:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:33:50 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:33:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:33:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:33:52 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:33:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:34:21 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:35:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:35:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:35:22 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:35:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:35:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:35:29 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:35:31 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 20:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:59:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:59:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 20:59:04 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 20:59:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 20:59:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:04:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:04:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:04:02 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 21:04:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:04:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:10:03 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 21:10:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:10:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:10:26 --> Facilitator checklist stored for event 37 by user 46
+INFO - 2025-12-18 21:10:26 --> Updated equipment 1: Qty: 200->200, Good: 10->10, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 21:10:26 --> Updated equipment 2: Qty: 500->500, Good: 30->30, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 21:10:26 --> Updated equipment 4: Qty: 296->296, Good: 1->1, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 21:10:26 --> Updated equipment 22: Qty: 30->30, Good: 5->5, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 21:10:26 --> Updated equipment 24: Qty: 10->10, Good: 1->1, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 21:10:26 --> Event 37 inspection completed and status updated to 'completed'
+DEBUG - 2025-12-18 21:10:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:10:31 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 21:10:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:10:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:10:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:10:32 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 21:10:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:10:34 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 21:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:13:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:13:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:13:42 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 21:13:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:13:48 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 21:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:13:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:13:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:13:49 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 21:13:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:14:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:14:34 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 21:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:14:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:14:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:14:35 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 21:14:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:14:55 --> Facilitator checklist stored for event 37 by user 46
+DEBUG - 2025-12-18 21:15:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:15:06 --> Facilitator checklist already exists for event 37
+INFO - 2025-12-18 21:15:06 --> Updated equipment 1: Qty: 200->200, Good: 10->10, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 21:15:06 --> Updated equipment 2: Qty: 500->500, Good: 30->30, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 21:15:06 --> Updated equipment 4: Qty: 296->296, Good: 1->1, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 21:15:06 --> Updated equipment 22: Qty: 30->30, Good: 5->5, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 21:15:06 --> Updated equipment 24: Qty: 10->10, Good: 1->1, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 21:15:06 --> Event 37 inspection completed and status updated to 'completed'
+DEBUG - 2025-12-18 21:15:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:15:11 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 21:15:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:15:12 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 21:15:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:15:14 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 21:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:15:16 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 21:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:15:22 --> Facilitator - Deleted file: Inspection_Evaluation_Event37_2025-12-18_211455.xlsx for event: 37
+INFO - 2025-12-18 21:15:22 --> Facilitator - Deleted inspection records for booking: 143
+DEBUG - 2025-12-18 21:15:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:15:29 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 21:15:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 21:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 21:15:31 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 21:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:48:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:48:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:48:03 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 22:48:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:48:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:48:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:48:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:48:05 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 22:48:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:51:50 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 22:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:51:53 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 22:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:52:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:52:12 --> Facilitator checklist stored for event 37 by user 46
+INFO - 2025-12-18 22:52:12 --> Updated equipment 1: Qty: 200->200, Good: 10->10, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 22:52:12 --> Updated equipment 2: Qty: 500->500, Good: 30->30, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 22:52:12 --> Updated equipment 4: Qty: 296->296, Good: 1->1, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 22:52:12 --> Updated equipment 22: Qty: 30->30, Good: 5->5, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 22:52:12 --> Updated equipment 24: Qty: 10->10, Good: 1->1, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 22:52:12 --> Event 37 inspection completed and status updated to 'completed'
+DEBUG - 2025-12-18 22:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:52:21 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 22:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:52:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:52:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:52:22 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 22:52:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:52:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:52:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:52:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:52:33 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 22:52:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:53:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:53:57 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 22:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:54:29 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 22:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:54:37 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 22:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:54:41 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 22:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:56:10 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 22:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:56:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:56:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:56:12 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 22:56:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:58:10 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 22:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:58:11 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 22:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:58:32 --> Facilitator checklist stored for event 37 by user 46
+INFO - 2025-12-18 22:58:32 --> Updated equipment 1: Qty: 200->200, Good: 10->1, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 22:58:32 --> Updated equipment 2: Qty: 500->500, Good: 30->30, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 22:58:32 --> Updated equipment 4: Qty: 296->296, Good: 1->1, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 22:58:32 --> Updated equipment 22: Qty: 30->30, Good: 5->5, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 22:58:32 --> Updated equipment 24: Qty: 10->10, Good: 1->1, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 22:58:32 --> Event 37 inspection completed and status updated to 'completed'
+DEBUG - 2025-12-18 22:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:58:35 --> Facilitator checklist already exists for event 37
+DEBUG - 2025-12-18 22:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:58:45 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 22:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:58:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 22:58:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 22:58:47 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 22:58:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:01:16 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:01:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:05:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:09:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:11:46 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:13:00 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:13:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:13:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:13:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:13:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:13:04 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:13:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:13:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:13:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:13:10 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:13:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:13:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:13:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:13:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:13:28 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:13:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:13:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:13:32 --> Facilitator - Deleted file: Inspection_Evaluation_Event37_2025-12-18_225835.xlsx for event: 37
+INFO - 2025-12-18 23:13:32 --> Facilitator - Deleted inspection records for booking: 143
+DEBUG - 2025-12-18 23:13:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:13:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:13:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:13:39 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:13:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:13:53 --> Facilitator checklist stored for event 37 by user 46
+INFO - 2025-12-18 23:13:53 --> Updated equipment 1: Qty: 200->200, Good: 1->10, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 23:13:53 --> Updated equipment 2: Qty: 500->500, Good: 30->30, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 23:13:53 --> Updated equipment 4: Qty: 296->296, Good: 1->1, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 23:13:53 --> Updated equipment 22: Qty: 30->30, Good: 5->5, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 23:13:53 --> Updated equipment 24: Qty: 10->10, Good: 1->1, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 23:13:53 --> Event 37 inspection completed and status updated to 'completed'
+DEBUG - 2025-12-18 23:13:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:13:57 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:13:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:13:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:13:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:13:58 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:13:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:14:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:14:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:14:00 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:14:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:14:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:16:38 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:16:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:16:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:16:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:16:39 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:16:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:16:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:16:41 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:16:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:16:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:16:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:16:45 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:16:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:16:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:17:15 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:17:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:17:17 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:17:37 --> Facilitator checklist stored for event 37 by user 46
+INFO - 2025-12-18 23:17:37 --> Updated equipment 1: Qty: 200->200, Good: 10->10, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 23:17:37 --> Updated equipment 2: Qty: 500->500, Good: 30->30, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 23:17:37 --> Updated equipment 4: Qty: 296->296, Good: 1->1, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 23:17:37 --> Updated equipment 22: Qty: 30->30, Good: 5->5, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 23:17:37 --> Updated equipment 24: Qty: 10->10, Good: 1->1, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 23:17:37 --> Event 37 inspection completed and status updated to 'completed'
+DEBUG - 2025-12-18 23:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:17:40 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:17:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:17:43 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:17:45 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:17:46 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:17:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:17:48 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:17:48 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:17:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:18:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:18:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:18:08 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:18:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:18:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:18:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:18:09 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:18:09 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:19:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:19:04 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:19:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:19:21 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:19:21 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:19:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:19:45 --> Facilitator checklist stored for event 37 by user 46
+DEBUG - 2025-12-18 23:19:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:19:47 --> Facilitator checklist already exists for event 37
+INFO - 2025-12-18 23:19:47 --> Updated equipment 1: Qty: 200->200, Good: 10->10, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 23:19:47 --> Updated equipment 2: Qty: 500->500, Good: 30->30, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 23:19:47 --> Updated equipment 4: Qty: 296->296, Good: 1->1, Damaged: 2->2, Missing: 0
+INFO - 2025-12-18 23:19:47 --> Updated equipment 22: Qty: 30->30, Good: 5->5, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 23:19:47 --> Updated equipment 24: Qty: 10->10, Good: 1->1, Damaged: 0->0, Missing: 0
+INFO - 2025-12-18 23:19:47 --> Event 37 inspection completed and status updated to 'completed'
+DEBUG - 2025-12-18 23:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:19:53 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:19:54 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:20:33 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:21:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:21:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:21:13 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:21:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:22:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:22:39 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:22:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:22:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:23:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:23:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:23:30 --> Facilitator - Found 1 confirmed bookings
+DEBUG - 2025-12-18 23:23:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:23:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:23:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:23:32 --> Facilitator - Found 5 equipment items (booking: 1, plan: 4) for booking 143
+DEBUG - 2025-12-18 23:23:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:41:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:41:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:41:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:42:00 --> User test@gmail.com logged in successfully as admin
+DEBUG - 2025-12-18 23:42:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:42:00 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 23:42:00 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 23:42:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-18 23:42:00 --> EventsAPI - Found 7 events (pending + confirmed + completed)
+INFO - 2025-12-18 23:42:00 --> EventsAPI - Status breakdown: {"pending":6,"confirmed":1}
+DEBUG - 2025-12-18 23:42:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-18 23:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -904,6 +904,7 @@ class Facilitator extends Controller
                 $goodQty = $status['good_quantity'] ?? 0;
                 $damagedQty = $status['damaged_quantity'] ?? 0;
                 $missingQty = $status['missing_quantity'] ?? 0;
+                $expectedQty = $status['expected_quantity'] ?? 0;
 
                 // Get current equipment data
                 $equipment = $this->db->table('equipment')
@@ -912,28 +913,36 @@ class Facilitator extends Controller
                     ->getRowArray();
 
                 if ($equipment) {
-                    // Calculate new quantities
+                    // Update equipment based on inspection results
+                    // Equipment that was rented is now being returned
                     $currentGood = $equipment['good'] ?? 0;
                     $currentDamaged = $equipment['damaged'] ?? 0;
-                    $currentQty = $equipment['quantity'] ?? 0;
+                    $currentRented = $equipment['rented'] ?? $expectedQty;
 
-                    // Update equipment based on inspection results
-                    // Reduce total quantity by missing items
-                    $newTotalQty = max(0, $currentQty - $missingQty);
+                    // After inspection: Add returned items to inventory
+                    // Good items go back to available stock
+                    $returnedGood = $goodQty;
+                    $newGood = $currentGood + $returnedGood;
 
-                    // Update good and damaged counts
-                    $newGoodQty = $goodQty;
-                    $newDamagedQty = $currentDamaged + $damagedQty;
+                    // Damaged items go to damaged inventory
+                    $returnedDamaged = $damagedQty;
+                    $newDamaged = $currentDamaged + $returnedDamaged;
 
-                    // Calculate available (good - rented)
-                    $rented = $equipment['rented'] ?? 0;
-                    $newAvailable = max(0, $newGoodQty - $rented);
+                    // Total quantity stays the same (missing items are tracked separately)
+                    $newTotalQty = $equipment['quantity'] ?? 0;
+
+                    // Rented count is reduced by returned items
+                    $newRented = max(0, $currentRented - $expectedQty);
+
+                    // Available = good - rented (not currently out on loan)
+                    $newAvailable = max(0, $newGood - $newRented);
 
                     // Update equipment record
                     $updateData = [
                         'quantity' => $newTotalQty,
-                        'good' => $newGoodQty,
-                        'damaged' => $newDamagedQty,
+                        'good' => $newGood,
+                        'damaged' => $newDamaged,
+                        'rented' => $newRented,
                         'available' => $newAvailable,
                         'updated_at' => date('Y-m-d H:i:s')
                     ];
@@ -942,7 +951,7 @@ class Facilitator extends Controller
                         ->where('id', $equipmentId)
                         ->update($updateData);
 
-                    log_message('info', "Updated equipment {$equipmentId}: Qty: {$currentQty}->{$newTotalQty}, Good: {$currentGood}->{$newGoodQty}, Damaged: {$currentDamaged}->{$newDamagedQty}, Missing: {$missingQty}");
+                    log_message('info', "Equipment {$equipmentId} returned after inspection: Good: +{$returnedGood} (now {$newGood}), Damaged: +{$returnedDamaged} (now {$newDamaged}), Rented: {$currentRented}->{$newRented}, Missing: {$missingQty}");
                 }
             }
 
@@ -1131,9 +1140,31 @@ class Facilitator extends Controller
             if (unlink($filePath)) {
                 log_message('info', 'Facilitator - Deleted file: ' . $fileName . ' for event: ' . $eventId);
                 
+                // Also delete inspection records from database
+                // First, find the checklist for this booking and event
+                $checklist = $this->db->table('facilitator_checklists')
+                    ->where('booking_id', $bookingId)
+                    ->where('event_id', $eventId)
+                    ->get()
+                    ->getRowArray();
+                
+                if ($checklist) {
+                    // Delete all checklist items for this checklist
+                    $this->db->table('facilitator_checklist_items')
+                        ->where('checklist_id', $checklist['id'])
+                        ->delete();
+                    
+                    // Delete the checklist record itself
+                    $this->db->table('facilitator_checklists')
+                        ->where('id', $checklist['id'])
+                        ->delete();
+                    
+                    log_message('info', 'Facilitator - Deleted inspection records for booking: ' . $bookingId);
+                }
+                
                 return $this->response->setJSON([
                     'success' => true,
-                    'message' => 'File deleted successfully'
+                    'message' => 'File and inspection records deleted successfully'
                 ]);
             } else {
                 throw new \Exception('Could not delete file');

@@ -180,13 +180,45 @@ public function createBooking()
             ->where('event_date', $request['event_date'])
             ->whereIn('status', ['pending', 'completed'])
             ->get()
-            ->getRowArray();
+            ->getResultArray();
 
-        if ($existingBooking) {
-            return $this->response->setJSON([
-                'success' => false,
-                'message' => 'This facility is already booked on this date. Please select a different date or facility.'
-            ])->setStatusCode(409);
+        // Check for time conflicts (with 2-hour grace period)
+        if (!empty($existingBooking)) {
+            $newEventTime = $request['event_time'];
+            $newDuration = $request['duration'] ?? 4;
+            
+            // Calculate new event end time
+            $newStart = new \DateTime($request['event_date'] . ' ' . $newEventTime);
+            $newEnd = clone $newStart;
+            $newEnd->add(new \DateInterval('PT' . intval($newDuration * 60) . 'M'));
+            
+            // Add 2-hour grace period
+            $newEndWithGrace = clone $newEnd;
+            $newEndWithGrace->add(new \DateInterval('PT2H'));
+
+            // Check each existing booking for time conflict
+            foreach ($existingBooking as $booking) {
+                $existingStart = new \DateTime($booking['event_date'] . ' ' . $booking['event_time']);
+                $existingEnd = clone $existingStart;
+                $existingEnd->add(new \DateInterval('PT' . intval($booking['duration'] * 60) . 'M'));
+                
+                // Add 2-hour grace period to existing booking
+                $existingEndWithGrace = clone $existingEnd;
+                $existingEndWithGrace->add(new \DateInterval('PT2H'));
+
+                // Check for overlap including grace periods
+                if ($newStart < $existingEndWithGrace && $newEndWithGrace > $existingStart) {
+                    return $this->response->setJSON([
+                        'success' => false,
+                        'message' => 'This facility has a conflicting booking. Your event time: ' . 
+                                   $newStart->format('h:i A') . ' - ' . $newEnd->format('h:i A') . 
+                                   ' (with 2-hour grace: until ' . $newEndWithGrace->format('h:i A') . '). ' .
+                                   'Existing booking: ' . $existingStart->format('h:i A') . ' - ' . 
+                                   $existingEnd->format('h:i A') . ' (with grace until ' . 
+                                   $existingEndWithGrace->format('h:i A') . ')'
+                    ])->setStatusCode(409);
+                }
+            }
         }
 
         // Check facility availability

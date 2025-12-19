@@ -39,6 +39,9 @@ $userRole = $session->get('role');
                     <li class="nav-item">
                         <a class="nav-link" href="<?= site_url('/') ?>">Home</a>
                     </li>
+                                <li class="nav-item">
+              <a class="nav-link" href="<?= site_url('/about') ?>">About</a>
+            </li>    
                     <li class="nav-item">
                         <a class="nav-link active" href="<?= site_url('/facilities') ?>">Facilities</a>
                     </li>
@@ -138,6 +141,11 @@ $userRole = $session->get('role');
                   </div>
                   <div class="facility-content">
                     <h3><?= esc($facility['name']) ?></h3>
+                    <?php if (!empty($facility['capacity'])): ?>
+                    <div style="display: inline-block; background: linear-gradient(45deg, #1e3c72, #2a5298); color: white; padding: 6px 12px; border-radius: 6px; font-weight: 600; margin-bottom: 10px; font-size: 0.9rem;">
+                      <i class="fas fa-users"></i> Capacity: <strong><?= $facility['capacity'] ?> persons</strong>
+                    </div>
+                    <?php endif; ?>
                     <p>
                       <?= esc($facility['description'] ?? 'Book this facility for your events, meetings, and activities.') ?>
                     </p>

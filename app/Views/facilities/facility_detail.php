@@ -471,9 +471,44 @@ $facilityKey = $facility['facility_key'];
             <?= $facility['icon'] ?? '🏢' ?>
           </div>
           <h2><?= esc($facility['name']) ?> - Premium Event Venue</h2>
+          <?php if (!empty($facility['capacity'])): ?>
+          <div style="display: inline-block; background: linear-gradient(45deg, #1e3c72, #2a5298); color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600; margin: 15px 0; font-size: 1rem;">
+            <i class="fas fa-users"></i> Capacity: <strong><?= $facility['capacity'] ?> persons</strong>
+          </div>
+          <?php endif; ?>
           <p>
             <?= esc($facility['description'] ?? 'Our facility offers a state-of-the-art environment perfect for various events, meetings, and activities with professional-grade equipment and flexible setup options.') ?>
           </p>
+        </div>
+
+        <!-- Gallery Section - Enhanced -->
+        <div class="gallery-section" style="margin-top: 60px; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); padding: 80px 0; border-radius: 32px; position: relative; overflow: hidden;">
+          <!-- Decorative background elements -->
+          <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: rgba(30, 60, 114, 0.08); border-radius: 50%; z-index: 0;"></div>
+          <div style="position: absolute; bottom: -50px; left: -50px; width: 200px; height: 200px; background: rgba(42, 82, 152, 0.08); border-radius: 50%; z-index: 0;"></div>
+          
+          <div style="max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 1;">
+            <div style="text-align: center; margin-bottom: 50px;">
+              <div style="display: inline-block; padding: 10px 20px; background: rgba(30, 60, 114, 0.1); border-radius: 20px; margin-bottom: 20px;">
+                <span style="color: #1e3c72; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Gallery Showcase</span>
+              </div>
+              <h3 style="color: #1e293b; font-size: 2.8rem; font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #1e3c72, #2a5298); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                <i class="fas fa-images me-2" style="color: #1e3c72; -webkit-text-fill-color: #1e3c72;"></i>
+                Explore Our Facility
+              </h3>
+              <p style="color: #64748b; font-size: 1.15rem; max-width: 650px; margin: 0 auto; line-height: 1.6; font-weight: 500;">
+                Take a visual tour of our world-class venue and discover the perfect setting for your next unforgettable event
+              </p>
+            </div>
+            <div class="gallery-grid-container" id="facilityGallery">
+              <!-- Gallery images will be loaded dynamically -->
+              <div style="grid-column: 1/-1; text-align: center; padding: 5rem 2rem; color: #94a3b8; background: linear-gradient(135deg, rgba(30, 60, 114, 0.08), rgba(42, 82, 152, 0.08)); border-radius: 20px; border: 2px dashed rgba(30, 60, 114, 0.2);">
+                <i class="fas fa-image" style="font-size: 4rem; margin-bottom: 1.5rem; display: block; opacity: 0.5; color: #1e3c72;"></i>
+                <p style="font-size: 1.2rem; margin: 0; font-weight: 500;">Loading gallery images...</p>
+                <p style="font-size: 0.95rem; margin: 10px 0 0 0; opacity: 0.7;">Preparing your visual tour</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Packages Section -->
@@ -498,14 +533,108 @@ $facilityKey = $facility['facility_key'];
           </div>
         </div>
 
-        <!-- Gallery Section -->
-        <div class="gallery-section">
-          <h3 class="text-center mb-4" style="color: #1e293b;">Facility Gallery</h3>
-          <div class="gallery-grid" id="facilityGallery">
-            <!-- Gallery images will be loaded dynamically -->
-            <div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: #94a3b8;">
-              <i class="fas fa-image" style="font-size: 3rem; margin-bottom: 1rem; display: block;"></i>
-              <p>Loading gallery...</p>
+        <!-- Facility Features & Amenities Section -->
+        <div class="features-amenities-section" style="margin-top: 50px;">
+          <h3 class="text-center mb-5" style="color: #1e293b;">
+            <i class="fas fa-star me-2" style="color: #fbbf24;"></i>
+            Premium Features & Amenities
+          </h3>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-card" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); border-left: 4px solid #1e3c72; height: 100%;">
+                <div style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;">
+                  <i class="fas fa-wifi"></i>
+                </div>
+                <h5 style="color: #1e293b; font-weight: 700; margin-bottom: 10px;">High-Speed WiFi</h5>
+                <p style="color: #64748b; margin: 0; font-size: 0.95rem;">
+                  Reliable high-speed internet connectivity throughout the facility for seamless presentations and connectivity.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-card" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); border-left: 4px solid #2a5298; height: 100%;">
+                <div style="font-size: 2.5rem; color: #2a5298; margin-bottom: 15px;">
+                  <i class="fas fa-video"></i>
+                </div>
+                <h5 style="color: #1e293b; font-weight: 700; margin-bottom: 10px;">Audio-Visual Equipment</h5>
+                <p style="color: #64748b; margin: 0; font-size: 0.95rem;">
+                  Professional-grade projectors, screens, and sound systems ready for your events and presentations.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-card" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); border-left: 4px solid #16a34a; height: 100%;">
+                <div style="font-size: 2.5rem; color: #16a34a; margin-bottom: 15px;">
+                  <i class="fas fa-wheelchair"></i>
+                </div>
+                <h5 style="color: #1e293b; font-weight: 700; margin-bottom: 10px;">Accessibility</h5>
+                <p style="color: #64748b; margin: 0; font-size: 0.95rem;">
+                  Fully accessible facilities with wheelchair access, restrooms, and accommodations for all guests.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-card" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); border-left: 4px solid #f59e0b; height: 100%;">
+                <div style="font-size: 2.5rem; color: #f59e0b; margin-bottom: 15px;">
+                  <i class="fas fa-snowflake"></i>
+                </div>
+                <h5 style="color: #1e293b; font-weight: 700; margin-bottom: 10px;">Climate Control</h5>
+                <p style="color: #64748b; margin: 0; font-size: 0.95rem;">
+                  Modern air conditioning and heating systems to maintain comfortable temperature year-round.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-card" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); border-left: 4px solid #06b6d4; height: 100%;">
+                <div style="font-size: 2.5rem; color: #06b6d4; margin-bottom: 15px;">
+                  <i class="fas fa-utensils"></i>
+                </div>
+                <h5 style="color: #1e293b; font-weight: 700; margin-bottom: 10px;">Catering Services</h5>
+                <p style="color: #64748b; margin: 0; font-size: 0.95rem;">
+                  Partner with our approved catering providers for refreshments and meal services during your event.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-card" style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); border-left: 4px solid #ec4899; height: 100%;">
+                <div style="font-size: 2.5rem; color: #ec4899; margin-bottom: 15px;">
+                  <i class="fas fa-camera"></i>
+                </div>
+                <h5 style="color: #1e293b; font-weight: 700; margin-bottom: 10px;">Media Support</h5>
+                <p style="color: #64748b; margin: 0; font-size: 0.95rem;">
+                  Space and support for photography, videography, and live streaming of your events.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        <!-- Quick Contact Section -->
+        <div class="quick-contact-section" style="margin-top: 50px; background: linear-gradient(135deg, #1e3c72, #2a5298); border-radius: 20px; padding: 40px; color: white; text-align: center;">
+          <h3 class="mb-3" style="color: white;">
+            <i class="fas fa-phone me-2"></i>
+            Need Help? Get in Touch
+          </h3>
+          <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.05rem; margin-bottom: 30px;">
+            Have questions about this facility? Our booking specialists are ready to assist you with any inquiries.
+          </p>
+          <div class="row g-3 justify-content-center">
+            <div class="col-md-3">
+              <a href="tel:+63123456789" style="background: rgba(255, 255, 255, 0.2); border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 15px 20px; color: white; text-decoration: none; display: inline-block; transition: all 0.3s ease; font-weight: 600;">
+                <i class="fas fa-phone me-2"></i>
+                Call Us
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="mailto:bookings@cspc.edu.ph" style="background: rgba(255, 255, 255, 0.2); border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 15px 20px; color: white; text-decoration: none; display: inline-block; transition: all 0.3s ease; font-weight: 600;">
+                <i class="fas fa-envelope me-2"></i>
+                Email Us
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="<?= site_url('/contact') ?>" style="background: rgba(255, 255, 255, 0.2); border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 15px 20px; color: white; text-decoration: none; display: inline-block; transition: all 0.3s ease; font-weight: 600;">
+                <i class="fas fa-message me-2"></i>
+                Contact Form
+              </a>
             </div>
           </div>
         </div>
@@ -1491,6 +1620,51 @@ function calculateTotalDuration() {
   return planDuration + additionalHours;
 }
 
+/**
+ * Check for date/time conflicts before booking
+ */
+async function checkBookingConflict(eventDate, eventTime, totalDuration) {
+  try {
+    const facilityId = facilityData.id;
+    
+    // Calculate end time with 2-hour grace period
+    const startTime = new Date(`2000-01-01 ${eventTime}`);
+    const endTime = new Date(startTime.getTime() + (totalDuration * 60 * 60 * 1000));
+    const endTimeWithGrace = new Date(endTime.getTime() + (2 * 60 * 60 * 1000)); // Add 2 hour grace
+    
+    const endTimeStr = String(endTime.getHours()).padStart(2, '0') + ':' + String(endTime.getMinutes()).padStart(2, '0');
+    const endTimeWithGraceStr = String(endTimeWithGrace.getHours()).padStart(2, '0') + ':' + String(endTimeWithGrace.getMinutes()).padStart(2, '0');
+
+    const response = await fetch("<?= base_url('api/bookings/checkDateConflict') ?>", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      },
+      body: JSON.stringify({
+        facility_id: facilityId,
+        event_date: eventDate,
+        event_time: eventTime,
+        duration: totalDuration
+      }),
+    });
+
+    const result = await response.json();
+    
+    if (result.hasConflict) {
+      return {
+        hasConflict: true,
+        message: `Facility has conflicting booking on this date/time. Your requested time: ${eventTime} - ${endTimeStr}. With 2-hour grace period, available from: ${endTimeWithGraceStr}`
+      };
+    }
+
+    return { hasConflict: false };
+  } catch (error) {
+    console.error("Error checking conflict:", error);
+    return { hasConflict: false }; // Don't block booking on check error
+  }
+}
+
 async function submitBooking() {
   console.log("Starting booking submission...");
 
@@ -1505,17 +1679,27 @@ async function submitBooking() {
     return;
   }
 
+  // Check for date/time conflicts before submitting
+  const eventDate = document.getElementById("eventDate").value;
+  const eventTime = document.getElementById("eventTime").value;
+  const totalDuration = calculateTotalDuration();
+  
+  const conflictCheck = await checkBookingConflict(eventDate, eventTime, totalDuration);
+  if (conflictCheck.hasConflict) {
+    alert("⚠️ Conflict Detected\n\n" + conflictCheck.message);
+    return;
+  }
+
   const selectedAddonIds = selectedAddons;
   const additionalHours = parseInt(document.getElementById("additionalHours")?.value) || 0;
-  const totalDuration = calculateTotalDuration();
 
   const formData = {
     facility_key: currentFacility,
     plan_id: selectedPlan.id,
     organization: document.getElementById("organization").value,
     address: document.getElementById("address").value,
-    event_date: document.getElementById("eventDate").value,
-    event_time: document.getElementById("eventTime").value,
+    event_date: eventDate,
+    event_time: eventTime,
     duration: totalDuration,
     attendees: document.getElementById("attendees").value || null,
     event_title: document.getElementById("eventTitle").value,

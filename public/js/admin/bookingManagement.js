@@ -59,6 +59,129 @@ async function loadSettings() {
   }
 }
 
+/**
+ * ============================================
+ * BOOKING CALCULATION HELPER FUNCTIONS
+ * ============================================
+ */
+
+/**
+ * Parse duration string to hours
+ * Examples: "4 hours" -> 4, "8 hours" -> 8, "1 day" -> 24, "1 month" -> 720
+ */
+function parseDurationToHours(duration) {
+  if (typeof duration === "number") {
+    return duration;
+  }
+
+  if (typeof duration !== "string") {
+    return 4; // Default to 4 hours
+  }
+
+  duration = duration.toLowerCase().trim();
+
+  // Extract the numeric part
+  const match = duration.match(/(\d+(?:\.\d+)?)/);
+  if (!match) {
+    return 4; // Default to 4 hours
+  }
+
+  const number = parseFloat(match[1]);
+
+  // Determine unit and convert to hours
+  if (duration.includes("month")) {
+    return number * 720; // 30 days * 24 hours
+  } else if (duration.includes("week")) {
+    return number * 168; // 7 days * 24 hours
+  } else if (duration.includes("day")) {
+    return number * 24;
+  } else if (duration.includes("hour")) {
+    return number;
+  } else if (duration.includes("minute")) {
+    return number / 60;
+  }
+
+  // Default: assume it's hours
+  return number;
+}
+
+/**
+ * Calculate event end time
+ * @param {string} startTime - Time in HH:MM or HH:MM:SS format
+ * @param {number} durationHours - Duration in hours
+ * @returns {string} End time in HH:MM format
+ */
+function calculateEventEndTime(startTime, durationHours) {
+  try {
+    // Parse start time
+    const [hours, minutes] = startTime.split(":").map(Number);
+
+    const startDate = new Date();
+    startDate.setHours(hours, minutes, 0);
+
+    // Add duration in minutes
+    const durationMinutes = durationHours * 60;
+    const endDate = new Date(startDate.getTime() + durationMinutes * 60000);
+
+    // Format end time
+    const endHours = String(endDate.getHours()).padStart(2, "0");
+    const endMinutes = String(endDate.getMinutes()).padStart(2, "0");
+
+    return `${endHours}:${endMinutes}`;
+  } catch (error) {
+    console.error("Error calculating event end time:", error);
+    return null;
+  }
+}
+
+/**
+ * Calculate total duration hours from base and additional
+ */
+function calculateTotalDurationHours(baseDuration, additionalHours = 0) {
+  const baseHours = parseDurationToHours(baseDuration);
+  return baseHours + (Number(additionalHours) || 0);
+}
+
+/**
+ * Check if two time ranges conflict (including grace period)
+ * @param {string} startTime1 - Start time of first event (HH:MM)
+ * @param {string} endTime1 - End time of first event (HH:MM)
+ * @param {string} startTime2 - Start time of second event (HH:MM)
+ * @param {string} endTime2 - End time of second event (HH:MM)
+ * @param {number} gracePeriodHours - Grace period in hours
+ * @returns {boolean} True if there is a conflict
+ */
+function hasTimeConflict(
+  startTime1,
+  endTime1,
+  startTime2,
+  endTime2,
+  gracePeriodHours = 2
+) {
+  try {
+    const parseTime = (timeStr) => {
+      const [h, m] = timeStr.split(":").map(Number);
+      return h * 60 + m; // Convert to minutes from midnight
+    };
+
+    const start1 = parseTime(startTime1);
+    const end1 = parseTime(endTime1);
+    const start2 = parseTime(startTime2);
+    const end2 = parseTime(endTime2);
+
+    // Add grace period to end times (in minutes)
+    const graceMinutes = gracePeriodHours * 60;
+    const end1WithGrace = end1 + graceMinutes;
+    const end2WithGrace = end2 + graceMinutes;
+
+    // Check for overlap
+    return !(end1WithGrace <= start2 || end2WithGrace <= start1);
+  } catch (error) {
+    console.error("Error checking time conflict:", error);
+    return false;
+  }
+}
+
 // Toggle sidebar
 function toggleSidebar() {
   document.querySelector(".sidebar").classList.toggle("active");
@@ -372,6 +495,19 @@ function displayBookingDetails(booking) {
   // Clear and prepare the details container for tab content
   detailsContainer.innerHTML = "";
 
+  // Calculate end time if not already set (for pending bookings)
+  if (!booking.event_end_time && booking.event_time && booking.duration) {
+    const totalHours = calculateTotalDurationHours(
+      booking.duration,
+      booking.additional_hours || 0
+    );
+    booking.event_end_time = calculateEventEndTime(
+      booking.event_time,
+      totalHours
+    );
+    booking.total_duration_hours = totalHours;
+  }
+
   // Check if this is a student booking
   const isStudentBooking = booking.booking_type === "student";
   const isEmployeeBooking = booking.booking_type === "employee";
@@ -462,14 +598,46 @@ function displayBookingDetails(booking) {
               booking.event_date ? formatDate(booking.event_date) : "N/A"
             }</span>
         </div>
-        <div class="detail-item">
-            <span class="detail-label">Event Time:</span>
-            <span class="detail-value">${booking.event_time || "N/A"}</span>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0;">
+            <div class="detail-item" style="background-color: #e3f2fd; padding: 12px; border-radius: 6px; border-left: 4px solid #1976d2;">
+                <span class="detail-label" style="display: block; color: #1976d2; font-weight: 600;">⏰ Start Time</span>
+                <span class="detail-value" style="font-weight: bold; color: #1565c0; font-size: 1.1em;">${
+                  booking.event_time || "N/A"
+                }</span>
+            </div>
+            <div class="detail-item" style="background-color: #f0f8ff; padding: 12px; border-radius: 6px; border-left: 4px solid #2196F3;">
+                <span class="detail-label" style="display: block; color: #2196F3; font-weight: 600;">🏁 End Time</span>
+                <span class="detail-value" style="font-weight: bold; color: #1565c0; font-size: 1.1em;">${
+                  booking.event_end_time || "N/A"
+                }</span>
+            </div>
         </div>
         <div class="detail-item">
             <span class="detail-label">Duration:</span>
-            <span class="detail-value">${booking.duration || "N/A"} hours</span>
+            <span class="detail-value">${booking.duration || "N/A"}</span>
         </div>
+        ${
+          booking.total_duration_hours
+            ? `
+            <div class="detail-item" style="background-color: #fffacd; padding: 8px; border-radius: 4px; border-left: 4px solid #FF9800;">
+                <span class="detail-label">Total Duration:</span>
+                <span class="detail-value" style="font-weight: bold; color: #FF9800;">${booking.total_duration_hours} hours</span>
+            </div>
+            `
+            : ""
+        }
+        ${
+          booking.additional_hours && booking.additional_hours > 0
+            ? `
+            <div class="detail-item">
+                <span class="detail-label">Additional Hours:</span>
+                <span class="detail-value">${
+                  booking.additional_hours
+                } hours (₱${booking.additional_hours * 500}/hour)</span>
+            </div>
+            `
+            : ""
+        }
         <div class="detail-item">
             <span class="detail-label">Attendees:</span>
             <span class="detail-value">${
@@ -1000,7 +1168,12 @@ async function approveBooking() {
     const data = await response.json();
 
     if (data.success) {
-      alert("Booking approved successfully!");
+      // Show success message with calculated times if available
+      let successMsg = "Booking approved successfully!";
+      if (data.event_end_time && data.total_duration_hours) {
+        successMsg = `Booking approved successfully!\n\nCalculated Details:\nEnd Time: ${data.event_end_time}\nTotal Duration: ${data.total_duration_hours} hours`;
+      }
+      alert(successMsg);
       closeModal("approvalModal");
       loadBookings(); // Reload bookings
     } else {

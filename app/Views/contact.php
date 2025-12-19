@@ -40,6 +40,9 @@ $userRole = $session->get('role');
                         <a class="nav-link" href="<?= site_url('/') ?>">Home</a>
                     </li>
                     <li class="nav-item">
+          <a class="nav-link" href="<?= site_url('/about') ?>">About</a>
+            </li>                     
+                    <li class="nav-item">
                         <a class="nav-link" href="<?= site_url('/facilities') ?>">Facilities</a>
                     </li>
                     <li class="nav-item">
