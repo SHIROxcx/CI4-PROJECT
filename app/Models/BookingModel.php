@@ -425,10 +425,14 @@ $booking['equipment'] = $equipment;;
 
     /**
      * Check if facility is available for given date and time
-     * Prevents double booking
+     * Prevents double booking and includes 2-hour facility preparation buffer
+     * After each booking ends, facility needs 2 hours to be cleaned and setup for next event
      */
-    public function checkFacilityAvailability($facilityId, $eventDate, $eventTime, $duration, $excludeBookingId = null)
+    public function checkFacilityAvailability($facilityId, $eventDate, $eventTime, $duration = 2, $excludeBookingId = null)
     {
+        // Define facility preparation time in hours
+        $FACILITY_PREP_TIME_HOURS = 2;
+        
         $query = $this->db->table('bookings')
             ->where('facility_id', $facilityId)
             ->where('event_date', $eventDate)
@@ -445,11 +449,18 @@ $booking['equipment'] = $equipment;;
             $existingStart = strtotime($booking['event_time']);
             $existingEnd = strtotime($booking['event_time']) + ($booking['duration'] * 3600);
             
+            // Add facility prep time buffer after existing booking
+            $existingEndWithPrep = $existingEnd + ($FACILITY_PREP_TIME_HOURS * 3600);
+            
+            // Add facility prep time buffer before new booking (facility must be ready 2 hours before)
+            $newStartWithPrep = strtotime($eventTime) - ($FACILITY_PREP_TIME_HOURS * 3600);
             $newStart = strtotime($eventTime);
             $newEnd = strtotime($eventTime) + ($duration * 3600);
 
-            // Check for time overlap
-            if (($newStart < $existingEnd) && ($newEnd > $existingStart)) {
+            // Check for time overlap including prep time buffers
+            // Condition 1: New booking starts before existing booking ends (with prep)
+            // Condition 2: New booking ends after existing booking starts (with prep)
+            if (($newStart < $existingEndWithPrep) && ($newEnd + ($FACILITY_PREP_TIME_HOURS * 3600) > $existingStart)) {
                 return false; // Conflict found
             }
         }

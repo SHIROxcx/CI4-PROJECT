@@ -349,7 +349,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="<?= base_url('/admin/external') ?>" class="submenu-item">👤 Users</a></li>
-                        <li><a href="<?= base_url('/admin/student') ?>" class="submenu-item">🎓 Students</a></li>
+                        <li><a href="<?= base_url('/admin/internal') ?>" class="submenu-item">🎓 Students</a></li>
                     </ul>
                 </li>
 

@@ -977,7 +977,9 @@ function openDocumentUploadModal(bookingId) {
 // Load existing documents to show upload status
 async function loadExistingDocuments(bookingId) {
   try {
-    const response = await fetch(`/api/student/bookings/${bookingId}/files`);
+    const response = await fetch(`/api/student-bookings/${bookingId}/files`, {
+      credentials: "include",
+    });
     const data = await response.json();
 
     if (data.success && data.files) {
@@ -1153,6 +1155,7 @@ async function uploadDocuments() {
       `/api/student-bookings/${bookingId}/upload-documents`,
       {
         method: "POST",
+        credentials: "include",
         body: formData,
       }
     );
@@ -1194,7 +1197,7 @@ function downloadDocument(previewId) {
   const bookingId = document.getElementById("uploadBookingId").value;
 
   if (fileId) {
-    window.location.href = `/api/student/bookings/${bookingId}/files/${fileId}/download`;
+    window.location.href = `/api/student-bookings/${bookingId}/files/${fileId}/download`;
   }
 }
 

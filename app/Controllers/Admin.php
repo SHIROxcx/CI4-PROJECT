@@ -105,7 +105,7 @@ class Admin extends BaseController
         return $this->bookingManagement();
     }
 
-    public function student()
+    public function internal()
     {
         $redirect = $this->checkAdminRole();
         if ($redirect) return $redirect;
@@ -119,7 +119,7 @@ class Admin extends BaseController
             'userEmail' => $session->get('email')
         ];
 
-        return view('admin/student', $data);
+        return view('admin/internal', $data);
     }
 
     public function attendance()

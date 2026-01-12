@@ -29,7 +29,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="<?= base_url('/admin/external') ?>" class="submenu-item">🌐 External</a></li>
-                        <li><a href="<?= base_url('/admin/student') ?>" class="submenu-item active">🏛️ Internal</a></li>
+                        <li><a href="<?= base_url('/admin/internal') ?>" class="submenu-item active">🏛️ Internal</a></li>
                     </ul>
                 </li>
 

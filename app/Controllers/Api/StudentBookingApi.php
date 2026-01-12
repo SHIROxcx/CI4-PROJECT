@@ -30,36 +30,92 @@ class StudentBookingApi extends ResourceController
     /**
      * Verify user access - Allow both students and admins
      */
-private function verifyUserAccess()
-{
-    $session = session();
-    $userId = $session->get('user_id');
-    $userRole = $session->get('role');
-    $userEmail = $session->get('email');
+    private function verifyUserAccess()
+    {
+        $session = session();
+        $userId = $session->get('user_id');
+        $userRole = $session->get('role');
+        $userEmail = $session->get('email');
 
-    // Allow guest bookings (non-logged-in users)
-    if (!$userId || !$userEmail) {
-        return null; // Return null instead of false for guests
+        // Allow guest bookings (non-logged-in users)
+        if (!$userId || !$userEmail) {
+            return null; // Return null instead of false for guests
+        }
+
+        // Allow students, faculty, employee, and admins
+        if (!in_array($userRole, ['student', 'faculty', 'employee', 'admin'])) {
+            return null;
+        }
+
+        return [
+            'user_id' => $userId,
+            'role' => $userRole,
+            'email' => $userEmail,
+            'full_name' => $session->get('full_name')
+        ];
     }
 
-    // Allow students, faculty, and admins
-    if (!in_array($userRole, ['student', 'faculty', 'admin'])) {
-        return null;
-    }
+    /**
+     * Check facility availability for date and time
+     * Public endpoint for the booking search form
+     */
+    public function checkFacilityAvailability()
+    {
+        try {
+            $request = $this->request->getJSON(true);
+            
+            // Validate required fields
+            if (!isset($request['facility_id']) || !isset($request['date']) || !isset($request['time'])) {
+                return $this->response->setJSON([
+                    'available' => false,
+                    'message' => 'Missing required fields: facility_id, date, time'
+                ])->setStatusCode(400);
+            }
 
-    return [
-        'user_id' => $userId,
-        'role' => $userRole,
-        'email' => $userEmail,
-        'full_name' => $session->get('full_name')
-    ];
-}
+            $facilityId = $request['facility_id'];
+            $date = $request['date'];
+            $time = $request['time'];
+            $duration = $request['duration'] ?? 2; // Default 2 hour duration if not specified
+
+            // Check if facility exists
+            $facility = $this->facilityModel->find($facilityId);
+            if (!$facility) {
+                return $this->response->setJSON([
+                    'available' => false,
+                    'message' => 'Facility not found'
+                ])->setStatusCode(404);
+            }
+
+            // Check availability using the booking model method
+            $isAvailable = $this->bookingModel->checkFacilityAvailability(
+                $facilityId,
+                $date,
+                $time,
+                $duration
+            );
+
+            return $this->response->setJSON([
+                'available' => $isAvailable,
+                'facility' => $facility['name'],
+                'date' => $date,
+                'time' => $time,
+                'message' => $isAvailable ? 'Facility is available' : 'Facility is not available at this time'
+            ]);
+
+        } catch (\Exception $e) {
+            log_message('error', 'Error checking facility availability: ' . $e->getMessage());
+            return $this->response->setJSON([
+                'available' => false,
+                'message' => 'Error checking availability: ' . $e->getMessage()
+            ])->setStatusCode(500);
+        }
+    }
 
     /**
      * Create student booking
      * Accessible by both students and admins
      */
-public function createStudentBooking()
+    public function createStudentBooking()
 {
     try {
         $userData = $this->verifyUserAccess();
@@ -114,14 +170,22 @@ $validation->setRules([
         }
 
         // Always use form data for client name and email
-        $clientName = $request['client_name'];
-        $emailAddress = $request['email_address'];
+        $clientName = $request['client_name'] ?? '';
+        $emailAddress = $request['email_address'] ?? '';
 
         // Determine created_by based on login status
         $createdBy = $userData ? $userData['user_id'] : null;
 
         // Get facility details
-        $facility = $this->facilityModel->find($request['facility_id']);
+        $facilityId = $request['facility_id'] ?? null;
+        if (!$facilityId) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Facility ID is required'
+            ])->setStatusCode(400);
+        }
+
+        $facility = $this->facilityModel->find($facilityId);
         if (!$facility) {
             return $this->response->setJSON([
                 'success' => false,
@@ -141,19 +205,19 @@ $validation->setRules([
         // Check facility availability with time-based conflict detection (with grace period)
         // Get all existing bookings for the facility on the same date
         $existingBookings = $this->bookingModel
-            ->where('facility_id', $request['facility_id'])
-            ->where('event_date', $request['event_date'])
+            ->where('facility_id', $facilityId)
+            ->where('event_date', $request['event_date'] ?? '')
             ->whereIn('status', ['pending', 'confirmed'])
             ->get()
             ->getResultArray();
 
         // Check for time conflicts with 2-hour grace period
         if (!empty($existingBookings)) {
-            $newEventTime = $request['event_time'];
-            $newDuration = $request['duration'];
+            $newEventTime = $request['event_time'] ?? '08:00';
+            $newDuration = $request['duration'] ?? 1;
             
             // Calculate new event end time
-            $newStart = new \DateTime($request['event_date'] . ' ' . $newEventTime);
+            $newStart = new \DateTime(($request['event_date'] ?? date('Y-m-d')) . ' ' . $newEventTime);
             $newEnd = clone $newStart;
             $newEnd->add(new \DateInterval('PT' . intval($newDuration * 60) . 'M'));
             
@@ -190,18 +254,18 @@ $validation->setRules([
 
         // Prepare booking data
         $bookingData = [
-            'facility_id' => $request['facility_id'],
-            'plan_id' => $request['plan_id'],
+            'facility_id' => $facilityId,
+            'plan_id' => $request['plan_id'] ?? null,
             'client_name' => $clientName,
-            'contact_number' => $request['contact_number'],
+            'contact_number' => $request['contact_number'] ?? '',
             'email_address' => $emailAddress,
-            'organization' => $request['organization'],
+            'organization' => $request['organization'] ?? '',
             'address' => $request['address'] ?? null,
-            'event_date' => $request['event_date'],
-            'event_time' => $request['event_time'],
-            'duration' => $request['duration'],
+            'event_date' => $request['event_date'] ?? date('Y-m-d'),
+            'event_time' => $request['event_time'] ?? '08:00',
+            'duration' => $request['duration'] ?? 1,
             'attendees' => $request['attendees'] ?? null,
-            'event_title' => $request['event_title'],
+            'event_title' => $request['event_title'] ?? '',
             'special_requirements' => $request['special_requirements'] ?? '',
             'total_cost' => $totalCost,
             'additional_hours' => $additionalHours,
@@ -506,9 +570,13 @@ foreach ($files['files'] as $index => $file) {
             if (file_exists($existingFile['file_path'])) {
                 unlink($existingFile['file_path']);
             }
-            $db->table('student_booking_files')
-               ->where('id', $existingFile['id'])
-               ->delete();
+            try {
+                $db->table('student_booking_files')
+                   ->where('id', $existingFile['id'])
+                   ->delete();
+            } catch (\Exception $e) {
+                log_message('warning', "Error deleting old file: " . $e->getMessage());
+            }
         }
 
         // Generate new filename
@@ -529,7 +597,12 @@ foreach ($files['files'] as $index => $file) {
                 'upload_date' => date('Y-m-d H:i:s')
             ];
             
-            $db->table('student_booking_files')->insert($fileData);
+            try {
+                $db->table('student_booking_files')->insert($fileData);
+            } catch (\Exception $e) {
+                log_message('error', "Error inserting file record: " . $e->getMessage());
+                // Even if DB insert fails, file is on disk, so log but continue
+            }
             
             $uploadedFiles[] = [
                 'id' => $db->insertID(),
@@ -620,7 +693,14 @@ public function getStudentBookingFiles($bookingId)
 
         // Use StudentBookingFileModel instead of BookingFileModel
         $studentFileModel = new StudentBookingFileModel();
-        $files = $studentFileModel->where('booking_id', $bookingId)->findAll();
+        
+        try {
+            $files = $studentFileModel->where('booking_id', $bookingId)->findAll();
+        } catch (\Exception $tableError) {
+            log_message('error', "Database error getting files: " . $tableError->getMessage());
+            // If table doesn't exist or other DB error, return empty files array
+            $files = [];
+        }
 
         log_message('info', "Found " . count($files) . " files for booking #{$bookingId}");
 
@@ -656,12 +736,10 @@ public function getStudentBookingFiles($bookingId)
     }
 }
 
-
     /**
      * Download student document
      */
-
-public function downloadStudentDocument($bookingId, $fileId)
+    public function downloadStudentDocument($bookingId, $fileId)
 {
     try {
         log_message('info', "=== DOWNLOAD FILE START (Booking #{$bookingId}, File #{$fileId}) ===");

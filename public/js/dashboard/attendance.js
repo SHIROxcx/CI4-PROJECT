@@ -186,10 +186,10 @@ function renderGuestList() {
                         </button>`
                         : '<span class="text-success"><i class="fas fa-check"></i></span>'
                     }
-                    <button class="btn btn-action btn-info" onclick="viewGuestQR(${
+                    <button class="btn btn-action btn-danger" onclick="deleteGuest(${
                       guest.id
-                    })" title="View QR">
-                        <i class="fas fa-qrcode"></i>
+                    })" title="Delete">
+                        <i class="fas fa-trash"></i>
                     </button>
                 </div>
             </td>
@@ -203,8 +203,14 @@ function renderGuestList() {
 async function updateStatistics() {
   try {
     const response = await fetch(
-      `/api/events/${currentEventId}/attendance-stats`
+      `/api/events/${currentEventId}/attendance-stats`,
+      { credentials: "include" }
     );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch stats");
+    }
+
     const data = await response.json();
 
     if (data.success) {
@@ -214,8 +220,11 @@ async function updateStatistics() {
       document.getElementById("pendingCount").textContent = stats.pending;
       document.getElementById("attendanceRate").textContent =
         stats.attendance_rate + "%";
+    } else {
+      throw new Error("API returned error");
     }
   } catch (error) {
+    // Silently use fallback calculation for booking-based stats
     // Fallback to local calculation
     const total = guests.length;
     const attended = guests.filter((g) => g.attended).length;
@@ -283,6 +292,37 @@ async function downloadGuestQR() {
   } catch (error) {
     console.error("Error downloading QR:", error);
     showAlert("error", "Failed to download QR code");
+  }
+}
+
+// Delete Guest
+async function deleteGuest(guestId) {
+  if (!confirm("Are you sure you want to delete this guest?")) {
+    return;
+  }
+
+  try {
+    const response = await fetch(`/api/guests/${guestId}/delete`, {
+      method: "DELETE",
+      credentials: "include",
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    });
+
+    const data = await response.json();
+
+    if (data.success || response.ok) {
+      showAlert("success", "Guest deleted successfully");
+
+      // Reload guests from API to refresh the list
+      await loadGuests();
+    } else {
+      showAlert("error", data.message || "Failed to delete guest");
+    }
+  } catch (error) {
+    console.error("Error deleting guest:", error);
+    showAlert("error", "Failed to delete guest: " + error.message);
   }
 }
 

@@ -11,6 +11,7 @@ $userRole = $session->get('role');
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSPC Facility Booking - Reserve Campus Facilities Online</title>
+    <link rel="icon" type="image/jpeg" href="<?= base_url('images/CSPC.jpg') ?>">
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
       rel="stylesheet"
@@ -657,6 +658,191 @@ $userRole = $session->get('role');
         }
       }
 
+      /* Availability Search Section */
+      .availability-search {
+        background: linear-gradient(135deg, rgba(30, 60, 114, 0.05) 0%, rgba(42, 82, 152, 0.05) 100%);
+        padding: 60px 0;
+        margin-top: -40px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .search-form-wrapper {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 45px;
+        background: white;
+        border-radius: 24px;
+        box-shadow: 0 15px 50px rgba(30, 60, 114, 0.15);
+        border: 2px solid rgba(30, 60, 114, 0.08);
+      }
+
+      .search-form-title {
+        font-size: 1.8rem;
+        color: #1e293b;
+        font-weight: 800;
+        margin-bottom: 35px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .search-form-title i {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(45deg, #1e3c72, #2a5298);
+        color: white;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+      }
+
+      .search-form-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        align-items: flex-end;
+      }
+
+      .search-form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .search-form-group label {
+        font-size: 0.9rem;
+        color: #475569;
+        font-weight: 700;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .search-form-group label i {
+        color: #1e3c72;
+        font-size: 0.95rem;
+      }
+
+      .search-form-group input,
+      .search-form-group select {
+        padding: 13px 16px;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        background: white;
+        color: #1e293b;
+        font-weight: 500;
+      }
+
+      .search-form-group input::placeholder {
+        color: #94a3b8;
+      }
+
+      .search-form-group input:focus,
+      .search-form-group select:focus {
+        outline: none;
+        border-color: #1e3c72;
+        box-shadow: 0 0 0 4px rgba(30, 60, 114, 0.12);
+        background: rgba(30, 60, 114, 0.02);
+      }
+
+      .search-btn {
+        background: linear-gradient(45deg, #1e3c72, #2a5298);
+        color: white;
+        border: none;
+        padding: 13px 30px;
+        border-radius: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        font-size: 1rem;
+        box-shadow: 0 6px 20px rgba(30, 60, 114, 0.25);
+      }
+
+      .search-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(30, 60, 114, 0.35);
+      }
+
+      .search-btn:active {
+        transform: translateY(0);
+      }
+
+      .availability-result {
+        margin-top: 30px;
+        padding: 20px 22px;
+        border-radius: 12px;
+        display: none;
+        font-weight: 600;
+        font-size: 0.98rem;
+        animation: slideDown 0.3s ease-out;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .availability-result.available {
+        background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+        border: 2px solid #22c55e;
+        color: #16a34a;
+      }
+
+      .availability-result.unavailable {
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
+        border: 2px solid #ef4444;
+        color: #dc2626;
+      }
+
+      .availability-result.loading {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+        border: 2px solid #3b82f6;
+        color: #2563eb;
+      }
+
+      .availability-result i {
+        margin-right: 10px;
+        font-size: 1.1rem;
+      }
+
+      .availability-result a {
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .availability-result.available a {
+        color: #16a34a;
+      }
+
+      .availability-result.available a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 1024px) {
+        .search-form-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
       @media (max-width: 768px) {
         .hero h1 {
           font-size: 2.5rem;
@@ -676,6 +862,14 @@ $userRole = $session->get('role');
 
         .section-header h2 {
           font-size: 2.2rem;
+        }
+
+        .search-form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .search-form-wrapper {
+          padding: 20px;
         }
       }
     </style>
@@ -745,6 +939,61 @@ $userRole = $session->get('role');
       </div>
     </section>
 
+    <!-- Availability Search Section -->
+    <section class="availability-search">
+      <div class="container">
+        <div class="search-form-wrapper">
+          <div class="search-form-title">
+            <i class="fas fa-search"></i>
+            Check Facility Availability
+          </div>
+          <form id="availabilityForm">
+            <div class="search-form-grid">
+              <div class="search-form-group">
+                <label for="facilitySelect">
+                  <i class="fas fa-building"></i>
+                  Facility
+                </label>
+                <select id="facilitySelect" required>
+                  <option value="">Select a facility</option>
+                  <?php if (!empty($facilities)): ?>
+                    <?php foreach ($facilities as $facility): ?>
+                      <option value="<?= esc($facility['id']) ?>" data-key="<?= esc($facility['facility_key']) ?>">
+                        <?= esc($facility['name']) ?>
+                      </option>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </select>
+              </div>
+
+              <div class="search-form-group">
+                <label for="dateSelect">
+                  <i class="fas fa-calendar"></i>
+                  Date
+                </label>
+                <input type="date" id="dateSelect" required />
+              </div>
+
+              <div class="search-form-group">
+                <label for="timeSelect">
+                  <i class="fas fa-clock"></i>
+                  Time
+                </label>
+                <input type="time" id="timeSelect" required />
+              </div>
+
+              <div class="search-form-group">
+                <button type="button" class="search-btn" onclick="checkAvailability()">
+                  <i class="fas fa-check-circle"></i> Check Availability
+                </button>
+              </div>
+            </div>
+
+            <div class="availability-result" id="availabilityResult"></div>
+          </form>
+        </div>
+      </div>
+    </section>
 
        <!-- Featured Facilities -->
     <section class="featured-facilities">
@@ -1022,6 +1271,103 @@ $userRole = $session->get('role');
         if (statsContainer) {
           observer.observe(statsContainer);
         }
+      });
+
+      // Set minimum date to today
+      document.addEventListener('DOMContentLoaded', function() {
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('dateSelect').setAttribute('min', today);
+      });
+
+      // Check availability function
+      function checkAvailability() {
+        const facilityId = document.getElementById('facilitySelect').value;
+        const facilityOption = document.getElementById('facilitySelect').selectedOptions[0];
+        const facilityKey = facilityOption.getAttribute('data-key');
+        const date = document.getElementById('dateSelect').value;
+        const time = document.getElementById('timeSelect').value;
+        const resultDiv = document.getElementById('availabilityResult');
+
+        // Validate inputs
+        if (!facilityId || !date || !time) {
+          resultDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please fill in all fields';
+          resultDiv.className = 'availability-result unavailable';
+          resultDiv.style.display = 'block';
+          return;
+        }
+
+        // Show loading state
+        resultDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Checking availability...';
+        resultDiv.className = 'availability-result loading';
+        resultDiv.style.display = 'block';
+
+        // Make AJAX request to check availability
+        fetch('<?= site_url('/bookings/check-availability') ?>', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+          },
+          body: JSON.stringify({
+            facility_id: facilityId,
+            date: date,
+            time: time
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.available) {
+            resultDiv.innerHTML = `
+              <i class="fas fa-check-circle"></i>
+              <span>
+                <strong>${facilityOption.textContent}</strong> is available on <strong>${formatDate(date)}</strong> at <strong>${formatTime(time)}</strong>
+                <a href="<?= site_url('/facility/') ?>${facilityKey}" style="margin-left: 15px; font-size: 1rem;">Book Now →</a>
+              </span>
+            `;
+            resultDiv.className = 'availability-result available';
+          } else {
+            resultDiv.innerHTML = `
+              <i class="fas fa-times-circle"></i>
+              <span>
+                <strong>${facilityOption.textContent}</strong> is not available on <strong>${formatDate(date)}</strong> at <strong>${formatTime(time)}</strong>. 
+                Please select a different date or time.
+              </span>
+            `;
+            resultDiv.className = 'availability-result unavailable';
+          }
+          resultDiv.style.display = 'block';
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          resultDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error checking availability. Please try again.';
+          resultDiv.className = 'availability-result unavailable';
+          resultDiv.style.display = 'block';
+        });
+      }
+
+      // Format date to readable format
+      function formatDate(dateString) {
+        const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
+        return new Date(dateString + 'T00:00:00').toLocaleDateString('en-US', options);
+      }
+
+      // Format time to 12-hour format
+      function formatTime(timeString) {
+        const [hours, minutes] = timeString.split(':');
+        const hour = parseInt(hours);
+        const ampm = hour >= 12 ? 'PM' : 'AM';
+        const displayHour = hour % 12 || 12;
+        return `${displayHour}:${minutes} ${ampm}`;
+      }
+
+      // Allow Enter key to trigger search
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('availabilityForm').addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            checkAvailability();
+          }
+        });
       });
     </script>
   </body>

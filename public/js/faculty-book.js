@@ -699,12 +699,10 @@ async function submitFreeBooking() {
         showToast("Uploading documents...", "info");
 
         const uploadResponse = await fetch(
-          `/api/student/bookings/${bookingId}/upload`,
+          `/api/student-bookings/${bookingId}/upload-documents`,
           {
             method: "POST",
-            headers: {
-              "X-Requested-With": "XMLHttpRequest",
-            },
+            credentials: "include",
             body: formData,
           }
         );

@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
 // Load user bookings
 async function loadBookings() {
   try {
-    const response = await fetch("/api/student/bookings");
+    const response = await fetch("/api/student/bookings", {
+      credentials: "include",
+    });
     const data = await response.json();
 
     if (data.success) {
@@ -166,7 +168,9 @@ function hasReceipt(bookingId) {
 // View booking details
 async function viewBookingDetails(bookingId) {
   try {
-    const response = await fetch(`/api/student/bookings/${bookingId}`);
+    const response = await fetch(`/api/student/bookings/${bookingId}`, {
+      credentials: "include",
+    });
     const data = await response.json();
 
     if (data.success) {
@@ -800,6 +804,7 @@ async function cancelBooking() {
 
     const response = await fetch(`/api/student/bookings/${bookingId}/cancel`, {
       method: "POST",
+      credentials: "include",
       headers: {
         "X-Requested-With": "XMLHttpRequest",
       },
@@ -900,7 +905,9 @@ function openDocumentUploadModal(bookingId) {
 } // Load existing documents to show upload status
 async function loadExistingDocuments(bookingId) {
   try {
-    const response = await fetch(`/api/student/bookings/${bookingId}/files`);
+    const response = await fetch(`/api/student-bookings/${bookingId}/files`, {
+      credentials: "include",
+    });
     const data = await response.json();
 
     if (data.success && data.files) {
@@ -1021,9 +1028,10 @@ async function removeDocument(fileInputId, previewId) {
   if (fileId) {
     try {
       const response = await fetch(
-        `/api/student/bookings/${bookingId}/files/${fileId}`,
+        `/api/student-bookings/${bookingId}/files/${fileId}`,
         {
           method: "DELETE",
+          credentials: "include",
         }
       );
       const data = await response.json();
@@ -1092,10 +1100,14 @@ async function uploadDocuments() {
   submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Uploading...';
 
   try {
-    const response = await fetch(`/api/student/bookings/${bookingId}/upload`, {
-      method: "POST",
-      body: formData,
-    });
+    const response = await fetch(
+      `/api/student-bookings/${bookingId}/upload-documents`,
+      {
+        method: "POST",
+        credentials: "include",
+        body: formData,
+      }
+    );
 
     const data = await response.json();
 
@@ -1155,7 +1167,9 @@ async function openRescheduleModal(bookingId) {
   // If booking not found in local array, fetch from API
   if (!booking) {
     try {
-      const response = await fetch(`/api/student/bookings/${bookingId}`);
+      const response = await fetch(`/api/student/bookings/${bookingId}`, {
+        credentials: "include",
+      });
       const data = await response.json();
 
       if (data.success) {
@@ -1246,6 +1260,7 @@ async function submitReschedule() {
       `/api/student/bookings/${bookingId}/reschedule`,
       {
         method: "POST",
+        credentials: "include",
         headers: {
           "X-Requested-With": "XMLHttpRequest",
           "Content-Type": "application/json",
@@ -1303,7 +1318,9 @@ async function submitReschedule() {
 // Load and display document status
 async function loadDocumentStatus(bookingId) {
   try {
-    const response = await fetch(`/api/student/bookings/${bookingId}/files`);
+    const response = await fetch(`/api/student-bookings/${bookingId}/files`, {
+      credentials: "include",
+    });
     const data = await response.json();
 
     const container = document.getElementById("documentStatusContainer");
@@ -1390,6 +1407,7 @@ async function deleteBooking() {
 
     const response = await fetch(`/api/student/bookings/${bookingId}`, {
       method: "DELETE",
+      credentials: "include",
       headers: {
         "X-Requested-With": "XMLHttpRequest",
       },

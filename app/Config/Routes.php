@@ -72,6 +72,7 @@ $routes->get('api/bookings/equipment', 'Api\BookingApiController::getEquipment')
 // Admin dashboard
 $routes->get('/admin', 'Admin::index', ['filter' => 'auth']);
 $routes->get('/admin/equipment', 'Admin::equipment', ['filter' => 'auth']);
+$routes->get('/admin/internal', 'Admin::internal', ['filter' => 'auth']);
 $routes->get('/admin/external', 'Admin::external', ['filter' => 'auth']);
 $routes->get('/admin/events', 'Admin::events', ['filter' => 'auth']);
 $routes->get('/admin/calendar-debug', 'Admin::calendarDebug', ['filter' => 'auth']); // Debug tool
@@ -86,8 +87,6 @@ $routes->group('admin', ['filter' => 'role'], function($routes) {
 // Admin protected routes group
 $routes->group('admin', ['filter' => 'auth'], function($routes) {
 
-    $routes->get('student', 'Admin::student');
-    $routes->get('attendance', 'Admin::attendance');
 
     // Equipment management
     $routes->get('equipment', 'Admin\Equipment::index');
@@ -311,6 +310,7 @@ $routes->group('api/student', ['namespace' => 'App\Controllers\Api', 'filter' =>
     $routes->get('bookings/(:num)/files', 'StudentBookingApi::getStudentBookingFiles/$1');
     $routes->get('bookings/(:num)/files/(:num)/download', 'StudentBookingApi::downloadStudentDocument/$1/$2');
     $routes->delete('bookings/(:num)/files/(:num)', 'StudentBookingApi::deleteStudentDocument/$1/$2');
+    $routes->post('bookings/check-availability', 'StudentBookingApi::checkFacilityAvailability');
     $routes->get('bookings/check-availability', 'StudentBookingApi::checkFacilityAvailability');
     
     $routes->get('bookings', 'StudentBookingApi::getStudentBookings');
@@ -324,6 +324,11 @@ $routes->group('api/student', ['namespace' => 'App\Controllers\Api'], function($
     $routes->get('facilities/(:segment)/data', 'StudentBookingApi::getFacilityData/$1');
 });
 
+// Public booking check endpoint - NO auth required for public availability check
+$routes->group('bookings', ['namespace' => 'App\Controllers\Api'], function($routes) {
+    $routes->post('check-availability', 'StudentBookingApi::checkFacilityAvailability');
+    $routes->get('check-availability', 'StudentBookingApi::checkFacilityAvailability');
+});
 
 $routes->get('test-email', 'TestEmail::index');
 $routes->get('contact', 'Contact::index');

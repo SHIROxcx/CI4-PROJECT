@@ -27,7 +27,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="<?= base_url('/admin/external') ?>" class="submenu-item">🌐 External</a></li>
-                        <li><a href="<?= base_url('/admin/student') ?>" class="submenu-item active">🏛️ Internal</a></li>
+                        <li><a href="<?= base_url('/admin/internal') ?>" class="submenu-item active">🏛️ Internal</a></li>
                     </ul>
                 </li>
 
@@ -61,6 +61,33 @@
     <!-- Main Content -->
     <div class="main-content">
         <!-- Header -->
+        <div class="header">
+            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+            
+            <!-- Notification Bell -->
+            <div class="notification-bell-container">
+                <div class="notification-bell" id="adminNotificationBell" onclick="toggleAdminNotificationDropdown(event)">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge" id="adminNotificationBadge" style="display: none;">0</span>
+                </div>
+
+                <!-- Notification Dropdown -->
+                <div class="notification-dropdown" id="adminNotificationDropdown">
+                    <div class="notification-dropdown-header">
+                        <h5>Notifications</h5>
+                        <button class="notification-clear-btn" onclick="clearAdminNotifications()" title="Clear all">Clear All</button>
+                    </div>
+                    <ul class="notification-items" id="adminNotificationList">
+                        <li class="notification-item">
+                            <div class="notification-empty">
+                                <i class="fas fa-bell-slash"></i>
+                                <p>No notifications yet</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         
         <!-- Dashboard Content -->
         <div class="dashboard">
@@ -206,7 +233,191 @@
                 const options = { year: 'numeric', month: 'long' };
                 monthYear.textContent = date.toLocaleDateString('en-US', options);
             }
+
+            // Initialize admin notifications
+            loadAdminNotifications();
+            
+            // Refresh notifications every 10 seconds
+            setInterval(loadAdminNotifications, 10000);
         });
+
+        // Admin Notification System Functions
+        let adminNotificationsData = [];
+
+        function toggleAdminNotificationDropdown(event) {
+            event.stopPropagation();
+            const dropdown = document.getElementById('adminNotificationDropdown');
+            dropdown.classList.toggle('show');
+
+            // Close when clicking outside
+            document.addEventListener('click', function closeDropdown(e) {
+                if (!e.target.closest('#adminNotificationBell') && !e.target.closest('#adminNotificationDropdown')) {
+                    dropdown.classList.remove('show');
+                    document.removeEventListener('click', closeDropdown);
+                }
+            });
+        }
+
+        function loadAdminNotifications() {
+            const notifications = [];
+
+            // Example notifications - you can replace with API calls
+            const systemHealth = localStorage.getItem('systemHealth');
+            const pendingBookings = localStorage.getItem('pendingBookings');
+            const equipmentAlerts = localStorage.getItem('equipmentAlerts');
+
+            // System health notification
+            if (systemHealth === 'warning') {
+                notifications.push({
+                    id: 'system-health',
+                    title: 'System Health Alert',
+                    message: 'Database connection is running slow',
+                    type: 'warning',
+                    icon: 'fas fa-exclamation-triangle',
+                    timestamp: new Date().toISOString(),
+                    unread: !localStorage.getItem('system-health-read')
+                });
+            }
+
+            // Pending bookings notification
+            if (pendingBookings) {
+                const count = parseInt(pendingBookings);
+                if (count > 0) {
+                    notifications.push({
+                        id: 'pending-bookings',
+                        title: 'Pending Bookings',
+                        message: `You have ${count} booking(s) awaiting approval`,
+                        type: 'info',
+                        icon: 'fas fa-calendar-check',
+                        timestamp: new Date().toISOString(),
+                        unread: !localStorage.getItem('pending-bookings-read')
+                    });
+                }
+            }
+
+            // Equipment alerts notification
+            if (equipmentAlerts) {
+                const count = parseInt(equipmentAlerts);
+                if (count > 0) {
+                    notifications.push({
+                        id: 'equipment-alerts',
+                        title: 'Equipment Maintenance',
+                        message: `${count} item(s) need maintenance`,
+                        type: 'warning',
+                        icon: 'fas fa-tools',
+                        timestamp: new Date().toISOString(),
+                        unread: !localStorage.getItem('equipment-alerts-read')
+                    });
+                }
+            }
+
+            adminNotificationsData = notifications;
+            renderAdminNotifications();
+        }
+
+        function renderAdminNotifications() {
+            const notificationList = document.getElementById('adminNotificationList');
+            const badge = document.getElementById('adminNotificationBadge');
+            const unreadCount = adminNotificationsData.filter(n => n.unread).length;
+
+            // Update badge
+            if (unreadCount > 0) {
+                badge.textContent = unreadCount;
+                badge.style.display = 'flex';
+            } else {
+                badge.style.display = 'none';
+            }
+
+            // Render notifications
+            if (adminNotificationsData.length === 0) {
+                notificationList.innerHTML = `
+                    <li class="notification-item">
+                        <div class="notification-empty">
+                            <i class="fas fa-bell-slash"></i>
+                            <p>No notifications yet</p>
+                        </div>
+                    </li>
+                `;
+            } else {
+                notificationList.innerHTML = adminNotificationsData.map(notification => `
+                    <li class="notification-item ${notification.unread ? 'unread' : ''} ${notification.type}" onclick="markAdminAsRead('${notification.id}')">
+                        <div class="notification-icon">
+                            <i class="${notification.icon}"></i>
+                        </div>
+                        <div class="notification-content">
+                            <p class="notification-title">${notification.title}</p>
+                            <p class="notification-message">${notification.message}</p>
+                            <div class="notification-time">${getAdminTimeAgo(notification.timestamp)}</div>
+                        </div>
+                    </li>
+                `).join('');
+            }
+        }
+
+        function markAdminAsRead(notificationId) {
+            localStorage.setItem(notificationId + '-read', 'true');
+            loadAdminNotifications();
+        }
+
+        function clearAdminNotifications() {
+            adminNotificationsData.forEach(n => {
+                localStorage.removeItem(n.id);
+                localStorage.removeItem(n.id + '-read');
+            });
+            adminNotificationsData = [];
+            renderAdminNotifications();
+        }
+
+        function getAdminTimeAgo(timestamp) {
+            const date = new Date(timestamp);
+            const now = new Date();
+            const secondsAgo = Math.floor((now - date) / 1000);
+
+            if (secondsAgo < 60) return 'Just now';
+            if (secondsAgo < 3600) return Math.floor(secondsAgo / 60) + ' min ago';
+            if (secondsAgo < 86400) return Math.floor(secondsAgo / 3600) + ' h ago';
+            if (secondsAgo < 604800) return Math.floor(secondsAgo / 86400) + ' d ago';
+            
+            return date.toLocaleDateString();
+        }
+
+        // Function to trigger notifications from other scripts
+        function addAdminNotification(title, message, type = 'info') {
+            const id = 'notification-' + Date.now();
+            localStorage.setItem(id, JSON.stringify({
+                id: id,
+                title: title,
+                message: message,
+                type: type,
+                timestamp: new Date().toISOString()
+            }));
+            localStorage.removeItem(id + '-read');
+            loadAdminNotifications();
+        }
+
+        // Function to set system status
+        function setSystemAlert(level) {
+            localStorage.setItem('systemHealth', level); // 'warning', 'success', null
+            loadAdminNotifications();
+        }
+
+        function setPendingBookings(count) {
+            if (count > 0) {
+                localStorage.setItem('pendingBookings', count);
+            } else {
+                localStorage.removeItem('pendingBookings');
+            }
+            loadAdminNotifications();
+        }
+
+        function setEquipmentAlerts(count) {
+            if (count > 0) {
+                localStorage.setItem('equipmentAlerts', count);
+            } else {
+                localStorage.removeItem('equipmentAlerts');
+            }
+            loadAdminNotifications();
+        }
     </script>
 </body>
 </html>
