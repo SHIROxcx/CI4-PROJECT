@@ -165,9 +165,25 @@ function openAddFacilityModal() {
   document.getElementById("modalTitle").textContent = "Add New Facility";
   document.getElementById("facilityForm").reset();
   document.getElementById("facilityId").value = "";
+  document.getElementById("facilityKey").value = "";
   document.getElementById("isActive").checked = true;
   document.getElementById("isMaintenance").checked = false;
   document.getElementById("facilityModal").style.display = "block";
+}
+
+// Generate facility key from name
+function generateFacilityKey() {
+  const name = document.getElementById("facilityName").value.trim();
+  if (name) {
+    // Convert to lowercase, replace spaces and special characters with hyphens
+    const key = name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, ""); // Remove leading/trailing hyphens
+    document.getElementById("facilityKey").value = key;
+  } else {
+    document.getElementById("facilityKey").value = "";
+  }
 }
 
 // Edit facility

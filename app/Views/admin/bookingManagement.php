@@ -151,7 +151,7 @@
 <th>Event Date</th>
 <th>Status</th>
 <th>Total Cost</th>
-<th>Actions</th>
+
                             </tr>
                         </thead>
                         <tbody id="bookingsTableBody">
@@ -441,13 +441,13 @@
                         </div>
                         <div class="file-upload-actions">
                             <div class="file-input-wrapper">
-                                <input type="file" class="file-input" id="permission_letter-file" accept=".pdf,.doc,.docx" onchange="handleFileUpload(this, 'permission_letter')">
+                                <input type="file" class="file-input" id="permission_letter-file" accept=".pdf,.doc,.docx" onchange="handleStudentFileUpload(this, 'permission_letter')">
                                 <label for="permission_letter-file" class="file-upload-btn">📤 Choose File</label>
                             </div>
-                            <button class="btn btn-sm btn-outline download-uploaded-btn" onclick="downloadUploadedFile('permission_letter')" style="display: none;" title="Download">
+                            <button class="btn btn-sm btn-outline download-uploaded-btn" onclick="downloadStudentUploadedFile('permission_letter')" style="display: none;" title="Download">
                                 📥
                             </button>
-                            <button class="btn btn-sm cancel-file-btn" onclick="cancelFileUpload('permission_letter')" style="display: none;" title="Remove File">
+                            <button class="btn btn-sm cancel-file-btn" onclick="cancelStudentFileUpload('permission_letter')" style="display: none;" title="Remove File">
                                 ❌
                             </button>
                         </div>
@@ -464,13 +464,13 @@
                         </div>
                         <div class="file-upload-actions">
                             <div class="file-input-wrapper">
-                                <input type="file" class="file-input" id="request_letter-file" accept=".pdf,.doc,.docx" onchange="handleFileUpload(this, 'request_letter')">
+                                <input type="file" class="file-input" id="request_letter-file" accept=".pdf,.doc,.docx" onchange="handleStudentFileUpload(this, 'request_letter')">
                                 <label for="request_letter-file" class="file-upload-btn">📤 Choose File</label>
                             </div>
-                            <button class="btn btn-sm btn-outline download-uploaded-btn" onclick="downloadUploadedFile('request_letter')" style="display: none;" title="Download">
+                            <button class="btn btn-sm btn-outline download-uploaded-btn" onclick="downloadStudentUploadedFile('request_letter')" style="display: none;" title="Download">
                                 📥
                             </button>
-                            <button class="btn btn-sm cancel-file-btn" onclick="cancelFileUpload('request_letter')" style="display: none;" title="Remove File">
+                            <button class="btn btn-sm cancel-file-btn" onclick="cancelStudentFileUpload('request_letter')" style="display: none;" title="Remove File">
                                 ❌
                             </button>
                         </div>
@@ -487,13 +487,13 @@
                         </div>
                         <div class="file-upload-actions">
                             <div class="file-input-wrapper">
-                                <input type="file" class="file-input" id="approval_letter-file" accept=".pdf,.doc,.docx" onchange="handleFileUpload(this, 'approval_letter')">
+                                <input type="file" class="file-input" id="approval_letter-file" accept=".pdf,.doc,.docx" onchange="handleStudentFileUpload(this, 'approval_letter')">
                                 <label for="approval_letter-file" class="file-upload-btn">📤 Choose File</label>
                             </div>
-                            <button class="btn btn-sm btn-outline download-uploaded-btn" onclick="downloadUploadedFile('approval_letter')" style="display: none;" title="Download">
+                            <button class="btn btn-sm btn-outline download-uploaded-btn" onclick="downloadStudentUploadedFile('approval_letter')" style="display: none;" title="Download">
                                 📥
                             </button>
-                            <button class="btn btn-sm cancel-file-btn" onclick="cancelFileUpload('approval_letter')" style="display: none;" title="Remove File">
+                            <button class="btn btn-sm cancel-file-btn" onclick="cancelStudentFileUpload('approval_letter')" style="display: none;" title="Remove File">
                                 ❌
                             </button>
                         </div>

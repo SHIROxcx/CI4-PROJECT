@@ -77,6 +77,7 @@ $routes->get('/admin/external', 'Admin::external', ['filter' => 'auth']);
 $routes->get('/admin/events', 'Admin::events', ['filter' => 'auth']);
 $routes->get('/admin/calendar-debug', 'Admin::calendarDebug', ['filter' => 'auth']); // Debug tool
 $routes->get('/admin/facilities-management', 'Admin::facilitiesManagement', ['filter' => 'auth']);
+$routes->get('/admin/attendance', 'Admin::attendance', ['filter' => 'auth']);
 
 // Apply role filter to admin routes  
 $routes->group('admin', ['filter' => 'role'], function($routes) {

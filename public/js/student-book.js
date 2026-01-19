@@ -26,6 +26,28 @@ function openStudentBookingModal(facilityKey, facilityId) {
   });
 
   document.getElementById("studentBookingModal").style.display = "block";
+
+  // Initialize file input listeners
+  setTimeout(() => {
+    initializeStudentFileInputs();
+  }, 100);
+}
+
+function initializeStudentFileInputs() {
+  const fileInputs = document.querySelectorAll('input[type="file"]');
+  fileInputs.forEach((input) => {
+    const docType = input.id.replace("file-", "");
+
+    input.addEventListener("change", (e) => {
+      console.log(
+        "DEBUG: File input change event fired for",
+        docType,
+        "files:",
+        e.target.files.length
+      );
+      handleStudentFileSelect(e.target, docType);
+    });
+  });
 }
 
 function closeStudentModal() {
@@ -291,8 +313,28 @@ function updateStudentEquipment(equipmentId) {
 // FILE UPLOAD HANDLER
 // ========================================
 function handleStudentFileSelect(input, fileType) {
+  console.log(
+    "DEBUG: handleStudentFileSelect called - fileType:",
+    fileType,
+    "input.files.length:",
+    input.files.length
+  );
   const file = input.files[0];
-  if (!file) return;
+  if (!file) {
+    console.log("DEBUG: No file selected for", fileType);
+    return;
+  }
+
+  console.log(
+    "DEBUG: File selected for",
+    fileType,
+    "-",
+    file.name,
+    "size:",
+    file.size,
+    "type:",
+    file.type
+  );
 
   if (file.size > 10 * 1024 * 1024) {
     showToast("File size must be less than 10MB", "error");
@@ -313,6 +355,15 @@ function handleStudentFileSelect(input, fileType) {
   }
 
   uploadedStudentFiles[fileType] = file;
+  console.log(
+    "DEBUG: File stored in uploadedStudentFiles[" + fileType + "] =",
+    file.name
+  );
+  console.log("DEBUG: Current uploadedStudentFiles state:", {
+    permission: uploadedStudentFiles.permission?.name || null,
+    request: uploadedStudentFiles.request?.name || null,
+    approval: uploadedStudentFiles.approval?.name || null,
+  });
   const uploadItem = document.getElementById(`upload-${fileType}`);
   uploadItem.classList.add("uploaded");
   uploadItem.querySelector(".upload-status").textContent = "Ready";
@@ -811,21 +862,50 @@ async function submitStudentBooking() {
     }
 
     const bookingId = bookingResult.booking_id;
-
     const hasFiles =
       uploadedStudentFiles.permission ||
       uploadedStudentFiles.request ||
       uploadedStudentFiles.approval;
 
+    console.log(
+      "DEBUG: hasFiles check - permission:",
+      uploadedStudentFiles.permission,
+      "request:",
+      uploadedStudentFiles.request,
+      "approval:",
+      uploadedStudentFiles.approval
+    );
+    console.log("DEBUG: hasFiles =", hasFiles);
+
     if (hasFiles) {
       try {
+        console.log(
+          "DEBUG: Files detected, starting upload to /api/student/bookings/" +
+            bookingId +
+            "/upload"
+        );
         const formData = new FormData();
-        if (uploadedStudentFiles.permission)
+        if (uploadedStudentFiles.permission) {
+          console.log(
+            "DEBUG: Appending permission file:",
+            uploadedStudentFiles.permission.name
+          );
           formData.append("files[]", uploadedStudentFiles.permission);
-        if (uploadedStudentFiles.request)
+        }
+        if (uploadedStudentFiles.request) {
+          console.log(
+            "DEBUG: Appending request file:",
+            uploadedStudentFiles.request.name
+          );
           formData.append("files[]", uploadedStudentFiles.request);
-        if (uploadedStudentFiles.approval)
+        }
+        if (uploadedStudentFiles.approval) {
+          console.log(
+            "DEBUG: Appending approval file:",
+            uploadedStudentFiles.approval.name
+          );
           formData.append("files[]", uploadedStudentFiles.approval);
+        }
 
         showToast("Uploading documents...", "info");
 

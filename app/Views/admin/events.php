@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSPC Admin - Events Management</title>
     <link rel="stylesheet" href="<?= base_url('css/admin/booking.css') ?>">
-   <link rel="stylesheet" href="<?= base_url('css/admin/events.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('css/admin/events.css') ?>">
 </head>
 <body>
     <!-- Sidebar -->
@@ -26,7 +26,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="<?= base_url('/admin/external') ?>" class="submenu-item">🌐 External</a></li>
-                        <li><a href="<?= base_url('/admin/internal') ?>" class="submenu-item active">🏛️ Internal</a></li>
+                        <li><a href="<?= base_url('/admin/internal') ?>" class="submenu-item">🏛️ Internal</a></li>
                     </ul>
                 </li>
 
@@ -334,6 +334,7 @@
             });
 
             const formattedTime = event.event_time.substring(0, 5);
+            const eventId = event.id; // Store event ID for button reference
 
             card.innerHTML = `
                 <div class="event-status-badge status-${event.status}">${event.status}</div>
@@ -374,11 +375,18 @@
                 </div>
                 
                 <div class="event-actions">
-                    <button class="btn btn-primary btn-sm" onclick="viewEventDetailsFromButton(event, ${event.id})">
+                    <button class="btn btn-primary btn-sm" data-event-id="${eventId}">
                         👁️ View Details
                     </button>
                 </div>
             `;
+
+            // Add event listener to button after creating the card
+            const button = card.querySelector('.btn');
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                viewEventDetails(eventId);
+            });
 
             return card;
         }
@@ -404,6 +412,7 @@
                 year: 'numeric'
             });
             const formattedTime = event.event_time.substring(0, 5);
+            const eventId = event.id; // Store event ID for button reference
 
             row.innerHTML = `
                 <td>
@@ -432,12 +441,19 @@
                 <td>${(event.booking_type === 'student' || event.booking_type === 'employee') ? '<span style="color: #28a745; font-weight: 600;">FREE</span>' : '₱' + formatNumber(event.total_cost)}</td>
                 <td>
                     <div class="action-buttons">
-                        <button class="btn btn-primary btn-sm" onclick="viewEventDetails(${event.id})">
+                        <button class="btn btn-primary btn-sm" data-event-id="${eventId}">
                             👁️ View
                         </button>
                     </div>
                 </td>
             `;
+
+            // Add event listener to button after creating the row
+            const button = row.querySelector('.btn');
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                viewEventDetails(eventId);
+            });
 
             return row;
         }
@@ -829,12 +845,6 @@
             displayEvents(eventsData);
         }
 
-        // Toggle sidebar
-        function toggleSidebar() {
-            document.querySelector('.sidebar').classList.toggle('active');
-            document.querySelector('.main-content').classList.toggle('active');
-        }
-
         // Utility functions
         function showLoading(show) {
             document.getElementById('loadingIndicator').style.display = show ? 'block' : 'none';
@@ -884,52 +894,16 @@
             });
         };
 
-// Dropdown toggle functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all dropdown toggles
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-    
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Get the parent dropdown element
-            const dropdown = this.closest('.dropdown');
-            
-            // Close other dropdowns
-            document.querySelectorAll('.dropdown').forEach(otherDropdown => {
-                if (otherDropdown !== dropdown) {
-                    otherDropdown.classList.remove('open');
-                }
-            });
-            
-            // Toggle current dropdown
-            dropdown.classList.toggle('open');
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
         });
-    });
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.dropdown')) {
-            document.querySelectorAll('.dropdown').forEach(dropdown => {
-                dropdown.classList.remove('open');
-            });
-        }
-    });
-    
-    // Handle submenu item clicks
-    const submenuItems = document.querySelectorAll('.submenu-item');
-    submenuItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            // Remove active class from all submenu items
-            submenuItems.forEach(i => i.classList.remove('active'));
-            
-            // Add active class to clicked item
-            this.classList.add('active');
-        });
-    });
-});
         
     </script>
+
 </body>
 </html>

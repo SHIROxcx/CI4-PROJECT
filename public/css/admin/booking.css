@@ -411,7 +411,9 @@ body {
   background: white;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
 }
 
 .table-header {
@@ -430,6 +432,8 @@ body {
 
 .table-content {
   overflow-x: auto;
+  overflow-y: visible;
+  position: relative;
 }
 
 table {
@@ -442,6 +446,9 @@ td {
   padding: 16px 20px;
   text-align: left;
   border-bottom: 1px solid #e9ecef;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
 }
 
 th {
@@ -505,9 +512,182 @@ tr:hover {
 }
 
 .action-buttons {
+  position: relative;
+  display: inline-block;
+  z-index: 100;
+}
+
+.dropdown-trigger {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: 2px solid #0056b3;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
   display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 100px;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 100;
+}
+
+.dropdown-trigger:hover {
+  background-color: #0056b3;
+  border-color: #003d82;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.dropdown-trigger.active {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-trigger::after {
+  content: "▼";
+  font-size: 10px;
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-trigger.active::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  display: none;
+  position: fixed;
+  background-color: #ffffff;
+  min-width: 220px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  z-index: 999999 !important;
+  border-radius: 8px;
+  border: 1.5px solid #999;
+  overflow: visible;
+  opacity: 1;
+  backdrop-filter: none;
+  pointer-events: auto;
+}
+
+.dropdown-menu.show {
+  display: block;
+  animation: slideDown 0.3s ease-out;
+}
+
+#dropdown-menus-container {
+  position: fixed !important;
+  pointer-events: none !important;
+  z-index: 999999 !important;
+}
+
+#dropdown-menus-container .dropdown-menu {
+  pointer-events: auto !important;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+  color: #333;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
+  border: none;
+  background-color: #ffffff;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+
+/* Info button styling */
+.dropdown-menu button.info,
+.dropdown-menu a.info {
+  color: #0066cc;
+}
+
+.dropdown-menu a.info:hover,
+.dropdown-menu button.info:hover {
+  background-color: #e0f0ff;
+  color: #0066cc;
+  font-weight: 600;
+}
+
+/* Danger button styling */
+.dropdown-menu button.danger,
+.dropdown-menu a.danger {
+  color: #d32f2f;
+}
+
+.dropdown-menu a.danger:hover,
+.dropdown-menu button.danger:hover {
+  background-color: #ffe0e0;
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+/* Success button styling */
+.dropdown-menu button.success,
+.dropdown-menu a.success {
+  color: #27ae60;
+}
+
+.dropdown-menu a.success:hover,
+.dropdown-menu button.success:hover {
+  background-color: #e0f7e0;
+  color: #27ae60;
+  font-weight: 600;
+}
+
+/* Warning button styling */
+.dropdown-menu button.warning,
+.dropdown-menu a.warning {
+  color: #f39c12;
+}
+
+.dropdown-menu a.warning:hover,
+.dropdown-menu button.warning:hover {
+  background-color: #fff8e0;
+  color: #f39c12;
+  font-weight: 600;
+}
+
+.dropdown-menu .divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 4px 0;
+}
+
+.dropdown-menu a.warning:hover,
+.dropdown-menu button.warning:hover {
+  background-color: #fff8e0;
+  color: #f39c12;
 }
 
 /* Modal Styles */
@@ -1259,7 +1439,13 @@ tr:hover {
   }
 
   .action-buttons {
-    flex-direction: column;
+    display: flex;
+    justify-content: center;
+  }
+
+  .dropdown-menu {
+    min-width: 180px;
+    right: -20px;
   }
 
   .table-content {

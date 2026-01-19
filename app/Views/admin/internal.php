@@ -66,7 +66,7 @@
         <div class="booking-page">
             <div class="page-title">
                 <h2>Facility Booking Management</h2>
-                <p>Manage and create new facility bookings for CSPC facilities</p>
+                <p>Book CSPC facilities for FREE - Manage and create new facility bookings</p>
             </div>
 
             <!-- Facilities Grid -->
@@ -83,7 +83,7 @@
                 <div class="header-badge">🎓</div>
                 <div>
                     <h2 class="modal-title" id="modalTitle">Student Facility Booking</h2>
-                    <p class="modal-subtitle">Complete your event booking request</p>
+                    <p class="modal-subtitle">Book facilities FREE - Complete your event booking request</p>
                 </div>
                 <span class="close" onclick="closeStudentModal()">&times;</span>
             </div>
@@ -231,6 +231,12 @@
                     <div class="section-card">
                         <h3 class="card-title">📎 Required Documents</h3>
                         <p class="card-description">Upload the following documents (PDF, JPG, PNG - Max 10MB each)</p>
+
+                        <!-- Debug Panel -->
+                        <div id="uploadDebugPanel" style="background-color: #f0f7ff; border: 2px solid #0066cc; border-radius: 8px; padding: 15px; margin-bottom: 20px; font-family: monospace; font-size: 12px; max-height: 200px; overflow-y: auto; display: none;">
+                            <div style="margin-bottom: 10px; font-weight: bold; color: #0066cc;">📊 Upload Debug Log:</div>
+                            <div id="uploadDebugLog" style="color: #333; line-height: 1.6;"></div>
+                        </div>
 
                         <div class="documents-container">
                             <!-- Permission Document -->

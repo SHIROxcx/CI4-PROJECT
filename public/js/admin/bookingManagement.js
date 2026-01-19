@@ -233,6 +233,40 @@ function displayBookings(bookings) {
     const row = createBookingRow(booking);
     tbody.appendChild(row);
   });
+
+  // Render all dropdown menus to body after table is rendered
+  renderDropdownMenusToBody();
+}
+
+// Render all dropdown menus to body so they're not constrained by table
+function renderDropdownMenusToBody() {
+  if (!window.dropdownMenus || Object.keys(window.dropdownMenus).length === 0) {
+    return;
+  }
+
+  // Create container for all dropdowns if it doesn't exist
+  let dropdownContainer = document.getElementById("dropdown-menus-container");
+  if (!dropdownContainer) {
+    dropdownContainer = document.createElement("div");
+    dropdownContainer.id = "dropdown-menus-container";
+    dropdownContainer.style.position = "fixed";
+    dropdownContainer.style.pointerEvents = "none";
+    dropdownContainer.style.zIndex = "999999";
+    document.body.appendChild(dropdownContainer);
+  }
+
+  // Clear existing menus
+  dropdownContainer.innerHTML = "";
+
+  // Add all dropdown menus to container
+  Object.keys(window.dropdownMenus).forEach((menuId) => {
+    const menuHTML = window.dropdownMenus[menuId];
+    const temp = document.createElement("div");
+    temp.innerHTML = menuHTML;
+    const menuElement = temp.firstElementChild;
+    menuElement.style.pointerEvents = "auto";
+    dropdownContainer.appendChild(menuElement);
+  });
 }
 
 // Create booking table row
@@ -298,80 +332,158 @@ function createBookingRow(booking) {
   return row;
 }
 
+// Toggle dropdown menu
+function toggleDropdownMenu(event, bookingId) {
+  event.stopPropagation();
+  const button = event.currentTarget;
+  let menu = document.getElementById(`dropdown-menu-${bookingId}`);
+
+  // If menu doesn't exist yet, wait a moment and try again
+  if (!menu) {
+    setTimeout(() => toggleDropdownMenu(event, bookingId), 10);
+    return;
+  }
+
+  // Close all other menus
+  document.querySelectorAll(".dropdown-menu.show").forEach((m) => {
+    if (m.id !== `dropdown-menu-${bookingId}`) {
+      m.classList.remove("show");
+    }
+  });
+
+  // Remove active class from all buttons
+  document.querySelectorAll(".dropdown-trigger.active").forEach((btn) => {
+    if (btn !== button) {
+      btn.classList.remove("active");
+    }
+  });
+
+  // Toggle current menu and button state
+  const isShowing = !menu.classList.contains("show");
+  menu.classList.toggle("show");
+  button.classList.toggle("active");
+
+  // Position the dropdown using fixed positioning
+  if (isShowing) {
+    const positionMenu = () => {
+      const rect = button.getBoundingClientRect();
+      menu.style.position = "fixed";
+      menu.style.top = rect.bottom + 8 + "px";
+      menu.style.left = rect.right - 220 + "px";
+      menu.style.zIndex = "999999";
+    };
+
+    // Position immediately
+    setTimeout(positionMenu, 0);
+
+    // Reposition on scroll
+    const scrollHandler = positionMenu;
+    window.addEventListener("scroll", scrollHandler, {
+      once: false,
+      capture: true,
+    });
+    menu.dataset.scrollListenerActive = "true";
+    menu.dataset.scrollHandler = scrollHandler;
+  } else {
+    // Remove scroll listener when closing
+    if (menu.dataset.scrollListenerActive === "true") {
+      const scrollHandler = menu.dataset.scrollHandler;
+      window.removeEventListener("scroll", scrollHandler, { capture: true });
+      menu.dataset.scrollListenerActive = "false";
+    }
+  }
+}
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function (event) {
+  if (!event.target.closest(".action-buttons")) {
+    document.querySelectorAll(".dropdown-menu.show").forEach((menu) => {
+      menu.classList.remove("show");
+    });
+    document.querySelectorAll(".dropdown-trigger.active").forEach((btn) => {
+      btn.classList.remove("active");
+    });
+  }
+});
+
 // Create action buttons based on booking status
 function createActionButtons(booking) {
-  const baseActions = `<button class="btn btn-primary" onclick="viewBooking(${booking.id})">👁️ View</button>`;
   const isEmployeeBooking = booking.booking_type === "employee";
   const isStudentBooking = booking.booking_type === "student";
   const isFreebookingType = isStudentBooking || isEmployeeBooking;
 
-  // Student/employee Upload Button - goes to student files upload
-  const studentUploadButton = `<button class="btn btn-primary" onclick="openStudentUploadModal(${booking.id})" title="Upload Student Documents">📤 Upload</button>`;
+  let menuItems = [];
 
-  // User Upload Button - goes to admin files upload
-  const userUploadButton = `<button class="btn btn-primary" onclick="openUploadModal('BK${String(
-    booking.id
-  ).padStart(3, "0")}')" title="Upload Documents">📤 Upload</button>`;
+  // View action (always available)
+  menuItems.push(
+    `<button class="info" onclick="viewBooking(${booking.id})" title="View Booking Details">👁️ View</button>`
+  );
 
-  const declineReasonButton = `<button class="btn btn-warning" onclick="viewDeclineReason(${booking.id})" title="View Decline Reason">❌ Why Declined</button>`;
-
-  // Reschedule button for pending and confirmed
-  const rescheduleButton = `<button class="btn btn-warning" onclick="openRescheduleModal(${booking.id})" title="Reschedule Booking">📅 Reschedule</button>`;
-
-  if (booking.status === "pending") {
-    // FREE BOOKINGS (Student/employee) - Pending
-    if (isFreebookingType) {
-      return `
-        <div class="action-buttons">
-          ${baseActions}
-          ${studentUploadButton}
-          ${rescheduleButton}
-          <button class="btn btn-success" onclick="setCurrentBookingAndOpen(${booking.id}, 'approvalModal')">✅ Approve</button>
-          <button class="btn btn-danger" onclick="setCurrentBookingAndOpen(${booking.id}, 'declineModal')">❌ Decline</button>
-        </div>
-      `;
-    }
-    // EXTERNAL BOOKINGS - Pending
-    return `
-      <div class="action-buttons">
-        ${baseActions}
-        ${userUploadButton}
-        ${rescheduleButton}
-        <button class="btn btn-success" onclick="setCurrentBookingAndOpen(${booking.id}, 'approvalModal')">✅ Approve</button>
-        <button class="btn btn-danger" onclick="setCurrentBookingAndOpen(${booking.id}, 'declineModal')">❌ Decline</button>
-      </div>
-    `;
-  } else if (booking.status === "cancelled") {
-    return `
-      <div class="action-buttons">
-        ${baseActions}
-        ${declineReasonButton}
-        <button class="btn btn-danger" onclick="openDeleteModal(${booking.id})">🗑️ Delete</button>
-      </div>
-    `;
+  // Upload action based on booking type
+  if (isFreebookingType) {
+    menuItems.push(
+      `<button class="info" onclick="openStudentUploadModal(${booking.id})" title="Upload Student Documents">📤 Upload</button>`
+    );
   } else {
-    // CONFIRMED/OTHER STATUSES
-    // Student/employee: Only View + Upload + Reschedule
-    if (isFreebookingType) {
-      return `
-        <div class="action-buttons">
-          ${baseActions}
-          ${studentUploadButton}
-          ${rescheduleButton}
-          <button class="btn btn-danger" onclick="openDeleteModal(${booking.id})">🗑️ Delete</button>
-        </div>
-      `;
-    }
-    // User: View + Upload + Reschedule + Delete
-    return `
-      <div class="action-buttons">
-        ${baseActions}
-        ${userUploadButton}
-        ${rescheduleButton}
-        <button class="btn btn-danger" onclick="openDeleteModal(${booking.id})">🗑️ Delete</button>
-      </div>
-    `;
+    menuItems.push(
+      `<button class="info" onclick="openUploadModal('BK${String(
+        booking.id
+      ).padStart(3, "0")}')" title="Upload Documents">📤 Upload</button>`
+    );
   }
+
+  // Reschedule action (for pending and confirmed)
+  if (booking.status === "pending" || booking.status === "confirmed") {
+    menuItems.push(
+      `<button class="warning" onclick="openRescheduleModal(${booking.id})" title="Reschedule Booking">📅 Reschedule</button>`
+    );
+  }
+
+  // Approval actions (for pending bookings)
+  if (booking.status === "pending") {
+    menuItems.push(`<div class="divider"></div>`);
+    menuItems.push(
+      `<button class="success" onclick="setCurrentBookingAndOpen(${booking.id}, 'approvalModal')" title="Approve Booking">✅ Approve</button>`
+    );
+    menuItems.push(
+      `<button class="danger" onclick="setCurrentBookingAndOpen(${booking.id}, 'declineModal')" title="Decline Booking">❌ Decline</button>`
+    );
+  }
+
+  // Decline reason view (for cancelled bookings)
+  if (booking.status === "cancelled") {
+    menuItems.push(
+      `<button class="warning" onclick="viewDeclineReason(${booking.id})" title="View Decline Reason">❌ View Decline Reason</button>`
+    );
+  }
+
+  // Delete action (for cancelled and confirmed bookings)
+  if (booking.status === "cancelled" || booking.status === "confirmed") {
+    menuItems.push(`<div class="divider"></div>`);
+    menuItems.push(
+      `<button class="danger" onclick="openDeleteModal(${booking.id})" title="Delete Booking">🗑️ Delete</button>`
+    );
+  }
+
+  const dropdownId = `dropdown-menu-${booking.id}`;
+  const dropdownMenuHTML = `<div class="dropdown-menu" id="${dropdownId}">
+    ${menuItems.join("\n")}
+  </div>`;
+
+  // Create button HTML
+  const buttonHTML = `
+    <div class="action-buttons">
+      <button class="dropdown-trigger" onclick="toggleDropdownMenu(event, ${booking.id})">⚙️ Actions</button>
+    </div>
+  `;
+
+  // Store the dropdown menu HTML to be appended to body later
+  if (!window.dropdownMenus) {
+    window.dropdownMenus = {};
+  }
+  window.dropdownMenus[dropdownId] = dropdownMenuHTML;
+
+  return buttonHTML;
 }
 
 // Update statistics
@@ -2063,16 +2175,13 @@ async function saveFreeBookingUploadedFiles() {
     console.log("Uploading free booking files for booking:", currentBookingId);
     console.log("New files:", newFiles);
 
-    const response = await fetch(
-      `/api/student/bookings/${currentBookingId}/upload-files`,
-      {
-        method: "POST",
-        body: formData,
-        headers: {
-          "X-Requested-With": "XMLHttpRequest",
-        },
-      }
-    );
+    const response = await fetch(`/api/bookings/${currentBookingId}/upload`, {
+      method: "POST",
+      body: formData,
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    });
 
     const data = await response.json();
 
@@ -2822,7 +2931,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Load free booking files (student and employee)
 async function loadFreeBookingFiles(bookingId) {
   try {
-    const response = await fetch(`/api/student/bookings/${bookingId}/files`);
+    const response = await fetch(`/api/bookings/${bookingId}/files`);
 
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
@@ -2880,7 +2989,7 @@ async function loadFreeBookingFiles(bookingId) {
 
 // Download free booking file (student or employee)
 function downloadFreeBookingFile(bookingId, fileId) {
-  const url = `/api/student/bookings/${bookingId}/files/${fileId}/download`;
+  const url = `/api/bookings/${bookingId}/files/${fileId}/download`;
   const a = document.createElement("a");
   a.href = url;
   a.target = "_blank";
@@ -2895,7 +3004,7 @@ function downloadStudentFile(bookingId, fileId) {
 // Load student submitted files (kept for backward compatibility)
 async function loadStudentFiles(bookingId) {
   try {
-    const response = await fetch(`/api/student/bookings/${bookingId}/files`);
+    const response = await fetch(`/api/bookings/${bookingId}/files`);
 
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
@@ -2953,7 +3062,7 @@ async function loadStudentFiles(bookingId) {
 
 // Download student file
 function downloadStudentFile(bookingId, fileId) {
-  const url = `/api/student/bookings/${bookingId}/files/${fileId}/download`;
+  const url = `/api/bookings/${bookingId}/files/${fileId}/download`;
   const a = document.createElement("a");
   a.href = url;
   a.target = "_blank";
@@ -3230,10 +3339,12 @@ function openStudentUploadModal(bookingId) {
   // **FIX: Clear uploadedFiles before loading**
   uploadedFiles = {};
 
-  loadExistingStudentFilesForUpload(bookingId);
-
-  // Show modal
+  // Show modal first
   document.getElementById("uploadModal").style.display = "block";
+
+  // Then load existing files
+  console.log("Opening student upload modal for booking:", bookingId);
+  loadExistingStudentFilesForUpload(bookingId);
 }
 
 // Hide admin file upload items
@@ -3378,7 +3489,7 @@ async function cancelStudentFileUpload(fileType) {
   if (fileData && fileData.isExisting && fileData.fileId) {
     try {
       const response = await fetch(
-        `/api/student/bookings/${currentBookingId}/files/${fileData.fileId}`,
+        `/api/bookings/${currentBookingId}/files/${fileData.fileId}`,
         {
           method: "DELETE",
         }
@@ -3428,7 +3539,7 @@ async function downloadStudentUploadedFile(fileType) {
 
   try {
     if (fileData.isExisting && fileData.fileId) {
-      const downloadUrl = `/api/student/bookings/${currentBookingId}/files/${fileData.fileId}/download`;
+      const downloadUrl = `/api/bookings/${currentBookingId}/files/${fileData.fileId}/download`;
       const a = document.createElement("a");
       a.href = downloadUrl;
       a.download = fileData.name;
@@ -3455,14 +3566,29 @@ async function downloadStudentUploadedFile(fileType) {
 // Load existing student files for upload modal
 async function loadExistingStudentFilesForUpload(bookingId) {
   try {
-    const response = await fetch(`/api/student/bookings/${bookingId}/files`);
+    console.log("Loading existing files for booking:", bookingId);
+
+    const response = await fetch(`/api/bookings/${bookingId}/files`);
+
+    console.log("Files API response status:", response.status);
 
     if (response.ok) {
       const data = await response.json();
 
+      console.log("Files API response data:", data);
+
       if (data.success && data.files && data.files.length > 0) {
+        console.log("Found", data.files.length, "files");
+
         data.files.forEach((file) => {
           const fileType = file.file_type;
+
+          console.log(
+            "Processing file type:",
+            fileType,
+            "File:",
+            file.filename
+          );
 
           uploadedFiles[fileType] = {
             fileId: file.id,
@@ -3476,12 +3602,22 @@ async function loadExistingStudentFilesForUpload(bookingId) {
           const uploadItem = document.querySelector(
             `[data-file-type="${fileType}"]`
           );
+
+          console.log(
+            "Found upload item for",
+            fileType,
+            ":",
+            uploadItem ? "YES" : "NO"
+          );
+
           if (uploadItem) {
             uploadItem.classList.add("file-uploaded");
 
             const status = uploadItem.querySelector(".file-upload-status");
-            status.className = "file-upload-status status-uploaded";
-            status.textContent = `Uploaded: ${file.filename}`;
+            if (status) {
+              status.className = "file-upload-status status-uploaded";
+              status.textContent = `Uploaded: ${file.filename}`;
+            }
 
             const downloadBtn = uploadItem.querySelector(
               ".download-uploaded-btn"
@@ -3497,7 +3633,15 @@ async function loadExistingStudentFilesForUpload(bookingId) {
         });
 
         updateUploadProgress();
+      } else {
+        console.log("No files found in API response");
       }
+    } else {
+      console.error(
+        "API error response:",
+        response.status,
+        response.statusText
+      );
     }
   } catch (error) {
     console.error("Error loading existing student files:", error);
@@ -3537,6 +3681,7 @@ function hideAdminUploadItems() {
 }
 
 function showStudentUploadItems() {
+  console.log("Showing student upload items...");
   const studentFileTypes = [
     "permission_letter",
     "request_letter",
@@ -3544,7 +3689,11 @@ function showStudentUploadItems() {
   ];
   studentFileTypes.forEach((type) => {
     const item = document.querySelector(`[data-file-type="${type}"]`);
-    if (item) item.style.display = "flex";
+    console.log(`Student item [${type}]:`, item ? "FOUND" : "NOT FOUND");
+    if (item) {
+      item.style.display = "flex";
+      console.log(`Set [${type}] to display: flex`);
+    }
   });
 }
 

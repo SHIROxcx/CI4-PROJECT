@@ -149,13 +149,13 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label">Facility Name *</label>
-                            <input type="text" class="form-control" id="facilityName" required>
+                            <input type="text" class="form-control" id="facilityName" required onkeyup="generateFacilityKey()">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Facility Key *</label>
-                            <input type="text" class="form-control" id="facilityKey" required placeholder="e.g., auditorium">
-                            <small>Lowercase, no spaces, use hyphens</small>
+                            <label class="form-label">Facility Key (Auto-generated)</label>
+                            <input type="text" class="form-control" id="facilityKey" readonly>
+                            <small>Automatically generated from facility name</small>
                         </div>
                     </div>
 

@@ -4,98 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSPC Rental Facility Evaluation Form</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary: #0a2b7a;
+            --primary-light: #1e50a2;
+            --primary-dark: #061d54;
+            --secondary: #0d6efd;
+            --secondary-light: #2680ff;
+            --secondary-dark: #0b5ed7;
+            --success: #198754;
+            --danger: #dc3545;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: #333;
             line-height: 1.6;
+            min-height: 100vh;
+            padding: 40px 20px;
         }
 
         .container {
             max-width: 900px;
-            margin: 20px auto;
+            margin: 0 auto;
             background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 0;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
         }
 
         .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
             text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 3px solid #003366;
-            padding-bottom: 20px;
+            padding: 40px 30px;
+            border-bottom: 4px solid var(--secondary);
         }
 
         .header h1 {
-            color: #003366;
-            font-size: 24px;
+            font-size: 32px;
+            font-weight: 700;
             margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .header h1 i {
+            margin-right: 12px;
+            font-size: 28px;
         }
 
         .header p {
-            color: #666;
-            font-size: 14px;
-            font-style: italic;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .content-wrapper {
+            padding: 40px;
         }
 
         .booking-info {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8eef5 100%);
+            padding: 25px;
+            border-radius: 8px;
             margin-bottom: 30px;
-            border-left: 4px solid #003366;
+            border-left: 5px solid var(--secondary);
         }
 
         .booking-info p {
-            margin: 8px 0;
+            margin: 10px 0;
             font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .booking-info p i {
+            color: var(--secondary);
+            margin-right: 10px;
+            width: 16px;
         }
 
         .booking-info strong {
-            color: #003366;
+            color: var(--primary);
+            font-weight: 600;
         }
 
         .form-section {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .section-title {
-            background-color: #003366;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: white;
-            padding: 12px 15px;
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            border-radius: 4px;
+            padding: 15px 20px;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 12px rgba(10, 43, 122, 0.15);
+        }
+
+        .section-title i {
+            font-size: 20px;
         }
 
         .form-group {
-            margin-bottom: 25px;
-            padding: 15px;
-            background-color: #f9f9f9;
-            border-radius: 4px;
-            border-left: 3px solid #ddd;
+            margin-bottom: 28px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #f0f2f5 100%);
+            border-radius: 8px;
+            border-left: 4px solid #e0e6ed;
+            transition: all 0.3s ease;
         }
 
-        .form-group.focused {
-            border-left-color: #003366;
-            background-color: #f0f4f8;
+        .form-group:hover {
+            border-left-color: var(--secondary);
+            background: linear-gradient(135deg, #fff 0%, #f8faff 100%);
         }
 
         .question-label {
             display: block;
             font-weight: 600;
-            margin-bottom: 12px;
-            color: #333;
-            font-size: 14px;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 15px;
+        }
+
+        .question-label i {
+            margin-right: 8px;
+            color: var(--secondary);
         }
 
         .rating-options {
@@ -112,10 +163,23 @@
 
         .rating-option input[type="radio"],
         .rating-option input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             cursor: pointer;
-            accent-color: #003366;
+            accent-color: var(--secondary);
+            border: 2px solid #dee2e6;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .rating-option input[type="radio"] {
+            border-radius: 50%;
+        }
+
+        .rating-option input[type="radio"]:checked,
+        .rating-option input[type="checkbox"]:checked {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
         }
 
         .rating-option label {
@@ -125,58 +189,67 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            color: #333;
+            transition: all 0.3s ease;
         }
 
         .rating-option input[type="radio"]:checked ~ label,
         .rating-option input[type="checkbox"]:checked ~ label {
-            color: #003366;
+            color: var(--primary);
             font-weight: 600;
         }
 
         .subquestion {
             margin-left: 30px;
             margin-top: 15px;
-            padding: 12px;
-            background-color: white;
-            border-radius: 4px;
-            border-left: 2px solid #999;
+            padding: 16px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid var(--secondary);
         }
 
         .subquestion .question-label {
-            font-size: 13px;
-            color: #555;
+            font-size: 14px;
+            color: var(--primary);
+            margin-bottom: 12px;
         }
 
         textarea {
             width: 100%;
-            padding: 12px;
+            padding: 12px 14px;
             font-family: inherit;
             font-size: 14px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border: 2px solid #e0e6ed;
+            border-radius: 6px;
             resize: vertical;
             min-height: 100px;
+            transition: all 0.3s ease;
+            background: white;
         }
 
         textarea:focus {
             outline: none;
-            border-color: #003366;
-            box-shadow: 0 0 5px rgba(0, 51, 102, 0.1);
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+            background: white;
         }
 
         select {
             width: 100%;
-            padding: 10px;
+            padding: 10px 14px;
             font-family: inherit;
             font-size: 14px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border: 2px solid #e0e6ed;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            background: white;
+            cursor: pointer;
         }
 
         select:focus {
             outline: none;
-            border-color: #003366;
-            box-shadow: 0 0 5px rgba(0, 51, 102, 0.1);
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
         }
 
         .form-actions {
@@ -184,68 +257,78 @@
             gap: 15px;
             justify-content: center;
             margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #eee;
+            padding-top: 30px;
+            border-top: 2px solid #e0e6ed;
         }
 
         button {
-            padding: 12px 30px;
-            font-size: 16px;
+            padding: 12px 35px;
+            font-size: 15px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-submit {
-            background-color: #003366;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: white;
+            box-shadow: 0 4px 12px rgba(10, 43, 122, 0.2);
         }
 
-        .btn-submit:hover {
-            background-color: #002244;
+        .btn-submit:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+            box-shadow: 0 8px 20px rgba(10, 43, 122, 0.3);
         }
 
         .btn-submit:disabled {
-            background-color: #999;
+            background: #999;
             cursor: not-allowed;
             transform: none;
         }
 
         .btn-reset {
-            background-color: #f0f0f0;
-            color: #333;
-            border: 1px solid #ddd;
+            background: #f0f0f0;
+            color: var(--primary);
+            border: 2px solid #dee2e6;
         }
 
         .btn-reset:hover {
-            background-color: #e0e0e0;
+            background: #e8e8e8;
+            border-color: var(--primary);
         }
 
         .required-note {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 20px;
-            font-style: italic;
+            font-size: 13px;
+            color: #6c757d;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .required-note i {
+            color: var(--danger);
         }
 
         .loading {
             display: none;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
         }
 
         .spinner {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #003366;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary);
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             animation: spin 1s linear infinite;
-            margin: 0 auto 10px;
+            margin: 0 auto 15px;
         }
 
         @keyframes spin {
@@ -254,39 +337,67 @@
         }
 
         .error-message {
-            background-color: #fee;
-            color: #c33;
-            padding: 12px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            border-left: 4px solid #c33;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+            color: #721c24;
+            padding: 15px 16px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--danger);
             display: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .error-message i {
+            font-size: 18px;
+            flex-shrink: 0;
         }
 
         .success-message {
-            background-color: #efe;
-            color: #3c3;
-            padding: 12px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            border-left: 4px solid #3c3;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            color: #155724;
+            padding: 15px 16px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--success);
             display: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .success-message i {
+            font-size: 18px;
+            flex-shrink: 0;
         }
 
         .rating-scale {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
-            margin-top: 10px;
+            margin-top: 12px;
         }
 
         @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+
             .container {
-                padding: 20px;
+                border-radius: 10px;
+            }
+
+            .content-wrapper {
+                padding: 25px;
+            }
+
+            .header {
+                padding: 30px 20px;
             }
 
             .header h1 {
-                font-size: 20px;
+                font-size: 26px;
             }
 
             .form-actions {
@@ -295,6 +406,7 @@
 
             button {
                 width: 100%;
+                justify-content: center;
             }
 
             .rating-options {
@@ -310,32 +422,34 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🏢 CSPC RENTAL FACILITY EVALUATION FORM</h1>
+            <h1><i class="fas fa-star"></i> Facility Evaluation Form</h1>
             <p>Thank you for choosing CSPC as the venue of your occasion/event. In CSPC, we are committed to provide excellent services and open to suggestions for the continual improvement of our system. To help us serve you better, may we ask you to take a few minutes to answer this survey.</p>
         </div>
 
-        <div class="booking-info">
-            <p><strong>Booking ID:</strong> #BK<?= str_pad($booking['id'], 4, '0', STR_PAD_LEFT) ?></p>
-            <p><strong>Facility Rented:</strong> <?= htmlspecialchars($booking['event_title']) ?></p>
-            <p><strong>Event Date:</strong> <?= date('F d, Y', strtotime($booking['event_date'])) ?></p>
-            <p><strong>Your Name:</strong> <?= htmlspecialchars($booking['client_name']) ?></p>
-        </div>
+        <div class="content-wrapper">
+            <div class="booking-info">
+                <p><i class="fas fa-hashtag"></i> <strong>Booking ID:</strong> #BK<?= str_pad($booking['id'], 4, '0', STR_PAD_LEFT) ?></p>
+                <p><i class="fas fa-building"></i> <strong>Facility Rented:</strong> <?= htmlspecialchars($booking['event_title']) ?></p>
+                <p><i class="fas fa-calendar"></i> <strong>Event Date:</strong> <?= date('F d, Y', strtotime($booking['event_date'])) ?></p>
+                <p><i class="fas fa-user"></i> <strong>Your Name:</strong> <?= htmlspecialchars($booking['client_name']) ?></p>
+            </div>
 
-        <div class="error-message" id="errorMessage"></div>
-        <div class="success-message" id="successMessage"></div>
+            <div class="error-message" id="errorMessage"><i class="fas fa-exclamation-circle"></i><span></span></div>
+            <div class="success-message" id="successMessage"><i class="fas fa-check-circle"></i><span></span></div>
 
-        <form id="surveyForm">
-            <input type="hidden" name="survey_token" value="<?= htmlspecialchars($token) ?>">
+            <form id="surveyForm">
+                <input type="hidden" name="survey_token" value="<?= htmlspecialchars($token) ?>">
+                <?= csrf_field() ?>
 
-            <p class="required-note">* All fields are required to complete the survey</p>
+                <p class="required-note"><i class="fas fa-asterisk"></i> All fields are required to complete the survey</p>
 
-            <!-- STAFF SECTION -->
-            <div class="form-section">
-                <div class="section-title">👥 STAFF EVALUATION</div>
+                <!-- STAFF SECTION -->
+                <div class="form-section">
+                    <div class="section-title"><i class="fas fa-users"></i> Staff Evaluation</div>
 
-                <div class="form-group">
-                    <label class="question-label">1. Punctuality of the staff (Property Staff and Audio Operator) *</label>
-                    <div class="rating-options">
+                    <div class="form-group">
+                        <label class="question-label"><i class="fas fa-question-circle"></i> 1. Punctuality of the staff (Property Staff and Audio Operator) *</label>
+                        <div class="rating-options">
                         <div class="rating-option">
                             <input type="radio" id="staff_punctuality_excellent" name="staff_punctuality" value="Excellent" required>
                             <label for="staff_punctuality_excellent">Excellent</label>
@@ -1016,6 +1130,7 @@
                 <p>Submitting your survey...</p>
             </div>
         </form>
+        </div>
     </div>
 
     <script>
@@ -1090,14 +1205,14 @@
         });
 
         function showError(message) {
-            errorMessage.textContent = message;
-            errorMessage.style.display = 'block';
+            errorMessage.querySelector('span').textContent = message;
+            errorMessage.style.display = 'flex';
             errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         function showSuccess(message) {
-            successMessage.textContent = message;
-            successMessage.style.display = 'block';
+            successMessage.querySelector('span').textContent = message;
+            successMessage.style.display = 'flex';
             successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     </script>

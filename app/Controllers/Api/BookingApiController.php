@@ -1352,26 +1352,38 @@ public function archive($id = null)
 public function uploadFiles($bookingId)
 {
     try {
+        log_message('info', "=== UPLOAD FILES START - Booking ID: {$bookingId} (BookingApiController) ===");
+        
         // Verify booking exists
         $booking = $this->bookingModel->find($bookingId);
         if (!$booking) {
+            log_message('error', "Booking {$bookingId} not found");
             return $this->response->setJSON([
                 'success' => false,
                 'message' => 'Booking not found'
             ])->setStatusCode(404);
         }
 
+        log_message('info', "Booking found: {$booking['id']}, Type: {$booking['booking_type']}");
+
         $uploadPath = WRITEPATH . 'uploads/student_booking_files/' . $bookingId . '/';
+        
+        log_message('info', "Upload path: {$uploadPath}");
         
         // Create directory if it doesn't exist
         if (!is_dir($uploadPath)) {
-            mkdir($uploadPath, 0755, true);
+            @mkdir($uploadPath, 0755, true);
+            log_message('info', "Created directory");
         }
 
         $uploadedFiles = [];
         $files = $this->request->getFiles();
 
+        log_message('info', "getFiles() returned: " . count($files) . " file(s)");
+        log_message('debug', "Files array keys: " . json_encode(array_keys($files)));
+
         if (empty($files)) {
+            log_message('error', "No files in request");
             return $this->response->setJSON([
                 'success' => false,
                 'message' => 'No files uploaded'
@@ -1380,22 +1392,67 @@ public function uploadFiles($bookingId)
 
         $db = \Config\Database::connect();
         
-        foreach ($files as $fileKey => $file) {
+        // Handle both single files and array of files from FormData
+        $filesToProcess = [];
+        if (isset($files['files'])) {
+            // Files uploaded as "files[]" in FormData
+            $filesToProcess = is_array($files['files']) ? $files['files'] : [$files['files']];
+            log_message('info', "Processing files[] array with " . count($filesToProcess) . " item(s)");
+        } else {
+            // Individual file fields
+            $filesToProcess = $files;
+            log_message('info', "Processing individual file fields");
+        }
+        
+        // File type mapping for student/employee bookings
+        $fileTypeMapping = [
+            0 => 'permission_letter',
+            1 => 'request_letter',
+            2 => 'approval_letter'
+        ];
+        
+        foreach ($filesToProcess as $fileIndex => $file) {
+            log_message('info', "Processing file index {$fileIndex}, type: " . gettype($file));
+            
+            // Handle nested arrays from CodeIgniter file uploads
+            while (is_array($file) && !empty($file)) {
+                log_message('debug', "File is array, unwrapping...");
+                $file = reset($file); // Get first element
+            }
+            
+            log_message('info', "After unwrap - type: " . gettype($file));
+            
+            // Skip if not a valid UploadedFile object
+            if (!is_object($file) || !method_exists($file, 'isValid')) {
+                log_message('warning', "File at index {$fileIndex} is not a valid UploadedFile object. Type: " . gettype($file) . ", Is object: " . (is_object($file) ? 'yes' : 'no'));
+                continue;
+            }
+            
+            log_message('info', "File is valid UploadedFile object, checking if valid...");
+            
             if ($file->isValid() && !$file->hasMoved()) {
                 
                 // Validate file size (10MB max)
                 if ($file->getSize() > 10 * 1024 * 1024) {
+                    log_message('warning', "File too large: {$file->getClientName()}");
                     continue; // Skip files larger than 10MB
                 }
+
+                // Determine the file type
+                // For numeric indices, use mapping; otherwise use the key as-is
+                $fileType = isset($fileTypeMapping[$fileIndex]) ? $fileTypeMapping[$fileIndex] : $fileIndex;
+
+                log_message('info', "Processing file type: {$fileType}");
 
                 // Check if file of this type already exists for this booking
                 $existingFile = $db->table('student_booking_files')
                                   ->where('booking_id', $bookingId)
-                                  ->where('file_type', $fileKey)
+                                  ->where('file_type', $fileType)
                                   ->get()
                                   ->getRowArray();
 
                 if ($existingFile) {
+                    log_message('info', "Deleting existing file: {$existingFile['original_filename']}");
                     // Delete the old file from disk
                     if (file_exists($existingFile['file_path'])) {
                         unlink($existingFile['file_path']);
@@ -1408,13 +1465,17 @@ public function uploadFiles($bookingId)
                 // Generate unique filename
                 $newName = $file->getRandomName();
                 
+                log_message('info', "Moving file {$file->getClientName()} to {$uploadPath}{$newName}");
+                
                 // Move file to upload directory
                 if ($file->move($uploadPath, $newName)) {
+                    
+                    log_message('info', "File moved successfully, now inserting to database");
                     
                     // Save file info to database
                     $fileData = [
                         'booking_id' => $bookingId,
-                        'file_type' => $fileKey,
+                        'file_type' => $fileType,
                         'original_filename' => $file->getClientName(),
                         'stored_filename' => $newName,
                         'file_path' => $uploadPath . $newName,
@@ -1423,19 +1484,35 @@ public function uploadFiles($bookingId)
                         'upload_date' => date('Y-m-d H:i:s')
                     ];
                     
-                    $fileId = $db->table('student_booking_files')->insert($fileData);
+                    log_message('debug', "File data to insert: " . json_encode($fileData));
+                    
+                    $insertResult = $db->table('student_booking_files')->insert($fileData);
+                    $insertID = $db->insertID();
+                    
+                    log_message('info', "Database insert result: {$insertResult}, ID: {$insertID}");
+                    
+                    if ($insertResult) {
+                        log_message('info', "✓ File successfully saved to database with ID {$insertID}");
+                    } else {
+                        log_message('error', "✗ Failed to insert file to database");
+                    }
                     
                     $uploadedFiles[] = [
-                        'id' => $db->insertID(), // Return the file ID
-                        'file_type' => $fileKey,
+                        'id' => $insertID,
+                        'file_type' => $fileType,
                         'filename' => $file->getClientName(),
                         'size' => $file->getSize()
                     ];
+                } else {
+                    log_message('error', "Failed to move file to {$uploadPath}{$newName}");
                 }
             }
         }
 
+        log_message('info', "Total files uploaded: " . count($uploadedFiles));
+
         if (empty($uploadedFiles)) {
+            log_message('error', "No files were successfully uploaded");
             return $this->response->setJSON([
                 'success' => false,
                 'message' => 'No files were successfully uploaded'
@@ -1463,6 +1540,8 @@ public function uploadFiles($bookingId)
 public function getBookingFiles($bookingId)
 {
     try {
+        log_message('info', "=== GET BOOKING FILES START for booking {$bookingId} ===");
+        
         $db = \Config\Database::connect();
         
         // Get files from student_booking_files table (used by both admin and student bookings)
@@ -1471,9 +1550,33 @@ public function getBookingFiles($bookingId)
                    ->get()
                    ->getResultArray();
 
+        log_message('info', "Retrieved " . count($files) . " files for booking {$bookingId}");
+        
+        if (!empty($files)) {
+            foreach ($files as $file) {
+                log_message('info', "  - File: {$file['original_filename']} (Type: {$file['file_type']}, Size: {$file['file_size']})");
+            }
+        } else {
+            log_message('warning', "No files found for booking {$bookingId}");
+        }
+
+        // Normalize response format to match JavaScript expectations
+        // This ensures consistency between different upload flows
+        $formattedFiles = array_map(function($file) {
+            return [
+                'id' => $file['id'],
+                'file_type' => $file['file_type'],
+                'filename' => $file['original_filename'],  // Normalize field name
+                'size' => $file['file_size'],              // Normalize field name
+                'mime_type' => $file['mime_type'],
+                'upload_date' => $file['upload_date']
+            ];
+        }, $files);
+
         return $this->response->setJSON([
             'success' => true,
-            'files' => $files
+            'files' => $formattedFiles,
+            'count' => count($formattedFiles)
         ]);
         
     } catch (\Exception $e) {

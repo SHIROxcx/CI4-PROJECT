@@ -821,7 +821,7 @@ if (!empty($equipment)) {
                     'icon' => $facility['icon'],
                     'description' => $facility['description'] ?? 'No description available',
                     'features' => ['Air Conditioned', 'Sound System', 'Projector'],
-                    'price' => 'Free for Students',
+                    'price' => 'Free Booking',
                     'is_active' => $facility['is_active'],
                     'is_maintenance' => $facility['is_maintenance']
                 ];

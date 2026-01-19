@@ -134,7 +134,7 @@ if (!$isLoggedIn) {
                         <span class="feature-tag">Projector</span>
                     </div>
                     <div class="facility-price">
-                        <span class="price-range">Free for Students</span>
+                        <span class="price-range">Free Booking</span>
                         <button class="book-btn">Book Now</button>
                     </div>
                 </div>

@@ -476,7 +476,8 @@ if (!empty($request['selected_equipment'])) {
 public function uploadStudentDocuments($bookingId)
 {
     try {
-        log_message('info', "=== UPLOAD START for booking {$bookingId} ===");
+        log_message('info', "=== UPLOAD START for booking {$bookingId} (StudentBookingApi) ===");
+        log_message('info', "User ID: " . (auth()->id() ?? 'NOT AUTHENTICATED'));
         
         // Verify booking exists
         $booking = $this->bookingModel->find($bookingId);
@@ -488,10 +489,11 @@ public function uploadStudentDocuments($bookingId)
             ])->setStatusCode(404);
         }
 
-        log_message('info', "Booking found: {$booking['id']}");
+        log_message('info', "✓ Booking found: {$booking['id']}, Type: {$booking['booking_type']} (StudentBookingApi)");
 
         // Verify it's a valid booking type (student, faculty, or employee)
         if (!in_array($booking['booking_type'], ['student', 'faculty', 'employee'])) {
+            log_message('error', "Invalid booking type: {$booking['booking_type']}");
             return $this->response->setJSON([
                 'success' => false,
                 'message' => 'Invalid booking type'
@@ -503,8 +505,8 @@ public function uploadStudentDocuments($bookingId)
         log_message('info', "Upload path: {$uploadPath}");
         
         if (!is_dir($uploadPath)) {
-            mkdir($uploadPath, 0755, true);
-            log_message('info', "Created upload directory");
+            @mkdir($uploadPath, 0755, true);
+            log_message('info', "Created upload directory, exists now: " . (is_dir($uploadPath) ? 'YES' : 'NO'));
         }
 
         $uploadedFiles = [];
@@ -512,11 +514,14 @@ public function uploadStudentDocuments($bookingId)
         // Get files from request - FIXED THIS PART
         $files = $this->request->getFiles();
         
-        log_message('info', "Files received: " . count($files));
-        log_message('info', "Files array: " . json_encode(array_keys($files)));
+        log_message('info', "getFiles() returned: " . json_encode(array_keys($files)));
+        log_message('info', "Total files count: " . count($files));
+        
+        // Debug: Log all $_FILES contents
+        log_message('debug', "RAW \$_FILES: " . json_encode(array_keys($_FILES ?? [])));
         
         if (empty($files) || !isset($files['files'])) {
-            log_message('error', "No files found in request");
+            log_message('error', "No 'files' key found in request. Available keys: " . json_encode(array_keys($files)));
             return $this->response->setJSON([
                 'success' => false,
                 'message' => 'No files uploaded'
@@ -535,28 +540,37 @@ public function uploadStudentDocuments($bookingId)
         ];
         
         // Process each uploaded file
-foreach ($files['files'] as $index => $file) {
-    log_message('info', "Processing file index {$index}");
-    
-    // CRITICAL: Check if file is an array (when multiple files with same name)
-    if (is_array($file)) {
-        $file = $file[0]; // Take first file
-    }
-    
-    log_message('info', "File name: {$file->getClientName()}, Valid: {$file->isValid()}, HasMoved: {$file->hasMoved()}");
-    
-    if ($file->isValid() && !$file->hasMoved()) {
-        
-        // Validate file size
-        if ($file->getSize() > 10 * 1024 * 1024) {
-            log_message('warning', "File too large: {$file->getClientName()}");
-            continue;
-        }
+        foreach ($files['files'] as $index => $file) {
+            log_message('info', "Processing file index {$index}, file type: " . gettype($file));
+            
+            // CRITICAL: Handle nested arrays - CodeIgniter sometimes wraps files in arrays
+            while (is_array($file) && !empty($file)) {
+                log_message('debug', "File is array, unwrapping from index {$index}...");
+                $file = reset($file); // Get first element if it's an array
+            }
+            
+            log_message('info', "After unwrap - type: " . gettype($file));
+            
+            // Skip if still not a valid UploadedFile object
+            if (!is_object($file) || !method_exists($file, 'isValid')) {
+                log_message('warning', "File index {$index} is not a valid UploadedFile object. Type: " . gettype($file));
+                continue;
+            }
+            
+            log_message('info', "File name: {$file->getClientName()}, Valid: {$file->isValid()}, HasMoved: {$file->hasMoved()}");
+            
+            if ($file->isValid() && !$file->hasMoved()) {
+                
+                // Validate file size
+                if ($file->getSize() > 10 * 1024 * 1024) {
+                    log_message('warning', "File too large: {$file->getClientName()}");
+                    continue;
+                }
 
-        // Get file type from mapping
-        $fileType = $fileTypeMapping[$index] ?? 'document';
-        
-        log_message('info', "File type: {$fileType}");
+                // Get file type from mapping
+                $fileType = $fileTypeMapping[$index] ?? 'document';
+                
+                log_message('info', "File type: {$fileType}");
         
         // Check if file already exists for this type
         $existingFile = $db->table('student_booking_files')

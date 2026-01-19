@@ -64,29 +64,7 @@
         <div class="header">
             <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
             
-            <!-- Notification Bell -->
-            <div class="notification-bell-container">
-                <div class="notification-bell" id="adminNotificationBell" onclick="toggleAdminNotificationDropdown(event)">
-                    <i class="fas fa-bell"></i>
-                    <span class="notification-badge" id="adminNotificationBadge" style="display: none;">0</span>
-                </div>
 
-                <!-- Notification Dropdown -->
-                <div class="notification-dropdown" id="adminNotificationDropdown">
-                    <div class="notification-dropdown-header">
-                        <h5>Notifications</h5>
-                        <button class="notification-clear-btn" onclick="clearAdminNotifications()" title="Clear all">Clear All</button>
-                    </div>
-                    <ul class="notification-items" id="adminNotificationList">
-                        <li class="notification-item">
-                            <div class="notification-empty">
-                                <i class="fas fa-bell-slash"></i>
-                                <p>No notifications yet</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </div>
         
         <!-- Dashboard Content -->

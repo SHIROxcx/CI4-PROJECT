@@ -11,7 +11,6 @@ $userRole = $session->get('role');
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSPC Facility Booking - Reserve Campus Facilities Online</title>
-    <link rel="icon" type="image/jpeg" href="<?= base_url('images/CSPC.jpg') ?>">
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
       rel="stylesheet"
@@ -113,10 +112,10 @@ $userRole = $session->get('role');
       /* Hero Section */
       .hero {
         text-align: center;
-        padding: 100px 20px 80px;
+        padding: 80px 20px;
         color: white;
         position: relative;
-        overflow: hidden;
+        overflow: visible;
       }
 
       .hero::before {
@@ -134,7 +133,7 @@ $userRole = $session->get('role');
       .hero-content {
         position: relative;
         z-index: 2;
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
       }
 
@@ -658,18 +657,9 @@ $userRole = $session->get('role');
         }
       }
 
-      /* Availability Search Section */
-      .availability-search {
-        background: linear-gradient(135deg, rgba(30, 60, 114, 0.05) 0%, rgba(42, 82, 152, 0.05) 100%);
-        padding: 60px 0;
-        margin-top: -40px;
-        position: relative;
-        z-index: 10;
-      }
-
       .search-form-wrapper {
         max-width: 1100px;
-        margin: 0 auto;
+        margin: 60px auto 0;
         padding: 45px;
         background: white;
         border-radius: 24px;
@@ -936,12 +926,8 @@ $userRole = $session->get('role');
             <i class="fas fa-info-circle"></i> How It Works
           </button>
         </div>
-      </div>
-    </section>
 
-    <!-- Availability Search Section -->
-    <section class="availability-search">
-      <div class="container">
+        <!-- Availability Search Section -->
         <div class="search-form-wrapper">
           <div class="search-form-title">
             <i class="fas fa-search"></i>

@@ -8,6 +8,50 @@ let uploadedStudentFiles = {
   approval: null,
 };
 
+// Debug logging for file uploads
+function addUploadDebugLog(message, type = "info") {
+  const debugPanel = document.getElementById("uploadDebugPanel");
+  const debugLog = document.getElementById("uploadDebugLog");
+
+  if (debugLog) {
+    const timestamp = new Date().toLocaleTimeString();
+    const icon =
+      type === "success"
+        ? "✅"
+        : type === "error"
+        ? "❌"
+        : type === "warning"
+        ? "⚠️"
+        : "ℹ️";
+    const color =
+      type === "success"
+        ? "#28a745"
+        : type === "error"
+        ? "#dc3545"
+        : type === "warning"
+        ? "#ffc107"
+        : "#0066cc";
+
+    const logEntry = document.createElement("div");
+    logEntry.style.color = color;
+    logEntry.style.marginBottom = "5px";
+    logEntry.innerHTML = `[${timestamp}] ${icon} ${message}`;
+
+    debugLog.appendChild(logEntry);
+
+    // Show debug panel
+    if (debugPanel) {
+      debugPanel.style.display = "block";
+    }
+
+    // Scroll to bottom
+    debugLog.scrollTop = debugLog.scrollHeight;
+
+    // Also log to console
+    console.log(`[${type.toUpperCase()}] ${message}`);
+  }
+}
+
 function openStudentBookingModal(facilityKey, facilityId) {
   selectedStudentFacility = facilityKey;
   selectedStudentFacilityId = facilityId;
@@ -187,10 +231,21 @@ function updateStudentEquipment(equipmentId) {
 function handleStudentFileSelect(input, fileType) {
   const file = input.files[0];
 
-  if (!file) return;
+  if (!file) {
+    addUploadDebugLog(`File input cleared for ${fileType}`, "info");
+    return;
+  }
+
+  addUploadDebugLog(`File selected for ${fileType}: ${file.name}`, "info");
 
   // Validate size
   if (file.size > 10 * 1024 * 1024) {
+    addUploadDebugLog(
+      `❌ File too large: ${file.name} (${(file.size / 1024 / 1024).toFixed(
+        2
+      )} MB)`,
+      "error"
+    );
     showToast("File size must be less than 10MB", "error");
     input.value = "";
     return;
@@ -204,6 +259,10 @@ function handleStudentFileSelect(input, fileType) {
     "image/jpg",
   ];
   if (!allowedTypes.includes(file.type)) {
+    addUploadDebugLog(
+      `❌ Invalid file type: ${file.type} (allowed: PDF, JPG, PNG)`,
+      "error"
+    );
     showToast("Only PDF, JPG, and PNG files are allowed", "error");
     input.value = "";
     return;
@@ -211,6 +270,12 @@ function handleStudentFileSelect(input, fileType) {
 
   // Store file
   uploadedStudentFiles[fileType] = file;
+  addUploadDebugLog(
+    `✅ ${fileType} file validated and ready: ${file.name} (${(
+      file.size / 1024
+    ).toFixed(2)} KB)`,
+    "success"
+  );
 
   // Update UI
   const uploadItem = document.getElementById(`upload-${fileType}`);
@@ -219,7 +284,7 @@ function handleStudentFileSelect(input, fileType) {
   uploadItem.querySelector(".upload-status").style.color = "var(--success)";
   document.getElementById(`filename-${fileType}`).textContent = file.name;
 
-  showToast(`${file.name} uploaded successfully`, "success");
+  showToast(`${file.name} ready for upload`, "success");
   checkStudentFilesComplete();
 }
 
@@ -234,6 +299,22 @@ function checkStudentFilesComplete() {
 // Initialize drag and drop handlers when modal opens
 function initializeStudentDragDrop() {
   const uploadAreas = document.querySelectorAll(".upload-area");
+
+  // Attach change listeners to file inputs (in addition to onchange attribute)
+  const fileInputs = document.querySelectorAll('input[type="file"]');
+  fileInputs.forEach((input) => {
+    const docType = input.id.replace("file-", "");
+
+    input.addEventListener("change", (e) => {
+      console.log(
+        "File input change event fired for",
+        docType,
+        "files:",
+        e.target.files.length
+      );
+      handleStudentFileSelect(e.target, docType);
+    });
+  });
 
   uploadAreas.forEach((area) => {
     // Prevent default drag behaviors
@@ -268,11 +349,19 @@ function initializeStudentDragDrop() {
         // Find the file input in this upload area
         const fileInput = area.querySelector('input[type="file"]');
         if (fileInput && files.length > 0) {
-          fileInput.files = files;
-
-          // Trigger the file select handler
+          // Note: Cannot assign to fileInput.files (read-only)
+          // Instead, manually handle the dropped file
+          const file = files[0];
           const docType = fileInput.id.replace("file-", "");
-          handleStudentFileSelect(fileInput, docType);
+
+          // Simulate file selection by directly calling the handler
+          // Create a mock input object with files property
+          const mockInput = {
+            files: files,
+            value: file.name,
+          };
+
+          handleStudentFileSelect(mockInput, docType);
         }
       },
       false
@@ -338,6 +427,9 @@ async function submitStudentBooking() {
     };
 
     // Create booking
+    console.log("🔵 STEP 1: Creating Booking");
+    console.log("Booking Data:", bookingData);
+
     const bookingResponse = await fetch("/api/student/bookings/create", {
       method: "POST",
       headers: {
@@ -347,13 +439,18 @@ async function submitStudentBooking() {
       body: JSON.stringify(bookingData),
     });
 
+    console.log("Booking Response Status:", bookingResponse.status);
+
     const bookingResult = await bookingResponse.json();
+
+    console.log("🟢 Booking Created:", bookingResult);
 
     if (!bookingResult.success) {
       throw new Error(bookingResult.message || "Failed to create booking");
     }
 
     const bookingId = bookingResult.booking_id;
+    addUploadDebugLog(`Booking created with ID: ${bookingId}`, "success");
 
     // Upload files if provided
     const hasFiles =
@@ -361,76 +458,241 @@ async function submitStudentBooking() {
       uploadedStudentFiles.request ||
       uploadedStudentFiles.approval;
 
+    addUploadDebugLog(
+      `📁 File Check - permission: ${
+        uploadedStudentFiles.permission?.name || "none"
+      }, request: ${uploadedStudentFiles.request?.name || "none"}, approval: ${
+        uploadedStudentFiles.approval?.name || "none"
+      }`,
+      "info"
+    );
+    addUploadDebugLog(
+      `hasFiles = ${hasFiles}`,
+      hasFiles ? "success" : "warning"
+    );
+
     if (hasFiles) {
       try {
         const formData = new FormData();
 
         // Log files being uploaded
-        console.log("Files to upload:", uploadedStudentFiles);
+        addUploadDebugLog("Starting file upload process...", "info");
 
         // Add files in the correct array format that the server expects
+        let fileList = [];
+
         if (uploadedStudentFiles.permission) {
           formData.append("files[]", uploadedStudentFiles.permission);
-          console.log(
-            "Added permission file:",
-            uploadedStudentFiles.permission.name
+          fileList.push(
+            `Permission (${(
+              uploadedStudentFiles.permission.size / 1024
+            ).toFixed(2)} KB)`
+          );
+          addUploadDebugLog(
+            `✓ Added permission file: ${uploadedStudentFiles.permission.name}`,
+            "success"
           );
         }
         if (uploadedStudentFiles.request) {
           formData.append("files[]", uploadedStudentFiles.request);
-          console.log("Added request file:", uploadedStudentFiles.request.name);
+          fileList.push(
+            `Request (${(uploadedStudentFiles.request.size / 1024).toFixed(
+              2
+            )} KB)`
+          );
+          addUploadDebugLog(
+            `✓ Added request file: ${uploadedStudentFiles.request.name}`,
+            "success"
+          );
         }
         if (uploadedStudentFiles.approval) {
           formData.append("files[]", uploadedStudentFiles.approval);
-          console.log(
-            "Added approval file:",
-            uploadedStudentFiles.approval.name
+          fileList.push(
+            `Approval (${(uploadedStudentFiles.approval.size / 1024).toFixed(
+              2
+            )} KB)`
+          );
+          addUploadDebugLog(
+            `✓ Added approval file: ${uploadedStudentFiles.approval.name}`,
+            "success"
           );
         }
 
-        // Debug: Log FormData contents
-        console.log("FormData entries:");
-        for (let [key, value] of formData.entries()) {
-          console.log(`${key}: ${value.name || value}`);
-        }
+        addUploadDebugLog(`Total files to upload: ${fileList.length}`, "info");
 
-        const uploadResponse = await fetch(
-          `/api/student/bookings/${bookingId}/upload`,
-          {
-            method: "POST",
-            headers: {
-              "X-Requested-With": "XMLHttpRequest",
-            },
-            body: formData,
-          }
+        // Use the same working admin endpoint as booking management modal
+        const uploadUrl = `/api/bookings/${bookingId}/upload`;
+        addUploadDebugLog(`Sending request to: ${uploadUrl}`, "info");
+
+        // Log FormData contents in detail
+        const formDataEntries = Array.from(formData.entries());
+        addUploadDebugLog(
+          `FormData has ${formDataEntries.length} entries`,
+          "info"
         );
 
-        console.log("Upload response status:", uploadResponse.status);
+        formDataEntries.forEach((entry, idx) => {
+          const [key, value] = entry;
+          if (value instanceof File) {
+            addUploadDebugLog(
+              `  [${idx}] ${key}: File - ${value.name} (${value.size} bytes, ${value.type})`,
+              "info"
+            );
+          } else {
+            addUploadDebugLog(`  [${idx}] ${key}: ${value}`, "info");
+          }
+        });
+
+        addUploadDebugLog("=== NETWORK REQUEST STARTING ===", "info");
+
+        console.log("🚀 NETWORK REQUEST DETAILS:");
+        console.log("URL:", uploadUrl);
+        console.log("Method: POST");
+        console.log("Headers: X-Requested-With: XMLHttpRequest");
+        console.log("Body Type: FormData");
+        console.log(
+          "FormData Entries:",
+          formDataEntries.map(([k, v]) =>
+            v instanceof File
+              ? `${k}: File(${v.name}, ${v.size}b)`
+              : `${k}: ${v}`
+          )
+        );
+
+        const uploadResponse = await fetch(uploadUrl, {
+          method: "POST",
+          headers: {
+            "X-Requested-With": "XMLHttpRequest",
+          },
+          body: formData,
+        });
+
+        console.log("📡 NETWORK RESPONSE RECEIVED:");
+        console.log("Status:", uploadResponse.status);
+        console.log("Status Text:", uploadResponse.statusText);
+        console.log("Headers:", {
+          "content-type": uploadResponse.headers.get("content-type"),
+          "content-length": uploadResponse.headers.get("content-length"),
+        });
+
+        addUploadDebugLog(
+          `Server response status: ${uploadResponse.status}`,
+          uploadResponse.ok ? "success" : "warning"
+        );
+
+        if (!uploadResponse.ok) {
+          const errorText = await uploadResponse.text();
+          console.error(
+            "❌ HTTP ERROR:",
+            uploadResponse.status,
+            uploadResponse.statusText
+          );
+          console.error("Response Body:", errorText);
+          addUploadDebugLog(`HTTP Error Response: ${errorText}`, "error");
+          throw new Error(
+            `HTTP ${uploadResponse.status}: ${uploadResponse.statusText}`
+          );
+        }
+
         const uploadResult = await uploadResponse.json();
-        console.log("Upload response:", uploadResult);
+
+        console.log("✅ PARSED RESPONSE:");
+        console.log("Response JSON:", uploadResult);
+        console.log("Upload Success:", uploadResult.success);
+        console.log("Upload Message:", uploadResult.message);
+        console.log(
+          "Upload Files Count:",
+          uploadResult.files ? uploadResult.files.length : "N/A"
+        );
+
+        addUploadDebugLog(
+          `Server response: ${JSON.stringify(uploadResult)}`,
+          "info"
+        );
 
         if (!uploadResult.success) {
-          console.warn("File upload warning:", uploadResult.message);
+          addUploadDebugLog(`Upload failed: ${uploadResult.message}`, "error");
+          console.error("❌ Upload failed:", uploadResult.message);
           showToast(
             "Booking created but some files failed to upload: " +
               uploadResult.message,
             "warning"
           );
         } else {
-          console.log("Files uploaded successfully:", uploadResult.files);
+          console.log(
+            "✅ Upload success - added",
+            uploadResult.files.length,
+            "file(s)"
+          );
+          addUploadDebugLog(
+            `✅ All ${uploadResult.files.length} file(s) uploaded successfully!`,
+            "success"
+          );
+          uploadResult.files.forEach((file, index) => {
+            addUploadDebugLog(
+              `  File ${index + 1}: ${file.file_type} - ${file.filename}`,
+              "success"
+            );
+          });
+
+          // Verify files are in database by fetching them
+          addUploadDebugLog(`Verifying files are saved in database...`, "info");
+          try {
+            const verifyResponse = await fetch(
+              `/api/bookings/${bookingId}/files`,
+              {
+                headers: {
+                  "X-Requested-With": "XMLHttpRequest",
+                },
+              }
+            );
+            const verifyResult = await verifyResponse.json();
+
+            if (verifyResult.success) {
+              addUploadDebugLog(
+                `✅ Database verification: Found ${
+                  verifyResult.count || verifyResult.files.length
+                } file(s) in database`,
+                "success"
+              );
+              verifyResult.files.forEach((file, index) => {
+                addUploadDebugLog(
+                  `  DB File ${index + 1}: ${file.file_type} - ${
+                    file.original_filename
+                  } (${file.file_size} bytes)`,
+                  "success"
+                );
+              });
+            } else {
+              addUploadDebugLog(
+                `❌ Database verification failed: ${verifyResult.message}`,
+                "error"
+              );
+            }
+          } catch (verifyError) {
+            addUploadDebugLog(
+              `❌ Verification error: ${verifyError.message}`,
+              "error"
+            );
+          }
+
           showToast(
             `${uploadResult.files.length} file(s) uploaded successfully`,
             "success"
           );
         }
       } catch (uploadError) {
-        console.error("File upload error:", uploadError);
-        console.error("Error details:", uploadError.message);
+        console.error("❌ UPLOAD ERROR:", uploadError);
+        console.error("Error Stack:", uploadError.stack);
+        addUploadDebugLog(`❌ Upload error: ${uploadError.message}`, "error");
         showToast(
           "Booking created but file upload failed: " + uploadError.message,
           "warning"
         );
       }
+    } else {
+      addUploadDebugLog("No files selected - skipping upload", "info");
+      console.log("⚠️ No files to upload");
     }
 
     // Reset button state before showing success
@@ -441,7 +703,10 @@ async function submitStudentBooking() {
     showStudentSuccess(bookingId);
     showToast("Booking submitted successfully!", "success");
   } catch (error) {
-    console.error("Booking error:", error);
+    console.error("❌ FORM SUBMISSION ERROR:", error);
+    console.error("Error Message:", error.message);
+    console.error("Error Stack:", error.stack);
+    addUploadDebugLog(`Form submission error: ${error.message}`, "error");
     showToast(error.message || "Failed to submit booking", "error");
     btn.disabled = false;
     btn.textContent = "✓ Submit Booking";
